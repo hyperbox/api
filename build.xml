@@ -1,0 +1,124 @@
+﻿<!--
+ * 
+ * Hyperbox - Virtual Infrastructure Manager
+ * Copyright (C) 2013-2015 Maxime Dor
+ * 
+ * http://kamax.io/hbox/
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or 
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *  
+-->
+
+<project name="Hyperbox" default="build">
+
+	<macrodef name="assertDirAvailable">
+		<attribute name="dir" />
+		<sequential>
+			<fail message="@{dir} could not be found">
+				<condition>
+					<not>
+						<available file="@{dir}" type="dir" />
+					</not>
+				</condition>
+			</fail>
+		</sequential>
+	</macrodef>
+	
+	<property file="build.properties"/>
+	
+	<property name="out.dirname"									value="out" />
+	<property name="src.dir"										value="src" />
+	<property name="lib.dir"										value="lib" />
+	
+	<property name="hbox.base.dir"									location="." />
+	<property name="hbox.dir"										location="${hbox.base.dir}/src" />
+	<property name="hbox.out.dir"									location="${hbox.base.dir}/${out.dirname}" />
+	<property name="hbox.docs.dir"									location="${hbox.base.dir}/docs" />
+	<property name="hbox.media.dir"									location="${hbox.base.dir}/media" />
+	
+	<property name="hbox.build.dir"									location="${hbox.out.dir}/build" />
+	<property name="hbox.build.class.dir"							location="${hbox.build.dir}/class" />
+	<property name="hbox.build.jar.dir"								location="${hbox.build.dir}/jar" />
+	<property name="hbox.build.module.jar.dir"						location="${hbox.build.jar.dir}/modules" />
+	
+	<property name="tools.dir"										location="${hbox.dir}/tools" />
+	<property name="tools.src.dir"									location="${tools.dir}/${src.dir}" />
+
+	<property name="api.dir"										location="${hbox.dir}/api" />
+	<property name="api.src.dir"									location="${api.dir}/${src.dir}" />
+	<property name="api.lib.dir"									location="${api.dir}/${lib.dir}" />
+	<property name="api.classes.dir"								location="${hbox.build.class.dir}/api" />
+	<property name="api.src.dir.abs"								location="${api.src.dir}" />
+	<property name="api.protocol.src.dir.abs"						location="${api.src.dir}/org/altherian/hbox/comm" />
+
+	<property name="kryo.api.dir"									location="${hbox.dir}/network/kryonet-api" />
+	<property name="kryo.api.src.dir"								location="${kryo.api.dir}/${src.dir}" />
+	<property name="kryo.api.lib.dir"								location="${kryo.api.dir}/${lib.dir}" />
+	
+	<property name="docs.out.dir"									location="${hbox.out.dir}/${docs.dir}" />
+	<property name="javadoc.out.dir"								location="${hbox.out.dir}/${docs.dir}/javadoc" />
+	<property name="media.dir.abs"									location="${hbox.media.dir}" />
+	
+	<target name="clean">
+		<delete dir="${hbox.out.dir}"/>
+	</target>
+		
+	<path id="api.classpath">
+		<pathelement location="${api.classes.dir}"/>
+		<fileset dir="${api.lib.dir}" includes="**/*.jar"/>
+	</path>
+	
+	<path id="kryo.api.classpath">
+		<path refid="api.classpath"/>
+		<pathelement location="${kryo.api.classes.dir}"/>
+		<fileset dir="${kryo.api.lib.dir}" includes="**/*.jar"/>
+	</path>
+	
+	<target name="configure">
+		<assertDirAvailable dir="${tools.src.dir}" />
+		<assertDirAvailable dir="${api.src.dir}" />
+
+		<exec executable="git" outputProperty="hbox.version">
+			<arg line="describe --always"/>
+		</exec>
+		
+		<exec executable="git" outputProperty="hbox.api.revision">
+			<arg line="describe --always"/>
+		</exec>
+		
+		<exec executable="git" outputProperty="hbox.protocol.version">
+			<arg line="describe --always"/>
+		</exec>
+		
+		<echo message="Hyperbox Version:             ${hbox.version}" />
+		<echo message="API Revision:                 ${hbox.api.revision}" />
+		<echo message="Network Protocol Revision:    ${hbox.protocol.version}" />
+	</target>
+	
+	<target name="api.compile" depends="configure">
+		<mkdir dir="${api.classes.dir}" />
+		<javac source="1.6" target="1.6" debug="on" debuglevel="lines" includeantruntime="false" srcdir="${tools.src.dir}" destdir="${api.classes.dir}" classpathref="api.classpath" />
+		<javac source="1.6" target="1.6" debug="on" debuglevel="lines" includeantruntime="false" srcdir="${api.src.dir}" destdir="${api.classes.dir}" classpathref="api.classpath" />
+		<javac source="1.6" target="1.6" debug="on" debuglevel="lines" includeantruntime="false" srcdir="${kryo.api.src.dir}" destdir="${api.classes.dir}" classpathref="kryo.api.classpath" />
+		<echo file="${api.classes.dir}/api.build.properties" append="true">version=${hbox.version}${line.separator}</echo>
+		<echo file="${api.classes.dir}/api.build.properties" append="true">protocol=${hbox.protocol.version}${line.separator}</echo>
+		
+		<jar destfile="${hbox.build.jar.dir}/hbox-api.jar">
+			<fileset dir="${api.classes.dir}" />
+		</jar>
+	</target>
+	
+	<extension-point name="build" depends="api.compile" />
+
+</project>
