@@ -104,7 +104,7 @@
 			<arg line="describe --always"/>
 		</exec>
 		
-		<echo message="Hyperbox API Version: ${hbox.version}" />
+		<echo message="Hyperbox API Version: ${hbox.api.version}" />
 	</target>
 	
 	<target name="api.compile" depends="configure">
