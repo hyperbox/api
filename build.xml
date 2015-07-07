@@ -41,6 +41,8 @@
 	<property name="tools.name"													value="tools" />
 	<property name="api.name"													value="api" />
 	<property name="core.name"													value="core" />
+	<property name="gui.name"													value="gui" />
+	<property name="cli.name"													value="cli" />
 	<property name="server.name"												value="server" />
 	<property name="client.name"												value="client" />
 	<property name="module.dirname"												value="modules" />
@@ -53,11 +55,14 @@
 	<property name="class.dirname"												value="class" />
 	<property name="javadoc.dirname"											value="javadoc" />
 	<property name="jar.dirname"												value="jar" />
+	<property name="bin.dirname"												value="bin" />
+	<property name="dist.dirname"												value="dist" />
+	<property name="tools.dirname"												value="tools" />
 	
 	<property name="doc.dirname"												value="doc" />
 	<property name="media.dirname"												value="media" />
 	<property name="image.dirname"												value="img" />
-	
+	<property name="icons.dirname"												value="icons" />
 	
 	<property name="hbox.api.base.dir"											location="." />
 	
@@ -83,10 +88,41 @@
 	<property name="hbox.api.kryo.lib.dir"										location="${hbox.api.kryo.dir}/${lib.dirname}" />
 	<property name="hbox.api.kryo.class.dir"									location="${hbox.api.out.build.class.dir}/${core.name}-${kryonet.name}" />
 	
+	<property name="hbox.api.media.dir"											location="${hbox.api.base.dir}/${media.dirname}" />
+	<property name="hbox.api.media.img.dir"										location="${hbox.api.media.dir}/${image.dirname}" />
+	
+	<condition property="ifWin">
+		<os family="windows" />
+	</condition>
+	
+	<condition property="ifLinux">
+		<os family="unix" />
+	</condition>
+	
 	<target name="clean">
 		<delete dir="${hbox.api.out.dir}"/>
 	</target>
+	
+	<target name="configure">
+		<assertDirAvailable dir="${hbox.api.tools.src.dir}" />
+		<assertDirAvailable dir="${hbox.api.core.src.dir}" />
+		<assertDirAvailable dir="${hbox.api.kryo.src.dir}" />
 		
+		<property name="os.type" 						value="${os.family}" />
+		<property name="platform"						value="${os.family}.${os.arch}" />
+		
+		<property file="${hbox.api.base.dir}/${tools.dirname}/${platform}/build.properties" />
+		<property file="${hbox.api.base.dir}/${tools.dirname}/${os.family}/build.properties" />
+		
+		<exec executable="git" outputProperty="hbox.api.version">
+			<arg line="describe --always"/>
+		</exec>
+		
+		<echo message="Hyperbox API Version: ${hbox.api.version}" />
+		
+		
+	</target>
+	
 	<path id="hbox.api.classpath">
 		<pathelement location="${hbox.api.kryo.class.dir}"/>
 		<pathelement location="${hbox.api.core.class.dir}"/>
@@ -95,23 +131,10 @@
 		<fileset dir="${hbox.api.core.lib.dir}" includes="**/*.jar"/>
 	</path>
 	
-	<target name="configure">
-		<assertDirAvailable dir="${hbox.api.tools.src.dir}" />
-		<assertDirAvailable dir="${hbox.api.core.src.dir}" />
-		<assertDirAvailable dir="${hbox.api.kryo.src.dir}" />
-
-		<exec executable="git" outputProperty="hbox.api.version">
-			<arg line="describe --always"/>
-		</exec>
-		
-		<echo message="Hyperbox API Version: ${hbox.api.version}" />
-	</target>
-	
-	<target name="api.compile" depends="configure">
+	<target name="compile" depends="configure">
 		<mkdir dir="${hbox.api.tools.class.dir}" />
 		<mkdir dir="${hbox.api.core.class.dir}" />
 		<mkdir dir="${hbox.api.kryo.class.dir}" />
-		
 		
 		<javac source="1.6" target="1.6" debug="on" debuglevel="lines" includeantruntime="false" srcdir="${hbox.api.tools.src.dir}" destdir="${hbox.api.tools.class.dir}" classpathref="hbox.api.classpath" />
 		<javac source="1.6" target="1.6" debug="on" debuglevel="lines" includeantruntime="false" srcdir="${hbox.api.core.src.dir}" destdir="${hbox.api.core.class.dir}" classpathref="hbox.api.classpath" />
@@ -126,6 +149,10 @@
 		</jar>
 	</target>
 	
-	<extension-point name="build" depends="api.compile" />
-
+	<extension-point name="build" depends="compile" />
+	
+	<extension-point name="deploy" depends="compile" />
+	
+	<extension-point name="dist" depends="compile" />
+	
 </project>
