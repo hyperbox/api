@@ -35,39 +35,17 @@
 		</sequential>
 	</macrodef>
 	
-	<property file="build.properties"/>
-	
-	<property name="hbox.name"													value="hbox" />
-	<property name="tools.name"													value="tools" />
-	<property name="api.name"													value="api" />
-	<property name="core.name"													value="core" />
-	<property name="gui.name"													value="gui" />
-	<property name="cli.name"													value="cli" />
-	<property name="server.name"												value="server" />
-	<property name="client.name"												value="client" />
-	<property name="module.dirname"												value="modules" />
-	<property name="kryonet.name"												value="kryonet" />
-	
-	<property name="src.dirname"												value="src" />
-	<property name="lib.dirname"												value="lib" />
-	<property name="out.dirname"												value="out" />
-	<property name="build.dirname"												value="build" />
-	<property name="class.dirname"												value="class" />
-	<property name="javadoc.dirname"											value="javadoc" />
-	<property name="jar.dirname"												value="jar" />
-	<property name="bin.dirname"												value="bin" />
-	<property name="dist.dirname"												value="dist" />
-	<property name="tools.dirname"												value="tools" />
-	
-	<property name="doc.dirname"												value="doc" />
-	<property name="media.dirname"												value="media" />
-	<property name="image.dirname"												value="img" />
-	<property name="icons.dirname"												value="icons" />
+	<property file="build.properties" />
 	
 	<property name="hbox.api.base.dir"											location="." />
+	<property file="${hbox.api.base.dir}/global.properties" />
 	
 	<property name="hbox.api.src.dir"											location="${hbox.api.base.dir}/${src.dirname}" />
+	<condition property="hbox.api.out.dir" value="${hbox.out.dir}">
+			<isset property="hbox.out.dir" />
+	</condition>
 	<property name="hbox.api.out.dir"											location="${hbox.api.base.dir}/${out.dirname}" />
+	
 	<property name="hbox.api.core.dir"											location="${hbox.api.src.dir}/${core.name}" />
 	<property name="hbox.api.tools.dir"											location="${hbox.api.src.dir}/${tools.name}" />
 	<property name="hbox.api.kryo.dir"											location="${hbox.api.src.dir}/network/${kryonet.name}" />
@@ -127,8 +105,6 @@
 		</exec>
 		
 		<echo message="Hyperbox API Version: ${hbox.api.version}" />
-		
-		
 	</target>
 	
 	<path id="hbox.api.classpath">
@@ -149,15 +125,16 @@
 		<javac source="1.6" target="1.6" debug="on" debuglevel="lines" includeantruntime="false" srcdir="${hbox.api.kryo.src.dir}" destdir="${hbox.api.kryo.class.dir}" classpathref="hbox.api.classpath" />
 		<echo file="${hbox.api.core.class.dir}/api.build.properties" append="true">version=${hbox.api.version}${line.separator}</echo>
 		<echo file="${hbox.api.core.class.dir}/api.build.properties" append="true">protocol=${hbox.api.version}${line.separator}</echo>
-		
+	</target>
+	
+	<target name="build" depends="compile">
+		<mkdir dir="${hbox.api.out.build.jar.dir}" />
 		<jar destfile="${hbox.api.out.build.jar.file}">
 			<fileset dir="${hbox.api.tools.class.dir}" />
 			<fileset dir="${hbox.api.core.class.dir}" />
 			<fileset dir="${hbox.api.kryo.class.dir}" />
 		</jar>
 	</target>
-	
-	<extension-point name="build" depends="compile" />
 	
 	<extension-point name="deploy" depends="compile" />
 	
