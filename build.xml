@@ -100,7 +100,7 @@
 		<property file="${hbox.api.base.dir}/${tools.dirname}/${platform}/build.properties" />
 		<property file="${hbox.api.base.dir}/${tools.dirname}/${os.family}/build.properties" />
 		
-		<exec executable="git" outputProperty="hbox.api.version">
+		<exec executable="git" dir="${hbox.api.base.dir}" outputProperty="hbox.api.version">
 			<arg line="describe --always"/>
 		</exec>
 		
@@ -123,7 +123,7 @@
 		<javac source="1.6" target="1.6" debug="on" includeantruntime="false" srcdir="${hbox.api.tools.src.dir}" destdir="${hbox.api.tools.class.dir}" classpathref="hbox.api.classpath" />
 		<javac source="1.6" target="1.6" debug="on" includeantruntime="false" srcdir="${hbox.api.core.src.dir}" destdir="${hbox.api.core.class.dir}" classpathref="hbox.api.classpath" />
 		<javac source="1.6" target="1.6" debug="on" includeantruntime="false" srcdir="${hbox.api.kryo.src.dir}" destdir="${hbox.api.kryo.class.dir}" classpathref="hbox.api.classpath" />
-		<echo file="${hbox.api.core.class.dir}/api.build.properties" append="true">version=${hbox.api.version}${line.separator}</echo>
+		<echo file="${hbox.api.core.class.dir}/api.build.properties" append="false">version=${hbox.api.version}${line.separator}</echo>
 		<echo file="${hbox.api.core.class.dir}/api.build.properties" append="true">protocol=${hbox.api.version}${line.separator}</echo>
 	</target>
 	
