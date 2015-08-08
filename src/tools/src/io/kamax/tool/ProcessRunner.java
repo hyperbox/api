@@ -35,11 +35,11 @@ public class ProcessRunner {
       new StreamDumper(p.getErrorStream()).start();
    }
 
-   public static ProcessRunner runAndWait(String[] args) {
+   public static ProcessRunner runAndWait(String... args) {
       return new ProcessRunner(args).runSync();
    }
 
-   public ProcessRunner(String[] args) {
+   public ProcessRunner(String... args) {
       this.args = args;
    }
 
