@@ -40,11 +40,7 @@ public enum HyperboxEvents {
    StoreState,
 
    ModuleRegistered,
-   ModuleUnregistered,
-   ModuleEnabled,
-   ModuleDisabled,
    ModuleLoaded,
-   ModuleUnloaded,
 
    MachineState,
    MachineRegistration,

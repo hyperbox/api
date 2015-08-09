@@ -152,11 +152,7 @@ public enum HyperboxTasks {
    ModuleList,
    ModuleGet,
    ModuleRegister,
-   ModuleUnregister,
-   ModuleEnable,
-   ModuleDisable,
    ModuleLoad,
-   ModuleUnload,
 
    Hello;
 

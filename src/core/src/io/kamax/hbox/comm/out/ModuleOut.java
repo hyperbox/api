@@ -51,10 +51,6 @@ public class ModuleOut extends ObjectOut {
       return getSetting(ModuleAttribute.Version).getString();
    }
 
-   public boolean isEnabled() {
-      return getSetting(ModuleAttribute.isEnabled).getBoolean();
-   }
-
    public boolean isLoaded() {
       return getSetting(ModuleAttribute.isLoaded).getBoolean();
    }

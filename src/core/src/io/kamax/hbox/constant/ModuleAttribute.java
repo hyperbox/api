@@ -25,7 +25,6 @@ public enum ModuleAttribute {
    DescriptorFile,
    Name,
    Version,
-   isEnabled,
    isLoaded,
    Ressources,
 

@@ -65,14 +65,6 @@ public class ModuleIn extends ObjectIn<EntityType> {
       setSetting(new StringSettingIO(ModuleAttribute.Version, version));
    }
 
-   public boolean isEnabled() {
-      return getSetting(ModuleAttribute.isEnabled).getBoolean();
-   }
-
-   public void setEnabled(boolean isEnabled) {
-      setSetting(new BooleanSettingIO(ModuleAttribute.isEnabled, isEnabled));
-   }
-
    public boolean isLoaded() {
       return getSetting(ModuleAttribute.isLoaded).getBoolean();
    }
