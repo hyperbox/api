@@ -63,13 +63,14 @@ pre {
 .chapterTitle, .note, .caution, .warning {
 	border: 1px solid;
 	margin: 1.5em 0em 0.3em 0em;
-	padding: 0.10em;
+	padding: 0.5em 0.5em;
 }
 
 .chapterTitle {
 	color: #00529B;
 	background-color: #BDE5F8;
 	text-align: center;
+	padding: 0.2em 0.2em;
 }
 
 .note {
@@ -85,4 +86,5 @@ pre {
 .warning {
 	color: #D8000C;
 	background-color: #FFBABA;
+	font-weight: bold;
 }
