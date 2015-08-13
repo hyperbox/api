@@ -91,7 +91,7 @@
 	</target>
 	
 	<target name="configure" depends="configure.win, configure.linux">
-		<property name="platform"						value="${os.family}.${os.arch}" />
+		<property name="platform"						value="${os.family}_${os.arch}" />
 
 		<assertDirAvailable dir="${hbox.api.tools.src.dir}" />
 		<assertDirAvailable dir="${hbox.api.core.src.dir}" />
