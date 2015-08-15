@@ -33,8 +33,8 @@ import java.util.Set;
  * provide the following essentials services :
  * <ul>
  * <li>Load implementation.
- * <li>Return a Class implementation give its full qualified name (e.g. io.kamax.hboxd.module._ModuleClassLoader) if such class can be found within
- * the module files.</li>
+ * <li>Return a Class implementation give its full qualified name (e.g. io.kamax.hbox.module._ModuleClassLoader) if such class can be found within the
+ * module files.</li>
  * <li>Return the set of all found Java code in a Set of URL pointing to the Java files.</li>
  * </ul>
  * </p>
