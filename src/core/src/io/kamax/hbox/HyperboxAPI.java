@@ -29,10 +29,12 @@ import java.util.Set;
 public class HyperboxAPI {
 
    private static Properties buildProperties = new Properties();
-   private static Version version = Version.UNKNOWN;
-   private static Version protocolVersion = Version.UNKNOWN;;
+   private static Version version;
+   private static Version protocolVersion;
 
    private static void failedToLoad(Exception e) {
+      version = Version.UNKNOWN;
+      protocolVersion = Version.UNKNOWN;
       Logger.error("Unable to access or read the api.build.properties ressource: " + e.getMessage());
       Logger.error("API version and revision may not be accurate");
    }
@@ -42,13 +44,15 @@ public class HyperboxAPI {
       Logger.error("Failing back to default version");
    }
 
-   static {
+   private static void loadVersions() {
       try {
          buildProperties.load(HyperboxAPI.class.getResourceAsStream("/api.build.properties"));
+
          Version rawVersion = new Version(buildProperties.getProperty("version"));
          if (rawVersion.isValid()) {
             version = rawVersion;
          } else {
+            version = Version.UNKNOWN;
             invalidVersion(rawVersion);
          }
 
@@ -56,6 +60,8 @@ public class HyperboxAPI {
          if (rawProtocolVersion.isValid()) {
             protocolVersion = rawProtocolVersion;
          } else {
+            protocolVersion = Version.UNKNOWN;
+            ;
             invalidVersion(rawProtocolVersion);
          }
       } catch (IOException e) {
@@ -68,10 +74,18 @@ public class HyperboxAPI {
    }
 
    public static Version getVersion() {
+      if (version == null) {
+         loadVersions();
+      }
+
       return version;
    }
 
    public static Version getProtocolVersion() {
+      if (protocolVersion == null) {
+         loadVersions();
+      }
+
       return protocolVersion;
    }
 
