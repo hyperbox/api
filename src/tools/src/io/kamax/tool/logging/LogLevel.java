@@ -23,7 +23,6 @@ package io.kamax.tool.logging;
 public enum LogLevel {
 
    Raw(0, false),
-   FatalException(10, true),
    Exception(20, true),
    Error(30, true),
    Warning(40, true),

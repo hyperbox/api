@@ -33,7 +33,7 @@ public class Logger {
 
    private static String logFileName;
 
-   private static LogLevel maxLevel = LogLevel.Info;
+   private static LogLevel maxLevel = LogLevel.Error;
    private static Boolean printSql;
 
    private static SimpleDateFormat formater;
@@ -105,10 +105,6 @@ public class Logger {
       e.printStackTrace(output);
    }
 
-   public static void fatalException(Object o) {
-      put(o, LogLevel.FatalException);
-   }
-
    public static void error(Object o) {
       put(o, LogLevel.Error);
    }
@@ -149,9 +145,9 @@ public class Logger {
          Calendar now = new GregorianCalendar();
          FileOutputStream fos = new FileOutputStream(file, true);
          output = new PrintStream(fos);
-         output.println("+============================================================================+");
-         output.println(String.format("+           Log start on %1$td/%1$tm/%1$tY @ %1$tH:%1$tM:%1$tS           +", now));
-         output.println("+============================================================================+");
+         output.println("+==============================================================+");
+         output.println(String.format(" Log start on %1$td/%1$tm/%1$tY @ %1$tH:%1$tM:%1$tS           +", now));
+         output.println("+==============================================================+");
          output.flush();
       }
 
@@ -194,32 +190,29 @@ public class Logger {
             case Raw:
                output = o.toString();
                break;
-            case FatalException:
-               output = time + " |FatalExcept| " + Thread.currentThread().getName() + " | " + getCalling(false) + " | " + o;
-               break;
             case Exception:
-               output = time + " |E X C E P T I O N| " + Thread.currentThread().getName() + " | " + getCalling(false);
+               output = time + " | Exception | " + Thread.currentThread().getName() + " | " + getCalling(false);
                break;
             case Error:
-               output = time + " |ERROR ERROR| " + o;
+               output = time + " |     Error | " + o;
                break;
             case Warning:
-               output = time + " |  WARNING  | " + o;
+               output = time + " |   Warning | " + o;
                break;
             case Info:
-               output = time + " |   Info    | " + o;
+               output = time + " |      Info | " + o;
                break;
             case Verbose:
-               output = time + " |  verbose  | " + o;
+               output = time + " |   verbose | " + o;
                break;
             case Debug:
-               output = time + " |   debug   | " + Thread.currentThread().getName() + " | " + getCalling(false) + " | " + o;
+               output = time + " |     debug | " + Thread.currentThread().getName() + " | " + getCalling(false) + " | " + o;
                break;
             case Tracking:
-               output = time + " | tracking  | " + Thread.currentThread().getName() + " | " + getCalling(true);
+               output = time + " |  tracking | " + Thread.currentThread().getName() + " | " + getCalling(true);
                break;
             default:
-               output = time + " | UNKNWON | " + o;
+               output = time + " |   UNKNWON | " + o;
          }
 
          put(output);
