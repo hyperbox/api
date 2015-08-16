@@ -48,7 +48,6 @@
 	
 	<property name="hbox.api.core.dir"											location="${hbox.api.src.dir}/${core.name}" />
 	<property name="hbox.api.tools.dir"											location="${hbox.api.src.dir}/${tools.name}" />
-	<property name="hbox.api.kryo.dir"											location="${hbox.api.src.dir}/network/${kryonet.name}" />
 	<property name="hbox.api.jar.filename"										value="${hbox.name}-${api.name}.jar" />
 	
 	<property name="hbox.api.out.build.dir"										location="${hbox.api.out.dir}/${build.dirname}" />
@@ -62,10 +61,6 @@
 	<property name="hbox.api.core.src.dir"										location="${hbox.api.core.dir}/${src.dirname}" />
 	<property name="hbox.api.core.lib.dir"										location="${hbox.api.core.dir}/${lib.dirname}" />
 	<property name="hbox.api.core.class.dir"									location="${hbox.api.out.build.class.dir}/${core.name}" />
-	
-	<property name="hbox.api.kryo.src.dir"										location="${hbox.api.kryo.dir}/${src.dirname}" />
-	<property name="hbox.api.kryo.lib.dir"										location="${hbox.api.kryo.dir}/${lib.dirname}" />
-	<property name="hbox.api.kryo.class.dir"									location="${hbox.api.out.build.class.dir}/${core.name}-${kryonet.name}" />
 	
 	<property name="hbox.api.media.dir"											location="${hbox.api.base.dir}/${media.dirname}" />
 	<property name="hbox.api.media.img.dir"										location="${hbox.api.media.dir}/${image.dirname}" />
@@ -95,7 +90,6 @@
 
 		<assertDirAvailable dir="${hbox.api.tools.src.dir}" />
 		<assertDirAvailable dir="${hbox.api.core.src.dir}" />
-		<assertDirAvailable dir="${hbox.api.kryo.src.dir}" />
 
 		<property file="${hbox.api.base.dir}/${tools.dirname}/${platform}/build.properties" />
 		<property file="${hbox.api.base.dir}/${tools.dirname}/${os.family}/build.properties" />
@@ -108,21 +102,17 @@
 	</target>
 	
 	<path id="hbox.api.classpath">
-		<pathelement location="${hbox.api.kryo.class.dir}"/>
 		<pathelement location="${hbox.api.core.class.dir}"/>
 		<pathelement location="${hbox.api.tools.class.dir}"/>
-		<fileset dir="${hbox.api.kryo.lib.dir}" includes="**/*.jar"/>
 		<fileset dir="${hbox.api.core.lib.dir}" includes="**/*.jar"/>
 	</path>
 	
 	<target name="compile" depends="configure">
 		<mkdir dir="${hbox.api.tools.class.dir}" />
 		<mkdir dir="${hbox.api.core.class.dir}" />
-		<mkdir dir="${hbox.api.kryo.class.dir}" />
 		
 		<javac source="1.6" target="1.6" debug="on" includeantruntime="false" srcdir="${hbox.api.tools.src.dir}" destdir="${hbox.api.tools.class.dir}" classpathref="hbox.api.classpath" />
 		<javac source="1.6" target="1.6" debug="on" includeantruntime="false" srcdir="${hbox.api.core.src.dir}" destdir="${hbox.api.core.class.dir}" classpathref="hbox.api.classpath" />
-		<javac source="1.6" target="1.6" debug="on" includeantruntime="false" srcdir="${hbox.api.kryo.src.dir}" destdir="${hbox.api.kryo.class.dir}" classpathref="hbox.api.classpath" />
 		<echo file="${hbox.api.core.class.dir}/api.build.properties" append="false">version=${hbox.api.version}${line.separator}</echo>
 		<echo file="${hbox.api.core.class.dir}/api.build.properties" append="true">protocol=${hbox.api.version}${line.separator}</echo>
 	</target>
@@ -132,7 +122,6 @@
 		<jar destfile="${hbox.api.out.build.jar.file}">
 			<fileset dir="${hbox.api.tools.class.dir}" />
 			<fileset dir="${hbox.api.core.class.dir}" />
-			<fileset dir="${hbox.api.kryo.class.dir}" />
 		</jar>
 	</target>
 	
