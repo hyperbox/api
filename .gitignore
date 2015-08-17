@@ -1,2 +1,6 @@
 /out/
 build.properties
+
+src/core/.settings/
+src/tools/.settings/
+
