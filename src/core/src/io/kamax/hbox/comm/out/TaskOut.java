@@ -105,4 +105,42 @@ public class TaskOut extends ObjectOut {
       return error;
    }
 
+   @Override
+   public int hashCode() {
+      final int prime = 31;
+      int result = super.hashCode();
+      result = (prime * result) + ((getId() == null) ? 0 : getId().hashCode());
+      result = (prime * result) + ((serverId == null) ? 0 : serverId.hashCode());
+      return result;
+   }
+
+   @Override
+   public boolean equals(Object obj) {
+      if (this == obj) {
+         return true;
+      }
+      if (!super.equals(obj)) {
+         return false;
+      }
+      if (!(obj instanceof TaskOut)) {
+         return false;
+      }
+      TaskOut other = (TaskOut) obj;
+      if (getId() == null) {
+         if (other.getId() != null) {
+            return false;
+         }
+      } else if (!getId().equals(other.getId())) {
+         return false;
+      }
+      if (serverId == null) {
+         if (other.serverId != null) {
+            return false;
+         }
+      } else if (!serverId.equals(other.serverId)) {
+         return false;
+      }
+      return true;
+   }
+
 }
