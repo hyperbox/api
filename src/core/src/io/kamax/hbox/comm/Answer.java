@@ -31,6 +31,8 @@ package io.kamax.hbox.comm;
  */
 public final class Answer extends Message {
 
+   public static final Answer INVALID_PROTOCOL = new Answer(AnswerType.INVALID_PROTOCOL);
+
    private String exchangeId;
    private Command command;
    private AnswerType type;
@@ -41,6 +43,11 @@ public final class Answer extends Message {
    @SuppressWarnings("unused")
    private Answer() {
       // DO NOT USE!
+   }
+
+   private Answer(AnswerType type) {
+      super("");
+      this.type = type;
    }
 
    /**

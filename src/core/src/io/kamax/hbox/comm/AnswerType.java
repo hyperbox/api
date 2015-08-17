@@ -141,7 +141,12 @@ public enum AnswerType {
    /**
     * The request was refused due to the lack of privileges.
     */
-   UNAUTHORIZED(2, true);
+   UNAUTHORIZED(2, true),
+
+   /**
+    * The protocol used between the client and server is incompatible.
+    */
+   INVALID_PROTOCOL(2, true);
 
    private final static int STARTING = 0;
    private final static int PROGRESS = 1;
