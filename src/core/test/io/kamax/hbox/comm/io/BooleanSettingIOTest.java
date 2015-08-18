@@ -22,7 +22,6 @@
 package io.kamax.hbox.comm.io;
 
 import static org.junit.Assert.assertTrue;
-import io.kamax.hbox.comm.io.BooleanSettingIO;
 import org.junit.Test;
 
 public class BooleanSettingIOTest {

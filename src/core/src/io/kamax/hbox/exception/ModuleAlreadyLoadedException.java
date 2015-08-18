@@ -20,7 +20,6 @@
 
 package io.kamax.hbox.exception;
 
-
 @SuppressWarnings("serial")
 public class ModuleAlreadyLoadedException extends ModuleException {
 
