@@ -61,6 +61,8 @@
 	<property name="hbox.api.core.src.dir"										location="${hbox.api.core.dir}/${src.dirname}" />
 	<property name="hbox.api.core.lib.dir"										location="${hbox.api.core.dir}/${lib.dirname}" />
 	<property name="hbox.api.core.class.dir"									location="${hbox.api.out.build.class.dir}/${core.name}" />
+
+	<property name="hbox.api.doc.dir"											location="${hbox.api.base.dir}/${doc.dirname}" />
 	
 	<property name="hbox.api.media.dir"											location="${hbox.api.base.dir}/${media.dirname}" />
 	<property name="hbox.api.media.img.dir"										location="${hbox.api.media.dir}/${image.dirname}" />
