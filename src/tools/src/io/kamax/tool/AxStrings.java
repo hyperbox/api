@@ -97,4 +97,18 @@ public class AxStrings {
       return (l != null) && (r != null) && l.equals(r);
    }
 
+   /**
+    * Get the string representation of the object
+    * 
+    * @param o The object to represent
+    * @return o.toString() or null if o is null
+    */
+   public static String get(Object o) {
+      if (o != null) {
+         return o.toString();
+      } else {
+         return null;
+      }
+   }
+
 }
