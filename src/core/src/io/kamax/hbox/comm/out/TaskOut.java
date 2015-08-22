@@ -27,120 +27,120 @@ import java.util.Date;
 
 public class TaskOut extends ObjectOut {
 
-   private String serverId;
-   private String actionId;
-   private String requestId;
-   private UserOut uOut;
+    private String serverId;
+    private String actionId;
+    private String requestId;
+    private UserOut uOut;
 
-   private TaskState state;
+    private TaskState state;
 
-   private Date createTime;
-   private Date queueTime;
-   private Date startTime;
-   private Date endTime;
-   private ExceptionOut error;
+    private Date createTime;
+    private Date queueTime;
+    private Date startTime;
+    private Date endTime;
+    private ExceptionOut error;
 
-   @SuppressWarnings("unused")
-   private TaskOut() {
-      // used for (de)serialisation
-   }
+    @SuppressWarnings("unused")
+    private TaskOut() {
+        // used for (de)serialisation
+    }
 
-   public TaskOut(String serverId, String taskId) {
-      super(EntityType.Task, taskId);
-      this.serverId = serverId;
-   }
+    public TaskOut(String serverId, String taskId) {
+        super(EntityType.Task, taskId);
+        this.serverId = serverId;
+    }
 
-   public TaskOut(String serverId, String taskId, String actionId, String requestId, TaskState state, UserOut uOut, Date createTime,
-         Date queueTime,
-         Date startTime, Date endTime, ExceptionOut error) {
-      this(serverId, taskId);
-      this.actionId = actionId;
-      this.requestId = requestId;
-      this.state = state;
-      this.uOut = uOut;
-      this.createTime = createTime;
-      this.queueTime = queueTime;
-      this.startTime = startTime;
-      this.endTime = endTime;
-      this.error = error;
-   }
+    public TaskOut(String serverId, String taskId, String actionId, String requestId, TaskState state, UserOut uOut, Date createTime,
+            Date queueTime,
+            Date startTime, Date endTime, ExceptionOut error) {
+        this(serverId, taskId);
+        this.actionId = actionId;
+        this.requestId = requestId;
+        this.state = state;
+        this.uOut = uOut;
+        this.createTime = createTime;
+        this.queueTime = queueTime;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.error = error;
+    }
 
-   public String getServerId() {
-      return serverId;
-   }
+    public String getServerId() {
+        return serverId;
+    }
 
-   public UserOut getUser() {
-      return uOut;
-   }
+    public UserOut getUser() {
+        return uOut;
+    }
 
-   public TaskState getState() {
-      return state;
-   }
+    public TaskState getState() {
+        return state;
+    }
 
-   public String getActionId() {
-      return actionId;
-   }
+    public String getActionId() {
+        return actionId;
+    }
 
-   public String getRequestId() {
-      return requestId;
-   }
+    public String getRequestId() {
+        return requestId;
+    }
 
-   public Date getCreateTime() {
-      return createTime;
-   }
+    public Date getCreateTime() {
+        return createTime;
+    }
 
-   public Date getQueueTime() {
-      return queueTime;
-   }
+    public Date getQueueTime() {
+        return queueTime;
+    }
 
-   public Date getStartTime() {
-      return startTime;
-   }
+    public Date getStartTime() {
+        return startTime;
+    }
 
-   public Date getStopTime() {
-      return endTime;
-   }
+    public Date getStopTime() {
+        return endTime;
+    }
 
-   public ExceptionOut getError() {
-      return error;
-   }
+    public ExceptionOut getError() {
+        return error;
+    }
 
-   @Override
-   public int hashCode() {
-      final int prime = 31;
-      int result = super.hashCode();
-      result = (prime * result) + ((getId() == null) ? 0 : getId().hashCode());
-      result = (prime * result) + ((serverId == null) ? 0 : serverId.hashCode());
-      return result;
-   }
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = super.hashCode();
+        result = (prime * result) + ((getId() == null) ? 0 : getId().hashCode());
+        result = (prime * result) + ((serverId == null) ? 0 : serverId.hashCode());
+        return result;
+    }
 
-   @Override
-   public boolean equals(Object obj) {
-      if (this == obj) {
-         return true;
-      }
-      if (!super.equals(obj)) {
-         return false;
-      }
-      if (!(obj instanceof TaskOut)) {
-         return false;
-      }
-      TaskOut other = (TaskOut) obj;
-      if (getId() == null) {
-         if (other.getId() != null) {
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!super.equals(obj)) {
             return false;
-         }
-      } else if (!getId().equals(other.getId())) {
-         return false;
-      }
-      if (serverId == null) {
-         if (other.serverId != null) {
+        }
+        if (!(obj instanceof TaskOut)) {
             return false;
-         }
-      } else if (!serverId.equals(other.serverId)) {
-         return false;
-      }
-      return true;
-   }
+        }
+        TaskOut other = (TaskOut) obj;
+        if (getId() == null) {
+            if (other.getId() != null) {
+                return false;
+            }
+        } else if (!getId().equals(other.getId())) {
+            return false;
+        }
+        if (serverId == null) {
+            if (other.serverId != null) {
+                return false;
+            }
+        } else if (!serverId.equals(other.serverId)) {
+            return false;
+        }
+        return true;
+    }
 
 }

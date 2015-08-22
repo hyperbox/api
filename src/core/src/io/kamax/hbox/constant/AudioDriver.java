@@ -22,22 +22,22 @@ package io.kamax.hbox.constant;
 
 /**
  * Audio mode supported by Virtualbox
- * 
+ *
  * @author max
  */
 public enum AudioDriver {
 
-   Null,
-   WinMM,
-   OSS,
-   ALSA,
-   DirectSound,
-   CoreAudio,
-   Pulse,
-   SolAudio;
+    Null,
+    WinMM,
+    OSS,
+    ALSA,
+    DirectSound,
+    CoreAudio,
+    Pulse,
+    SolAudio;
 
-   public String getId() {
-      return toString();
-   }
+    public String getId() {
+        return toString();
+    }
 
 }

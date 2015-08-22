@@ -28,13 +28,13 @@ import java.util.Date;
 
 public class SnapshotModifiedEventOut extends SnapshotEventOut {
 
-   @SuppressWarnings("unused")
-   private SnapshotModifiedEventOut() {
-      // Used for serialization
-   }
+    @SuppressWarnings("unused")
+    private SnapshotModifiedEventOut() {
+        // Used for serialization
+    }
 
-   public SnapshotModifiedEventOut(Date time, ServerOut srvOut, MachineOut mOut, SnapshotOut snapOut) {
-      super(time, HyperboxEvents.SnapshotModified, srvOut, mOut, snapOut);
-   }
+    public SnapshotModifiedEventOut(Date time, ServerOut srvOut, MachineOut mOut, SnapshotOut snapOut) {
+        super(time, HyperboxEvents.SnapshotModified, srvOut, mOut, snapOut);
+    }
 
 }

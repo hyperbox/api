@@ -25,37 +25,37 @@ import io.kamax.hbox.constant.EntityType;
 
 public class NetAdaptorOut extends ObjectOut {
 
-   private String label;
-   private String modeId;
-   private boolean isEnabled;
-   private boolean hasServices;
+    private String label;
+    private String modeId;
+    private boolean isEnabled;
+    private boolean hasServices;
 
-   protected NetAdaptorOut() {
-      // Serialization
-   }
+    protected NetAdaptorOut() {
+        // Serialization
+    }
 
-   public NetAdaptorOut(String id, String label, String modeId, boolean isEnabled, boolean hasServices) {
-      super(EntityType.NetAdaptor, id);
-      this.label = label;
-      this.modeId = modeId;
-      this.isEnabled = isEnabled;
-      this.hasServices = hasServices;
-   }
+    public NetAdaptorOut(String id, String label, String modeId, boolean isEnabled, boolean hasServices) {
+        super(EntityType.NetAdaptor, id);
+        this.label = label;
+        this.modeId = modeId;
+        this.isEnabled = isEnabled;
+        this.hasServices = hasServices;
+    }
 
-   public String getLabel() {
-      return label;
-   }
+    public String getLabel() {
+        return label;
+    }
 
-   public String getMode() {
-      return modeId;
-   }
+    public String getMode() {
+        return modeId;
+    }
 
-   public boolean isEnabled() {
-      return isEnabled;
-   }
+    public boolean isEnabled() {
+        return isEnabled;
+    }
 
-   public boolean hasServices() {
-      return hasServices;
-   }
+    public boolean hasServices() {
+        return hasServices;
+    }
 
 }

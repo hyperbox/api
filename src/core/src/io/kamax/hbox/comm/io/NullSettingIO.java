@@ -23,27 +23,27 @@ package io.kamax.hbox.comm.io;
 
 public class NullSettingIO extends SettingIO {
 
-   protected NullSettingIO() {
+    protected NullSettingIO() {
 
-   }
+    }
 
-   public NullSettingIO(String name) {
-      super(name, null);
-   }
+    public NullSettingIO(String name) {
+        super(name, null);
+    }
 
-   @Override
-   public Boolean getBoolean() {
-      return false;
-   }
+    @Override
+    public Boolean getBoolean() {
+        return false;
+    }
 
-   @Override
-   public String getString() {
-      return "";
-   }
+    @Override
+    public String getString() {
+        return "";
+    }
 
-   @Override
-   public Long getNumber() {
-      return 0l;
-   }
+    @Override
+    public Long getNumber() {
+        return 0l;
+    }
 
 }

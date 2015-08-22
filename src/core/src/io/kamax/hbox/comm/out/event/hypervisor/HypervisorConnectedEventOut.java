@@ -28,17 +28,17 @@ import java.util.Date;
 
 public class HypervisorConnectedEventOut extends HypervisorConnectionStateEventOut {
 
-   protected HypervisorConnectedEventOut() {
-      // Used for serialization
-   }
+    protected HypervisorConnectedEventOut() {
+        // Used for serialization
+    }
 
-   public HypervisorConnectedEventOut(Date time, ServerOut srvOut, HypervisorOut hypOut) {
-      super(time, HyperboxEvents.HypervisorConnected, srvOut, hypOut);
-   }
+    public HypervisorConnectedEventOut(Date time, ServerOut srvOut, HypervisorOut hypOut) {
+        super(time, HyperboxEvents.HypervisorConnected, srvOut, hypOut);
+    }
 
-   @Override
-   public String toString() {
-      return "Server " + getServer().getName() + " connected to Hypervisor " + getHypervisor().getId() + " @ " + getTime();
-   }
+    @Override
+    public String toString() {
+        return "Server " + getServer().getName() + " connected to Hypervisor " + getHypervisor().getId() + " @ " + getTime();
+    }
 
 }

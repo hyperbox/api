@@ -20,23 +20,25 @@
 
 package io.kamax.hbox.exception;
 
-@SuppressWarnings("serial")
+
 public class ObjectNotFoundException extends HyperboxException {
 
-   public ObjectNotFoundException() {
-      super("Object was not found");
-   }
+    private static final long serialVersionUID = -6366726894805105876L;
 
-   public ObjectNotFoundException(String s) {
-      super(s);
-   }
+    public ObjectNotFoundException() {
+        super("Object was not found");
+    }
 
-   public ObjectNotFoundException(Throwable t) {
-      super(t);
-   }
+    public ObjectNotFoundException(String s) {
+        super(s);
+    }
 
-   public ObjectNotFoundException(String s, Throwable t) {
-      super(s, t);
-   }
+    public ObjectNotFoundException(Throwable t) {
+        super(t);
+    }
+
+    public ObjectNotFoundException(String s, Throwable t) {
+        super(s, t);
+    }
 
 }

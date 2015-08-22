@@ -22,32 +22,32 @@ package io.kamax.hbox.constant;
 
 /**
  * Firmware to use at boot of the VM
- * 
+ *
  * @author max
  */
 public enum Firmware {
 
-   /**
-    * BIOS
-    */
-   Bios,
-   /**
-    * EFI
-    */
-   Efi,
-   /**
-    * EFI 32 bits
-    */
-   Efi32,
-   /**
-    * EFI 64 bits
-    */
-   Efi64,
+    /**
+     * BIOS
+     */
+    Bios,
+    /**
+     * EFI
+     */
+    Efi,
+    /**
+     * EFI 32 bits
+     */
+    Efi32,
+    /**
+     * EFI 64 bits
+     */
+    Efi64,
 
-   EfiDual;
+    EfiDual;
 
-   public String getId() {
-      return toString();
-   }
+    public String getId() {
+        return toString();
+    }
 
 }

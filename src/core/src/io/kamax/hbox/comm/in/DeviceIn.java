@@ -27,46 +27,46 @@ import java.util.List;
 
 public class DeviceIn extends ObjectIn<EntityType> implements _Actionnable {
 
-   private String machineUuid;
-   private String devType;
+    private String machineUuid;
+    private String devType;
 
-   public DeviceIn() {
-      super(EntityType.Device);
-   }
+    public DeviceIn() {
+        super(EntityType.Device);
+    }
 
-   public DeviceIn(String id) {
-      super(EntityType.Device, id);
-   }
+    public DeviceIn(String id) {
+        super(EntityType.Device, id);
+    }
 
-   public DeviceIn(String id, String devType) {
-      super(EntityType.Device, id);
-      setDevType(devType);
-   }
+    public DeviceIn(String id, String devType) {
+        super(EntityType.Device, id);
+        setDevType(devType);
+    }
 
-   public DeviceIn(String id, String devType, List<SettingIO> settings) {
-      super(EntityType.Device, id, settings);
-   }
+    public DeviceIn(String id, String devType, List<SettingIO> settings) {
+        super(EntityType.Device, id, settings);
+    }
 
-   public String getMachineUuid() {
-      return machineUuid;
-   }
+    public String getMachineUuid() {
+        return machineUuid;
+    }
 
-   public void setMachineUuid(String uuid) {
-      machineUuid = uuid;
-   }
+    public void setMachineUuid(String uuid) {
+        machineUuid = uuid;
+    }
 
-   /**
-    * @return the devType
-    */
-   public String getDevType() {
-      return devType;
-   }
+    /**
+     * @return the devType
+     */
+    public String getDevType() {
+        return devType;
+    }
 
-   /**
-    * @param devType the devType to set
-    */
-   public void setDevType(String devType) {
-      this.devType = devType;
-   }
+    /**
+     * @param devType the devType to set
+     */
+    public void setDevType(String devType) {
+        this.devType = devType;
+    }
 
 }

@@ -22,27 +22,27 @@ package io.kamax.hbox.constant;
 
 public enum StorageControllerSubType {
 
-   LsiLogic(StorageControllerType.SCSI),
-   BusLogi(StorageControllerType.SCSI),
-   IntelAhci(StorageControllerType.SATA),
-   PIIX3(StorageControllerType.IDE),
-   PIIX4(StorageControllerType.IDE),
-   ICH6(StorageControllerType.IDE),
-   I82078(StorageControllerType.Floppy),
-   LsiLogicSas(StorageControllerType.SAS);
+    LsiLogic(StorageControllerType.SCSI),
+    BusLogi(StorageControllerType.SCSI),
+    IntelAhci(StorageControllerType.SATA),
+    PIIX3(StorageControllerType.IDE),
+    PIIX4(StorageControllerType.IDE),
+    ICH6(StorageControllerType.IDE),
+    I82078(StorageControllerType.Floppy),
+    LsiLogicSas(StorageControllerType.SAS);
 
-   private StorageControllerType type;
+    private StorageControllerType type;
 
-   private StorageControllerSubType(StorageControllerType type) {
-      this.type = type;
-   }
+    private StorageControllerSubType(StorageControllerType type) {
+        this.type = type;
+    }
 
-   public StorageControllerType getParentType() {
-      return type;
-   }
+    public StorageControllerType getParentType() {
+        return type;
+    }
 
-   public String getId() {
-      return toString();
-   }
+    public String getId() {
+        return toString();
+    }
 
 }

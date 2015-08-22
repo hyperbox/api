@@ -22,20 +22,20 @@ package io.kamax.hbox.hypervisor.net;
 
 public interface _NetService_IP4_DHCP extends _NetService {
 
-   public String getAddress();
+    public String getAddress();
 
-   public String getMask();
+    public String getMask();
 
-   public String getStartAddress();
+    public String getStartAddress();
 
-   public String getEndAddress();
+    public String getEndAddress();
 
-   public void setAddress(String addr);
+    public void setAddress(String addr);
 
-   public void setNetmask(String netmask);
+    public void setNetmask(String netmask);
 
-   public void setStartAddress(String startAddr);
+    public void setStartAddress(String startAddr);
 
-   public void setEndAddress(String endAddr);
+    public void setEndAddress(String endAddr);
 
 }

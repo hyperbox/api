@@ -26,12 +26,12 @@ import java.util.Date;
 
 public class NetAdaptorRemovedEventOut extends NetAdaptorEventOut {
 
-   protected NetAdaptorRemovedEventOut() {
-      // Used for (de)serialization
-   }
+    protected NetAdaptorRemovedEventOut() {
+        // Used for (de)serialization
+    }
 
-   public NetAdaptorRemovedEventOut(Date time, ServerOut srvOut, String hypId, String netModeId, String netAdaptorId) {
-      super(time, HyperboxEvents.NetAdaptorRemoved, srvOut, hypId, netModeId, netAdaptorId);
-   }
+    public NetAdaptorRemovedEventOut(Date time, ServerOut srvOut, String hypId, String netModeId, String netAdaptorId) {
+        super(time, HyperboxEvents.NetAdaptorRemoved, srvOut, hypId, netModeId, netAdaptorId);
+    }
 
 }

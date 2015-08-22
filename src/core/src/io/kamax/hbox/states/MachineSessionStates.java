@@ -22,9 +22,9 @@ package io.kamax.hbox.states;
 
 public enum MachineSessionStates {
 
-   Locking,
-   Locked,
-   Unlocking,
-   Unlocked,
+    Locking,
+    Locked,
+    Unlocking,
+    Unlocked,
 
 }

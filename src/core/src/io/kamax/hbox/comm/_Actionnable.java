@@ -24,8 +24,8 @@ import io.kamax.hbox.comm.in.Action;
 
 public interface _Actionnable {
 
-   public Action getAction();
+    public Action getAction();
 
-   public void setAction(Action a);
+    public void setAction(Action a);
 
 }

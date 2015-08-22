@@ -27,137 +27,137 @@ import io.kamax.hbox.comm.out.hypervisor.HypervisorOut;
 
 public enum HyperboxTasks {
 
-   /**
-    * Retrieve the list of servers managed by the one we are connected to.
-    * <p>
-    * Request Object: None<br/>
-    * Answer Object: {@link ServerOut}<br/>
-    * Answer Type : Multi<br/>
-    * Queueable: No
-    * </p>
-    */
-   ServerList,
-   /**
-    * Retrieve the information about a server
-    * <p>
-    * Request Object: {@link ServerIn} for a specific server, none for the current server<br/>
-    * Answer Object: {@link ServerOut}<br/>
-    * Answer Type: Single<br/>
-    * Queueable: No
-    * </p>
-    */
-   ServerGet,
-   ServerConfigure,
-   ServerShutdown,
-   ServerLogLevelList,
+    /**
+     * Retrieve the list of servers managed by the one we are connected to.
+     * <p>
+     * Request Object: None<br/>
+     * Answer Object: {@link ServerOut}<br/>
+     * Answer Type : Multi<br/>
+     * Queueable: No
+     * </p>
+     */
+    ServerList,
+    /**
+     * Retrieve the information about a server
+     * <p>
+     * Request Object: {@link ServerIn} for a specific server, none for the current server<br/>
+     * Answer Object: {@link ServerOut}<br/>
+     * Answer Type: Single<br/>
+     * Queueable: No
+     * </p>
+     */
+    ServerGet,
+    ServerConfigure,
+    ServerShutdown,
+    ServerLogLevelList,
 
-   /**
-    * Connect a server to an hypervisor.
-    * <p>
-    * Request Objects: {@link ServerIn} for a specific server, none for the current server<br/>
-    * {@link HypervisorIn} for the hypervisor to connect to<br/>
-    * Answer Object: {@link HypervisorOut}<br/>
-    * Answer Type: Single<br/>
-    * Queueable: Yes
-    * </p>
-    */
-   ServerConnectHypervisor,
+    /**
+     * Connect a server to an hypervisor.
+     * <p>
+     * Request Objects: {@link ServerIn} for a specific server, none for the current server<br/>
+     * {@link HypervisorIn} for the hypervisor to connect to<br/>
+     * Answer Object: {@link HypervisorOut}<br/>
+     * Answer Type: Single<br/>
+     * Queueable: Yes
+     * </p>
+     */
+    ServerConnectHypervisor,
 
-   /**
-    * Disconnect the server from its hypervisor.
-    * <p>
-    * Request Objects: {@link ServerIn} for a specific server, none for the current server<br/>
-    * Answer Type: Single<br/>
-    * Queueable: Yes
-    * </p>
-    */
-   ServerDisconnectHypervisor,
+    /**
+     * Disconnect the server from its hypervisor.
+     * <p>
+     * Request Objects: {@link ServerIn} for a specific server, none for the current server<br/>
+     * Answer Type: Single<br/>
+     * Queueable: Yes
+     * </p>
+     */
+    ServerDisconnectHypervisor,
 
-   HypervisorList,
-   HypervisorGet,
-   HypervisorAdd,
-   HypervisorRemove,
-   HypervisorConfigure,
-   HypervisorConnect,
-   HypervisorDisconnect,
+    HypervisorList,
+    HypervisorGet,
+    HypervisorAdd,
+    HypervisorRemove,
+    HypervisorConfigure,
+    HypervisorConnect,
+    HypervisorDisconnect,
 
-   HostGet,
+    HostGet,
 
-   Login,
-   Logout,
+    Login,
+    Logout,
 
-   StoreList,
-   StoreGet,
-   StoreCreate,
-   StoreModify,
-   StoreDelete,
+    StoreList,
+    StoreGet,
+    StoreCreate,
+    StoreModify,
+    StoreDelete,
 
-   StoreRegister,
-   StoreUnregister,
+    StoreRegister,
+    StoreUnregister,
 
-   /**
-    * Not implemented
-    */
-   StoreItemList,
-   /**
-    * Not implemented
-    */
-   StoreItemGet,
-   /**
-    * Not implemented
-    */
-   StoreItemCreate,
-   /**
-    * Not implemented
-    */
-   StoreItemModify,
-   /**
-    * Not implemented
-    */
-   StoreItemDelete,
-   /**
-    * Not implemented
-    */
-   StoreItemDownload,
-   /**
-    * Not implemented
-    */
-   StoreItemUpload,
+    /**
+     * Not implemented
+     */
+    StoreItemList,
+    /**
+     * Not implemented
+     */
+    StoreItemGet,
+    /**
+     * Not implemented
+     */
+    StoreItemCreate,
+    /**
+     * Not implemented
+     */
+    StoreItemModify,
+    /**
+     * Not implemented
+     */
+    StoreItemDelete,
+    /**
+     * Not implemented
+     */
+    StoreItemDownload,
+    /**
+     * Not implemented
+     */
+    StoreItemUpload,
 
-   SessionList,
-   SessionGet,
-   SessionClose,
+    SessionList,
+    SessionGet,
+    SessionClose,
 
-   TaskList,
-   TaskGet,
-   TaskCancel,
-   TaskPause,
-   TaskStart,
+    TaskList,
+    TaskGet,
+    TaskCancel,
+    TaskPause,
+    TaskStart,
 
-   UserList,
-   UserGet,
-   UserCreate,
-   UserModify,
-   UserDelete,
+    UserList,
+    UserGet,
+    UserCreate,
+    UserModify,
+    UserDelete,
 
-   GuestRestart,
-   GuestShutdown,
+    GuestRestart,
+    GuestShutdown,
 
-   PermissionSet,
-   PermissionDelete,
-   PermissionList,
-   PermissionGet,
+    PermissionSet,
+    PermissionDelete,
+    PermissionList,
+    PermissionGet,
 
-   ModuleRefresh,
-   ModuleList,
-   ModuleGet,
-   ModuleRegister,
-   ModuleLoad,
+    ModuleRefresh,
+    ModuleList,
+    ModuleGet,
+    ModuleRegister,
+    ModuleLoad,
 
-   Hello;
+    Hello;
 
-   public String getId() {
-      return toString();
-   }
+    public String getId() {
+        return toString();
+    }
 
 }

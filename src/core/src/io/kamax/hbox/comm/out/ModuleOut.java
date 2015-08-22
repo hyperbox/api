@@ -27,37 +27,37 @@ import java.util.Collection;
 
 public class ModuleOut extends ObjectOut {
 
-   protected ModuleOut() {
-      // used for (de)serialisation
-   }
+    protected ModuleOut() {
+        // used for (de)serialisation
+    }
 
-   public ModuleOut(String id) {
-      super(EntityType.Module, id);
-   }
+    public ModuleOut(String id) {
+        super(EntityType.Module, id);
+    }
 
-   public ModuleOut(String id, Collection<SettingIO> settings) {
-      super(EntityType.Module, id, settings);
-   }
+    public ModuleOut(String id, Collection<SettingIO> settings) {
+        super(EntityType.Module, id, settings);
+    }
 
-   public String getDescriptorFile() {
-      return getSetting(ModuleAttribute.DescriptorFile).getString();
-   }
+    public String getDescriptorFile() {
+        return getSetting(ModuleAttribute.DescriptorFile).getString();
+    }
 
-   public String getName() {
-      return getSetting(ModuleAttribute.Name).getString();
-   }
+    public String getName() {
+        return getSetting(ModuleAttribute.Name).getString();
+    }
 
-   public String getVersion() {
-      return getSetting(ModuleAttribute.Version).getString();
-   }
+    public String getVersion() {
+        return getSetting(ModuleAttribute.Version).getString();
+    }
 
-   public boolean isLoaded() {
-      return getSetting(ModuleAttribute.isLoaded).getBoolean();
-   }
+    public boolean isLoaded() {
+        return getSetting(ModuleAttribute.isLoaded).getBoolean();
+    }
 
-   @Override
-   public String toString() {
-      return "Module ID " + getId() + " (" + getName() + ")";
-   }
+    @Override
+    public String toString() {
+        return "Module ID " + getId() + " (" + getName() + ")";
+    }
 
 }

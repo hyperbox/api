@@ -20,11 +20,13 @@
 
 package io.kamax.hbox.exception;
 
-@SuppressWarnings("serial")
+
 public class ModuleAlreadyRegisteredException extends ModuleException {
 
-   public ModuleAlreadyRegisteredException(String moduleId) {
-      super("A module is already registered under ID/Descriptor: " + moduleId);
-   }
+    private static final long serialVersionUID = 5032324766856423628L;
+
+    public ModuleAlreadyRegisteredException(String moduleId) {
+        super("A module is already registered under ID/Descriptor: " + moduleId);
+    }
 
 }

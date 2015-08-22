@@ -30,78 +30,78 @@ import java.util.List;
 
 public class MediumOut extends ObjectOut {
 
-   @SuppressWarnings("unused")
-   private MediumOut() {
-      // Used for serialization
-   }
+    @SuppressWarnings("unused")
+    private MediumOut() {
+        // Used for serialization
+    }
 
-   public MediumOut(String uuid, List<SettingIO> settings) {
-      super(EntityType.Medium, uuid, settings);
-      setSetting(new StringSettingIO(MediumAttribute.UUID, uuid));
-      setSetting(settings);
-   }
+    public MediumOut(String uuid, List<SettingIO> settings) {
+        super(EntityType.Medium, uuid, settings);
+        setSetting(new StringSettingIO(MediumAttribute.UUID, uuid));
+        setSetting(settings);
+    }
 
-   public String getUuid() {
-      return getSetting(MediumAttribute.UUID).getString();
-   }
+    public String getUuid() {
+        return getSetting(MediumAttribute.UUID).getString();
+    }
 
-   /**
-    * Return the filename of this medium or its UUID if the filename was not provided
-    * 
-    * @return a String containing the filename or the UUID for this medium
-    */
-   public String getName() {
-      if (!hasSetting(MediumAttribute.Name)) {
-         setSetting(new StringSettingIO(MediumAttribute.Name, getUuid()));
-      }
+    /**
+     * Return the filename of this medium or its UUID if the filename was not provided
+     * 
+     * @return a String containing the filename or the UUID for this medium
+     */
+    public String getName() {
+        if (!hasSetting(MediumAttribute.Name)) {
+            setSetting(new StringSettingIO(MediumAttribute.Name, getUuid()));
+        }
 
-      return getSetting(MediumAttribute.Name).getString();
-   }
+        return getSetting(MediumAttribute.Name).getString();
+    }
 
-   public boolean hasParent() {
-      return !AxStrings.isEmpty(getSetting(MediumAttribute.ParentUUID).getString());
-   }
+    public boolean hasParent() {
+        return !AxStrings.isEmpty(getSetting(MediumAttribute.ParentUUID).getString());
+    }
 
-   public String getParentUuid() {
-      return getSetting(MediumAttribute.ParentUUID).getString();
-   }
+    public String getParentUuid() {
+        return getSetting(MediumAttribute.ParentUUID).getString();
+    }
 
-   public String getLocation() {
-      return getSetting(MediumAttribute.Location).getString();
-   }
+    public String getLocation() {
+        return getSetting(MediumAttribute.Location).getString();
+    }
 
-   /**
-    * Get the UUID for the base medium of this medium, if any
-    * 
-    * @return UUID if this medium has a base medium, or an empty String if not
-    */
-   public String getBaseUuid() {
-      if (hasSetting(MediumAttribute.BaseUUID)) {
-         return getSetting(MediumAttribute.BaseUUID).getString();
-      } else {
-         return "";
-      }
-   }
+    /**
+     * Get the UUID for the base medium of this medium, if any
+     * 
+     * @return UUID if this medium has a base medium, or an empty String if not
+     */
+    public String getBaseUuid() {
+        if (hasSetting(MediumAttribute.BaseUUID)) {
+            return getSetting(MediumAttribute.BaseUUID).getString();
+        } else {
+            return "";
+        }
+    }
 
-   public boolean isReadOnly() {
-      return getSetting(MediumAttribute.ReadOnly).getBoolean();
-   }
+    public boolean isReadOnly() {
+        return getSetting(MediumAttribute.ReadOnly).getBoolean();
+    }
 
-   public long getLogicalSize() {
-      return getSetting(MediumAttribute.LogicalSize).getNumber();
-   }
+    public long getLogicalSize() {
+        return getSetting(MediumAttribute.LogicalSize).getNumber();
+    }
 
-   public String getType() {
-      return getSetting(MediumAttribute.Type).getString();
-   }
+    public String getType() {
+        return getSetting(MediumAttribute.Type).getString();
+    }
 
-   public String getDeviceType() {
-      return getSetting(MediumAttribute.DeviceType).getString();
-   }
+    public String getDeviceType() {
+        return getSetting(MediumAttribute.DeviceType).getString();
+    }
 
-   @Override
-   public String toString() {
-      return getSetting(MediumAttribute.Name).getString();
-   }
+    @Override
+    public String toString() {
+        return getSetting(MediumAttribute.Name).getString();
+    }
 
 }

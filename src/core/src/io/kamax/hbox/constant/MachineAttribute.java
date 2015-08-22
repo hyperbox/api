@@ -30,211 +30,211 @@ package io.kamax.hbox.constant;
 // TODO should be separated into devices
 public enum MachineAttribute {
 
-   ServerId(EntityType.Machine),
-   IsAccessible(EntityType.Machine),
-   Location(EntityType.Machine),
+    ServerId(EntityType.Machine),
+    IsAccessible(EntityType.Machine),
+    Location(EntityType.Machine),
 
-   // ////////////////////////////////////
-   // Audio Settings
-   // ////////////////////////////////////
-   AudioController(EntityType.Audio),
-   AudioDriver(EntityType.Audio),
-   AudioEnable(EntityType.Audio),
+    // ////////////////////////////////////
+    // Audio Settings
+    // ////////////////////////////////////
+    AudioController(EntityType.Audio),
+    AudioDriver(EntityType.Audio),
+    AudioEnable(EntityType.Audio),
 
-   // /////////////////////////////////////
-   // CPU Settings
-   // /////////////////////////////////////
-   /**
-    * Set the number of CPUs for the VM
-    */
-   CpuCount(EntityType.CPU),
-   /**
-    * Set if CPUs should be hot plug - Requires compatible OS
-    */
-   CpuHotPlug(EntityType.CPU),
-   /**
-    * Set the CPUs execution cap - This value will set the cap for every virtual CPU attached to the guest and is in percentage of the Host CPU power
-    */
-   CpuExecCap(EntityType.CPU),
-   /**
-    * Set if Virtualbox should show virtual CPU to the guest, or give the host's CPU information.
-    */
-   SyntheticCPU(EntityType.CPU),
+    // /////////////////////////////////////
+    // CPU Settings
+    // /////////////////////////////////////
+    /**
+     * Set the number of CPUs for the VM
+     */
+    CpuCount(EntityType.CPU),
+    /**
+     * Set if CPUs should be hot plug - Requires compatible OS
+     */
+    CpuHotPlug(EntityType.CPU),
+    /**
+     * Set the CPUs execution cap - This value will set the cap for every virtual CPU attached to the guest and is in percentage of the Host CPU power
+     */
+    CpuExecCap(EntityType.CPU),
+    /**
+     * Set if Virtualbox should show virtual CPU to the guest, or give the host's CPU information.
+     */
+    SyntheticCPU(EntityType.CPU),
 
-   // /////////////////////////////////////
-   // General settings
-   // /////////////////////////////////////
-   /**
-    * Machine name
-    */
-   Name(EntityType.Machine),
-   /**
-    * OS Type of the machine<br/>
-    */
-   OsType(EntityType.Machine),
-   /**
-    * Open description about the VM
-    */
-   Description(EntityType.Machine),
+    // /////////////////////////////////////
+    // General settings
+    // /////////////////////////////////////
+    /**
+     * Machine name
+     */
+    Name(EntityType.Machine),
+    /**
+     * OS Type of the machine<br/>
+     */
+    OsType(EntityType.Machine),
+    /**
+     * Open description about the VM
+     */
+    Description(EntityType.Machine),
 
-   // /////////////////////////////////////
-   // Keyboard Settings
-   // /////////////////////////////////////
+    // /////////////////////////////////////
+    // Keyboard Settings
+    // /////////////////////////////////////
 
-   KeyboardMode(EntityType.Keyboard),
+    KeyboardMode(EntityType.Keyboard),
 
-   // /////////////////////////////////////
-   // Memory Settings
-   // /////////////////////////////////////
-   /**
-    * RAM amount in Megabytes
-    */
-   Memory(EntityType.Memory),
-   /**
-    * Is large page activated or not
-    */
-   LargePages(EntityType.Memory),
-   /**
-    * Is page fusion activated or not
-    */
-   PageFusion(EntityType.Memory),
-   /**
-    * Set Nested Paging support for the VM
-    */
-   NestedPaging(EntityType.Memory),
-   /**
-    * Set VT-x support for the VM (only for Intel CPU)
-    */
-   Vtxvpid(EntityType.Memory),
-   /**
-    * Ballon size in Mega Bytes
-    */
-   GuestMemoryBalloon(EntityType.Memory),
+    // /////////////////////////////////////
+    // Memory Settings
+    // /////////////////////////////////////
+    /**
+     * RAM amount in Megabytes
+     */
+    Memory(EntityType.Memory),
+    /**
+     * Is large page activated or not
+     */
+    LargePages(EntityType.Memory),
+    /**
+     * Is page fusion activated or not
+     */
+    PageFusion(EntityType.Memory),
+    /**
+     * Set Nested Paging support for the VM
+     */
+    NestedPaging(EntityType.Memory),
+    /**
+     * Set VT-x support for the VM (only for Intel CPU)
+     */
+    Vtxvpid(EntityType.Memory),
+    /**
+     * Ballon size in Mega Bytes
+     */
+    GuestMemoryBalloon(EntityType.Memory),
 
-   // /////////////////////////////////////
-   // Motherboard settings
-   // /////////////////////////////////////
-   /**
-    * Set the VM firmware (bios/efi)<br/>
-    * Not currently implemented
-    */
-   // TODO implement
-   Firmware(EntityType.Motherboard),
-   /**
-    * Set the VM chipset<br/>
-    * Not currently implemented
-    */
-   // TODO implement
-   Chipset(EntityType.Motherboard),
-   /**
-    * Set status of ACPI support for the VM
-    */
-   ACPI(EntityType.Motherboard),
-   /**
-    * Set status of I/O APIC support for the VM
-    */
-   IoAPIC(EntityType.Motherboard),
-   /**
-    * Change the hardware UUID (usually the same as the VM UUID)<br/>
-    * Not currently implemented
-    */
-   // TODO implement
-   HardwareUuid(EntityType.Motherboard),
+    // /////////////////////////////////////
+    // Motherboard settings
+    // /////////////////////////////////////
+    /**
+     * Set the VM firmware (bios/efi)<br/>
+     * Not currently implemented
+     */
+    // TODO implement
+    Firmware(EntityType.Motherboard),
+    /**
+     * Set the VM chipset<br/>
+     * Not currently implemented
+     */
+    // TODO implement
+    Chipset(EntityType.Motherboard),
+    /**
+     * Set status of ACPI support for the VM
+     */
+    ACPI(EntityType.Motherboard),
+    /**
+     * Set status of I/O APIC support for the VM
+     */
+    IoAPIC(EntityType.Motherboard),
+    /**
+     * Change the hardware UUID (usually the same as the VM UUID)<br/>
+     * Not currently implemented
+     */
+    // TODO implement
+    HardwareUuid(EntityType.Motherboard),
 
-   // /////////////////////////////////////
-   // Mouse
-   // /////////////////////////////////////
-   MouseMode(EntityType.Mouse),
+    // /////////////////////////////////////
+    // Mouse
+    // /////////////////////////////////////
+    MouseMode(EntityType.Mouse),
 
-   // /////////////////////////////////////
-   // USB settings
-   // /////////////////////////////////////
-   /**
-    * Enable/Disable USB
-    */
-   UsbOhci(EntityType.USB),
-   /**
-    * Enable/Disable USB 2.0<br/>
-    * Not currently implemented
-    */
-   // TODO implement
-   UsbEhci(EntityType.USB),
+    // /////////////////////////////////////
+    // USB settings
+    // /////////////////////////////////////
+    /**
+     * Enable/Disable USB
+     */
+    UsbOhci(EntityType.USB),
+    /**
+     * Enable/Disable USB 2.0<br/>
+     * Not currently implemented
+     */
+    // TODO implement
+    UsbEhci(EntityType.USB),
 
-   // /////////////////////////////////////
-   // Video settings
-   // /////////////////////////////////////
-   /**
-    * Number of monitors attached the Guest OS
-    */
-   MonitorCount(EntityType.Display),
-   /**
-    * Amount of Video memory in Megabytes
-    */
-   VRAM(EntityType.Display),
-   /**
-    * Enable 2D acceleration
-    */
-   Accelerate2dVideo(EntityType.Display),
-   /**
-    * Enable 3D acceleration
-    */
-   Accelerate3d(EntityType.Display),
+    // /////////////////////////////////////
+    // Video settings
+    // /////////////////////////////////////
+    /**
+     * Number of monitors attached the Guest OS
+     */
+    MonitorCount(EntityType.Display),
+    /**
+     * Amount of Video memory in Megabytes
+     */
+    VRAM(EntityType.Display),
+    /**
+     * Enable 2D acceleration
+     */
+    Accelerate2dVideo(EntityType.Display),
+    /**
+     * Enable 3D acceleration
+     */
+    Accelerate3d(EntityType.Display),
 
-   // /////////////////////////////////////
-   // Virtualisation specific settings
-   // /////////////////////////////////////
-   /**
-    * Set if PAE and NX capabilities of the host CPU will be exposed to the virtual machine<br/>
-    * Not currently implemented
-    */
-   // TODO implement
-   PAE(EntityType.Machine),
-   /**
-    * Set if High Precision Event Timer should be turned on or off<br/>
-    * Not currently implemented
-    */
-   // TODO implement
-   HPET(EntityType.Machine),
-   /**
-    * If Intel VT-x / AMD-V should be used
-    */
-   HwVirtEx(EntityType.Machine),
-   /**
-    * Set if there should be an exclusive use of VT-x/AMD-V
-    */
-   HwVirtExExcl(EntityType.Machine),
+    // /////////////////////////////////////
+    // Virtualisation specific settings
+    // /////////////////////////////////////
+    /**
+     * Set if PAE and NX capabilities of the host CPU will be exposed to the virtual machine<br/>
+     * Not currently implemented
+     */
+    // TODO implement
+    PAE(EntityType.Machine),
+    /**
+     * Set if High Precision Event Timer should be turned on or off<br/>
+     * Not currently implemented
+     */
+    // TODO implement
+    HPET(EntityType.Machine),
+    /**
+     * If Intel VT-x / AMD-V should be used
+     */
+    HwVirtEx(EntityType.Machine),
+    /**
+     * Set if there should be an exclusive use of VT-x/AMD-V
+     */
+    HwVirtExExcl(EntityType.Machine),
 
-   // /////////////////////////////////////
-   // Snapshot infos
-   // /////////////////////////////////////
-   RootSnapshotUuid(EntityType.Machine),
-   CurrentSnapshotUuid(EntityType.Machine),
-   HasSnapshot(EntityType.Machine),
+    // /////////////////////////////////////
+    // Snapshot infos
+    // /////////////////////////////////////
+    RootSnapshotUuid(EntityType.Machine),
+    CurrentSnapshotUuid(EntityType.Machine),
+    HasSnapshot(EntityType.Machine),
 
-   /*
-    * VRDE settings
-    */
-   VrdeAuthType(EntityType.Console),
-   VrdeAuthLibrary(EntityType.Console),
-   VrdeAuthTimeout(EntityType.Console),
-   VrdeEnabled(EntityType.Console),
-   VrdeMultiConnection(EntityType.Console),
-   VrdeAddress(EntityType.Console),
-   VrdePort(EntityType.Console),
-   VrdeModule(EntityType.Console);
+    /*
+     * VRDE settings
+     */
+    VrdeAuthType(EntityType.Console),
+    VrdeAuthLibrary(EntityType.Console),
+    VrdeAuthTimeout(EntityType.Console),
+    VrdeEnabled(EntityType.Console),
+    VrdeMultiConnection(EntityType.Console),
+    VrdeAddress(EntityType.Console),
+    VrdePort(EntityType.Console),
+    VrdeModule(EntityType.Console);
 
-   private EntityType dt;
+    private EntityType dt;
 
-   private MachineAttribute(EntityType type) {
-      dt = type;
-   }
+    private MachineAttribute(EntityType type) {
+        dt = type;
+    }
 
-   public EntityType getDeviceType() {
-      return dt;
-   }
+    public EntityType getDeviceType() {
+        return dt;
+    }
 
-   public String getId() {
-      return toString();
-   }
+    public String getId() {
+        return toString();
+    }
 
 }

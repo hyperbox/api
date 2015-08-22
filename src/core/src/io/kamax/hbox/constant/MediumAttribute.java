@@ -21,40 +21,40 @@
 package io.kamax.hbox.constant;
 
 public enum MediumAttribute {
-   UUID(true),
-   ParentUUID(true),
-   BaseUUID(true),
-   Description,
-   State(true),
-   Location(true),
-   Name,
-   Size(true),
-   LogicalSize(true),
-   DeviceType(true),
-   Type(true),
-   ReadOnly,
-   Variant(true),
-   Format(true),
-   MediumFormat(true),
-   AutoReset,
-   LastAccessError(true);
+    UUID(true),
+    ParentUUID(true),
+    BaseUUID(true),
+    Description,
+    State(true),
+    Location(true),
+    Name,
+    Size(true),
+    LogicalSize(true),
+    DeviceType(true),
+    Type(true),
+    ReadOnly,
+    Variant(true),
+    Format(true),
+    MediumFormat(true),
+    AutoReset,
+    LastAccessError(true);
 
-   private boolean isReadOnly;
+    private boolean isReadOnly;
 
-   public boolean isReadOnly() {
-      return isReadOnly;
-   }
+    public boolean isReadOnly() {
+        return isReadOnly;
+    }
 
-   private MediumAttribute() {
-      this(false);
-   }
+    private MediumAttribute() {
+        this(false);
+    }
 
-   private MediumAttribute(boolean isReadOnly) {
-      this.isReadOnly = isReadOnly;
-   }
+    private MediumAttribute(boolean isReadOnly) {
+        this.isReadOnly = isReadOnly;
+    }
 
-   public String getId() {
-      return toString();
-   }
+    public String getId() {
+        return toString();
+    }
 
 }

@@ -26,48 +26,50 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-@SuppressWarnings("serial")
+
 public class JLabelIconAutoResize extends JLabel {
 
-   public JLabelIconAutoResize() {
-      super();
-      setMinimumSize(new Dimension(1, 1));
-   }
+    private static final long serialVersionUID = 3623948011238072783L;
 
-   @Override
-   protected void paintComponent(Graphics g) {
-      super.paintComponents(g);
+    public JLabelIconAutoResize() {
+        super();
+        setMinimumSize(new Dimension(1, 1));
+    }
 
-      ImageIcon icon = (ImageIcon) getIcon();
-      if (icon != null) {
-         int iconWidth = icon.getIconWidth();
-         int iconHeight = icon.getIconHeight();
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponents(g);
 
-         double iconAspect = (double) iconHeight / iconWidth;
+        ImageIcon icon = (ImageIcon) getIcon();
+        if (icon != null) {
+            int iconWidth = icon.getIconWidth();
+            int iconHeight = icon.getIconHeight();
 
-         int w = getWidth();
-         int h = getHeight();
-         double canvasAspect = (double) h / w;
+            double iconAspect = (double) iconHeight / iconWidth;
 
-         int x = 0, y = 0;
+            int w = getWidth();
+            int h = getHeight();
+            double canvasAspect = (double) h / w;
 
-         // Maintain aspect ratio.
-         if (iconAspect < canvasAspect) {
-            // Drawing space is taller than image.
-            y = h;
-            h = (int) (w * iconAspect);
-            y = (y - h) / 2; // center it along vertical
-         } else {
-            // Drawing space is wider than image.
-            x = w;
-            w = (int) (h / iconAspect);
-            x = (x - w) / 2; // center it along horizontal
-         }
+            int x = 0, y = 0;
 
-         Image img = icon.getImage();
-         g.drawImage(img, x, y, (w + x), (h + y), 0, 0, iconWidth, iconHeight, null);
-         setMinimumSize(new Dimension(1, 1));
-         g.dispose();
-      }
-   }
+            // Maintain aspect ratio.
+            if (iconAspect < canvasAspect) {
+                // Drawing space is taller than image.
+                y = h;
+                h = (int) (w * iconAspect);
+                y = (y - h) / 2; // center it along vertical
+            } else {
+                // Drawing space is wider than image.
+                x = w;
+                w = (int) (h / iconAspect);
+                x = (x - w) / 2; // center it along horizontal
+            }
+
+            Image img = icon.getImage();
+            g.drawImage(img, x, y, (w + x), (h + y), 0, 0, iconWidth, iconHeight, null);
+            setMinimumSize(new Dimension(1, 1));
+            g.dispose();
+        }
+    }
 }

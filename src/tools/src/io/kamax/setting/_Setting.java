@@ -22,14 +22,14 @@ package io.kamax.setting;
 
 public interface _Setting {
 
-   public String getName();
+    public String getName();
 
-   public Object getValue();
+    public Object getValue();
 
-   public Boolean getBoolean();
+    public Boolean getBoolean();
 
-   public Long getNumber();
+    public Long getNumber();
 
-   public String getString();
+    public String getString();
 
 }

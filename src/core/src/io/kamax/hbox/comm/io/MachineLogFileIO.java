@@ -26,37 +26,37 @@ import java.util.List;
 
 public class MachineLogFileIO implements _MachineLogFile {
 
-   private String id;
-   private String filename;
-   private List<String> log;
+    private String id;
+    private String filename;
+    private List<String> log;
 
-   @Override
-   public String getId() {
-      return id;
-   }
+    @Override
+    public String getId() {
+        return id;
+    }
 
-   @Override
-   public List<String> getLog() {
-      return log;
-   }
+    @Override
+    public List<String> getLog() {
+        return log;
+    }
 
-   @Override
-   public String getFileName() {
-      return filename;
-   }
+    @Override
+    public String getFileName() {
+        return filename;
+    }
 
-   protected MachineLogFileIO() {
-      // only for serialization
-   }
+    protected MachineLogFileIO() {
+        // only for serialization
+    }
 
-   public MachineLogFileIO(String id, String filename, List<String> log) {
-      this.id = id;
-      this.log = new ArrayList<String>(log);
-      this.filename = filename;
-   }
+    public MachineLogFileIO(String id, String filename, List<String> log) {
+        this.id = id;
+        this.log = new ArrayList<String>(log);
+        this.filename = filename;
+    }
 
-   public MachineLogFileIO(String id) {
-      this.id = id;
-   }
+    public MachineLogFileIO(String id) {
+        this.id = id;
+    }
 
 }

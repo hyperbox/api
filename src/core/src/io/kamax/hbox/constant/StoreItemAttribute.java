@@ -22,10 +22,10 @@ package io.kamax.hbox.constant;
 
 public enum StoreItemAttribute {
 
-   Name,
-   Path,
-   StoreId,
-   Size,
-   IsContainer
+    Name,
+    Path,
+    StoreId,
+    Size,
+    IsContainer
 
 }

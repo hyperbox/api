@@ -22,14 +22,14 @@ package io.kamax.hbox.constant;
 
 public enum StorageControllerType {
 
-   Floppy,
-   IDE,
-   SATA,
-   SCSI,
-   SAS;
+    Floppy,
+    IDE,
+    SATA,
+    SCSI,
+    SAS;
 
-   public String getId() {
-      return toString();
-   }
+    public String getId() {
+        return toString();
+    }
 
 }

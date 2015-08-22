@@ -24,107 +24,107 @@ import io.kamax.hbox.constant.EntityType;
 
 public class ProgressTrackerOut extends ObjectOut {
 
-   private String id;
-   private String type;
-   private String state;
+    private String id;
+    private String type;
+    private String state;
 
-   @SuppressWarnings("unused")
-   private ProgressTrackerOut() {
-      // used for (de)serialisation
-   }
+    @SuppressWarnings("unused")
+    private ProgressTrackerOut() {
+        // used for (de)serialisation
+    }
 
-   public ProgressTrackerOut(String id, String type, String state) {
-      super(EntityType.ProgressTracker, id);
-      this.type = type;
-      this.state = state;
-   }
+    public ProgressTrackerOut(String id, String type, String state) {
+        super(EntityType.ProgressTracker, id);
+        this.type = type;
+        this.state = state;
+    }
 
-   @Override
-   public String getId() {
-      return id;
-   }
+    @Override
+    public String getId() {
+        return id;
+    }
 
-   public String getType() {
-      return type;
-   }
+    public String getType() {
+        return type;
+    }
 
-   public String getState() {
-      return state;
-   }
+    public String getState() {
+        return state;
+    }
 
-   public String getDescription() {
-      return null;
+    public String getDescription() {
+        return null;
 
-   }
+    }
 
-   public boolean isCancelable() {
-      return false;
+    public boolean isCancelable() {
+        return false;
 
-   }
+    }
 
-   public long getPercent() {
-      return 0;
+    public long getPercent() {
+        return 0;
 
-   }
+    }
 
-   /**
-    * In seconds
-    * 
-    * @return seconds remaining
-    */
-   public long timeRemaining() {
-      return 0;
+    /**
+     * In seconds
+     * 
+     * @return seconds remaining
+     */
+    public long timeRemaining() {
+        return 0;
 
-   }
+    }
 
-   public boolean isRunning() {
-      return false;
+    public boolean isRunning() {
+        return false;
 
-   }
+    }
 
-   public boolean hasBeenCanceled() {
-      return false;
+    public boolean hasBeenCanceled() {
+        return false;
 
-   }
+    }
 
-   public long returnCode() {
-      return 0;
+    public long returnCode() {
+        return 0;
 
-   }
+    }
 
-   public boolean hasFailed() {
-      return false;
+    public boolean hasFailed() {
+        return false;
 
-   }
+    }
 
-   public long getErrorCode() {
-      return 0;
+    public long getErrorCode() {
+        return 0;
 
-   }
+    }
 
-   public String getError() {
-      return null;
+    public String getError() {
+        return null;
 
-   }
+    }
 
-   public long getOperationCount() {
-      return 0;
+    public long getOperationCount() {
+        return 0;
 
-   }
+    }
 
-   public long getCurrentOperation() {
-      return 0;
+    public long getCurrentOperation() {
+        return 0;
 
-   }
+    }
 
-   public String getOperationDescription() {
-      return null;
+    public String getOperationDescription() {
+        return null;
 
-   }
+    }
 
-   public long getOperationPercent() {
-      return 0;
+    public long getOperationPercent() {
+        return 0;
 
-   }
+    }
 
 }

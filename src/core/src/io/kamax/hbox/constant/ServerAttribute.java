@@ -22,14 +22,14 @@ package io.kamax.hbox.constant;
 
 public enum ServerAttribute {
 
-   Id,
-   Name,
-   Type,
-   Version,
-   NetProtocolVersion,
-   Revision,
-   FullVersion,
-   IsHypervisorConnected,
-   LogLevel,
+    Id,
+    Name,
+    Type,
+    Version,
+    NetProtocolVersion,
+    Revision,
+    FullVersion,
+    IsHypervisorConnected,
+    LogLevel,
 
 }

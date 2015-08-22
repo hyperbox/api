@@ -25,82 +25,82 @@ import io.kamax.hbox.constant.EntityType;
 
 public class StorageDeviceAttachmentOut extends ObjectOut {
 
-   private String machineUuid;
-   private String controllerName;
-   private String mediumUuid;
-   private long portId;
-   private long deviceId;
-   private String deviceType;
+    private String machineUuid;
+    private String controllerName;
+    private String mediumUuid;
+    private long portId;
+    private long deviceId;
+    private String deviceType;
 
-   @SuppressWarnings("unused")
-   private StorageDeviceAttachmentOut() {
-      // Used for serialization
-   }
+    @SuppressWarnings("unused")
+    private StorageDeviceAttachmentOut() {
+        // Used for serialization
+    }
 
-   public StorageDeviceAttachmentOut(String machineUuid, String controllerName, String mediumUuid, long portId, long deviceId, String deviceType) {
-      super(EntityType.StorageAttachment, machineUuid + "|" + controllerName + "|" + portId + "|" + deviceId);
-      this.machineUuid = machineUuid;
-      this.controllerName = controllerName;
-      this.mediumUuid = mediumUuid;
-      this.portId = portId;
-      this.deviceId = deviceId;
-      this.deviceType = deviceType;
-   }
+    public StorageDeviceAttachmentOut(String machineUuid, String controllerName, String mediumUuid, long portId, long deviceId, String deviceType) {
+        super(EntityType.StorageAttachment, machineUuid + "|" + controllerName + "|" + portId + "|" + deviceId);
+        this.machineUuid = machineUuid;
+        this.controllerName = controllerName;
+        this.mediumUuid = mediumUuid;
+        this.portId = portId;
+        this.deviceId = deviceId;
+        this.deviceType = deviceType;
+    }
 
-   /**
-    * @return the machineUuid
-    */
-   public String getMachineUuid() {
-      return machineUuid;
-   }
+    /**
+     * @return the machineUuid
+     */
+    public String getMachineUuid() {
+        return machineUuid;
+    }
 
-   /**
-    * @return the controllerName
-    */
-   public String getControllerName() {
-      return controllerName;
-   }
+    /**
+     * @return the controllerName
+     */
+    public String getControllerName() {
+        return controllerName;
+    }
 
-   /**
-    * @return the mediumUuid or null if no medium is present
-    * @see #hasMediumInserted()
-    */
-   public String getMediumUuid() {
-      return mediumUuid;
-   }
+    /**
+     * @return the mediumUuid or null if no medium is present
+     * @see #hasMediumInserted()
+     */
+    public String getMediumUuid() {
+        return mediumUuid;
+    }
 
-   /**
-    * @return the portId
-    */
-   public long getPortId() {
-      return portId;
-   }
+    /**
+     * @return the portId
+     */
+    public long getPortId() {
+        return portId;
+    }
 
-   /**
-    * @return the deviceId
-    */
-   public long getDeviceId() {
-      return deviceId;
-   }
+    /**
+     * @return the deviceId
+     */
+    public long getDeviceId() {
+        return deviceId;
+    }
 
-   /**
-    * @return the deviceType
-    */
-   public String getDeviceType() {
-      return deviceType;
-   }
+    /**
+     * @return the deviceType
+     */
+    public String getDeviceType() {
+        return deviceType;
+    }
 
-   public boolean hasMediumInserted() {
-      return (getMediumUuid() != null);
-   }
+    public boolean hasMediumInserted() {
+        return (getMediumUuid() != null);
+    }
 
-   @Override
-   public String toString() {
-      if (hasMediumInserted()) {
-         return getMediumUuid();
-      } else {
-         return getDeviceType() + " Drive";
-      }
-   }
+    @Override
+    public String toString() {
+        if (hasMediumInserted()) {
+            return getMediumUuid();
+        } else {
+            return getDeviceType() + " Drive";
+        }
+    }
 
 }

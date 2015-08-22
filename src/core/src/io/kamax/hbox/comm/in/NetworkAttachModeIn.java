@@ -24,12 +24,12 @@ import io.kamax.hbox.constant.EntityType;
 
 public class NetworkAttachModeIn extends ObjectIn<EntityType> {
 
-   public NetworkAttachModeIn() {
-      super(EntityType.NetworkAttachMode);
-   }
+    public NetworkAttachModeIn() {
+        super(EntityType.NetworkAttachMode);
+    }
 
-   public NetworkAttachModeIn(String id) {
-      super(EntityType.NetworkAttachMode, id);
-   }
+    public NetworkAttachModeIn(String id) {
+        super(EntityType.NetworkAttachMode, id);
+    }
 
 }

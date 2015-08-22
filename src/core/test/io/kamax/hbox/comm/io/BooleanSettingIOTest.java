@@ -26,11 +26,11 @@ import org.junit.Test;
 
 public class BooleanSettingIOTest {
 
-   @Test
-   public void test() {
-      BooleanSettingIO setting = new BooleanSettingIO("name", true);
-      assertTrue(setting.getName().contentEquals("name"));
-      assertTrue(setting.getBoolean());
-   }
+    @Test
+    public void test() {
+        BooleanSettingIO setting = new BooleanSettingIO("name", true);
+        assertTrue(setting.getName().contentEquals("name"));
+        assertTrue(setting.getBoolean());
+    }
 
 }

@@ -27,12 +27,12 @@ import io.kamax.hbox.comm.out.hypervisor.HypervisorOut;
 
 public class HypervisorOutputTest {
 
-   public static void validateFull(HypervisorOut hypOut) {
-      assertFalse(hypOut.getId().isEmpty());
-      assertNotNull(hypOut.getVendor());
-      assertNotNull(hypOut.getProduct());
-      assertNotNull(hypOut.getVersion());
-      assertNotNull(hypOut.getRevision());
-   }
+    public static void validateFull(HypervisorOut hypOut) {
+        assertFalse(hypOut.getId().isEmpty());
+        assertNotNull(hypOut.getVendor());
+        assertNotNull(hypOut.getProduct());
+        assertNotNull(hypOut.getVersion());
+        assertNotNull(hypOut.getRevision());
+    }
 
 }

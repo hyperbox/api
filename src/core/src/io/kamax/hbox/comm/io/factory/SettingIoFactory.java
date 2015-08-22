@@ -35,52 +35,52 @@ import java.util.List;
 
 public class SettingIoFactory {
 
-   public static SettingIO get(_Setting s) {
-      if (s instanceof StringSetting) {
-         return new StringSettingIO(s.getName(), ((StringSetting) s).getValue());
-      } else if (s instanceof PositiveNumberSetting) {
-         return new PositiveNumberSettingIO(s.getName(), ((PositiveNumberSetting) s).getValue());
-      } else if (s instanceof BooleanSetting) {
-         return new BooleanSettingIO(s.getName(), ((BooleanSetting) s).getValue());
-      } else {
-         // TODO add support for serializable
-         return new StringSettingIO(s.getName(), s.getValue().toString());
-      }
-   }
+    public static SettingIO get(_Setting s) {
+        if (s instanceof StringSetting) {
+            return new StringSettingIO(s.getName(), ((StringSetting) s).getValue());
+        } else if (s instanceof PositiveNumberSetting) {
+            return new PositiveNumberSettingIO(s.getName(), ((PositiveNumberSetting) s).getValue());
+        } else if (s instanceof BooleanSetting) {
+            return new BooleanSettingIO(s.getName(), ((BooleanSetting) s).getValue());
+        } else {
+            // TODO add support for serializable
+            return new StringSettingIO(s.getName(), s.getValue().toString());
+        }
+    }
 
-   public static _Setting get(SettingIO sIo) {
-      if (sIo instanceof StringSettingIO) {
-         return new StringSetting(sIo.getName(), sIo.getString());
-      } else if (sIo instanceof PositiveNumberSettingIO) {
-         return new PositiveNumberSetting(sIo.getName(), sIo.getNumber());
-      } else if (sIo instanceof BooleanSettingIO) {
-         return new BooleanSetting(sIo.getName(), sIo.getBoolean());
-      } else {
-         // TODO add support for serializable
-         return new StringSetting(sIo.getName(), sIo.getRawValue().toString());
-      }
-   }
+    public static _Setting get(SettingIO sIo) {
+        if (sIo instanceof StringSettingIO) {
+            return new StringSetting(sIo.getName(), sIo.getString());
+        } else if (sIo instanceof PositiveNumberSettingIO) {
+            return new PositiveNumberSetting(sIo.getName(), sIo.getNumber());
+        } else if (sIo instanceof BooleanSettingIO) {
+            return new BooleanSetting(sIo.getName(), sIo.getBoolean());
+        } else {
+            // TODO add support for serializable
+            return new StringSetting(sIo.getName(), sIo.getRawValue().toString());
+        }
+    }
 
-   public static List<_Setting> getListIo(Collection<SettingIO> listIo) {
-      List<_Setting> listSettings = new ArrayList<_Setting>();
-      for (SettingIO settingIo : listIo) {
-         listSettings.add(get(settingIo));
-      }
-      return listSettings;
-   }
+    public static List<_Setting> getListIo(Collection<SettingIO> listIo) {
+        List<_Setting> listSettings = new ArrayList<_Setting>();
+        for (SettingIO settingIo : listIo) {
+            listSettings.add(get(settingIo));
+        }
+        return listSettings;
+    }
 
-   public static List<SettingIO> getList(_Settable s) {
-      return getList(s.getSettings());
-   }
+    public static List<SettingIO> getList(_Settable s) {
+        return getList(s.getSettings());
+    }
 
-   public static List<SettingIO> getList(Collection<_Setting> settings) {
-      List<SettingIO> settingsIo = new ArrayList<SettingIO>();
-      for (_Setting setting : settings) {
-         if (setting != null) {
-            settingsIo.add(get(setting));
-         }
-      }
-      return settingsIo;
-   }
+    public static List<SettingIO> getList(Collection<_Setting> settings) {
+        List<SettingIO> settingsIo = new ArrayList<SettingIO>();
+        for (_Setting setting : settings) {
+            if (setting != null) {
+                settingsIo.add(get(setting));
+            }
+        }
+        return settingsIo;
+    }
 
 }

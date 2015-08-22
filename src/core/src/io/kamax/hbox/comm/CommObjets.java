@@ -22,7 +22,7 @@ package io.kamax.hbox.comm;
 
 public enum CommObjets {
 
-   KeyboardMode,
-   MouseMode
+    KeyboardMode,
+    MouseMode
 
 }

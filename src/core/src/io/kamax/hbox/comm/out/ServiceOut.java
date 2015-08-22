@@ -25,23 +25,23 @@ import io.kamax.hbox.states.ServiceState;
 
 public class ServiceOut extends ObjectOut {
 
-   private ServiceState state;
+    private ServiceState state;
 
-   protected ServiceOut() {
-      // used for (de)serialisation
-   }
+    protected ServiceOut() {
+        // used for (de)serialisation
+    }
 
-   public ServiceOut(String svcId, ServiceState state) {
-      super(EntityType.Service, svcId);
-      this.state = state;
-   }
+    public ServiceOut(String svcId, ServiceState state) {
+        super(EntityType.Service, svcId);
+        this.state = state;
+    }
 
-   public ServiceOut(String svcId) {
-      this(svcId, ServiceState.Unknown);
-   }
+    public ServiceOut(String svcId) {
+        this(svcId, ServiceState.Unknown);
+    }
 
-   public ServiceState getState() {
-      return state;
-   }
+    public ServiceState getState() {
+        return state;
+    }
 
 }

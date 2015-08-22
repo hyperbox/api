@@ -22,9 +22,9 @@ package io.kamax.hbox.comm.in;
 
 public enum Action {
 
-   Create,
-   Modify,
-   Replace,
-   Delete
+    Create,
+    Modify,
+    Replace,
+    Delete
 
 }

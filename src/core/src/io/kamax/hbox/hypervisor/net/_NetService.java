@@ -25,18 +25,18 @@ import io.kamax.hbox.constant.NetServiceType;
 
 public interface _NetService {
 
-   /**
-    * Get the type ID for the net service
-    *
-    * @return Type ID as String
-    * @see NetServiceType Default supported options
-    */
-   public String getType();
+    /**
+     * Get the type ID for the net service
+     *
+     * @return Type ID as String
+     * @see NetServiceType Default supported options
+     */
+    public String getType();
 
-   public boolean isEnabled();
+    public boolean isEnabled();
 
-   public void setEnabled(boolean isEnabled);
+    public void setEnabled(boolean isEnabled);
 
-   public NetServiceIO getIO();
+    public NetServiceIO getIO();
 
 }

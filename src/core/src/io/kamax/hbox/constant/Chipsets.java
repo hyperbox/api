@@ -22,23 +22,23 @@ package io.kamax.hbox.constant;
 
 /**
  * Supported Chipset by Virtualbox
- * 
+ *
  * @author max
  */
 public enum Chipsets {
 
-   /**
-    * ICH9 chipset
-    */
-   ICH9,
+    /**
+     * ICH9 chipset
+     */
+    ICH9,
 
-   /**
-    * PIIX3 chipset
-    */
-   PIIX3;
+    /**
+     * PIIX3 chipset
+     */
+    PIIX3;
 
-   public String getId() {
-      return toString();
-   }
+    public String getId() {
+        return toString();
+    }
 
 }

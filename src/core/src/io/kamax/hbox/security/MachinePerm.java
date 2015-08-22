@@ -22,18 +22,18 @@ package io.kamax.hbox.security;
 
 public enum MachinePerm {
 
-   List,
-   Get,
-   Start,
-   Stop,
-   Reset,
-   Pause,
-   Resume,
+    List,
+    Get,
+    Start,
+    Stop,
+    Reset,
+    Pause,
+    Resume,
 
-   Create,
-   Delete,
+    Create,
+    Delete,
 
-   Register,
-   Unregister,
+    Register,
+    Unregister,
 
 }

@@ -38,48 +38,48 @@ import java.util.Set;
  * <li>Return the set of all found Java code in a Set of URL pointing to the Java files.</li>
  * </ul>
  * </p>
- * 
+ *
  * @author max
- * 
+ *
  */
 public interface _ModuleClassLoader {
 
-   /**
-    * Initialise this module class loader with the give base path and search for Java resources.
-    * 
-    * @param basePath Path (file or directory) given as String. Supported values are implementation specific.
-    */
-   public void load(String basePath);
+    /**
+     * Initialise this module class loader with the give base path and search for Java resources.
+     * 
+     * @param basePath Path (file or directory) given as String. Supported values are implementation specific.
+     */
+    public void load(String basePath);
 
-   /**
-    * Returns the internal implementation of {@link ClassLoader} for this particular ModuleClassLoader instance.
-    * 
-    * @return Custom implementation of {@link ClassLoader}.
-    */
-   public ClassLoader getClassLoader();
+    /**
+     * Returns the internal implementation of {@link ClassLoader} for this particular ModuleClassLoader instance.
+     * 
+     * @return Custom implementation of {@link ClassLoader}.
+     */
+    public ClassLoader getClassLoader();
 
-   /**
-    * Return the list of Java code also called resources as a set of URL pointing to the relevant files.
-    * 
-    * @return a {@link Set} of {@link URL} for all the Java resources found during {@link #load(String)}.
-    */
-   public Set<URL> getRessources();
+    /**
+     * Return the list of Java code also called resources as a set of URL pointing to the relevant files.
+     * 
+     * @return a {@link Set} of {@link URL} for all the Java resources found during {@link #load(String)}.
+     */
+    public Set<URL> getRessources();
 
-   /**
-    * Returns this module implementation of the given {@link Class} name, or its parent if none is found.
-    * <p>
-    * The implementation will prefer a Class within the module over the Parent ClassLoader's one to be consistent with the notion of module.
-    * </p>
-    * 
-    * @param name The fully qualified name for the class in the format <code>com.package.class.name</code>
-    * @return The implementation within the module, or the parent class loader (typically, the JVM one).
-    * @throws ClassNotFoundException If no class under that name was found wihtin the module or in the parent class loader.
-    */
-   public Class<?> createClass(String name) throws ClassNotFoundException;
+    /**
+     * Returns this module implementation of the given {@link Class} name, or its parent if none is found.
+     * <p>
+     * The implementation will prefer a Class within the module over the Parent ClassLoader's one to be consistent with the notion of module.
+     * </p>
+     * 
+     * @param name The fully qualified name for the class in the format <code>com.package.class.name</code>
+     * @return The implementation within the module, or the parent class loader (typically, the JVM one).
+     * @throws ClassNotFoundException If no class under that name was found wihtin the module or in the parent class loader.
+     */
+    public Class<?> createClass(String name) throws ClassNotFoundException;
 
-   /**
-    * Unload and release any resources linked by this ModuleClassLoader, including its own internal ClassLoader.
-    */
-   public void unload();
+    /**
+     * Unload and release any resources linked by this ModuleClassLoader, including its own internal ClassLoader.
+     */
+    public void unload();
 
 }

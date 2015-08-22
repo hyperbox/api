@@ -26,66 +26,67 @@ import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import javax.swing.JTextField;
 
-@SuppressWarnings("serial")
+
 public class JTextFieldShadow extends JTextField {
 
-   private static final Color SHADOW_COLOR = Color.LIGHT_GRAY;
-   private String shadowText;
-   private Color prevForeground;
-   private boolean isShadow;
+    private static final long serialVersionUID = 8922108170647452598L;
+    private static final Color SHADOW_COLOR = Color.LIGHT_GRAY;
+    private String shadowText;
+    private Color prevForeground;
+    private boolean isShadow;
 
-   public JTextFieldShadow(String shadowText) {
-      super(shadowText);
+    public JTextFieldShadow(String shadowText) {
+        super(shadowText);
 
-      isShadow = true;
-      setShadowText(shadowText);
-      prevForeground = getForeground();
-      setForeground(SHADOW_COLOR);
+        isShadow = true;
+        setShadowText(shadowText);
+        prevForeground = getForeground();
+        setForeground(SHADOW_COLOR);
 
-      this.addFocusListener(new FocusListener() {
+        this.addFocusListener(new FocusListener() {
 
-         @Override
-         public void focusGained(FocusEvent fe) {
-            if (isShadow) {
-               setText("");
-               setLight();
+            @Override
+            public void focusGained(FocusEvent fe) {
+                if (isShadow) {
+                    setText("");
+                    setLight();
+                }
             }
-         }
 
-         @Override
-         public void focusLost(FocusEvent fe) {
-            if (AxStrings.isEmpty(getText())) {
-               setText(JTextFieldShadow.this.shadowText);
-               isShadow = true;
-               prevForeground = getForeground();
-               setForeground(SHADOW_COLOR);
+            @Override
+            public void focusLost(FocusEvent fe) {
+                if (AxStrings.isEmpty(getText())) {
+                    setText(JTextFieldShadow.this.shadowText);
+                    isShadow = true;
+                    prevForeground = getForeground();
+                    setForeground(SHADOW_COLOR);
+                }
             }
-         }
-      });
-   }
+        });
+    }
 
-   private void setLight() {
-      isShadow = false;
-      setForeground(prevForeground);
-   }
+    private void setLight() {
+        isShadow = false;
+        setForeground(prevForeground);
+    }
 
-   @Override
-   public String getText() {
-      if (isShadow) {
-         return null;
-      } else {
-         return super.getText();
-      }
-   }
+    @Override
+    public String getText() {
+        if (isShadow) {
+            return null;
+        } else {
+            return super.getText();
+        }
+    }
 
-   @Override
-   public void setText(String t) {
-      super.setText(t);
-      setLight();
-   }
+    @Override
+    public void setText(String t) {
+        super.setText(t);
+        setLight();
+    }
 
-   public void setShadowText(String shadowText) {
-      this.shadowText = shadowText;
-   }
+    public void setShadowText(String shadowText) {
+        this.shadowText = shadowText;
+    }
 
 }

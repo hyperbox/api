@@ -28,12 +28,12 @@ import java.util.Date;
 
 public class StorageControllerModifiedEventOut extends StorageControllerEventOut {
 
-   protected StorageControllerModifiedEventOut() {
-      // Used for serialization
-   }
+    protected StorageControllerModifiedEventOut() {
+        // Used for serialization
+    }
 
-   public StorageControllerModifiedEventOut(Date time, ServerOut srvOut, MachineOut vmOut, StorageControllerOut stoOut) {
-      super(time, HyperboxEvents.StorageControllerModified, srvOut, vmOut, stoOut);
-   }
+    public StorageControllerModifiedEventOut(Date time, ServerOut srvOut, MachineOut vmOut, StorageControllerOut stoOut) {
+        super(time, HyperboxEvents.StorageControllerModified, srvOut, vmOut, stoOut);
+    }
 
 }

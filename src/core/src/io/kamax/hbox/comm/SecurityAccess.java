@@ -22,7 +22,7 @@ package io.kamax.hbox.comm;
 
 public enum SecurityAccess {
 
-   Grant,
-   Deny
+    Grant,
+    Deny
 
 }

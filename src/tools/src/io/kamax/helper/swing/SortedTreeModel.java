@@ -24,49 +24,50 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 
-@SuppressWarnings("serial")
+
 public class SortedTreeModel extends DefaultTreeModel {
 
-   public static final int ASCENDING = -1;
-   public static final int DESCENDING = 1;
-   public static final int UNSORTED = 0;
+    private static final long serialVersionUID = 4064319647068068195L;
+    public static final int ASCENDING = -1;
+    public static final int DESCENDING = 1;
+    public static final int UNSORTED = 0;
 
-   private int sorting = ASCENDING;
+    private int sorting = ASCENDING;
 
-   public SortedTreeModel(TreeNode root) {
-      super(root);
-   }
+    public SortedTreeModel(TreeNode root) {
+        super(root);
+    }
 
-   public SortedTreeModel(TreeNode root, int sorting) {
-      this(root);
-      setSorting(sorting);
-   }
+    public SortedTreeModel(TreeNode root, int sorting) {
+        this(root);
+        setSorting(sorting);
+    }
 
-   public SortedTreeModel(TreeNode root, boolean asksAllowsChildren) {
-      super(root, asksAllowsChildren);
-   }
+    public SortedTreeModel(TreeNode root, boolean asksAllowsChildren) {
+        super(root, asksAllowsChildren);
+    }
 
-   public void insertNode(DefaultMutableTreeNode newChild, DefaultMutableTreeNode parent) {
-      int insertIndex = parent.getChildCount();
-      if (sorting != UNSORTED) {
-         for (int i = 0; i < parent.getChildCount(); i++) {
-            DefaultMutableTreeNode child = (DefaultMutableTreeNode) parent.getChildAt(i);
-            int compare = child.getUserObject().toString().compareTo(newChild.getUserObject().toString()) * sorting;
-            if (compare < 0) {
-               insertIndex = i;
-               break;
+    public void insertNode(DefaultMutableTreeNode newChild, DefaultMutableTreeNode parent) {
+        int insertIndex = parent.getChildCount();
+        if (sorting != UNSORTED) {
+            for (int i = 0; i < parent.getChildCount(); i++) {
+                DefaultMutableTreeNode child = (DefaultMutableTreeNode) parent.getChildAt(i);
+                int compare = child.getUserObject().toString().compareTo(newChild.getUserObject().toString()) * sorting;
+                if (compare < 0) {
+                    insertIndex = i;
+                    break;
+                }
             }
-         }
-      }
-      insertNodeInto(newChild, parent, insertIndex);
-   }
+        }
+        insertNodeInto(newChild, parent, insertIndex);
+    }
 
-   public void setSorting(int sorting) {
-      this.sorting = sorting;
-   }
+    public void setSorting(int sorting) {
+        this.sorting = sorting;
+    }
 
-   public int getSorting() {
-      return sorting;
-   }
+    public int getSorting() {
+        return sorting;
+    }
 
 }

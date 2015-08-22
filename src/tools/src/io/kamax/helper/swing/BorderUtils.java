@@ -27,12 +27,12 @@ import javax.swing.border.Border;
 
 public class BorderUtils {
 
-   protected BorderUtils() {
-      // not used
-   }
+    protected BorderUtils() {
+        // not used
+    }
 
-   public static Border createTitledBorder(Color color, String name) {
-      return BorderFactory.createTitledBorder(BorderFactory.createLineBorder(color), name);
-   }
+    public static Border createTitledBorder(Color color, String name) {
+        return BorderFactory.createTitledBorder(BorderFactory.createLineBorder(color), name);
+    }
 
 }

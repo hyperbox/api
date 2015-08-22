@@ -26,14 +26,14 @@ import io.kamax.hbox.comm.out.storage.StorageControllerSubTypeOut;
 
 public final class StorageControllerSubTypeOutputTest {
 
-   public static void validate(StorageControllerSubTypeOut scstOut) {
-      assertFalse(scstOut.getId().isEmpty());
-      assertFalse(scstOut.getParentType().isEmpty());
-   }
+    public static void validate(StorageControllerSubTypeOut scstOut) {
+        assertFalse(scstOut.getId().isEmpty());
+        assertFalse(scstOut.getParentType().isEmpty());
+    }
 
-   public static void compare(StorageControllerSubTypeOut scstOut1, StorageControllerSubTypeOut scstOut2) {
-      assertTrue(scstOut1.getId().contentEquals(scstOut2.getId()));
-      assertTrue(scstOut1.getParentType().contentEquals(scstOut2.getParentType()));
-   }
+    public static void compare(StorageControllerSubTypeOut scstOut1, StorageControllerSubTypeOut scstOut2) {
+        assertTrue(scstOut1.getId().contentEquals(scstOut2.getId()));
+        assertTrue(scstOut1.getParentType().contentEquals(scstOut2.getParentType()));
+    }
 
 }

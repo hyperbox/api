@@ -22,14 +22,14 @@ package io.kamax.hbox.event;
 
 public enum EventType {
 
-   Starting,
-   Started,
-   Stopping,
-   Stopped,
-   Paused,
-   Created,
-   Destroyed,
-   Opened,
-   Closed;
+    Starting,
+    Started,
+    Stopping,
+    Stopped,
+    Paused,
+    Created,
+    Destroyed,
+    Opened,
+    Closed;
 
 }

@@ -25,25 +25,25 @@ import io.kamax.hbox.states.MachineSessionStates;
 
 public final class MachineSessionOut extends ObjectOut {
 
-   private MachineOut mOut;
-   private MachineSessionStates state;
+    private MachineOut mOut;
+    private MachineSessionStates state;
 
-   @SuppressWarnings("unused")
-   private MachineSessionOut() {
-      // Used for serialization
-   }
+    @SuppressWarnings("unused")
+    private MachineSessionOut() {
+        // Used for serialization
+    }
 
-   public MachineSessionOut(MachineOut mOut, MachineSessionStates state) {
-      this.mOut = mOut;
-      this.state = state;
-   }
+    public MachineSessionOut(MachineOut mOut, MachineSessionStates state) {
+        this.mOut = mOut;
+        this.state = state;
+    }
 
-   public MachineOut getMachine() {
-      return mOut;
-   }
+    public MachineOut getMachine() {
+        return mOut;
+    }
 
-   public MachineSessionStates getState() {
-      return state;
-   }
+    public MachineSessionStates getState() {
+        return state;
+    }
 
 }

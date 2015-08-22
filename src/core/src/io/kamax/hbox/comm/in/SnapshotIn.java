@@ -27,42 +27,42 @@ import java.util.UUID;
 
 public class SnapshotIn extends ObjectIn<EntityType> {
 
-   public SnapshotIn() {
-      super(EntityType.Snapshot);
-   }
+    public SnapshotIn() {
+        super(EntityType.Snapshot);
+    }
 
-   public SnapshotIn(String id) {
-      this();
-      try {
-         UUID uuid = UUID.fromString(id);
-         setUuid(uuid.toString());
-      } catch (IllegalArgumentException e) {
-         setName(id);
-      }
-   }
+    public SnapshotIn(String id) {
+        this();
+        try {
+            UUID uuid = UUID.fromString(id);
+            setUuid(uuid.toString());
+        } catch (IllegalArgumentException e) {
+            setName(id);
+        }
+    }
 
-   public String getUuid() {
-      return getSetting(SnapshotAttribute.Uuid).getString();
-   }
+    public String getUuid() {
+        return getSetting(SnapshotAttribute.Uuid).getString();
+    }
 
-   public void setUuid(String uuid) {
-      setSetting(new StringSettingIO(SnapshotAttribute.Uuid, uuid));
-   }
+    public void setUuid(String uuid) {
+        setSetting(new StringSettingIO(SnapshotAttribute.Uuid, uuid));
+    }
 
-   public String getName() {
-      return getSetting(SnapshotAttribute.Name).getString();
-   }
+    public String getName() {
+        return getSetting(SnapshotAttribute.Name).getString();
+    }
 
-   public void setName(String name) {
-      setSetting(new StringSettingIO(SnapshotAttribute.Name, name));
-   }
+    public void setName(String name) {
+        setSetting(new StringSettingIO(SnapshotAttribute.Name, name));
+    }
 
-   public String getDescription() {
-      return getSetting(SnapshotAttribute.Description).getString();
-   }
+    public String getDescription() {
+        return getSetting(SnapshotAttribute.Description).getString();
+    }
 
-   public void setDescription(String desc) {
-      setSetting(new StringSettingIO(SnapshotAttribute.Description, desc));
-   }
+    public void setDescription(String desc) {
+        setSetting(new StringSettingIO(SnapshotAttribute.Description, desc));
+    }
 
 }

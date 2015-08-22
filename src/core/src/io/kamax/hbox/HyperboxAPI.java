@@ -28,87 +28,87 @@ import java.util.Set;
 
 public class HyperboxAPI {
 
-   private static Properties buildProperties = new Properties();
-   private static Version version;
-   private static Version protocolVersion;
+    private static Properties buildProperties = new Properties();
+    private static Version version;
+    private static Version protocolVersion;
 
-   private static void failedToLoad(Exception e) {
-      version = Version.UNKNOWN;
-      protocolVersion = Version.UNKNOWN;
-      Logger.error("Unable to access or read the api.build.properties ressource: " + e.getMessage());
-      Logger.error("API version and revision may not be accurate");
-   }
+    private static void failedToLoad(Exception e) {
+        version = Version.UNKNOWN;
+        protocolVersion = Version.UNKNOWN;
+        Logger.error("Unable to access or read the api.build.properties ressource: " + e.getMessage());
+        Logger.error("API version and revision may not be accurate");
+    }
 
-   private static void invalidVersion(Version v) {
-      Logger.error("Invalid API version in properties: " + v);
-      Logger.error("Failing back to default version");
-   }
+    private static void invalidVersion(Version v) {
+        Logger.error("Invalid API version in properties: " + v);
+        Logger.error("Failing back to default version");
+    }
 
-   private static void loadVersions() {
-      try {
-         buildProperties.load(HyperboxAPI.class.getResourceAsStream("/api.build.properties"));
+    private static void loadVersions() {
+        try {
+            buildProperties.load(HyperboxAPI.class.getResourceAsStream("/api.build.properties"));
 
-         Version rawVersion = new Version(buildProperties.getProperty("version"));
-         if (rawVersion.isValid()) {
-            version = rawVersion;
-         } else {
-            version = Version.UNKNOWN;
-            invalidVersion(rawVersion);
-         }
+            Version rawVersion = new Version(buildProperties.getProperty("version"));
+            if (rawVersion.isValid()) {
+                version = rawVersion;
+            } else {
+                version = Version.UNKNOWN;
+                invalidVersion(rawVersion);
+            }
 
-         Version rawProtocolVersion = new Version(buildProperties.getProperty("protocol"));
-         if (rawProtocolVersion.isValid()) {
-            protocolVersion = rawProtocolVersion;
-         } else {
-            protocolVersion = Version.UNKNOWN;
-            ;
-            invalidVersion(rawProtocolVersion);
-         }
-      } catch (IOException e) {
-         failedToLoad(e);
-      } catch (NullPointerException e) {
-         failedToLoad(e);
-      } catch (NumberFormatException e) {
-         failedToLoad(e);
-      }
-   }
+            Version rawProtocolVersion = new Version(buildProperties.getProperty("protocol"));
+            if (rawProtocolVersion.isValid()) {
+                protocolVersion = rawProtocolVersion;
+            } else {
+                protocolVersion = Version.UNKNOWN;
+                ;
+                invalidVersion(rawProtocolVersion);
+            }
+        } catch (IOException e) {
+            failedToLoad(e);
+        } catch (NullPointerException e) {
+            failedToLoad(e);
+        } catch (NumberFormatException e) {
+            failedToLoad(e);
+        }
+    }
 
-   public static Version getVersion() {
-      if (version == null) {
-         loadVersions();
-      }
+    public static Version getVersion() {
+        if (version == null) {
+            loadVersions();
+        }
 
-      return version;
-   }
+        return version;
+    }
 
-   public static Version getProtocolVersion() {
-      if (protocolVersion == null) {
-         loadVersions();
-      }
+    public static Version getProtocolVersion() {
+        if (protocolVersion == null) {
+            loadVersions();
+        }
 
-      return protocolVersion;
-   }
+        return protocolVersion;
+    }
 
-   public static void processArgs(Set<String> args) {
-      if (args.contains("--apiversion")) {
-         System.out.println(getVersion());
-         System.exit(0);
-      }
-      if (args.contains("--netversion")) {
-         System.out.println(HyperboxAPI.getProtocolVersion());
-         System.exit(0);
-      }
-   }
+    public static void processArgs(Set<String> args) {
+        if (args.contains("--apiversion")) {
+            System.out.println(getVersion());
+            System.exit(0);
+        }
+        if (args.contains("--netversion")) {
+            System.out.println(HyperboxAPI.getProtocolVersion());
+            System.exit(0);
+        }
+    }
 
-   public static String getLogHeader(String fullVersion) {
-      StringBuilder header = new StringBuilder();
-      header.append("Hyperbox " + fullVersion);
-      header.append(" - ");
-      header.append("Java " + System.getProperty("java.version") + " " + System.getProperty("java.vm.name") + " "
-            + System.getProperty("java.vm.version"));
-      header.append(" - ");
-      header.append(System.getProperty("os.name") + " " + System.getProperty("os.version") + " " + System.getProperty("os.arch"));
-      return header.toString();
-   }
+    public static String getLogHeader(String fullVersion) {
+        StringBuilder header = new StringBuilder();
+        header.append("Hyperbox " + fullVersion);
+        header.append(" - ");
+        header.append("Java " + System.getProperty("java.version") + " " + System.getProperty("java.vm.name") + " "
+                + System.getProperty("java.vm.version"));
+        header.append(" - ");
+        header.append(System.getProperty("os.name") + " " + System.getProperty("os.version") + " " + System.getProperty("os.arch"));
+        return header.toString();
+    }
 
 }

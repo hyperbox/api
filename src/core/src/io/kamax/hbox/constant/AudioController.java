@@ -22,12 +22,12 @@ package io.kamax.hbox.constant;
 
 public enum AudioController {
 
-   AC97,
-   SB16,
-   HDA;
+    AC97,
+    SB16,
+    HDA;
 
-   public String getId() {
-      return toString();
-   }
+    public String getId() {
+        return toString();
+    }
 
 }

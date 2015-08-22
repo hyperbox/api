@@ -24,22 +24,22 @@ import io.kamax.hbox.comm.out.network.NetworkInterfaceOut;
 
 public class NetworkInteraceOutputTest {
 
-   public static void validateSimple(NetworkInterfaceOut nOut) {
-      // TODO
-   }
+    public static void validateSimple(NetworkInterfaceOut nOut) {
+        // TODO
+    }
 
-   public static void validateFull(NetworkInterfaceOut nOut) {
-      validateSimple(nOut);
-      // TODO
-   }
+    public static void validateFull(NetworkInterfaceOut nOut) {
+        validateSimple(nOut);
+        // TODO
+    }
 
-   public static void compareSimple(NetworkInterfaceOut nic01, NetworkInterfaceOut nic02) {
-      // TODO
-   }
+    public static void compareSimple(NetworkInterfaceOut nic01, NetworkInterfaceOut nic02) {
+        // TODO
+    }
 
-   public static void compareFull(NetworkInterfaceOut nic01, NetworkInterfaceOut nic02) {
-      compareSimple(nic01, nic02);
-      // TODO
-   }
+    public static void compareFull(NetworkInterfaceOut nic01, NetworkInterfaceOut nic02) {
+        compareSimple(nic01, nic02);
+        // TODO
+    }
 
 }

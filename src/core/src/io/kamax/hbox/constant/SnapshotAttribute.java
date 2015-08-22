@@ -22,17 +22,17 @@ package io.kamax.hbox.constant;
 
 public enum SnapshotAttribute {
 
-   Uuid,
-   Name,
-   Description,
-   CreationTime,
-   MachineID,
-   HasParent,
-   HasChildren,
-   IsOnline;
+    Uuid,
+    Name,
+    Description,
+    CreationTime,
+    MachineID,
+    HasParent,
+    HasChildren,
+    IsOnline;
 
-   public String getId() {
-      return toString();
-   }
+    public String getId() {
+        return toString();
+    }
 
 }

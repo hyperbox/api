@@ -22,16 +22,16 @@ package io.kamax.tool;
 
 public class ValueValidator {
 
-   public static String removeNull(String s) {
-      if ((s == null) || s.equals("null")) {
-         s = new String();
-      }
+    public static String removeNull(String s) {
+        if ((s == null) || s.equals("null")) {
+            s = new String();
+        }
 
-      return s;
-   }
+        return s;
+    }
 
-   public static boolean equals(String s, Enum<?> e) {
-      return s.contentEquals(e.toString());
-   }
+    public static boolean equals(String s, Enum<?> e) {
+        return s.contentEquals(e.toString());
+    }
 
 }

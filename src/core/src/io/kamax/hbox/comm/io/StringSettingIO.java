@@ -24,39 +24,39 @@ import io.kamax.hbox.utils.Settings;
 
 /**
  * Helper class to implement a String type for the Setting Comm object
- * 
+ *
  * @author max
  */
 public final class StringSettingIO extends SettingIO {
 
-   /**
-    * Empty constructor for serialisation classes.<br/>
-    * <ul>
-    * <b>!! DONOT USE !!</b>
-    * </ul>
-    */
-   @SuppressWarnings("unused")
-   private StringSettingIO() {
-   }
+    /**
+     * Empty constructor for serialisation classes.<br/>
+     * <ul>
+     * <b>!! DONOT USE !!</b>
+     * </ul>
+     */
+    @SuppressWarnings("unused")
+    private StringSettingIO() {
+    }
 
-   /**
-    * Constructor for a new String setting, with the given name and value.<br/>
-    * {@link Settings#getUniqueId(Object)} will be used on the Object name to get a unique ID.
-    * 
-    * @param name The Object value returned by to use as name.
-    * @param value The String value of this setting
-    */
-   public StringSettingIO(Object name, String value) {
-      super(name, value);
-   }
+    /**
+     * Constructor for a new String setting, with the given name and value.<br/>
+     * {@link Settings#getUniqueId(Object)} will be used on the Object name to get a unique ID.
+     * 
+     * @param name The Object value returned by to use as name.
+     * @param value The String value of this setting
+     */
+    public StringSettingIO(Object name, String value) {
+        super(name, value);
+    }
 
-   /**
-    * Get the value of this setting as String
-    * 
-    * @return String value of this setting
-    */
-   public String getValue() {
-      return (String) getRawValue();
-   }
+    /**
+     * Get the value of this setting as String
+     * 
+     * @return String value of this setting
+     */
+    public String getValue() {
+        return (String) getRawValue();
+    }
 
 }

@@ -22,12 +22,12 @@ package io.kamax.hbox.constant;
 
 public enum GuestNetworkInterfaceAttribute {
 
-   ID,
-   IsUp,
-   MacAddress,
-   IP4Address,
-   IP4Subnet,
-   IP6Address,
-   IP6Subnet
+    ID,
+    IsUp,
+    MacAddress,
+    IP4Address,
+    IP4Subnet,
+    IP6Address,
+    IP6Subnet
 
 }

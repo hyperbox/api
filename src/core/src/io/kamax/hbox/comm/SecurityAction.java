@@ -22,37 +22,37 @@ package io.kamax.hbox.comm;
 
 public enum SecurityAction {
 
-   Any,
+    Any,
 
-   List,
-   Get,
-   /**
-    * Add already existing item. Synonym for import, register
-    */
-   Add,
-   /**
-    * Create a new item
-    */
-   Create,
-   Modify,
-   /**
-    * Remove an existing item from the list but without deleting it. Synonym for unregister
-    */
-   Remove,
-   /**
-    * Remove and delete an existing item
-    */
-   Delete,
+    List,
+    Get,
+    /**
+     * Add already existing item. Synonym for import, register
+     */
+    Add,
+    /**
+     * Create a new item
+     */
+    Create,
+    Modify,
+    /**
+     * Remove an existing item from the list but without deleting it. Synonym for unregister
+     */
+    Remove,
+    /**
+     * Remove and delete an existing item
+     */
+    Delete,
 
-   Start,
-   Stop,
-   Pause,
-   Save,
-   Reset,
-   Restart,
-   Resume,
+    Start,
+    Stop,
+    Pause,
+    Save,
+    Reset,
+    Restart,
+    Resume,
 
-   Connect,
-   Disconnect,
+    Connect,
+    Disconnect,
 
 }

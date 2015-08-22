@@ -22,17 +22,17 @@ package io.kamax.hbox.constant;
 
 public enum StorageControllerAttribute {
 
-   Name,
-   Type,
-   SubType,
-   PortCount,
-   MaxPortCount,
-   MinPortCount,
-   MaxDeviceCount,
-   IoCache;
+    Name,
+    Type,
+    SubType,
+    PortCount,
+    MaxPortCount,
+    MinPortCount,
+    MaxDeviceCount,
+    IoCache;
 
-   public String getId() {
-      return toString();
-   }
+    public String getId() {
+        return toString();
+    }
 
 }

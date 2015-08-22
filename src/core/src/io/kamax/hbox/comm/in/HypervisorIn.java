@@ -28,28 +28,28 @@ import io.kamax.hbox.constant.HypervisorAttribute;
 
 public class HypervisorIn extends ObjectIn<EntityType> {
 
-   public HypervisorIn() {
-      super(EntityType.Hypervisor);
-   }
+    public HypervisorIn() {
+        super(EntityType.Hypervisor);
+    }
 
-   public HypervisorIn(String id) {
-      super(EntityType.Hypervisor, id);
-   }
+    public HypervisorIn(String id) {
+        super(EntityType.Hypervisor, id);
+    }
 
-   public String getConnectOptions() {
-      return getSetting(HypervisorAttribute.ConnectorOptions).getString();
-   }
+    public String getConnectOptions() {
+        return getSetting(HypervisorAttribute.ConnectorOptions).getString();
+    }
 
-   public void setConnectionOptions(String options) {
-      setSetting(new StringSettingIO(HypervisorAttribute.ConnectorOptions, options));
-   }
+    public void setConnectionOptions(String options) {
+        setSetting(new StringSettingIO(HypervisorAttribute.ConnectorOptions, options));
+    }
 
-   public Boolean getAutoConnect() {
-      return getSetting(HypervisorAttribute.ConnectorAuto).getBoolean();
-   }
+    public Boolean getAutoConnect() {
+        return getSetting(HypervisorAttribute.ConnectorAuto).getBoolean();
+    }
 
-   public void setAutoConnect(Boolean auto) {
-      setSetting(new BooleanSettingIO(HypervisorAttribute.ConnectorAuto, auto));
-   }
+    public void setAutoConnect(Boolean auto) {
+        setSetting(new BooleanSettingIO(HypervisorAttribute.ConnectorAuto, auto));
+    }
 
 }

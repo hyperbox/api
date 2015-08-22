@@ -24,14 +24,14 @@ import java.util.List;
 
 public interface _Settable {
 
-   public List<_Setting> getSettings();
+    public List<_Setting> getSettings();
 
-   public _Setting getSetting(String settingId);
+    public _Setting getSetting(String settingId);
 
-   public void setSetting(_Setting setting);
+    public void setSetting(_Setting setting);
 
-   public void setSetting(List<_Setting> settings);
+    public void setSetting(List<_Setting> settings);
 
-   public boolean hasSetting(String settingId);
+    public boolean hasSetting(String settingId);
 
 }

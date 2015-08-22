@@ -24,14 +24,14 @@ import io.kamax.hbox.constant.EntityType;
 
 public class ConsoleIn extends DeviceIn {
 
-   public ConsoleIn() {
-      super(EntityType.Console.getId());
-   }
+    public ConsoleIn() {
+        super(EntityType.Console.getId());
+    }
 
-   public ConsoleIn(String id) {
-      super(id);
-   }
+    public ConsoleIn(String id) {
+        super(id);
+    }
 
-   // TODO
+    // TODO
 
 }

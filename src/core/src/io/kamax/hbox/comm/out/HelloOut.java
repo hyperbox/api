@@ -22,18 +22,18 @@ package io.kamax.hbox.comm.out;
 
 public class HelloOut extends ObjectOut {
 
-   private String protocolVersion = "";
+    private String protocolVersion = "";
 
-   protected HelloOut() {
-      // used for (de)serialisation
-   }
+    protected HelloOut() {
+        // used for (de)serialisation
+    }
 
-   public HelloOut(String protocolVersion) {
-      this.protocolVersion = protocolVersion;
-   }
+    public HelloOut(String protocolVersion) {
+        this.protocolVersion = protocolVersion;
+    }
 
-   public String getProtocolVersion() {
-      return protocolVersion;
-   }
+    public String getProtocolVersion() {
+        return protocolVersion;
+    }
 
 }

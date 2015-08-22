@@ -102,130 +102,130 @@ import com.esotericsoftware.kryo.Kryo;
 
 /**
  * Used to register classes that will be sent through the channel.
- * 
+ *
  * @author max
  */
 public class KryoRegister {
 
-   public static void register(Kryo kryo) {
-      kryo.setRegistrationRequired(false);
-      /*
-       * Register Java API classes
-       */
-      kryo.register(ArrayList.class);
-      kryo.register(HashMap.class);
-      kryo.register(HashSet.class);
-      kryo.register(Date.class);
+    public static void register(Kryo kryo) {
+        kryo.setRegistrationRequired(false);
+        /*
+         * Register Java API classes
+         */
+        kryo.register(ArrayList.class);
+        kryo.register(HashMap.class);
+        kryo.register(HashSet.class);
+        kryo.register(Date.class);
 
-      /*
-       * Register Hyperbox API communication classes
-       */
-      kryo.register(Message.class);
-      kryo.register(Request.class);
-      kryo.register(Answer.class);
-      kryo.register(AnswerType.class);
-      kryo.register(Command.class);
-      kryo.register(Action.class);
-      kryo.register(ExceptionOut.class);
+        /*
+         * Register Hyperbox API communication classes
+         */
+        kryo.register(Message.class);
+        kryo.register(Request.class);
+        kryo.register(Answer.class);
+        kryo.register(AnswerType.class);
+        kryo.register(Command.class);
+        kryo.register(Action.class);
+        kryo.register(ExceptionOut.class);
 
-      /*
-       * Register Hyperbox API IO classes
-       */
-      kryo.register(StringSettingIO.class);
-      kryo.register(BooleanSettingIO.class);
-      kryo.register(PositiveNumberSettingIO.class);
+        /*
+         * Register Hyperbox API IO classes
+         */
+        kryo.register(StringSettingIO.class);
+        kryo.register(BooleanSettingIO.class);
+        kryo.register(PositiveNumberSettingIO.class);
 
-      kryo.register(MachineIn.class);
-      kryo.register(MachineOut.class);
+        kryo.register(MachineIn.class);
+        kryo.register(MachineOut.class);
 
-      kryo.register(MachineMetricOut.class);
+        kryo.register(MachineMetricOut.class);
 
-      kryo.register(MachineSessionOut.class);
+        kryo.register(MachineSessionOut.class);
 
-      kryo.register(StoreIn.class);
-      kryo.register(StoreOut.class);
+        kryo.register(StoreIn.class);
+        kryo.register(StoreOut.class);
 
-      kryo.register(StoreItemIn.class);
-      kryo.register(StoreItemOut.class);
+        kryo.register(StoreItemIn.class);
+        kryo.register(StoreItemOut.class);
 
-      kryo.register(MediumIn.class);
-      kryo.register(MediumOut.class);
+        kryo.register(MediumIn.class);
+        kryo.register(MediumOut.class);
 
-      kryo.register(NetworkInterfaceIn.class);
-      kryo.register(NetworkInterfaceOut.class);
+        kryo.register(NetworkInterfaceIn.class);
+        kryo.register(NetworkInterfaceOut.class);
 
-      kryo.register(NetworkAttachModeIn.class);
-      kryo.register(NetworkAttachModeOut.class);
+        kryo.register(NetworkAttachModeIn.class);
+        kryo.register(NetworkAttachModeOut.class);
 
-      kryo.register(NetworkAttachNameIn.class);
-      kryo.register(NetworkAttachNameOut.class);
+        kryo.register(NetworkAttachNameIn.class);
+        kryo.register(NetworkAttachNameOut.class);
 
-      kryo.register(NetworkInterfaceTypeIn.class);
-      kryo.register(NetworkInterfaceTypeOut.class);
+        kryo.register(NetworkInterfaceTypeIn.class);
+        kryo.register(NetworkInterfaceTypeOut.class);
 
-      kryo.register(StorageControllerIn.class);
-      kryo.register(StorageControllerOut.class);
+        kryo.register(StorageControllerIn.class);
+        kryo.register(StorageControllerOut.class);
 
-      kryo.register(StorageControllerTypeIn.class);
-      kryo.register(StorageControllerTypeOut.class);
+        kryo.register(StorageControllerTypeIn.class);
+        kryo.register(StorageControllerTypeOut.class);
 
-      kryo.register(StorageControllerSubTypeIn.class);
-      kryo.register(StorageControllerSubTypeOut.class);
+        kryo.register(StorageControllerSubTypeIn.class);
+        kryo.register(StorageControllerSubTypeOut.class);
 
-      kryo.register(StorageDeviceAttachmentIn.class);
-      kryo.register(StorageDeviceAttachmentOut.class);
+        kryo.register(StorageDeviceAttachmentIn.class);
+        kryo.register(StorageDeviceAttachmentOut.class);
 
-      kryo.register(SnapshotIn.class);
-      kryo.register(SnapshotOut.class);
+        kryo.register(SnapshotIn.class);
+        kryo.register(SnapshotOut.class);
 
-      kryo.register(UserIn.class);
-      kryo.register(UserOut.class);
+        kryo.register(UserIn.class);
+        kryo.register(UserOut.class);
 
-      kryo.register(SessionOut.class);
-      kryo.register(SessionIn.class);
+        kryo.register(SessionOut.class);
+        kryo.register(SessionIn.class);
 
-      kryo.register(ServerIn.class);
-      kryo.register(ServerOut.class);
+        kryo.register(ServerIn.class);
+        kryo.register(ServerOut.class);
 
-      kryo.register(TaskIn.class);
-      kryo.register(TaskOut.class);
+        kryo.register(TaskIn.class);
+        kryo.register(TaskOut.class);
 
-      kryo.register(OsTypeIn.class);
-      kryo.register(OsTypeOut.class);
+        kryo.register(OsTypeIn.class);
+        kryo.register(OsTypeOut.class);
 
-      /*
-       * Events
-       */
-      kryo.register(MachineDataChangeEventOut.class);
-      kryo.register(MachineRegistrationEventOut.class);
-      kryo.register(MachineStateEventOut.class);
-      kryo.register(SessionStateEventOut.class);
-      kryo.register(SnapshotModifiedEventOut.class);
-      kryo.register(SnapshotDeletedEventOut.class);
-      kryo.register(SnapshotRestoredEventOut.class);
-      kryo.register(SnapshotTakenEventOut.class);
-      kryo.register(SystemStateEventOut.class);
-      kryo.register(TaskQueueEventOut.class);
-      kryo.register(TaskStateEventOut.class);
-      kryo.register(UnknownEventOut.class);
+        /*
+         * Events
+         */
+        kryo.register(MachineDataChangeEventOut.class);
+        kryo.register(MachineRegistrationEventOut.class);
+        kryo.register(MachineStateEventOut.class);
+        kryo.register(SessionStateEventOut.class);
+        kryo.register(SnapshotModifiedEventOut.class);
+        kryo.register(SnapshotDeletedEventOut.class);
+        kryo.register(SnapshotRestoredEventOut.class);
+        kryo.register(SnapshotTakenEventOut.class);
+        kryo.register(SystemStateEventOut.class);
+        kryo.register(TaskQueueEventOut.class);
+        kryo.register(TaskStateEventOut.class);
+        kryo.register(UnknownEventOut.class);
 
-      /*
-       * Register Hyperbox API business classes
-       */
-      kryo.register(ACPI.class);
-      kryo.register(EntityType.class);
-      kryo.register(MachineSessionStates.class);
-      kryo.register(MachineStates.class);
-      kryo.register(ModuleState.class);
-      kryo.register(ProgressTrackerState.class);
-      kryo.register(SessionStates.class);
-      kryo.register(StoreAttribute.class);
-      kryo.register(StoreItemAttribute.class);
-      kryo.register(ServerState.class);
-      kryo.register(TaskQueueEvents.class);
-      kryo.register(TaskState.class);
-      kryo.register(StorageControllerSubType.class);
-      kryo.register(StorageControllerType.class);
-   }
+        /*
+         * Register Hyperbox API business classes
+         */
+        kryo.register(ACPI.class);
+        kryo.register(EntityType.class);
+        kryo.register(MachineSessionStates.class);
+        kryo.register(MachineStates.class);
+        kryo.register(ModuleState.class);
+        kryo.register(ProgressTrackerState.class);
+        kryo.register(SessionStates.class);
+        kryo.register(StoreAttribute.class);
+        kryo.register(StoreItemAttribute.class);
+        kryo.register(ServerState.class);
+        kryo.register(TaskQueueEvents.class);
+        kryo.register(TaskState.class);
+        kryo.register(StorageControllerSubType.class);
+        kryo.register(StorageControllerType.class);
+    }
 
 }

@@ -22,32 +22,32 @@ package io.kamax.hbox.constant;
 
 /**
  * Mouse modes supported by Virtualbox
- * 
+ *
  * @author max
  */
 public enum MouseMode {
 
-   None,
+    None,
 
-   /**
-    * PS/2 mouse mode
-    */
-   Ps2,
+    /**
+     * PS/2 mouse mode
+     */
+    Ps2,
 
-   /**
-    * Normal USB mouse
-    */
-   Usb,
+    /**
+     * Normal USB mouse
+     */
+    Usb,
 
-   /**
-    * Pointing device mouse
-    */
-   UsbTablet,
+    /**
+     * Pointing device mouse
+     */
+    UsbTablet,
 
-   ComboMouse;
+    ComboMouse;
 
-   public String getId() {
-      return toString();
-   }
+    public String getId() {
+        return toString();
+    }
 
 }

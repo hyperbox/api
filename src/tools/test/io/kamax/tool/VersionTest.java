@@ -26,54 +26,54 @@ import org.junit.Test;
 
 public class VersionTest {
 
-   private final static String v1_0_0 = "1.0.0";
-   private final static String v2_3_4 = "2.3.4";
-   private final static String v3_4_5r67 = "3.4.5-67";
-   private final static String invalid1 = "invalidversion";
-   private final static String invalid2 = "8.9-0";
-   private final static String invalid3 = "";
-   private final static String invalid4 = null;
+    private final static String v1_0_0 = "1.0.0";
+    private final static String v2_3_4 = "2.3.4";
+    private final static String v3_4_5r67 = "3.4.5-67";
+    private final static String invalid1 = "invalidversion";
+    private final static String invalid2 = "8.9-0";
+    private final static String invalid3 = "";
+    private final static String invalid4 = null;
 
-   @Test
-   public void unknown() {
-      Version unknown = new Version(Version.UNKNOWN.toString());
-      assertTrue(Version.UNKNOWN.equals(unknown));
-   }
+    @Test
+    public void unknown() {
+        Version unknown = new Version(Version.UNKNOWN.toString());
+        assertTrue(Version.UNKNOWN.equals(unknown));
+    }
 
-   @Test
-   public void valid() {
-      assertTrue(Version.UNKNOWN.isValid());
-      assertTrue(new Version(v1_0_0).isValid());
-      assertTrue(new Version(v2_3_4).isValid());
-      assertTrue(new Version(v3_4_5r67).isValid());
+    @Test
+    public void valid() {
+        assertTrue(Version.UNKNOWN.isValid());
+        assertTrue(new Version(v1_0_0).isValid());
+        assertTrue(new Version(v2_3_4).isValid());
+        assertTrue(new Version(v3_4_5r67).isValid());
 
-      assertFalse(new Version(invalid1).isValid());
-      assertFalse(new Version(invalid2).isValid());
-      assertFalse(new Version(invalid3).isValid());
-      assertFalse(new Version(invalid4).isValid());
-   }
+        assertFalse(new Version(invalid1).isValid());
+        assertFalse(new Version(invalid2).isValid());
+        assertFalse(new Version(invalid3).isValid());
+        assertFalse(new Version(invalid4).isValid());
+    }
 
-   @Test
-   public void equal() {
-      assertTrue(Version.UNKNOWN.equals(Version.UNKNOWN));
-      assertTrue((new Version(v1_0_0)).equals(new Version(v1_0_0)));
-      assertTrue((new Version(v2_3_4)).equals(new Version(v2_3_4)));
-      assertTrue((new Version(v3_4_5r67)).equals(new Version(v3_4_5r67)));
-   }
+    @Test
+    public void equal() {
+        assertTrue(Version.UNKNOWN.equals(Version.UNKNOWN));
+        assertTrue((new Version(v1_0_0)).equals(new Version(v1_0_0)));
+        assertTrue((new Version(v2_3_4)).equals(new Version(v2_3_4)));
+        assertTrue((new Version(v3_4_5r67)).equals(new Version(v3_4_5r67)));
+    }
 
-   @Test
-   public void update() {
-      Version first = new Version(v1_0_0);
-      Version second = new Version(v2_3_4);
-      Version third = new Version(v3_4_5r67);
+    @Test
+    public void update() {
+        Version first = new Version(v1_0_0);
+        Version second = new Version(v2_3_4);
+        Version third = new Version(v3_4_5r67);
 
-      assertFalse(first.isUpdate(second));
-      assertFalse(first.isUpdate(third));
-      assertFalse(second.isUpdate(third));
-      assertTrue(second.isUpdate(first));
-      assertTrue(third.isUpdate(first));
-      assertTrue(third.isUpdate(second));
+        assertFalse(first.isUpdate(second));
+        assertFalse(first.isUpdate(third));
+        assertFalse(second.isUpdate(third));
+        assertTrue(second.isUpdate(first));
+        assertTrue(third.isUpdate(first));
+        assertTrue(third.isUpdate(second));
 
-   }
+    }
 
 }

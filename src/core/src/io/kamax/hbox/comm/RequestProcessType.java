@@ -22,8 +22,8 @@ package io.kamax.hbox.comm;
 
 public enum RequestProcessType {
 
-   NoWait,
-   WaitForRequest,
-   WaitForTask
+    NoWait,
+    WaitForRequest,
+    WaitForTask
 
 }

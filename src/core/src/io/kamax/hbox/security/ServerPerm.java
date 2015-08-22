@@ -22,7 +22,7 @@ package io.kamax.hbox.security;
 
 public enum ServerPerm {
 
-   Get,
-   Stop
+    Get,
+    Stop
 
 }

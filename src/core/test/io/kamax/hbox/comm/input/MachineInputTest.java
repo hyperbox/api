@@ -29,22 +29,22 @@ import org.junit.Test;
 
 public class MachineInputTest {
 
-   private MachineIn mIn;
+    private MachineIn mIn;
 
-   @Before
-   public void before() {
-      mIn = new MachineIn();
-   }
+    @Before
+    public void before() {
+        mIn = new MachineIn();
+    }
 
-   @After
-   public void after() {
-      mIn = null;
-   }
+    @After
+    public void after() {
+        mIn = null;
+    }
 
-   @Test
-   public void uuidTest() {
-      assertNull("Unset uuid should be null", mIn.getUuid());
-      assertFalse(mIn.hasNewData());
-   }
+    @Test
+    public void uuidTest() {
+        assertNull("Unset uuid should be null", mIn.getUuid());
+        assertFalse(mIn.hasNewData());
+    }
 
 }

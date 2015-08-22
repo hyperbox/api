@@ -28,43 +28,43 @@ import io.kamax.hbox.constant.StoreItemAttribute;
 
 public final class StoreItemOut extends ObjectOut {
 
-   @SuppressWarnings("unused")
-   private StoreItemOut() {
-      // used for (de)serialisation
-   }
+    @SuppressWarnings("unused")
+    private StoreItemOut() {
+        // used for (de)serialisation
+    }
 
-   public StoreItemOut(String storeId, String name, String path, long size, boolean isContainer) {
-      super(EntityType.StoreItem, name + "|" + path);
-      setSetting(new StringSettingIO(StoreItemAttribute.StoreId, storeId));
-      setSetting(new StringSettingIO(StoreItemAttribute.Name, name));
-      setSetting(new StringSettingIO(StoreItemAttribute.Path, path));
-      setSetting(new PositiveNumberSettingIO(StoreItemAttribute.Size, size));
-      setSetting(new BooleanSettingIO(StoreItemAttribute.IsContainer, isContainer));
-   }
+    public StoreItemOut(String storeId, String name, String path, long size, boolean isContainer) {
+        super(EntityType.StoreItem, name + "|" + path);
+        setSetting(new StringSettingIO(StoreItemAttribute.StoreId, storeId));
+        setSetting(new StringSettingIO(StoreItemAttribute.Name, name));
+        setSetting(new StringSettingIO(StoreItemAttribute.Path, path));
+        setSetting(new PositiveNumberSettingIO(StoreItemAttribute.Size, size));
+        setSetting(new BooleanSettingIO(StoreItemAttribute.IsContainer, isContainer));
+    }
 
-   public String getStoreId() {
-      return getSetting(StoreItemAttribute.StoreId).getString();
-   }
+    public String getStoreId() {
+        return getSetting(StoreItemAttribute.StoreId).getString();
+    }
 
-   public String getName() {
-      return getSetting(StoreItemAttribute.Name).getString();
-   }
+    public String getName() {
+        return getSetting(StoreItemAttribute.Name).getString();
+    }
 
-   public String getPath() {
-      return getSetting(StoreItemAttribute.Path).getString();
-   }
+    public String getPath() {
+        return getSetting(StoreItemAttribute.Path).getString();
+    }
 
-   public Long getSize() {
-      return getSetting(StoreItemAttribute.Size).getNumber();
-   }
+    public Long getSize() {
+        return getSetting(StoreItemAttribute.Size).getNumber();
+    }
 
-   public Boolean isContainer() {
-      return getSetting(StoreItemAttribute.IsContainer).getBoolean();
-   }
+    public Boolean isContainer() {
+        return getSetting(StoreItemAttribute.IsContainer).getBoolean();
+    }
 
-   @Override
-   public String toString() {
-      return getName();
-   }
+    @Override
+    public String toString() {
+        return getName();
+    }
 
 }

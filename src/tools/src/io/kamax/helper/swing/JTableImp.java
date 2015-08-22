@@ -25,30 +25,33 @@ import java.awt.event.FocusListener;
 import javax.swing.JTable;
 import javax.swing.table.TableModel;
 
-@SuppressWarnings("serial")
+
 public class JTableImp extends JTable implements FocusListener {
 
-   private Boolean clearOnFocusLost = true;
+    private static final long serialVersionUID = 717736072775935740L;
+    private Boolean clearOnFocusLost = true;
 
-   public JTableImp(TableModel m) {
-      super(m);
-      init();
-   }
+    public JTableImp(TableModel m) {
+        super(m);
+        init();
+    }
 
-   private void init() {
-      addFocusListener(this);
-   }
+    private void init() {
+        addFocusListener(this);
+    }
 
-   @Override
-   public void focusGained(FocusEvent e) {
-      // not used
-   }
+    @Override
+    public void focusGained(FocusEvent e) {
+        // not used
+    }
 
-   @Override
-   public void focusLost(FocusEvent e) {
-      if (e.getOppositeComponent() instanceof JTable)
-         if (clearOnFocusLost)
-            clearSelection();
-   }
+    @Override
+    public void focusLost(FocusEvent e) {
+        if (e.getOppositeComponent() instanceof JTable) {
+            if (clearOnFocusLost) {
+                clearSelection();
+            }
+        }
+    }
 
 }

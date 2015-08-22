@@ -27,26 +27,26 @@ import java.util.Date;
 
 public abstract class MachineEventOut extends EventOut {
 
-   protected MachineEventOut() {
-      // Used for serialization
-   }
+    protected MachineEventOut() {
+        // Used for serialization
+    }
 
-   public MachineEventOut(Date time, Enum<?> id, ServerOut srvOut, MachineOut mOut) {
-      super(time, id, srvOut);
-      set(MachineOut.class, mOut);
-   }
+    public MachineEventOut(Date time, Enum<?> id, ServerOut srvOut, MachineOut mOut) {
+        super(time, id, srvOut);
+        set(MachineOut.class, mOut);
+    }
 
-   public MachineOut getMachine() {
-      return get(MachineOut.class);
-   }
+    public MachineOut getMachine() {
+        return get(MachineOut.class);
+    }
 
-   public String getUuid() {
-      return getMachine().getUuid();
-   }
+    public String getUuid() {
+        return getMachine().getUuid();
+    }
 
-   @Override
-   public String toString() {
-      return "Machine " + getUuid() + " on Server " + getServerId() + " | Event ID " + getId() + " occured @ " + getTime();
-   }
+    @Override
+    public String toString() {
+        return "Machine " + getUuid() + " on Server " + getServerId() + " | Event ID " + getId() + " occured @ " + getTime();
+    }
 
 }

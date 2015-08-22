@@ -27,36 +27,36 @@ import java.io.InputStreamReader;
 
 public class StreamReader extends Thread {
 
-   private InputStream s;
-   private String out = "";
+    private InputStream s;
+    private String out = "";
 
-   public StreamReader(InputStream s) {
-      this.s = s;
-   }
+    public StreamReader(InputStream s) {
+        this.s = s;
+    }
 
-   @Override
-   public void run() {
-      BufferedReader r = new BufferedReader(new InputStreamReader(s));
-      StringBuffer buffer = new StringBuffer();
-      try {
-         String line;
-         while ((line = r.readLine()) != null) {
-            buffer.append(line + System.getProperty("line.separator"));
-         }
-      } catch (Throwable t) {
-         t.printStackTrace();
-      } finally {
-         out = buffer.toString();
-         try {
-            r.close();
-         } catch (IOException e) {
-            e.printStackTrace();
-         }
-      }
-   }
+    @Override
+    public void run() {
+        BufferedReader r = new BufferedReader(new InputStreamReader(s));
+        StringBuffer buffer = new StringBuffer();
+        try {
+            String line;
+            while ((line = r.readLine()) != null) {
+                buffer.append(line + System.getProperty("line.separator"));
+            }
+        } catch (Throwable t) {
+            t.printStackTrace();
+        } finally {
+            out = buffer.toString();
+            try {
+                r.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
-   public String getData() {
-      return out;
-   }
+    public String getData() {
+        return out;
+    }
 
 }

@@ -22,7 +22,7 @@ package io.kamax.hbox.constant;
 
 public enum StorageDeviceAttribute {
 
-   PortID,
-   DeviceID,
+    PortID,
+    DeviceID,
 
 }

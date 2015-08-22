@@ -24,26 +24,26 @@ import io.kamax.hbox.comm.Message;
 
 public class Event extends Message implements _Event {
 
-   private Enum<?> id;
+    private Enum<?> id;
 
-   public Event(Enum<?> eventId) {
-      super("Event");
-      id = eventId;
-   }
+    public Event(Enum<?> eventId) {
+        super("Event");
+        id = eventId;
+    }
 
-   public Event(Enum<?> eventId, Object data) {
-      this(eventId);
-      set(data);
-   }
+    public Event(Enum<?> eventId, Object data) {
+        this(eventId);
+        set(data);
+    }
 
-   @Override
-   public Enum<?> getEventId() {
-      return id;
-   }
+    @Override
+    public Enum<?> getEventId() {
+        return id;
+    }
 
-   @Override
-   public String toString() {
-      return "Event ID " + getEventId() + " occured @ " + getTime();
-   }
+    @Override
+    public String toString() {
+        return "Event ID " + getEventId() + " occured @ " + getTime();
+    }
 
 }

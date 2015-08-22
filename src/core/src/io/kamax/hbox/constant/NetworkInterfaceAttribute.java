@@ -22,16 +22,16 @@ package io.kamax.hbox.constant;
 
 public enum NetworkInterfaceAttribute {
 
-   Enabled,
-   MacAddress,
-   CableConnected,
-   AdapterType,
-   AttachMode,
-   AttachName,
-   PromiscuousMode;
+    Enabled,
+    MacAddress,
+    CableConnected,
+    AdapterType,
+    AttachMode,
+    AttachName,
+    PromiscuousMode;
 
-   public String getId() {
-      return toString();
-   }
+    public String getId() {
+        return toString();
+    }
 
 }

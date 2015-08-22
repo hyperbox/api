@@ -27,25 +27,25 @@ import javax.swing.Action;
 
 public class GenericPictureFileChooser {
 
-   private MouseWorker mouseWorker;
-   private Action a;
+    private MouseWorker mouseWorker;
+    private Action a;
 
-   public GenericPictureFileChooser(Component c) {
-      mouseWorker = new MouseWorker();
-      c.addMouseListener(mouseWorker);
-   }
+    public GenericPictureFileChooser(Component c) {
+        mouseWorker = new MouseWorker();
+        c.addMouseListener(mouseWorker);
+    }
 
-   public void setAction(Action a) {
-      this.a = a;
-   }
+    public void setAction(Action a) {
+        this.a = a;
+    }
 
-   private class MouseWorker extends MouseAdapter {
+    private class MouseWorker extends MouseAdapter {
 
-      @Override
-      public void mouseClicked(MouseEvent e) {
-         a.actionPerformed(null);
-      }
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            a.actionPerformed(null);
+        }
 
-   }
+    }
 
 }

@@ -22,26 +22,26 @@ package io.kamax.hbox.constant;
 
 /**
  * VB keyboard modes
- * 
+ *
  * @author max
  */
 public enum KeyboardMode {
 
-   None,
-   /**
-    * Normal PS/2
-    */
-   Ps2,
+    None,
+    /**
+     * Normal PS/2
+     */
+    Ps2,
 
-   /**
-    * USB
-    */
-   Usb,
+    /**
+     * USB
+     */
+    Usb,
 
-   Combo;
+    Combo;
 
-   public String getId() {
-      return toString();
-   }
+    public String getId() {
+        return toString();
+    }
 
 }

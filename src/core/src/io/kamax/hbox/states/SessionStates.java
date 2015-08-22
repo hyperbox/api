@@ -22,8 +22,8 @@ package io.kamax.hbox.states;
 
 public enum SessionStates {
 
-   Created,
-   Authenticated,
-   Destroyed,
+    Created,
+    Authenticated,
+    Destroyed,
 
 }

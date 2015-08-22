@@ -28,22 +28,22 @@ import java.util.Date;
 
 public class TaskStateEventOut extends TaskEventOut {
 
-   @SuppressWarnings("unused")
-   private TaskStateEventOut() {
-      // Used for serialization
-   }
+    @SuppressWarnings("unused")
+    private TaskStateEventOut() {
+        // Used for serialization
+    }
 
-   public TaskStateEventOut(Date time, ServerOut srvOut, TaskOut tOut) {
-      super(time, HyperboxEvents.TaskState, srvOut, tOut);
-   }
+    public TaskStateEventOut(Date time, ServerOut srvOut, TaskOut tOut) {
+        super(time, HyperboxEvents.TaskState, srvOut, tOut);
+    }
 
-   public TaskState getState() {
-      return getTask().getState();
-   }
+    public TaskState getState() {
+        return getTask().getState();
+    }
 
-   @Override
-   public String toString() {
-      return "Task ID #" + getTaskId() + " state changed to " + getState() + " @ " + getTime();
-   }
+    @Override
+    public String toString() {
+        return "Task ID #" + getTaskId() + " state changed to " + getState() + " @ " + getTime();
+    }
 
 }

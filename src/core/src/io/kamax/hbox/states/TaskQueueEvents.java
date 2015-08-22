@@ -22,7 +22,7 @@ package io.kamax.hbox.states;
 
 public enum TaskQueueEvents {
 
-   TaskAdded,
-   TaskRemoved,
+    TaskAdded,
+    TaskRemoved,
 
 }

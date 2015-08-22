@@ -30,134 +30,134 @@ import java.util.Map;
 
 /**
  * Raw Event Comm message, normally extended.
- * 
+ *
  * @author max
  */
 // TODO need to make abstract
 public abstract class EventOut {
 
-   private String eventId;
-   private Date time;
-   private Map<String, ObjectOut> mapping = new HashMap<String, ObjectOut>();
+    private String eventId;
+    private Date time;
+    private Map<String, ObjectOut> mapping = new HashMap<String, ObjectOut>();
 
-   /**
-    * Empty constructor for serialisation classes.<br/>
-    * <ul>
-    * <b>!! DONOT USE !!</b>
-    * </ul>
-    */
-   protected EventOut() {
-      // Used for (de)serialization
-   }
+    /**
+     * Empty constructor for serialisation classes.<br/>
+     * <ul>
+     * <b>!! DONOT USE !!</b>
+     * </ul>
+     */
+    protected EventOut() {
+        // Used for (de)serialization
+    }
 
-   /**
-    * Build a new Event Comm object with the given String ID
-    * 
-    * @param time When the event occurred
-    * @param srvOut The Server from which this event originated from
-    * @param id The ID of the Event Comm
-    */
-   public EventOut(Date time, String id, ServerOut srvOut) {
-      this.time = time;
-      eventId = id;
-      set(ServerOut.class, srvOut);
-   }
+    /**
+     * Build a new Event Comm object with the given String ID
+     * 
+     * @param time When the event occurred
+     * @param srvOut The Server from which this event originated from
+     * @param id The ID of the Event Comm
+     */
+    public EventOut(Date time, String id, ServerOut srvOut) {
+        this.time = time;
+        eventId = id;
+        set(ServerOut.class, srvOut);
+    }
 
-   /**
-    * Build a new Event Comm object with the given SystemEvent ID
-    * 
-    * @param time When the event occurred
-    * @param srvOut The Server from which this event originated from
-    * @param id The ID of the Event Comm
-    */
-   public EventOut(Date time, Enum<?> id, ServerOut srvOut) {
-      this(time, id.toString(), srvOut);
-   }
+    /**
+     * Build a new Event Comm object with the given SystemEvent ID
+     * 
+     * @param time When the event occurred
+     * @param srvOut The Server from which this event originated from
+     * @param id The ID of the Event Comm
+     */
+    public EventOut(Date time, Enum<?> id, ServerOut srvOut) {
+        this(time, id.toString(), srvOut);
+    }
 
-   /**
-    * Build a new Event Comm object with the given ID and include the given data.
-    * 
-    * @param time When the event occurred
-    * @param srvOut The Server from which this event originated from
-    * @param id The Event ID to include
-    * @param data The object data to include
-    * @see ObjectIn
-    * @see HyperboxEvents
-    */
-   public EventOut(Date time, String id, ServerOut srvOut, ObjectOut data) {
-      this(time, id, srvOut);
-      set(data);
-   }
+    /**
+     * Build a new Event Comm object with the given ID and include the given data.
+     * 
+     * @param time When the event occurred
+     * @param srvOut The Server from which this event originated from
+     * @param id The Event ID to include
+     * @param data The object data to include
+     * @see ObjectIn
+     * @see HyperboxEvents
+     */
+    public EventOut(Date time, String id, ServerOut srvOut, ObjectOut data) {
+        this(time, id, srvOut);
+        set(data);
+    }
 
-   /**
-    * Get this event ID
-    * 
-    * @return This event ID as String
-    */
-   public String getId() {
-      return eventId;
-   }
+    /**
+     * Get this event ID
+     * 
+     * @return This event ID as String
+     */
+    public String getId() {
+        return eventId;
+    }
 
-   public Date getTime() {
-      return time;
-   }
+    public Date getTime() {
+        return time;
+    }
 
-   public ServerOut getServer() {
-      return get(ServerOut.class);
-   }
+    public ServerOut getServer() {
+        return get(ServerOut.class);
+    }
 
-   public String getServerId() {
-      return getServer().getId();
-   }
+    public String getServerId() {
+        return getServer().getId();
+    }
 
-   /**
-    * Set the given data under the given label
-    * 
-    * @param label The label for this data
-    * @param data The data as _ObjectIO object
-    * @see ObjectIn
-    */
-   protected void set(String label, ObjectOut data) {
-      mapping.put(label, data);
-   }
+    /**
+     * Set the given data under the given label
+     * 
+     * @param label The label for this data
+     * @param data The data as _ObjectIO object
+     * @see ObjectIn
+     */
+    protected void set(String label, ObjectOut data) {
+        mapping.put(label, data);
+    }
 
-   protected void set(Class<?> label, ObjectOut data) {
-      set(label.getName(), data);
-   }
+    protected void set(Class<?> label, ObjectOut data) {
+        set(label.getName(), data);
+    }
 
-   /**
-    * Include a Comm object to this event using its class name as label.
-    * 
-    * @param object a _ObjectIO objec to add to this event message.
-    * @see ObjectIn
-    * @see Class
-    */
-   protected void set(ObjectOut object) {
-      set(object.getClass().getName(), object);
-   }
+    /**
+     * Include a Comm object to this event using its class name as label.
+     * 
+     * @param object a _ObjectIO objec to add to this event message.
+     * @see ObjectIn
+     * @see Class
+     */
+    protected void set(ObjectOut object) {
+        set(object.getClass().getName(), object);
+    }
 
-   /**
-    * Get the object that was stored under this label, or null if none is mapped.
-    * 
-    * @param s The label to search for
-    * @return The object under this label, or null if no oject was found
-    * @see HashMap
-    */
-   protected Object get(String s) {
-      return mapping.get(s);
-   }
+    /**
+     * Get the object that was stored under this label, or null if none is mapped.
+     * 
+     * @param s The label to search for
+     * @return The object under this label, or null if no oject was found
+     * @see HashMap
+     */
+    protected Object get(String s) {
+        return mapping.get(s);
+    }
 
-   /**
-    * Get the object that was stored using its class name as label
-    * 
-    * @param c The Class to use as label
-    * @return The object under this label, or null if no oject was found
-    * @see HashMap
-    * @see Class
-    */
-   @SuppressWarnings("unchecked")
-   protected <T extends ObjectOut> T get(Class<T> c) {
-      return (T) get(c.getName());
-   }
+    /**
+     * Get the object that was stored using its class name as label
+     * 
+     * @param c The Class to use as label
+     * @return The object under this label, or null if no oject was found
+     * @see HashMap
+     * @see Class
+     */
+    @SuppressWarnings("unchecked")
+    protected <T extends ObjectOut> T get(Class<T> c) {
+        return (T) get(c.getName());
+    }
 
 }

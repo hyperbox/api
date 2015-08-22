@@ -25,13 +25,13 @@ import java.sql.SQLException;
 
 public class ResultSetImp {
 
-   public static Boolean columnExists(ResultSet rSet, String columnLabel) {
-      try {
-         rSet.findColumn(columnLabel);
-         return true;
-      } catch (SQLException e) {
-         return false;
-      }
-   }
+    public static Boolean columnExists(ResultSet rSet, String columnLabel) {
+        try {
+            rSet.findColumn(columnLabel);
+            return true;
+        } catch (SQLException e) {
+            return false;
+        }
+    }
 
 }

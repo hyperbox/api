@@ -23,10 +23,10 @@ package io.kamax.hbox.constant;
 
 public enum UserAttribute {
 
-   Id,
-   Username,
-   Domain,
-   Password,
-   Salt,
+    Id,
+    Username,
+    Domain,
+    Password,
+    Salt,
 
 }

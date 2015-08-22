@@ -25,13 +25,13 @@ import io.kamax.hbox.constant.EntityType;
 
 public class NetworkAttachModeOut extends ObjectOut {
 
-   @SuppressWarnings("unused")
-   private NetworkAttachModeOut() {
-      // Used for serialization
-   }
+    @SuppressWarnings("unused")
+    private NetworkAttachModeOut() {
+        // Used for serialization
+    }
 
-   public NetworkAttachModeOut(String id) {
-      super(EntityType.NetworkAttachMode, id);
-   }
+    public NetworkAttachModeOut(String id) {
+        super(EntityType.NetworkAttachMode, id);
+    }
 
 }

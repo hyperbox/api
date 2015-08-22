@@ -22,20 +22,20 @@ package io.kamax.hbox.data;
 
 public class Snapshot {
 
-   private String uuid;
-   private Machine vm;
+    private String uuid;
+    private Machine vm;
 
-   public Snapshot(String uuid, Machine vm) {
-      this.uuid = uuid;
-      this.vm = vm;
-   }
+    public Snapshot(String uuid, Machine vm) {
+        this.uuid = uuid;
+        this.vm = vm;
+    }
 
-   public String getUuid() {
-      return uuid;
-   }
+    public String getUuid() {
+        return uuid;
+    }
 
-   public Machine getMachine() {
-      return vm;
-   }
+    public Machine getMachine() {
+        return vm;
+    }
 
 }

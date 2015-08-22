@@ -22,23 +22,23 @@ package io.kamax.hbox.states;
 
 /**
  * Represent the different kind of ACPI signals that can be send to a machine by Virtualbox
- * 
+ *
  * @author max
  */
 public enum ACPI {
 
-   /**
-    * Like pressing the Power Button
-    */
-   PowerButton,
+    /**
+     * Like pressing the Power Button
+     */
+    PowerButton,
 
-   /**
-    * Like pressing the Sleep button
-    */
-   SleepButton;
+    /**
+     * Like pressing the Sleep button
+     */
+    SleepButton;
 
-   public String getId() {
-      return toString();
-   }
+    public String getId() {
+        return toString();
+    }
 
 }

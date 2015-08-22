@@ -22,11 +22,11 @@ package io.kamax.hbox.states;
 
 public enum ServiceState {
 
-   Stopped,
-   Starting,
-   Running,
-   Stopping,
-   Paused,
-   Unknown
+    Stopped,
+    Starting,
+    Running,
+    Stopping,
+    Paused,
+    Unknown
 
 }

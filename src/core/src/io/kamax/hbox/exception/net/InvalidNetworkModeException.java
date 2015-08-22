@@ -22,22 +22,23 @@ package io.kamax.hbox.exception.net;
 
 import io.kamax.hbox.exception.HyperboxException;
 
-@SuppressWarnings("serial")
+
 public class InvalidNetworkModeException extends HyperboxException {
 
-   private String mode;
+    private static final long serialVersionUID = -6489823010331416689L;
+    private String mode;
 
-   public InvalidNetworkModeException(String mode) {
-      this(mode, mode + " is not a valid network mode");
-   }
+    public InvalidNetworkModeException(String mode) {
+        this(mode, mode + " is not a valid network mode");
+    }
 
-   public InvalidNetworkModeException(String mode, String message) {
-      super(message);
-      this.mode = mode;
-   }
+    public InvalidNetworkModeException(String mode, String message) {
+        super(message);
+        this.mode = mode;
+    }
 
-   public String getMode() {
-      return mode;
-   }
+    public String getMode() {
+        return mode;
+    }
 
 }

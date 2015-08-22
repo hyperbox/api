@@ -22,44 +22,44 @@ package io.kamax.hbox.comm.io;
 
 /**
  * Helper class to implement a boolean type for the Setting Comm object
- * 
+ *
  * @author max
  */
 public final class BooleanSettingIO extends SettingIO {
 
-   /**
-    * Empty constructor for serialisation classes.<br/>
-    * <ul>
-    * <b>!! DO NOT USE !!</b>
-    * </ul>
-    */
-   @SuppressWarnings("unused")
-   private BooleanSettingIO() {
+    /**
+     * Empty constructor for serialisation classes.<br/>
+     * <ul>
+     * <b>!! DO NOT USE !!</b>
+     * </ul>
+     */
+    @SuppressWarnings("unused")
+    private BooleanSettingIO() {
 
-   }
+    }
 
-   /**
-    * Constructor for a new boolean setting, with the given name and value
-    * 
-    * @param name The name of this setting as Object
-    * @param value The boolean value for this setting
-    */
-   public BooleanSettingIO(Object name, Boolean value) {
-      super(name, value);
-   }
+    /**
+     * Constructor for a new boolean setting, with the given name and value
+     * 
+     * @param name The name of this setting as Object
+     * @param value The boolean value for this setting
+     */
+    public BooleanSettingIO(Object name, Boolean value) {
+        super(name, value);
+    }
 
-   /**
-    * Get the boolean value of this setting
-    * 
-    * @return boolean value of this setting
-    */
-   public boolean getValue() {
-      return (Boolean) getRawValue();
-   }
+    /**
+     * Get the boolean value of this setting
+     * 
+     * @return boolean value of this setting
+     */
+    public boolean getValue() {
+        return (Boolean) getRawValue();
+    }
 
-   @Override
-   public Boolean getBoolean() {
-      return (Boolean) getRawValue();
-   }
+    @Override
+    public Boolean getBoolean() {
+        return (Boolean) getRawValue();
+    }
 
 }

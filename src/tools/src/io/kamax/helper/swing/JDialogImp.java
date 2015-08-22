@@ -30,30 +30,31 @@ import javax.swing.KeyStroke;
 
 /**
  * - Allow to be closed on escape key
- * 
+ *
  * @author max
- * 
+ *
  */
-@SuppressWarnings("serial")
+
 public class JDialogImp extends JDialog {
 
-   private KeyStroke escapeKeyStroke = KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0);
+    private static final long serialVersionUID = 8835530340363823196L;
+    private KeyStroke escapeKeyStroke = KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0);
 
-   public void setCloseOnEscapeKey(boolean close) {
-      if (close) {
-         getRootPane().registerKeyboardAction(new EscapeActionListener(), escapeKeyStroke, JComponent.WHEN_IN_FOCUSED_WINDOW);
-      } else {
-         getRootPane().getInputMap().remove(escapeKeyStroke);
-      }
-   }
+    public void setCloseOnEscapeKey(boolean close) {
+        if (close) {
+            getRootPane().registerKeyboardAction(new EscapeActionListener(), escapeKeyStroke, JComponent.WHEN_IN_FOCUSED_WINDOW);
+        } else {
+            getRootPane().getInputMap().remove(escapeKeyStroke);
+        }
+    }
 
-   private class EscapeActionListener implements ActionListener {
+    private class EscapeActionListener implements ActionListener {
 
-      @Override
-      public void actionPerformed(ActionEvent ae) {
-         setVisible(false);
-      }
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            setVisible(false);
+        }
 
-   }
+    }
 
 }

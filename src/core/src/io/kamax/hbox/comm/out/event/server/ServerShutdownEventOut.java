@@ -27,18 +27,18 @@ import java.util.Date;
 
 public class ServerShutdownEventOut extends ServerEventOut {
 
-   @SuppressWarnings("unused")
-   private ServerShutdownEventOut() {
-      // Used for serialization
-   }
+    @SuppressWarnings("unused")
+    private ServerShutdownEventOut() {
+        // Used for serialization
+    }
 
-   public ServerShutdownEventOut(Date time, ServerOut srvOut) {
-      super(time, HyperboxEvents.ServerShutdown, srvOut);
-   }
+    public ServerShutdownEventOut(Date time, ServerOut srvOut) {
+        super(time, HyperboxEvents.ServerShutdown, srvOut);
+    }
 
-   @Override
-   public String toString() {
-      return "Server " + getServer().getName() + " (" + getServer().getId() + ") is shutting down @ " + getTime();
-   }
+    @Override
+    public String toString() {
+        return "Server " + getServer().getName() + " (" + getServer().getId() + ") is shutting down @ " + getTime();
+    }
 
 }

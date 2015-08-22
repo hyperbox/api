@@ -22,72 +22,72 @@ package io.kamax.hbox.event;
 
 public enum HyperboxEvents {
 
-   ServerState,
-   ServerPropertyChanged,
-   ServerConnectionState,
-   ServerShutdown,
-   SystemState,
+    ServerState,
+    ServerPropertyChanged,
+    ServerConnectionState,
+    ServerShutdown,
+    SystemState,
 
-   ServiceState,
+    ServiceState,
 
-   ClientState,
+    ClientState,
 
-   SessionState,
+    SessionState,
 
-   TaskState,
-   TaskQueue,
+    TaskState,
+    TaskQueue,
 
-   StoreState,
+    StoreState,
 
-   ModuleRegistered,
-   ModuleLoaded,
+    ModuleRegistered,
+    ModuleLoaded,
 
-   MachineState,
-   MachineRegistration,
-   MachineDataChange,
+    MachineState,
+    MachineRegistration,
+    MachineDataChange,
 
-   /**
-    * Temporary event due to Virtualbox Webservice bug
-    *
-    * @see <a href="https://www.virtualbox.org/ticket/12379">Virtualbox Bugtracker Ticket #12379</a>
-    */
-   // TODO review regularly
-   MachineSnapshotDataChange,
+    /**
+     * Temporary event due to Virtualbox Webservice bug
+     *
+     * @see <a href="https://www.virtualbox.org/ticket/12379">Virtualbox Bugtracker Ticket #12379</a>
+     */
+    // TODO review regularly
+    MachineSnapshotDataChange,
 
-   SnapshotModified,
-   SnapshotTaken,
-   SnapshotDeleted,
-   SnapshotRestored,
+    SnapshotModified,
+    SnapshotTaken,
+    SnapshotDeleted,
+    SnapshotRestored,
 
-   ServerFrontLoaded,
-   ServerFrontStarted,
-   ServerFrontStopped,
-   ServerFrontUnloaded,
-   ServerFrontCrashed,
+    ServerFrontLoaded,
+    ServerFrontStarted,
+    ServerFrontStopped,
+    ServerFrontUnloaded,
+    ServerFrontCrashed,
 
-   UserAdded,
-   UserModified,
-   UserRemoved,
-   UserEnabled,
-   UserDisabled,
+    UserAdded,
+    UserModified,
+    UserRemoved,
+    UserEnabled,
+    UserDisabled,
 
-   HypervisorConnected,
-   HypervisorDisconnected,
-   HypervisorConfigured,
+    HypervisorConnected,
+    HypervisorDisconnected,
+    HypervisorConfigured,
 
-   StorageControllerAdded,
-   StorageControllerModified,
-   StorageControllerRemoved,
-   StorageControllerAttachmentDataModified,
+    StorageControllerAdded,
+    StorageControllerModified,
+    StorageControllerRemoved,
+    StorageControllerAttachmentDataModified,
 
-   StorageAttachmentAdded,
-   StorageAttachmentModified,
-   StorageAttachmentRemoved,
+    StorageAttachmentAdded,
+    StorageAttachmentModified,
+    StorageAttachmentRemoved,
 
-   NetAdaptorAdded,
-   NetAdaptorModified,
-   NetAdaptorRemoved,
+    NetAdaptorAdded,
+    NetAdaptorModified,
+    NetAdaptorRemoved,
 
-   NetServiceChanged,
+    NetServiceChanged,
 
 }

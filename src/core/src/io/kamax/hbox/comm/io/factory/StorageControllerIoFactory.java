@@ -26,24 +26,24 @@ import io.kamax.hbox.comm.out.storage.StorageControllerOut;
 
 public final class StorageControllerIoFactory {
 
-   public static String getId(String machineUuid, String name) {
-      return machineUuid + "|" + name;
-   }
+    public static String getId(String machineUuid, String name) {
+        return machineUuid + "|" + name;
+    }
 
-   /**
-    * Create the equivalent in an Input object of this Storage Controller output object. The input object will have its {@link Action} set to
-    * {@link Action#Modify}
-    * 
-    * @param scOut The Storage Controller output object to transform
-    * @return an input Storage Controller object labelled as {@link Action#Modify}
-    * @see StorageControllerIn
-    * @see StorageControllerOut
-    * @see Action
-    */
-   public static StorageControllerIn get(StorageControllerOut scOut) {
-      StorageControllerIn scIn = new StorageControllerIn(scOut.getMachineUuid(), scOut.getName(), scOut.getType(), scOut.listSettings());
-      scIn.setAction(Action.Modify);
-      return scIn;
-   }
+    /**
+     * Create the equivalent in an Input object of this Storage Controller output object. The input object will have its {@link Action} set to
+     * {@link Action#Modify}
+     * 
+     * @param scOut The Storage Controller output object to transform
+     * @return an input Storage Controller object labelled as {@link Action#Modify}
+     * @see StorageControllerIn
+     * @see StorageControllerOut
+     * @see Action
+     */
+    public static StorageControllerIn get(StorageControllerOut scOut) {
+        StorageControllerIn scIn = new StorageControllerIn(scOut.getMachineUuid(), scOut.getName(), scOut.getType(), scOut.listSettings());
+        scIn.setAction(Action.Modify);
+        return scIn;
+    }
 
 }

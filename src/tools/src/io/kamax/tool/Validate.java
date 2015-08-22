@@ -22,10 +22,10 @@ package io.kamax.tool;
 
 public class Validate {
 
-   public static void notNull(Object o) {
-      if (o == null) {
-         throw new NullPointerException();
-      }
-   }
+    public static void notNull(Object o) {
+        if (o == null) {
+            throw new NullPointerException();
+        }
+    }
 
 }

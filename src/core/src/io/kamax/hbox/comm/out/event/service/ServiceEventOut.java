@@ -27,17 +27,17 @@ import java.util.Date;
 
 public class ServiceEventOut extends ServerEventOut {
 
-   protected ServiceEventOut() {
-      // Used for (de)serialization
-   }
+    protected ServiceEventOut() {
+        // Used for (de)serialization
+    }
 
-   public ServiceEventOut(Date time, Enum<?> id, ServerOut srvOut, ServiceOut svcOut) {
-      super(time, id, srvOut);
-      set(ServiceOut.class, svcOut);
-   }
+    public ServiceEventOut(Date time, Enum<?> id, ServerOut srvOut, ServiceOut svcOut) {
+        super(time, id, srvOut);
+        set(ServiceOut.class, svcOut);
+    }
 
-   public ServiceOut getService() {
-      return get(ServiceOut.class);
-   }
+    public ServiceOut getService() {
+        return get(ServiceOut.class);
+    }
 
 }

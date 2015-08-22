@@ -27,29 +27,29 @@ import java.io.InputStreamReader;
 
 public class StreamDumper extends Thread {
 
-   private InputStream s;
+    private InputStream s;
 
-   public StreamDumper(InputStream s) {
-      this.s = s;
-   }
+    public StreamDumper(InputStream s) {
+        this.s = s;
+    }
 
-   @Override
-   public void run() {
-      BufferedReader r = new BufferedReader(new InputStreamReader(s));
-      try {
-         String line;
-         do {
-            line = r.readLine();
-         } while (line != null);
-      } catch (Throwable t) {
-         t.printStackTrace();
-      } finally {
-         try {
-            r.close();
-         } catch (IOException e) {
-            e.printStackTrace();
-         }
-      }
-   }
+    @Override
+    public void run() {
+        BufferedReader r = new BufferedReader(new InputStreamReader(s));
+        try {
+            String line;
+            do {
+                line = r.readLine();
+            } while (line != null);
+        } catch (Throwable t) {
+            t.printStackTrace();
+        } finally {
+            try {
+                r.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
 }

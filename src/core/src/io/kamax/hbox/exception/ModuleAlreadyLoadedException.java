@@ -20,11 +20,13 @@
 
 package io.kamax.hbox.exception;
 
-@SuppressWarnings("serial")
+
 public class ModuleAlreadyLoadedException extends ModuleException {
 
-   public ModuleAlreadyLoadedException(String s) {
-      super("Module ID " + s + " is already loaded");
-   }
+    private static final long serialVersionUID = -5355502071703876981L;
+
+    public ModuleAlreadyLoadedException(String s) {
+        super("Module ID " + s + " is already loaded");
+    }
 
 }

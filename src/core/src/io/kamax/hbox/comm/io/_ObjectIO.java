@@ -22,8 +22,8 @@ package io.kamax.hbox.comm.io;
 
 public interface _ObjectIO {
 
-   public String getId();
+    public String getId();
 
-   public _ObjectIO getIO();
+    public _ObjectIO getIO();
 
 }

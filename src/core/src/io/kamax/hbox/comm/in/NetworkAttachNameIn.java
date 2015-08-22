@@ -24,12 +24,12 @@ import io.kamax.hbox.constant.EntityType;
 
 public class NetworkAttachNameIn extends ObjectIn<EntityType> {
 
-   public NetworkAttachNameIn() {
-      super(EntityType.NetworkAttachName);
-   }
+    public NetworkAttachNameIn() {
+        super(EntityType.NetworkAttachName);
+    }
 
-   public NetworkAttachNameIn(String id) {
-      super(EntityType.NetworkAttachName, id);
-   }
+    public NetworkAttachNameIn(String id) {
+        super(EntityType.NetworkAttachName, id);
+    }
 
 }

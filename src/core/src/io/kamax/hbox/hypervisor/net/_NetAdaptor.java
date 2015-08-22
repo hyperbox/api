@@ -24,20 +24,20 @@ import java.util.List;
 
 public interface _NetAdaptor {
 
-   public String getId();
+    public String getId();
 
-   public String getLabel();
+    public String getLabel();
 
-   public void setLabel(String label);
+    public void setLabel(String label);
 
-   public _NetMode getMode();
+    public _NetMode getMode();
 
-   public boolean isEnabled();
+    public boolean isEnabled();
 
-   public List<_NetService> getServices();
+    public List<_NetService> getServices();
 
-   public void setService(_NetService svc);
+    public void setService(_NetService svc);
 
-   public _NetService getService(String serviceTypeId);
+    public _NetService getService(String serviceTypeId);
 
 }

@@ -22,9 +22,9 @@ package io.kamax.hbox.constant;
 
 public enum PermissionAttribute {
 
-   ItemType,
-   Item,
-   Action,
-   IsGranted
+    ItemType,
+    Item,
+    Action,
+    IsGranted
 
 }

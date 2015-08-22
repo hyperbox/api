@@ -27,24 +27,24 @@ import io.kamax.hbox.constant.ServerAttribute;
 
 public class ServerIn extends ObjectIn<EntityType> {
 
-   public ServerIn() {
-      super(EntityType.Server);
-   }
+    public ServerIn() {
+        super(EntityType.Server);
+    }
 
-   public ServerIn(String id) {
-      super(EntityType.Server, id);
-   }
+    public ServerIn(String id) {
+        super(EntityType.Server, id);
+    }
 
-   public ServerIn(ServerOut srvOut) {
-      this(srvOut.getId());
-   }
+    public ServerIn(ServerOut srvOut) {
+        this(srvOut.getId());
+    }
 
-   public void setName(String name) {
-      setSetting(new StringSettingIO(ServerAttribute.Name, name));
-   }
+    public void setName(String name) {
+        setSetting(new StringSettingIO(ServerAttribute.Name, name));
+    }
 
-   public void setLogLevel(String logLevel) {
-      setSetting(new StringSettingIO(ServerAttribute.LogLevel, logLevel));
-   }
+    public void setLogLevel(String logLevel) {
+        setSetting(new StringSettingIO(ServerAttribute.LogLevel, logLevel));
+    }
 
 }

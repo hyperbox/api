@@ -22,10 +22,10 @@ package io.kamax.hbox.constant;
 
 public enum ModuleAttribute {
 
-   DescriptorFile,
-   Name,
-   Version,
-   isLoaded,
-   Ressources,
+    DescriptorFile,
+    Name,
+    Version,
+    isLoaded,
+    Ressources,
 
 }

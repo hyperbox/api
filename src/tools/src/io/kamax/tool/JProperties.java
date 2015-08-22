@@ -22,11 +22,13 @@ package io.kamax.tool;
 
 import java.util.Properties;
 
-@SuppressWarnings("serial")
+
 public class JProperties extends Properties {
 
-   public String getProperty(Enum<?> key) {
-      return getProperty(key.toString());
-   }
+    private static final long serialVersionUID = -56514986284596290L;
+
+    public String getProperty(Enum<?> key) {
+        return getProperty(key.toString());
+    }
 
 }

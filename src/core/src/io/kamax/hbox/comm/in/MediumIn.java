@@ -34,167 +34,167 @@ import java.util.Set;
 
 public class MediumIn extends ObjectIn<EntityType> implements _Actionnable {
 
-   private Action action = Action.Create;
-   private String parentUuid = null;
-   private Set<String> childUuid = new HashSet<String>();
+    private Action action = Action.Create;
+    private String parentUuid = null;
+    private Set<String> childUuid = new HashSet<String>();
 
-   public MediumIn() {
-      super(EntityType.Medium);
-   }
+    public MediumIn() {
+        super(EntityType.Medium);
+    }
 
-   public MediumIn(String uuid) {
-      super(EntityType.Medium, uuid);
-      setUuid(uuid);
-      setAction(Action.Modify);
-   }
+    public MediumIn(String uuid) {
+        super(EntityType.Medium, uuid);
+        setUuid(uuid);
+        setAction(Action.Modify);
+    }
 
-   public MediumIn(String path, String type) {
-      super(EntityType.Medium, path);
-      setLocation(path);
-      setType(type);
-   }
+    public MediumIn(String path, String type) {
+        super(EntityType.Medium, path);
+        setLocation(path);
+        setType(type);
+    }
 
-   public MediumIn(StoreItemIn siIn, String type) {
-      this(siIn.getPath(), type);
-   }
+    public MediumIn(StoreItemIn siIn, String type) {
+        this(siIn.getPath(), type);
+    }
 
-   public MediumIn(String uuid, List<SettingIO> settings) {
-      super(EntityType.Medium, uuid, settings);
-      setUuid(uuid);
-      setAction(Action.Modify);
-   }
+    public MediumIn(String uuid, List<SettingIO> settings) {
+        super(EntityType.Medium, uuid, settings);
+        setUuid(uuid);
+        setAction(Action.Modify);
+    }
 
-   public MediumIn(String uuid, String location, String type) {
-      this(uuid);
-      setLocation(location);
-      setType(type);
-   }
+    public MediumIn(String uuid, String location, String type) {
+        this(uuid);
+        setLocation(location);
+        setType(type);
+    }
 
-   public MediumIn(String uuid, String location, String type, String parentUuid, Set<String> childUuid) {
-      this(uuid, location, type);
-      if (parentUuid != null) {
-         this.parentUuid = parentUuid;
-      }
-      if (childUuid != null) {
-         this.childUuid.addAll(childUuid);
-      }
-   }
+    public MediumIn(String uuid, String location, String type, String parentUuid, Set<String> childUuid) {
+        this(uuid, location, type);
+        if (parentUuid != null) {
+            this.parentUuid = parentUuid;
+        }
+        if (childUuid != null) {
+            this.childUuid.addAll(childUuid);
+        }
+    }
 
-   /**
-    * Will return in preference of order : UUID, Location then an empty string if none of the previous are set
-    */
-   @Override
-   public String getId() {
-      if (!AxStrings.isEmpty(getUuid())) {
-         return getUuid();
-      } else if (!AxStrings.isEmpty(getLocation())) {
-         return getLocation();
-      } else {
-         return "";
-      }
-   }
+    /**
+     * Will return in preference of order : UUID, Location then an empty string if none of the previous are set
+     */
+    @Override
+    public String getId() {
+        if (!AxStrings.isEmpty(getUuid())) {
+            return getUuid();
+        } else if (!AxStrings.isEmpty(getLocation())) {
+            return getLocation();
+        } else {
+            return "";
+        }
+    }
 
-   public String getUuid() {
-      return getSetting(MediumAttribute.UUID).getString();
-   }
+    public String getUuid() {
+        return getSetting(MediumAttribute.UUID).getString();
+    }
 
-   public void setUuid(String uuid) {
-      setSetting(new StringSettingIO(MediumAttribute.UUID, uuid));
-   }
+    public void setUuid(String uuid) {
+        setSetting(new StringSettingIO(MediumAttribute.UUID, uuid));
+    }
 
-   public String getName() {
-      return getSetting(MediumAttribute.Name).getString();
-   }
+    public String getName() {
+        return getSetting(MediumAttribute.Name).getString();
+    }
 
-   public void setName(String name) {
-      setSetting(new StringSettingIO(MediumAttribute.Name, name));
-   }
+    public void setName(String name) {
+        setSetting(new StringSettingIO(MediumAttribute.Name, name));
+    }
 
-   public void setFormat(String format) {
-      setSetting(new StringSettingIO(MediumAttribute.Format, format));
-   }
+    public void setFormat(String format) {
+        setSetting(new StringSettingIO(MediumAttribute.Format, format));
+    }
 
-   public String getFormat() {
-      return getSetting(MediumAttribute.Format).getString();
-   }
+    public String getFormat() {
+        return getSetting(MediumAttribute.Format).getString();
+    }
 
-   public boolean hasParent() {
-      return !AxStrings.isEmpty(getSetting(MediumAttribute.ParentUUID).getString()) || (parentUuid != null);
-   }
+    public boolean hasParent() {
+        return !AxStrings.isEmpty(getSetting(MediumAttribute.ParentUUID).getString()) || (parentUuid != null);
+    }
 
-   public String getLocation() {
-      return getSetting(MediumAttribute.Location).getString();
-   }
+    public String getLocation() {
+        return getSetting(MediumAttribute.Location).getString();
+    }
 
-   public void setLocation(String path) {
-      setSetting(new StringSettingIO(MediumAttribute.Location, path));
-   }
+    public void setLocation(String path) {
+        setSetting(new StringSettingIO(MediumAttribute.Location, path));
+    }
 
-   public String getDeviceType() {
-      return getSetting(MediumAttribute.DeviceType).getString();
-   }
+    public String getDeviceType() {
+        return getSetting(MediumAttribute.DeviceType).getString();
+    }
 
-   public void setDeviceType(String id) {
-      setSetting(new StringSettingIO(MediumAttribute.DeviceType, id));
-   }
+    public void setDeviceType(String id) {
+        setSetting(new StringSettingIO(MediumAttribute.DeviceType, id));
+    }
 
-   public String getType() {
-      return getSetting(MediumAttribute.Type).getString();
-   }
+    public String getType() {
+        return getSetting(MediumAttribute.Type).getString();
+    }
 
-   public void setType(String devType) {
-      setSetting(new StringSettingIO(MediumAttribute.Type, devType));
-   }
+    public void setType(String devType) {
+        setSetting(new StringSettingIO(MediumAttribute.Type, devType));
+    }
 
-   public String getParentUuid() {
-      return parentUuid;
-   }
+    public String getParentUuid() {
+        return parentUuid;
+    }
 
-   public boolean hasChild() {
-      return ((childUuid != null) && childUuid.isEmpty());
-   }
+    public boolean hasChild() {
+        return ((childUuid != null) && childUuid.isEmpty());
+    }
 
-   public Set<String> getChildUuid() {
-      return childUuid;
-   }
+    public Set<String> getChildUuid() {
+        return childUuid;
+    }
 
-   public String getBaseUuid() {
-      return getSetting(MediumAttribute.BaseUUID).getString();
-   }
+    public String getBaseUuid() {
+        return getSetting(MediumAttribute.BaseUUID).getString();
+    }
 
-   public boolean isReadOnly() {
-      return getSetting(MediumAttribute.ReadOnly).getBoolean();
-   }
+    public boolean isReadOnly() {
+        return getSetting(MediumAttribute.ReadOnly).getBoolean();
+    }
 
-   public Long getLogicalSize() {
-      return getSetting(MediumAttribute.LogicalSize).getNumber();
-   }
+    public Long getLogicalSize() {
+        return getSetting(MediumAttribute.LogicalSize).getNumber();
+    }
 
-   public void setLogicalSize(Long logicalSize) {
-      setSetting(new PositiveNumberSettingIO(MediumAttribute.LogicalSize, logicalSize));
-   }
+    public void setLogicalSize(Long logicalSize) {
+        setSetting(new PositiveNumberSettingIO(MediumAttribute.LogicalSize, logicalSize));
+    }
 
-   @Override
-   public String toString() {
-      if (hasSetting(MediumAttribute.Name)) {
-         return getSetting(MediumAttribute.Name).getString();
-      } else if (hasSetting(MediumAttribute.UUID)) {
-         return getUuid().toString();
-      } else if (hasSetting(MediumAttribute.Location)) {
-         return new File(getLocation()).getName();
-      } else {
-         return getId();
-      }
-   }
+    @Override
+    public String toString() {
+        if (hasSetting(MediumAttribute.Name)) {
+            return getSetting(MediumAttribute.Name).getString();
+        } else if (hasSetting(MediumAttribute.UUID)) {
+            return getUuid().toString();
+        } else if (hasSetting(MediumAttribute.Location)) {
+            return new File(getLocation()).getName();
+        } else {
+            return getId();
+        }
+    }
 
-   @Override
-   public Action getAction() {
-      return action;
-   }
+    @Override
+    public Action getAction() {
+        return action;
+    }
 
-   @Override
-   public void setAction(Action action) {
-      this.action = action;
-   }
+    @Override
+    public void setAction(Action action) {
+        this.action = action;
+    }
 
 }

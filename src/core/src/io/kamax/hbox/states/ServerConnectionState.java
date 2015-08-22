@@ -22,7 +22,7 @@ package io.kamax.hbox.states;
 
 public enum ServerConnectionState {
 
-   Connected,
-   Disconnected
+    Connected,
+    Disconnected
 
 }

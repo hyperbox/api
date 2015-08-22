@@ -26,17 +26,17 @@ import java.util.Date;
 
 public abstract class HypervisorConnectionStateEventOut extends HypervisorEventOut {
 
-   protected HypervisorConnectionStateEventOut() {
-      // Used for serialization
-   }
+    protected HypervisorConnectionStateEventOut() {
+        // Used for serialization
+    }
 
-   public HypervisorConnectionStateEventOut(Date time, Enum<?> id, ServerOut srvOut, HypervisorOut hypOut) {
-      super(time, id, srvOut, hypOut);
-   }
+    public HypervisorConnectionStateEventOut(Date time, Enum<?> id, ServerOut srvOut, HypervisorOut hypOut) {
+        super(time, id, srvOut, hypOut);
+    }
 
-   @Override
-   public String toString() {
-      return "Hypervisor " + getHypervisor().getId() + " changed connection state @ " + getTime();
-   }
+    @Override
+    public String toString() {
+        return "Hypervisor " + getHypervisor().getId() + " changed connection state @ " + getTime();
+    }
 
 }

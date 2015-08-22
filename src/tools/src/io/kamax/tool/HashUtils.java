@@ -25,15 +25,15 @@ import java.security.NoSuchAlgorithmException;
 
 public class HashUtils {
 
-   public static String sha1(byte[] input) throws NoSuchAlgorithmException {
-      MessageDigest mDigest = MessageDigest.getInstance("SHA1");
-      byte[] result = mDigest.digest(input);
-      StringBuffer sb = new StringBuffer();
-      for (byte element : result) {
-         sb.append(Integer.toString((element & 0xff) + 0x100, 16).substring(1));
-      }
+    public static String sha1(byte[] input) throws NoSuchAlgorithmException {
+        MessageDigest mDigest = MessageDigest.getInstance("SHA1");
+        byte[] result = mDigest.digest(input);
+        StringBuffer sb = new StringBuffer();
+        for (byte element : result) {
+            sb.append(Integer.toString((element & 0xff) + 0x100, 16).substring(1));
+        }
 
-      return sb.toString();
-   }
+        return sb.toString();
+    }
 
 }

@@ -23,14 +23,14 @@ package io.kamax.hbox.constant;
 
 public enum HypervisorAttribute {
 
-   Type,
-   Vendor,
-   Product,
-   Version,
-   Revision,
-   ConnectorId,
-   ConnectorType,
-   ConnectorOptions,
-   ConnectorAuto,
+    Type,
+    Vendor,
+    Product,
+    Version,
+    Revision,
+    ConnectorId,
+    ConnectorType,
+    ConnectorOptions,
+    ConnectorAuto,
 
 }

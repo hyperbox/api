@@ -26,17 +26,17 @@ import java.sql.Statement;
 
 public class Warnings {
 
-   public static String extract(Statement stmt) throws SQLException {
-      return extract(stmt.getWarnings());
-   }
+    public static String extract(Statement stmt) throws SQLException {
+        return extract(stmt.getWarnings());
+    }
 
-   public static String extract(SQLWarning warning) {
-      StringBuilder warnings = new StringBuilder();
-      while (warning != null) {
-         warnings.append(warning.getMessage()).append("\n");
-         warning = warning.getNextWarning();
-      }
-      return warnings.toString();
-   }
+    public static String extract(SQLWarning warning) {
+        StringBuilder warnings = new StringBuilder();
+        while (warning != null) {
+            warnings.append(warning.getMessage()).append("\n");
+            warning = warning.getNextWarning();
+        }
+        return warnings.toString();
+    }
 
 }

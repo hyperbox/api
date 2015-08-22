@@ -30,130 +30,130 @@ import java.util.List;
 
 public class SnapshotOut extends ObjectOut {
 
-   private String parentUuid;
-   private List<String> childrenUuid;
+    private String parentUuid;
+    private List<String> childrenUuid;
 
-   @SuppressWarnings("unused")
-   private SnapshotOut() {
-      // Used for serialization
-   }
+    @SuppressWarnings("unused")
+    private SnapshotOut() {
+        // Used for serialization
+    }
 
-   public SnapshotOut(String uuid) {
-      super(EntityType.Snapshot, uuid);
-      setSetting(new StringSettingIO(SnapshotAttribute.Uuid, uuid));
-   }
+    public SnapshotOut(String uuid) {
+        super(EntityType.Snapshot, uuid);
+        setSetting(new StringSettingIO(SnapshotAttribute.Uuid, uuid));
+    }
 
-   public SnapshotOut(String uuid, String name, String desc) {
-      this(uuid);
-      setSetting(new StringSettingIO(SnapshotAttribute.Name, name));
-      setSetting(new StringSettingIO(SnapshotAttribute.Description, desc));
-   }
+    public SnapshotOut(String uuid, String name, String desc) {
+        this(uuid);
+        setSetting(new StringSettingIO(SnapshotAttribute.Name, name));
+        setSetting(new StringSettingIO(SnapshotAttribute.Description, desc));
+    }
 
-   public SnapshotOut(String uuid, String name, String desc, String parent) {
-      this(uuid, name, desc);
-      setParent(parent);
-   }
+    public SnapshotOut(String uuid, String name, String desc, String parent) {
+        this(uuid, name, desc);
+        setParent(parent);
+    }
 
-   public SnapshotOut(String uuid, String name, String desc, List<String> children) {
-      this(uuid, name, desc);
-      setChildren(children);
-   }
+    public SnapshotOut(String uuid, String name, String desc, List<String> children) {
+        this(uuid, name, desc);
+        setChildren(children);
+    }
 
-   public SnapshotOut(String uuid, String name, String desc, String parent, List<String> children) {
-      this(uuid, name, desc);
-      setParent(parent);
-      setChildren(children);
-   }
+    public SnapshotOut(String uuid, String name, String desc, String parent, List<String> children) {
+        this(uuid, name, desc);
+        setParent(parent);
+        setChildren(children);
+    }
 
-   public SnapshotOut(String uuid, List<SettingIO> settings, String parent, List<String> children) {
-      super(EntityType.Snapshot, uuid);
-      setSetting(settings);
-      setParent(parent);
-      setChildren(children);
-   }
+    public SnapshotOut(String uuid, List<SettingIO> settings, String parent, List<String> children) {
+        super(EntityType.Snapshot, uuid);
+        setSetting(settings);
+        setParent(parent);
+        setChildren(children);
+    }
 
-   private void setParent(String parentUuid) {
-      this.parentUuid = parentUuid;
-   }
+    private void setParent(String parentUuid) {
+        this.parentUuid = parentUuid;
+    }
 
-   private void setChildren(List<String> children) {
-      this.childrenUuid = new ArrayList<String>(children);
-   }
+    private void setChildren(List<String> children) {
+        this.childrenUuid = new ArrayList<String>(children);
+    }
 
-   public String getUuid() {
-      return getSetting(SnapshotAttribute.Uuid).getString();
-   }
+    public String getUuid() {
+        return getSetting(SnapshotAttribute.Uuid).getString();
+    }
 
-   public String getName() {
-      return getSetting(SnapshotAttribute.Name).getString();
-   }
+    public String getName() {
+        return getSetting(SnapshotAttribute.Name).getString();
+    }
 
-   public String getDescription() {
-      return getSetting(SnapshotAttribute.Description).getString();
-   }
+    public String getDescription() {
+        return getSetting(SnapshotAttribute.Description).getString();
+    }
 
-   public boolean hasParent() {
-      return parentUuid != null;
-   }
+    public boolean hasParent() {
+        return parentUuid != null;
+    }
 
-   public boolean hasChildren() {
-      return (childrenUuid != null) && !childrenUuid.isEmpty();
-   }
+    public boolean hasChildren() {
+        return (childrenUuid != null) && !childrenUuid.isEmpty();
+    }
 
-   public String getParentUuid() {
-      return parentUuid;
-   }
+    public String getParentUuid() {
+        return parentUuid;
+    }
 
-   public List<String> getChildrenUuid() {
-      return new ArrayList<String>(childrenUuid);
-   }
+    public List<String> getChildrenUuid() {
+        return new ArrayList<String>(childrenUuid);
+    }
 
-   public Boolean isOnline() {
-      return getSetting(SnapshotAttribute.IsOnline).getBoolean();
-   }
+    public Boolean isOnline() {
+        return getSetting(SnapshotAttribute.IsOnline).getBoolean();
+    }
 
-   /* (non-Javadoc)
-    * @see java.lang.Object#hashCode()
-    */
-   @Override
-   public int hashCode() {
-      final int prime = 31;
-      int result = super.hashCode();
-      result = (prime * result) + ((getUuid() == null) ? 0 : getUuid().hashCode());
-      result = (prime * result) + ((parentUuid == null) ? 0 : parentUuid.hashCode());
-      return result;
-   }
+    /* (non-Javadoc)
+     * @see java.lang.Object#hashCode()
+     */
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = super.hashCode();
+        result = (prime * result) + ((getUuid() == null) ? 0 : getUuid().hashCode());
+        result = (prime * result) + ((parentUuid == null) ? 0 : parentUuid.hashCode());
+        return result;
+    }
 
-   /* (non-Javadoc)
-    * @see java.lang.Object#equals(java.lang.Object)
-    */
-   @Override
-   public boolean equals(Object obj) {
-      if (this == obj) {
-         return true;
-      }
-      if (!super.equals(obj)) {
-         return false;
-      }
-      if (!(obj instanceof SnapshotOut)) {
-         return false;
-      }
-      SnapshotOut other = (SnapshotOut) obj;
-      if (getId() == null) {
-         if (other.getId() != null) {
+    /* (non-Javadoc)
+     * @see java.lang.Object#equals(java.lang.Object)
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!super.equals(obj)) {
             return false;
-         }
-      } else if (!getId().equals(other.getId())) {
-         return false;
-      }
-      if (parentUuid == null) {
-         if (other.getParentUuid() != null) {
+        }
+        if (!(obj instanceof SnapshotOut)) {
             return false;
-         }
-      } else if (!parentUuid.equals(other.getParentUuid())) {
-         return false;
-      }
-      return true;
-   }
+        }
+        SnapshotOut other = (SnapshotOut) obj;
+        if (getId() == null) {
+            if (other.getId() != null) {
+                return false;
+            }
+        } else if (!getId().equals(other.getId())) {
+            return false;
+        }
+        if (parentUuid == null) {
+            if (other.getParentUuid() != null) {
+                return false;
+            }
+        } else if (!parentUuid.equals(other.getParentUuid())) {
+            return false;
+        }
+        return true;
+    }
 
 }

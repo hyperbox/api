@@ -24,16 +24,16 @@ import io.kamax.hbox.constant.NetServiceType;
 
 public class NetService_NAT_IP4_IO extends NetService_NAT_IO {
 
-   protected NetService_NAT_IP4_IO() {
-      this(false);
-   }
+    protected NetService_NAT_IP4_IO() {
+        this(false);
+    }
 
-   public NetService_NAT_IP4_IO(NetService_NAT_IP4_IO svc) {
-      super(svc);
-   }
+    public NetService_NAT_IP4_IO(NetService_NAT_IP4_IO svc) {
+        super(svc);
+    }
 
-   public NetService_NAT_IP4_IO(boolean isEnabled) {
-      super(NetServiceType.NAT_IPv4.getId(), isEnabled);
-   }
+    public NetService_NAT_IP4_IO(boolean isEnabled) {
+        super(NetServiceType.NAT_IPv4.getId(), isEnabled);
+    }
 
 }

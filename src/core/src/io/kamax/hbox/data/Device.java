@@ -23,22 +23,22 @@ package io.kamax.hbox.data;
 
 public class Device extends Entity {
 
-   private String typeId;
+    private String typeId;
 
-   public Device() {
+    public Device() {
 
-   }
+    }
 
-   public Device(String id) {
-      super(id);
-   }
+    public Device(String id) {
+        super(id);
+    }
 
-   public String getTypeId() {
-      return typeId;
-   }
+    public String getTypeId() {
+        return typeId;
+    }
 
-   public void setTypeId(String typeId) {
-      this.typeId = typeId;
-   }
+    public void setTypeId(String typeId) {
+        this.typeId = typeId;
+    }
 
 }

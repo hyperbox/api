@@ -22,6 +22,6 @@ package io.kamax.hbox.comm;
 
 public interface _AnswerReceiver {
 
-   public void putAnswer(Answer ans);
+    public void putAnswer(Answer ans);
 
 }

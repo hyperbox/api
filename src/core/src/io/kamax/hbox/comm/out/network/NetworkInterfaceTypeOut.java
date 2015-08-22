@@ -25,13 +25,13 @@ import io.kamax.hbox.constant.EntityType;
 
 public final class NetworkInterfaceTypeOut extends ObjectOut {
 
-   @SuppressWarnings("unused")
-   private NetworkInterfaceTypeOut() {
-      // Used for serialization
-   }
+    @SuppressWarnings("unused")
+    private NetworkInterfaceTypeOut() {
+        // Used for serialization
+    }
 
-   public NetworkInterfaceTypeOut(String id) {
-      super(EntityType.NetworkInterfaceType, id);
-   }
+    public NetworkInterfaceTypeOut(String id) {
+        super(EntityType.NetworkInterfaceType, id);
+    }
 
 }

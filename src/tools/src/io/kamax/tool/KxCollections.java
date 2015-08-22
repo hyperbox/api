@@ -26,9 +26,9 @@ import java.util.List;
 
 public class KxCollections {
 
-   public static <T> List<T> sort(List<T> list, Comparator<T> comp) {
-      Collections.sort(list, comp);
-      return list;
-   }
+    public static <T> List<T> sort(List<T> list, Comparator<T> comp) {
+        Collections.sort(list, comp);
+        return list;
+    }
 
 }

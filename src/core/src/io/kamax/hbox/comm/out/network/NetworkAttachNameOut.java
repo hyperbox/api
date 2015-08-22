@@ -25,13 +25,13 @@ import io.kamax.hbox.constant.EntityType;
 
 public class NetworkAttachNameOut extends ObjectOut {
 
-   @SuppressWarnings("unused")
-   private NetworkAttachNameOut() {
-      // Used for serialization
-   }
+    @SuppressWarnings("unused")
+    private NetworkAttachNameOut() {
+        // Used for serialization
+    }
 
-   public NetworkAttachNameOut(String id) {
-      super(EntityType.NetworkAttachName, id);
-   }
+    public NetworkAttachNameOut(String id) {
+        super(EntityType.NetworkAttachName, id);
+    }
 
 }

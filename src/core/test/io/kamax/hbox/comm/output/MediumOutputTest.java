@@ -26,22 +26,22 @@ import io.kamax.hbox.comm.out.storage.MediumOut;
 
 public final class MediumOutputTest {
 
-   public static void validateSimple(MediumOut medOut) {
-      assertFalse(medOut.getId().isEmpty());
-      assertFalse(medOut.getUuid().isEmpty());
-   }
+    public static void validateSimple(MediumOut medOut) {
+        assertFalse(medOut.getId().isEmpty());
+        assertFalse(medOut.getUuid().isEmpty());
+    }
 
-   public static void validateFull(MediumOut medOut) {
-      validateSimple(medOut);
-      assertFalse(medOut.getLocation().isEmpty());
-      // TODO add isBase()
-      // assertFalse(medOut.getBaseUuid().isEmpty());
-      assertNotNull(medOut.getLogicalSize());
-      if (medOut.hasParent()) {
-         // assertFalse(medOut.getParentUuid().isEmpty());
-      } else {
-         // assertTrue(medOut.getParentUuid().isEmpty());
-      }
-   }
+    public static void validateFull(MediumOut medOut) {
+        validateSimple(medOut);
+        assertFalse(medOut.getLocation().isEmpty());
+        // TODO add isBase()
+        // assertFalse(medOut.getBaseUuid().isEmpty());
+        assertNotNull(medOut.getLogicalSize());
+        if (medOut.hasParent()) {
+            // assertFalse(medOut.getParentUuid().isEmpty());
+        } else {
+            // assertTrue(medOut.getParentUuid().isEmpty());
+        }
+    }
 
 }

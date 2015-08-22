@@ -24,45 +24,45 @@ import io.kamax.hbox.hypervisor.net._NetService;
 
 public enum NetServiceType {
 
-   /**
-    * Can IPv4 be enabled/disable
-    */
-   IPv4,
-   IPv4_NetCIDR,
+    /**
+     * Can IPv4 be enabled/disable
+     */
+    IPv4,
+    IPv4_NetCIDR,
 
-   /**
-    * Can IPv6 be enabled/disable
-    */
-   IPv6,
-   IPv6_Gateway,
+    /**
+     * Can IPv6 be enabled/disable
+     */
+    IPv6,
+    IPv6_Gateway,
 
-   /**
-    * Can a DHCP server be enabled/disable
-    */
-   DHCP_IPv4,
+    /**
+     * Can a DHCP server be enabled/disable
+     */
+    DHCP_IPv4,
 
-   /**
-    * Can an NAT engine for IPv4 be enabled/disabled
-    */
-   NAT_IPv4,
+    /**
+     * Can an NAT engine for IPv4 be enabled/disabled
+     */
+    NAT_IPv4,
 
-   /**
-    * Can an NAT engine for IPv6 be enabled/disabled
-    */
-   NAT_IPv6,
+    /**
+     * Can an NAT engine for IPv6 be enabled/disabled
+     */
+    NAT_IPv6,
 
-   ;
+    ;
 
-   public String getId() {
-      return toString();
-   }
+    public String getId() {
+        return toString();
+    }
 
-   public boolean typeOf(_NetService svc) {
-      return this.getId() == svc.getType();
-   }
+    public boolean typeOf(_NetService svc) {
+        return this.getId() == svc.getType();
+    }
 
-   public boolean is(Object o) {
-      return this.getId().equalsIgnoreCase(o.toString());
-   }
+    public boolean is(Object o) {
+        return this.getId().equalsIgnoreCase(o.toString());
+    }
 
 }

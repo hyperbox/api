@@ -25,12 +25,12 @@ import io.kamax.hbox.comm.out.StoreItemOut;
 
 public class StoreItemIoFactory {
 
-   private StoreItemIoFactory() {
-      // static class
-   }
+    private StoreItemIoFactory() {
+        // static class
+    }
 
-   public static StoreItemIn get(StoreItemOut siOut) {
-      return new StoreItemIn(siOut.getPath());
-   }
+    public static StoreItemIn get(StoreItemOut siOut) {
+        return new StoreItemIn(siOut.getPath());
+    }
 
 }

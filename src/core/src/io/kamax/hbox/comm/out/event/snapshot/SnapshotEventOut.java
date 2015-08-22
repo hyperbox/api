@@ -28,26 +28,26 @@ import java.util.Date;
 
 public abstract class SnapshotEventOut extends MachineEventOut {
 
-   protected SnapshotEventOut() {
-      // Used for serialization
-   }
+    protected SnapshotEventOut() {
+        // Used for serialization
+    }
 
-   public SnapshotEventOut(Date time, Enum<?> id, ServerOut srvOut, MachineOut mOut, SnapshotOut snapOut) {
-      super(time, id, srvOut, mOut);
-      set(SnapshotOut.class, snapOut);
-   }
+    public SnapshotEventOut(Date time, Enum<?> id, ServerOut srvOut, MachineOut mOut, SnapshotOut snapOut) {
+        super(time, id, srvOut, mOut);
+        set(SnapshotOut.class, snapOut);
+    }
 
-   public SnapshotOut getSnapshot() {
-      return get(SnapshotOut.class);
-   }
+    public SnapshotOut getSnapshot() {
+        return get(SnapshotOut.class);
+    }
 
-   public String getSnapshotUuid() {
-      return getSnapshot().getUuid();
-   }
+    public String getSnapshotUuid() {
+        return getSnapshot().getUuid();
+    }
 
-   @Override
-   public String toString() {
-      return "Event ID " + getId() + " occured @ " + getTime() + " for snapshot " + getSnapshotUuid() + " on machine " + getMachine().getId();
-   }
+    @Override
+    public String toString() {
+        return "Event ID " + getId() + " occured @ " + getTime() + " for snapshot " + getSnapshotUuid() + " on machine " + getMachine().getId();
+    }
 
 }

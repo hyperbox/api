@@ -28,18 +28,18 @@ import java.util.Date;
 
 public class UserRemovedEventOut extends UserEventOut {
 
-   @SuppressWarnings("unused")
-   private UserRemovedEventOut() {
-      // Used for serialization
-   }
+    @SuppressWarnings("unused")
+    private UserRemovedEventOut() {
+        // Used for serialization
+    }
 
-   public UserRemovedEventOut(Date time, ServerOut srvOut, UserOut user) {
-      super(time, HyperboxEvents.UserRemoved, srvOut, user);
-   }
+    public UserRemovedEventOut(Date time, ServerOut srvOut, UserOut user) {
+        super(time, HyperboxEvents.UserRemoved, srvOut, user);
+    }
 
-   @Override
-   public String toString() {
-      return "User " + getUser().getDomainLogonName() + " was removed at " + getTime();
-   }
+    @Override
+    public String toString() {
+        return "User " + getUser().getDomainLogonName() + " was removed at " + getTime();
+    }
 
 }

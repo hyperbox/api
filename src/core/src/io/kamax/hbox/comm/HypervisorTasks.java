@@ -39,318 +39,318 @@ import io.kamax.hbox.comm.out.storage.StorageControllerOut;
  */
 public enum HypervisorTasks {
 
-   /**
-    * Get the list of registered VMs
-    * <p>
-    * Request Object : None<br/>
-    * Answer Object : {@link MachineOut}<br/>
-    * Answer Type : Multi
-    * </p>
-    */
-   MachineList,
+    /**
+     * Get the list of registered VMs
+     * <p>
+     * Request Object : None<br/>
+     * Answer Object : {@link MachineOut}<br/>
+     * Answer Type : Multi
+     * </p>
+     */
+    MachineList,
 
-   MachineLock,
-   MachineUnlock,
+    MachineLock,
+    MachineUnlock,
 
-   /**
-    * Get the details of a VM
-    * <p>
-    * Request Object : {@link MachineIn}<br/>
-    * Answer Object : {@link MachineOut}<br/>
-    * Answer Type : Single
-    * </p>
-    */
-   MachineGet,
+    /**
+     * Get the details of a VM
+     * <p>
+     * Request Object : {@link MachineIn}<br/>
+     * Answer Object : {@link MachineOut}<br/>
+     * Answer Type : Single
+     * </p>
+     */
+    MachineGet,
 
-   /**
-    * Request PowerOn of a PoweredOff VM
-    * <p>
-    * Request Object : {@link MachineIn}<br/>
-    * Answer Object : None<br/>
-    * Answer Type : Single
-    * </p>
-    */
-   MachinePowerOn,
+    /**
+     * Request PowerOn of a PoweredOff VM
+     * <p>
+     * Request Object : {@link MachineIn}<br/>
+     * Answer Object : None<br/>
+     * Answer Type : Single
+     * </p>
+     */
+    MachinePowerOn,
 
-   /**
-    * Request PowerOff on a PoweredOn or Paused VM
-    * <p>
-    * Request Object : {@link MachineIn}<br/>
-    * Answer Object : None<br/>
-    * Answer Type : Single
-    * </p>
-    */
-   MachinePowerOff,
+    /**
+     * Request PowerOff on a PoweredOn or Paused VM
+     * <p>
+     * Request Object : {@link MachineIn}<br/>
+     * Answer Object : None<br/>
+     * Answer Type : Single
+     * </p>
+     */
+    MachinePowerOff,
 
-   /**
-    * Request Pause of a Running VM
-    * <p>
-    * Request Object : {@link MachineIn}<br/>
-    * Answer Object : None<br/>
-    * Answer Type : Single
-    * </p>
-    */
-   MachinePause,
+    /**
+     * Request Pause of a Running VM
+     * <p>
+     * Request Object : {@link MachineIn}<br/>
+     * Answer Object : None<br/>
+     * Answer Type : Single
+     * </p>
+     */
+    MachinePause,
 
-   /**
-    * Request Resume of a paused VM
-    * <p>
-    * Request Object : {@link MachineIn}<br/>
-    * Answer Object : None<br/>
-    * Answer Type : Single
-    * </p>
-    */
-   MachineResume,
+    /**
+     * Request Resume of a paused VM
+     * <p>
+     * Request Object : {@link MachineIn}<br/>
+     * Answer Object : None<br/>
+     * Answer Type : Single
+     * </p>
+     */
+    MachineResume,
 
-   /**
-    * Request to save the state of a Running VM
-    * <p>
-    * Request Object : {@link MachineIn}<br/>
-    * Answer Object : None<br/>
-    * Answer Type : Single
-    * </p>
-    */
-   MachineSaveState,
+    /**
+     * Request to save the state of a Running VM
+     * <p>
+     * Request Object : {@link MachineIn}<br/>
+     * Answer Object : None<br/>
+     * Answer Type : Single
+     * </p>
+     */
+    MachineSaveState,
 
-   /**
-    * Request to reset a PoweredOn VM
-    * <p>
-    * Request Object : {@link MachineIn}<br/>
-    * Answer Object : None<br/>
-    * Answer Type : Single
-    * </p>
-    */
-   MachineReset,
+    /**
+     * Request to reset a PoweredOn VM
+     * <p>
+     * Request Object : {@link MachineIn}<br/>
+     * Answer Object : None<br/>
+     * Answer Type : Single
+     * </p>
+     */
+    MachineReset,
 
-   /**
-    * Request to send a Sleep Button ACPI event (Press Sleep Button) on a Running VM
-    * <p>
-    * Request Object : {@link MachineIn}<br/>
-    * Answer Object : None<br/>
-    * Answer Type : Single
-    * </p>
-    */
-   MachineAcpiSleepButton,
+    /**
+     * Request to send a Sleep Button ACPI event (Press Sleep Button) on a Running VM
+     * <p>
+     * Request Object : {@link MachineIn}<br/>
+     * Answer Object : None<br/>
+     * Answer Type : Single
+     * </p>
+     */
+    MachineAcpiSleepButton,
 
-   /**
-    * Request to send a Power Button ACPI event (Press Sleep Button) on a Running VM
-    * <p>
-    * Request Object : {@link MachineIn}<br/>
-    * Answer Object : None<br/>
-    * Answer Type : Single
-    * </p>
-    */
-   MachineAcpiPowerButton,
+    /**
+     * Request to send a Power Button ACPI event (Press Sleep Button) on a Running VM
+     * <p>
+     * Request Object : {@link MachineIn}<br/>
+     * Answer Object : None<br/>
+     * Answer Type : Single
+     * </p>
+     */
+    MachineAcpiPowerButton,
 
-   /**
-    * Request to modify settings of a VM
-    * <p>
-    * Request Object : {@link MachineIn}<br/>
-    * Answer Object : None<br/>
-    * Answer Type : Single
-    * </p>
-    */
-   MachineModify,
+    /**
+     * Request to modify settings of a VM
+     * <p>
+     * Request Object : {@link MachineIn}<br/>
+     * Answer Object : None<br/>
+     * Answer Type : Single
+     * </p>
+     */
+    MachineModify,
 
-   /**
-    * Create a blank new VM, without pre-configured settings - Name & OsType must be provided.<br/>
-    * This will Answer with a MachineIO.<br/>
-    * If a VM with specific settings needs to be created, {@link #MachineCreate} then {@link #MachineModify} needs to be called.
-    * <p>
-    * Request Object : {@link MachineIn}<br/>
-    * Answer Object : {@link MachineOut}<br/>
-    * Answer Type : Single
-    * </p>
-    */
-   MachineCreate,
+    /**
+     * Create a blank new VM, without pre-configured settings - Name & OsType must be provided.<br/>
+     * This will Answer with a MachineIO.<br/>
+     * If a VM with specific settings needs to be created, {@link #MachineCreate} then {@link #MachineModify} needs to be called.
+     * <p>
+     * Request Object : {@link MachineIn}<br/>
+     * Answer Object : {@link MachineOut}<br/>
+     * Answer Type : Single
+     * </p>
+     */
+    MachineCreate,
 
-   /**
-    * Register a VM given its machine description file
-    * <p>
-    * Request Object : {@link StoreItemIn}<br/>
-    * Answer Object : {@link MachineOut}<br/>
-    * Answer Type : Single
-    * </p>
-    */
-   MachineRegister,
+    /**
+     * Register a VM given its machine description file
+     * <p>
+     * Request Object : {@link StoreItemIn}<br/>
+     * Answer Object : {@link MachineOut}<br/>
+     * Answer Type : Single
+     * </p>
+     */
+    MachineRegister,
 
-   /**
-    * Unregister the VM, without deleting any file
-    * <p>
-    * Request Object : {@link MachineIn}<br/>
-    * Answer Object : None<br/>
-    * Answer Type : Single
-    * </p>
-    */
-   MachineUnregister,
+    /**
+     * Unregister the VM, without deleting any file
+     * <p>
+     * Request Object : {@link MachineIn}<br/>
+     * Answer Object : None<br/>
+     * Answer Type : Single
+     * </p>
+     */
+    MachineUnregister,
 
-   /**
-    * Unregister and delete all the VM files
-    * <p>
-    * Request Object : {@link MachineIn}<br/>
-    * Answer Object : {@link MachineOut}<br/>
-    * Answer Type : Single
-    * </p>
-    */
-   MachineDelete,
+    /**
+     * Unregister and delete all the VM files
+     * <p>
+     * Request Object : {@link MachineIn}<br/>
+     * Answer Object : {@link MachineOut}<br/>
+     * Answer Type : Single
+     * </p>
+     */
+    MachineDelete,
 
-   MachineDisplayGetScreenshot,
+    MachineDisplayGetScreenshot,
 
-   NetworkInterfaceList,
+    NetworkInterfaceList,
 
-   /**
-    * Get the details of a Network Interface
-    * <p>
-    * Request Object : {@link NetworkInterfaceIn}<br/>
-    * Answer Object : {@link NetworkInterfaceOut}<br/>
-    * Answer Type : Single
-    * </p>
-    */
-   NetworkInterfaceGetInfo,
-   NetworkInterfaceModify,
+    /**
+     * Get the details of a Network Interface
+     * <p>
+     * Request Object : {@link NetworkInterfaceIn}<br/>
+     * Answer Object : {@link NetworkInterfaceOut}<br/>
+     * Answer Type : Single
+     * </p>
+     */
+    NetworkInterfaceGetInfo,
+    NetworkInterfaceModify,
 
-   NetworkAttachModeList,
-   NetworkAttachNameList,
-   NetworkAdapterTypeList,
+    NetworkAttachModeList,
+    NetworkAttachNameList,
+    NetworkAdapterTypeList,
 
-   NetModeList,
-   NetModeGet,
+    NetModeList,
+    NetModeGet,
 
-   NetAdaptorList,
-   NetAdaptorGet,
-   NetAdaptorAdd,
-   NetAdaptorModify,
-   NetAdaptorRemove,
+    NetAdaptorList,
+    NetAdaptorGet,
+    NetAdaptorAdd,
+    NetAdaptorModify,
+    NetAdaptorRemove,
 
-   NetServiceGet,
+    NetServiceGet,
 
-   StorageControllerList,
+    StorageControllerList,
 
-   /**
-    * Get the details of a Storage Controller
-    * <p>
-    * Request Object : {@link StorageControllerIn}<br/>
-    * Answer Object : {@link StorageControllerOut}<br/>
-    * Answer Type : Single
-    * </p>
-    */
-   StorageControllerGet,
-   StorageControllerAdd,
-   StorageControllerModify,
-   StorageControllerRemove,
+    /**
+     * Get the details of a Storage Controller
+     * <p>
+     * Request Object : {@link StorageControllerIn}<br/>
+     * Answer Object : {@link StorageControllerOut}<br/>
+     * Answer Type : Single
+     * </p>
+     */
+    StorageControllerGet,
+    StorageControllerAdd,
+    StorageControllerModify,
+    StorageControllerRemove,
 
-   StorageControllerMediumAttachmentList,
-   StorageControllerMediumAttachmentGet,
-   StorageControllerMediumAttachmentAdd,
-   StorageControllerMediumAttachmentRemove,
+    StorageControllerMediumAttachmentList,
+    StorageControllerMediumAttachmentGet,
+    StorageControllerMediumAttachmentAdd,
+    StorageControllerMediumAttachmentRemove,
 
-   StorageControllerTypeList,
-   StorageControllerTypeGet,
-   StorageControllerSubTypeList,
-   StorageControllerSubTypeGet,
+    StorageControllerTypeList,
+    StorageControllerTypeGet,
+    StorageControllerSubTypeList,
+    StorageControllerSubTypeGet,
 
-   GuestGet,
-   GuestNetworkInterfaceList,
-   GuestNetworkInterfaceGet,
-   /**
-    * <p>
-    * Request Objects : {@link MachineIn}, {@link GuestNetworkInterfaceIn}<br/>
-    * Answer Object : {@link GuestNetworkInterfaceOut} or <code>null</code><br/>
-    * Answer Type : Single
-    * </p>
-    */
-   GuestNetworkInterfaceFind,
+    GuestGet,
+    GuestNetworkInterfaceList,
+    GuestNetworkInterfaceGet,
+    /**
+     * <p>
+     * Request Objects : {@link MachineIn}, {@link GuestNetworkInterfaceIn}<br/>
+     * Answer Object : {@link GuestNetworkInterfaceOut} or <code>null</code><br/>
+     * Answer Type : Single
+     * </p>
+     */
+    GuestNetworkInterfaceFind,
 
-   MediumList,
-   MediumGet,
-   MediumCreate,
-   MediumModify,
-   MediumDelete,
-   MediumRegister,
-   MediumUnregister,
+    MediumList,
+    MediumGet,
+    MediumCreate,
+    MediumModify,
+    MediumDelete,
+    MediumRegister,
+    MediumUnregister,
 
-   /**
-    * Mount a medium to a storage attachment
-    * <p>
-    * Request Objects: MachineIn, StorageDeviceAttachmentInput, MediumInput<br/>
-    * Answer Object : none<br/>
-    * Answer Type : Single
-    * </p>
-    */
-   MediumMount,
-   MediumUnmount,
+    /**
+     * Mount a medium to a storage attachment
+     * <p>
+     * Request Objects: MachineIn, StorageDeviceAttachmentInput, MediumInput<br/>
+     * Answer Object : none<br/>
+     * Answer Type : Single
+     * </p>
+     */
+    MediumMount,
+    MediumUnmount,
 
-   OsTypeList,
-   OsTypeGetMachineSettings,
+    OsTypeList,
+    OsTypeGetMachineSettings,
 
-   SnapshotGet,
-   SnapshotGetCurrent,
-   SnapshotGetRoot,
-   SnapshotModify,
-   SnapshotTake,
-   SnapshotRestore,
-   SnapshotDelete,
+    SnapshotGet,
+    SnapshotGetCurrent,
+    SnapshotGetRoot,
+    SnapshotModify,
+    SnapshotTake,
+    SnapshotRestore,
+    SnapshotDelete,
 
-   KeyboardModeList,
-   MouseModeList,
+    KeyboardModeList,
+    MouseModeList,
 
-   /**
-    * <p>
-    * Request Object: none<br/>
-    * Answer Object : MediumOutput<br/>
-    * Answer Type : Single
-    * </p>
-    */
-   ToolsMediumGet,
+    /**
+     * <p>
+     * Request Object: none<br/>
+     * Answer Object : MediumOutput<br/>
+     * Answer Type : Single
+     * </p>
+     */
+    ToolsMediumGet,
 
-   /**
-    * <p>
-    * Request Object: DeviceInput<br/>
-    * Answer Object : SettingIO<br/>
-    * Answer Type : Multiple
-    * </p>
-    */
-   DevicePropertyList,
-   /**
-    * <p>
-    * Request Object: DeviceInput, SettingIO<br/>
-    * Answer Object : SettingIO<br/>
-    * Answer Type : Single
-    * </p>
-    */
-   DevicePropertyGet,
-   /**
-    * <p>
-    * Request Object: DeviceInput, SettingIO<br/>
-    * Answer Object : none<br/>
-    * </p>
-    */
-   DevicePropertySet,
-   /**
-    * <p>
-    * Request Object: DeviceInput, SettingIO<br/>
-    * Answer Object : none<br/>
-    * </p>
-    */
-   DevicePropertyUnset,
-   /**
-    * <p>
-    * Request Object: MachineIn<br/>
-    * Answer Object: MachineLogFileIO (ID only)<br/>
-    * Answer Type: Multiple
-    */
-   MachineLogFileList,
-   /**
-    * <p>
-    * Request Object: MachineIn, MachineLogFileIO<br/>
-    * Answer Object : MachineLogFileIO<br/>
-    * Answer Type: Single
-    * </p>
-    */
-   MachineLogFileGet;
+    /**
+     * <p>
+     * Request Object: DeviceInput<br/>
+     * Answer Object : SettingIO<br/>
+     * Answer Type : Multiple
+     * </p>
+     */
+    DevicePropertyList,
+    /**
+     * <p>
+     * Request Object: DeviceInput, SettingIO<br/>
+     * Answer Object : SettingIO<br/>
+     * Answer Type : Single
+     * </p>
+     */
+    DevicePropertyGet,
+    /**
+     * <p>
+     * Request Object: DeviceInput, SettingIO<br/>
+     * Answer Object : none<br/>
+     * </p>
+     */
+    DevicePropertySet,
+    /**
+     * <p>
+     * Request Object: DeviceInput, SettingIO<br/>
+     * Answer Object : none<br/>
+     * </p>
+     */
+    DevicePropertyUnset,
+    /**
+     * <p>
+     * Request Object: MachineIn<br/>
+     * Answer Object: MachineLogFileIO (ID only)<br/>
+     * Answer Type: Multiple
+     */
+    MachineLogFileList,
+    /**
+     * <p>
+     * Request Object: MachineIn, MachineLogFileIO<br/>
+     * Answer Object : MachineLogFileIO<br/>
+     * Answer Type: Single
+     * </p>
+     */
+    MachineLogFileGet;
 
-   public String getId() {
-      return toString();
-   }
+    public String getId() {
+        return toString();
+    }
 
 }

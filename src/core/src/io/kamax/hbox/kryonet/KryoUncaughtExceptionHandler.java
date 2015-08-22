@@ -26,10 +26,10 @@ import java.lang.Thread.UncaughtExceptionHandler;
 
 public class KryoUncaughtExceptionHandler implements UncaughtExceptionHandler {
 
-   @Override
-   public void uncaughtException(Thread arg0, Throwable arg1) {
-      Logger.error("Uncaught exception in Kryonet Update Thread: " + arg1.getMessage());
-      Logger.exception(arg1);
-   }
+    @Override
+    public void uncaughtException(Thread arg0, Throwable arg1) {
+        Logger.error("Uncaught exception in Kryonet Update Thread: " + arg1.getMessage());
+        Logger.exception(arg1);
+    }
 
 }

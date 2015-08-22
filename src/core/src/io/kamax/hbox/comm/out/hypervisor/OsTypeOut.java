@@ -25,37 +25,37 @@ import io.kamax.hbox.constant.EntityType;
 
 public class OsTypeOut extends ObjectOut {
 
-   private String id;
-   private String name;
-   private long bitness;
+    private String id;
+    private String name;
+    private long bitness;
 
-   protected OsTypeOut() {
-      // Used for serialization
-   }
+    protected OsTypeOut() {
+        // Used for serialization
+    }
 
-   public OsTypeOut(String id, String name, Long bitness) {
-      super(EntityType.OsType, id);
-      this.id = id;
-      this.name = name;
-      this.bitness = bitness;
-   }
+    public OsTypeOut(String id, String name, Long bitness) {
+        super(EntityType.OsType, id);
+        this.id = id;
+        this.name = name;
+        this.bitness = bitness;
+    }
 
-   @Override
-   public String getId() {
-      return id;
-   }
+    @Override
+    public String getId() {
+        return id;
+    }
 
-   public String getName() {
-      return name;
-   }
+    public String getName() {
+        return name;
+    }
 
-   public long getBitness() {
-      return bitness;
-   }
+    public long getBitness() {
+        return bitness;
+    }
 
-   @Override
-   public String toString() {
-      return getName();
-   }
+    @Override
+    public String toString() {
+        return getName();
+    }
 
 }

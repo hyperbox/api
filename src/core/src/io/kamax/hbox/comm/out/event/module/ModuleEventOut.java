@@ -27,17 +27,17 @@ import java.util.Date;
 
 public class ModuleEventOut extends EventOut {
 
-   protected ModuleEventOut() {
-      // Used for (de)serialization
-   }
+    protected ModuleEventOut() {
+        // Used for (de)serialization
+    }
 
-   public ModuleEventOut(Date time, Enum<?> id, ServerOut srvOut, ModuleOut modOut) {
-      super(time, id, srvOut);
-      set(ModuleOut.class, modOut);
-   }
+    public ModuleEventOut(Date time, Enum<?> id, ServerOut srvOut, ModuleOut modOut) {
+        super(time, id, srvOut);
+        set(ModuleOut.class, modOut);
+    }
 
-   public ModuleOut getModule() {
-      return get(ModuleOut.class);
-   }
+    public ModuleOut getModule() {
+        return get(ModuleOut.class);
+    }
 
 }

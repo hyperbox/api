@@ -24,13 +24,13 @@ import io.kamax.hbox.constant.EntityType;
 
 public class NetModeIn extends ObjectIn<EntityType> {
 
-   public NetModeIn() {
-      super(EntityType.NetMode);
-   }
+    public NetModeIn() {
+        super(EntityType.NetMode);
+    }
 
-   public NetModeIn(String id) {
-      this();
-      setId(id);
-   }
+    public NetModeIn(String id) {
+        this();
+        setId(id);
+    }
 
 }

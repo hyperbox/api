@@ -27,46 +27,46 @@ import java.util.List;
 
 public class NetAdaptorIn extends ObjectIn<EntityType> {
 
-   private String label;
-   private String modeId;
-   private List<NetServiceIO> services = new ArrayList<NetServiceIO>();
+    private String label;
+    private String modeId;
+    private List<NetServiceIO> services = new ArrayList<NetServiceIO>();
 
-   public NetAdaptorIn() {
-      super(EntityType.NetAdaptor);
-   }
+    public NetAdaptorIn() {
+        super(EntityType.NetAdaptor);
+    }
 
-   public NetAdaptorIn(String modeId, String id) {
-      this();
-      setId(id);
-      setModeId(modeId);
-   }
+    public NetAdaptorIn(String modeId, String id) {
+        this();
+        setId(id);
+        setModeId(modeId);
+    }
 
-   public String getLabel() {
-      return label;
-   }
+    public String getLabel() {
+        return label;
+    }
 
-   public void setLabel(String label) {
-      this.label = label;
-   }
+    public void setLabel(String label) {
+        this.label = label;
+    }
 
-   public String getModeId() {
-      return modeId;
-   }
+    public String getModeId() {
+        return modeId;
+    }
 
-   public void setModeId(String modeId) {
-      this.modeId = modeId;
-   }
+    public void setModeId(String modeId) {
+        this.modeId = modeId;
+    }
 
-   public List<NetServiceIO> getServices() {
-      return services;
-   }
+    public List<NetServiceIO> getServices() {
+        return services;
+    }
 
-   public void setServices(List<NetServiceIO> services) {
-      this.services = services;
-   }
+    public void setServices(List<NetServiceIO> services) {
+        this.services = services;
+    }
 
-   public void setService(NetServiceIO service) {
-      services.add(service);
-   }
+    public void setService(NetServiceIO service) {
+        services.add(service);
+    }
 
 }

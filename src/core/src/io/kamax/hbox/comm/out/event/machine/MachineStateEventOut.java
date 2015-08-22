@@ -28,25 +28,25 @@ import java.util.Date;
 
 public final class MachineStateEventOut extends MachineEventOut {
 
-   private MachineStates state;
+    private MachineStates state;
 
-   @SuppressWarnings("unused")
-   private MachineStateEventOut() {
-      // Used for serialization
-   }
+    @SuppressWarnings("unused")
+    private MachineStateEventOut() {
+        // Used for serialization
+    }
 
-   public MachineStateEventOut(Date time, ServerOut srvOut, MachineOut mOut, MachineStates state) {
-      super(time, HyperboxEvents.MachineState, srvOut, mOut);
-      this.state = state;
-   }
+    public MachineStateEventOut(Date time, ServerOut srvOut, MachineOut mOut, MachineStates state) {
+        super(time, HyperboxEvents.MachineState, srvOut, mOut);
+        this.state = state;
+    }
 
-   public MachineStates getState() {
-      return state;
-   }
+    public MachineStates getState() {
+        return state;
+    }
 
-   @Override
-   public String toString() {
-      return "Machine " + getUuid() + " | State changed to " + getState() + " @ " + getTime();
-   }
+    @Override
+    public String toString() {
+        return "Machine " + getUuid() + " | State changed to " + getState() + " @ " + getTime();
+    }
 
 }

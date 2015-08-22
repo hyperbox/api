@@ -27,20 +27,20 @@ import java.util.Date;
 
 public class ServerConnectionStateEventOut extends ServerEventOut {
 
-   private ServerConnectionState state;
+    private ServerConnectionState state;
 
-   @SuppressWarnings("unused")
-   private ServerConnectionStateEventOut() {
-      // Used for serialization
-   }
+    @SuppressWarnings("unused")
+    private ServerConnectionStateEventOut() {
+        // Used for serialization
+    }
 
-   public ServerConnectionStateEventOut(Date time, ServerOut srvOut, ServerConnectionState state) {
-      super(time, HyperboxEvents.ServerConnectionState, srvOut);
-      this.state = state;
-   }
+    public ServerConnectionStateEventOut(Date time, ServerOut srvOut, ServerConnectionState state) {
+        super(time, HyperboxEvents.ServerConnectionState, srvOut);
+        this.state = state;
+    }
 
-   public ServerConnectionState getState() {
-      return state;
-   }
+    public ServerConnectionState getState() {
+        return state;
+    }
 
 }

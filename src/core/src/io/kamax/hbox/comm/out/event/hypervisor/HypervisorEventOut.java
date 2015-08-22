@@ -28,24 +28,24 @@ import java.util.Date;
 
 public class HypervisorEventOut extends EventOut {
 
-   protected HypervisorEventOut() {
-      // Used for serialization
-   }
+    protected HypervisorEventOut() {
+        // Used for serialization
+    }
 
-   public HypervisorEventOut(Date time, Enum<?> id, ServerOut srvOut, HypervisorOut hypOut) {
-      super(time, id, srvOut);
-      if (hypOut != null) {
-         set(HypervisorOut.class, hypOut);
-      }
-   }
+    public HypervisorEventOut(Date time, Enum<?> id, ServerOut srvOut, HypervisorOut hypOut) {
+        super(time, id, srvOut);
+        if (hypOut != null) {
+            set(HypervisorOut.class, hypOut);
+        }
+    }
 
-   public HypervisorOut getHypervisor() {
-      return get(HypervisorOut.class);
-   }
+    public HypervisorOut getHypervisor() {
+        return get(HypervisorOut.class);
+    }
 
-   @Override
-   public String toString() {
-      return "Event ID " + getId() + " occured @ " + getTime() + " for Hypervisor " + getHypervisor().getId() + " on Server " + getServer().getName();
-   }
+    @Override
+    public String toString() {
+        return "Event ID " + getId() + " occured @ " + getTime() + " for Hypervisor " + getHypervisor().getId() + " on Server " + getServer().getName();
+    }
 
 }

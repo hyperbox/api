@@ -22,29 +22,29 @@ package io.kamax.tool.logging;
 
 public enum LogLevel {
 
-   Raw(0, false),
-   Exception(20, true),
-   Error(30, true),
-   Warning(40, true),
-   Info(50, false),
-   Verbose(60, false),
-   Debug(70, false),
-   Tracking(80, false);
+    Raw(0, false),
+    Exception(20, true),
+    Error(30, true),
+    Warning(40, true),
+    Info(50, false),
+    Verbose(60, false),
+    Debug(70, false),
+    Tracking(80, false);
 
-   private Integer level;
-   private Boolean isError;
+    private Integer level;
+    private Boolean isError;
 
-   private LogLevel(Integer level, Boolean isError) {
-      this.level = level;
-      this.isError = isError;
-   }
+    private LogLevel(Integer level, Boolean isError) {
+        this.level = level;
+        this.isError = isError;
+    }
 
-   public Integer getLevel() {
-      return level;
-   }
+    public Integer getLevel() {
+        return level;
+    }
 
-   public Boolean isError() {
-      return isError;
-   }
+    public Boolean isError() {
+        return isError;
+    }
 
 }

@@ -29,45 +29,45 @@ import java.util.Date;
 
 /**
  * Event message representing a change into the System state
- * 
+ *
  * @author max
  */
 public class SystemStateEventOut extends EventOut {
 
-   private ServerState ss;
+    private ServerState ss;
 
-   /**
-    * Used for serialisation, do not use!
-    */
-   @SuppressWarnings("unused")
-   private SystemStateEventOut() {
-      // Used for serialization
-   }
+    /**
+     * Used for serialisation, do not use!
+     */
+    @SuppressWarnings("unused")
+    private SystemStateEventOut() {
+        // Used for serialization
+    }
 
-   /**
-    * Create a new System Event comm message with the given state.
-    * 
-    * @param time when the event occurred
-    * @param srvOut The server it originated from
-    * @param ss The new SystemState
-    */
-   public SystemStateEventOut(Date time, ServerOut srvOut, ServerState ss) {
-      super(time, HyperboxEvents.SystemState, srvOut);
-      this.ss = ss;
-   }
+    /**
+     * Create a new System Event comm message with the given state.
+     * 
+     * @param time when the event occurred
+     * @param srvOut The server it originated from
+     * @param ss The new SystemState
+     */
+    public SystemStateEventOut(Date time, ServerOut srvOut, ServerState ss) {
+        super(time, HyperboxEvents.SystemState, srvOut);
+        this.ss = ss;
+    }
 
-   /**
-    * Get the system state stored in this event comm message.
-    * 
-    * @return the system state at the time of creation of the message.
-    */
-   public ServerState getState() {
-      return ss;
-   }
+    /**
+     * Get the system state stored in this event comm message.
+     * 
+     * @return the system state at the time of creation of the message.
+     */
+    public ServerState getState() {
+        return ss;
+    }
 
-   @Override
-   public String toString() {
-      return "Systeam state changed to " + ss + " @ " + TimeFormater.get(getTime());
-   }
+    @Override
+    public String toString() {
+        return "Systeam state changed to " + ss + " @ " + TimeFormater.get(getTime());
+    }
 
 }

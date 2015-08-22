@@ -22,38 +22,38 @@ package io.kamax.hbox.comm.io;
 
 /**
  * Helper class to implement a positive number type for the Setting Comm object
- * 
+ *
  * @author max
  */
 public final class PositiveNumberSettingIO extends SettingIO {
 
-   /**
-    * Empty constructor for serialisation classes.<br/>
-    * <ul>
-    * <b>!! DONOT USE !!</b>
-    * </ul>
-    */
-   @SuppressWarnings("unused")
-   private PositiveNumberSettingIO() {
-   }
+    /**
+     * Empty constructor for serialisation classes.<br/>
+     * <ul>
+     * <b>!! DONOT USE !!</b>
+     * </ul>
+     */
+    @SuppressWarnings("unused")
+    private PositiveNumberSettingIO() {
+    }
 
-   /**
-    * Constructor for a new boolean setting, with the given name and value
-    * 
-    * @param name The name of this setting as Object
-    * @param value The long value for this setting - If the value is less than 0, Math.abs() will be used to get a positive value.
-    */
-   public PositiveNumberSettingIO(Object name, long value) {
-      super(name, value);
-   }
+    /**
+     * Constructor for a new boolean setting, with the given name and value
+     * 
+     * @param name The name of this setting as Object
+     * @param value The long value for this setting - If the value is less than 0, Math.abs() will be used to get a positive value.
+     */
+    public PositiveNumberSettingIO(Object name, long value) {
+        super(name, value);
+    }
 
-   /**
-    * Get the value of this setting as long
-    * 
-    * @return long value of this setting
-    */
-   public Long getValue() {
-      return (Long) getRawValue();
-   }
+    /**
+     * Get the value of this setting as long
+     * 
+     * @return long value of this setting
+     */
+    public Long getValue() {
+        return (Long) getRawValue();
+    }
 
 }

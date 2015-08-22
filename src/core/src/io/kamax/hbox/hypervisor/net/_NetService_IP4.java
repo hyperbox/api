@@ -22,16 +22,16 @@ package io.kamax.hbox.hypervisor.net;
 
 public interface _NetService_IP4 extends _NetService {
 
-   public String getAddress();
+    public String getAddress();
 
-   public String getMask();
+    public String getMask();
 
-   public String getGateway();
+    public String getGateway();
 
-   public void setIP(String ip);
+    public void setIP(String ip);
 
-   public void setMask(String mask);
+    public void setMask(String mask);
 
-   public void setGateway(String gw);
+    public void setGateway(String gw);
 
 }

@@ -25,32 +25,32 @@ import io.kamax.hbox.constant.EntityType;
 
 public class StorageControllerTypeOut extends ObjectOut {
 
-   private long minPort;
-   private long maxPort;
-   private long maxDevicePerPort;
+    private long minPort;
+    private long maxPort;
+    private long maxDevicePerPort;
 
-   @SuppressWarnings("unused")
-   private StorageControllerTypeOut() {
-      // Used for serialization
-   }
+    @SuppressWarnings("unused")
+    private StorageControllerTypeOut() {
+        // Used for serialization
+    }
 
-   public StorageControllerTypeOut(String typeId, long minPort, long maxPort, long maxDevicePerPort) {
-      super(EntityType.StorageControllerType, typeId);
-      this.minPort = minPort;
-      this.maxPort = maxPort;
-      this.maxDevicePerPort = maxDevicePerPort;
-   }
+    public StorageControllerTypeOut(String typeId, long minPort, long maxPort, long maxDevicePerPort) {
+        super(EntityType.StorageControllerType, typeId);
+        this.minPort = minPort;
+        this.maxPort = maxPort;
+        this.maxDevicePerPort = maxDevicePerPort;
+    }
 
-   public long getMaxPort() {
-      return maxPort;
-   }
+    public long getMaxPort() {
+        return maxPort;
+    }
 
-   public long getMaxDevicePerPort() {
-      return maxDevicePerPort;
-   }
+    public long getMaxDevicePerPort() {
+        return maxDevicePerPort;
+    }
 
-   public long getMinPort() {
-      return minPort;
-   }
+    public long getMinPort() {
+        return minPort;
+    }
 
 }

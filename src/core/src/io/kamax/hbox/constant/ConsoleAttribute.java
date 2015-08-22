@@ -23,11 +23,11 @@ package io.kamax.hbox.constant;
 
 public enum ConsoleAttribute {
 
-   AuthType,
-   AuthLibrary,
-   AuthTimeout,
-   Enabled,
-   MultiConnection,
-   ReuseSingleConnection,
+    AuthType,
+    AuthLibrary,
+    AuthTimeout,
+    Enabled,
+    MultiConnection,
+    ReuseSingleConnection,
 
 }

@@ -25,18 +25,18 @@ import io.kamax.hbox.comm.out.ObjectOut;
 
 public class ScreenshotOut extends ObjectOut {
 
-   private byte[] screenData;
+    private byte[] screenData;
 
-   protected ScreenshotOut() {
-      // Used for serialization
-   }
+    protected ScreenshotOut() {
+        // Used for serialization
+    }
 
-   public ScreenshotOut(byte[] data) {
-      screenData = data;
-   }
+    public ScreenshotOut(byte[] data) {
+        screenData = data;
+    }
 
-   public byte[] getData() {
-      return screenData;
-   }
+    public byte[] getData() {
+        return screenData;
+    }
 
 }

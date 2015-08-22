@@ -22,30 +22,30 @@ package io.kamax.hbox.comm;
 
 public enum SecurityItem {
 
-   Any,
+    Any,
 
-   Server,
-   Host,
-   Hypervisor,
-   Machine,
-   Device,
-   Setting,
+    Server,
+    Host,
+    Hypervisor,
+    Machine,
+    Device,
+    Setting,
 
-   Snapshot,
-   Medium,
+    Snapshot,
+    Medium,
 
-   OsType,
-   AdapterType,
-   AttachMode,
-   AttachName,
+    OsType,
+    AdapterType,
+    AttachMode,
+    AttachName,
 
-   OsTemplate,
-   MachineTemplate,
+    OsTemplate,
+    MachineTemplate,
 
-   Service,
-   Module,
-   User,
-   Store,
-   Permission
+    Service,
+    Module,
+    User,
+    Store,
+    Permission
 
 }

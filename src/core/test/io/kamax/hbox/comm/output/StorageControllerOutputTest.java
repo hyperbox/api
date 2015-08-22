@@ -35,42 +35,42 @@ import org.junit.Test;
 
 public final class StorageControllerOutputTest {
 
-   @Test
-   public void basicTest() {
-      String id = "Test";
-      SettingIO name = new StringSettingIO(StorageControllerAttribute.Name, "Test");
-      SettingIO type = new StringSettingIO(StorageControllerAttribute.Type, StorageControllerType.SATA.toString());
-      SettingIO subType = new StringSettingIO(StorageControllerAttribute.SubType, StorageControllerSubType.IntelAhci.toString());
+    @Test
+    public void basicTest() {
+        String id = "Test";
+        SettingIO name = new StringSettingIO(StorageControllerAttribute.Name, "Test");
+        SettingIO type = new StringSettingIO(StorageControllerAttribute.Type, StorageControllerType.SATA.toString());
+        SettingIO subType = new StringSettingIO(StorageControllerAttribute.SubType, StorageControllerSubType.IntelAhci.toString());
 
-      StorageControllerOut scOut = new StorageControllerOut(UUID.randomUUID().toString(), id, Arrays.asList(name, type, subType));
-      validateSimple(scOut);
-      assertTrue(scOut.getId().contentEquals(id));
-      assertTrue(scOut.getName().contentEquals(name.getString()));
-      assertTrue(scOut.getSetting(StorageControllerAttribute.Type).getString().contentEquals(type.getString()));
-      assertTrue(scOut.getSetting(StorageControllerAttribute.SubType).getString().contentEquals(subType.getString()));
-      assertTrue(scOut.getType().contentEquals(type.getString()));
-      assertTrue(scOut.getSetting(StorageControllerAttribute.SubType).getString().contentEquals(subType.getString()));
-      assertTrue(scOut.getSubType().contentEquals(subType.getString()));
-   }
+        StorageControllerOut scOut = new StorageControllerOut(UUID.randomUUID().toString(), id, Arrays.asList(name, type, subType));
+        validateSimple(scOut);
+        assertTrue(scOut.getId().contentEquals(id));
+        assertTrue(scOut.getName().contentEquals(name.getString()));
+        assertTrue(scOut.getSetting(StorageControllerAttribute.Type).getString().contentEquals(type.getString()));
+        assertTrue(scOut.getSetting(StorageControllerAttribute.SubType).getString().contentEquals(subType.getString()));
+        assertTrue(scOut.getType().contentEquals(type.getString()));
+        assertTrue(scOut.getSetting(StorageControllerAttribute.SubType).getString().contentEquals(subType.getString()));
+        assertTrue(scOut.getSubType().contentEquals(subType.getString()));
+    }
 
-   public static void validateSimple(StorageControllerOut scOut) {
-      assertNotNull(scOut);
-      assertNotNull(scOut.getId());
-      assertFalse(scOut.getId().isEmpty());
-      assertNotNull(scOut.getName());
-      assertFalse(scOut.getName().isEmpty());
-   }
+    public static void validateSimple(StorageControllerOut scOut) {
+        assertNotNull(scOut);
+        assertNotNull(scOut.getId());
+        assertFalse(scOut.getId().isEmpty());
+        assertNotNull(scOut.getName());
+        assertFalse(scOut.getName().isEmpty());
+    }
 
-   public static void validateFull(StorageControllerOut scOut) {
-      validateSimple(scOut);
-      assertNotNull(scOut.getType());
-      assertNotNull(scOut.getSubType());
-      assertNotNull(scOut.getMinPortCount());
-      assertNotNull(scOut.getMaxPortCount());
-      assertNotNull(scOut.getMaxDeviceCount());
-      assertTrue(scOut.getMaxPortCount() >= 0);
-      assertTrue(scOut.getMinPortCount() >= 0);
-      assertTrue(scOut.getMaxPortCount() >= scOut.getMinPortCount());
-   }
+    public static void validateFull(StorageControllerOut scOut) {
+        validateSimple(scOut);
+        assertNotNull(scOut.getType());
+        assertNotNull(scOut.getSubType());
+        assertNotNull(scOut.getMinPortCount());
+        assertNotNull(scOut.getMaxPortCount());
+        assertNotNull(scOut.getMaxDeviceCount());
+        assertTrue(scOut.getMaxPortCount() >= 0);
+        assertTrue(scOut.getMinPortCount() >= 0);
+        assertTrue(scOut.getMaxPortCount() >= scOut.getMinPortCount());
+    }
 
 }

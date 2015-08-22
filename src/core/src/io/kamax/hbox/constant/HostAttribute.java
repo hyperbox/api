@@ -22,10 +22,10 @@ package io.kamax.hbox.constant;
 
 public enum HostAttribute {
 
-   Hostname,
-   OperatingSystemName,
-   OperatingSystemVersion,
-   MemoryTotal,
-   MemoryAvailable
+    Hostname,
+    OperatingSystemName,
+    OperatingSystemVersion,
+    MemoryTotal,
+    MemoryAvailable
 
 }

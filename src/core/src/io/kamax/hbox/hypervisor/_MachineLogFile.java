@@ -24,10 +24,10 @@ import java.util.List;
 
 public interface _MachineLogFile {
 
-   public String getId();
+    public String getId();
 
-   public List<String> getLog();
+    public List<String> getLog();
 
-   public String getFileName();
+    public String getFileName();
 
 }

@@ -25,20 +25,20 @@ import io.kamax.hbox.constant.EntityType;
 
 public final class StorageControllerSubTypeOut extends ObjectOut {
 
-   private String parentId;
+    private String parentId;
 
-   @SuppressWarnings("unused")
-   private StorageControllerSubTypeOut() {
-      // Used for serialization
-   }
+    @SuppressWarnings("unused")
+    private StorageControllerSubTypeOut() {
+        // Used for serialization
+    }
 
-   public StorageControllerSubTypeOut(String id, String parentId) {
-      super(EntityType.StorageControllerSubType, id);
-      this.parentId = parentId;
-   }
+    public StorageControllerSubTypeOut(String id, String parentId) {
+        super(EntityType.StorageControllerSubType, id);
+        this.parentId = parentId;
+    }
 
-   public String getParentType() {
-      return parentId;
-   }
+    public String getParentType() {
+        return parentId;
+    }
 
 }

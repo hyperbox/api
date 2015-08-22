@@ -22,10 +22,10 @@ package io.kamax.hbox.comm;
 
 public enum RequestDelay {
 
-   Default,
-   Immediate,
-   Queue,
-   Schedule,
-   Trigger,
+    Default,
+    Immediate,
+    Queue,
+    Schedule,
+    Trigger,
 
 }

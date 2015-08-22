@@ -30,95 +30,95 @@ import java.util.Map;
 
 public abstract class Entity {
 
-   private String id = "";
-   private Map<String, SettingIO> settings = new HashMap<String, SettingIO>();
+    private String id = "";
+    private Map<String, SettingIO> settings = new HashMap<String, SettingIO>();
 
-   public Entity() {
+    public Entity() {
 
-   }
+    }
 
-   public Entity(String id) {
-      this.id = id;
-   }
+    public Entity(String id) {
+        this.id = id;
+    }
 
-   public Entity(List<SettingIO> settings) {
-      setSetting(settings);
-   }
+    public Entity(List<SettingIO> settings) {
+        setSetting(settings);
+    }
 
-   public Entity(String id, List<SettingIO> settings) {
-      this(id);
-      setSetting(settings);
-   }
+    public Entity(String id, List<SettingIO> settings) {
+        this(id);
+        setSetting(settings);
+    }
 
-   @Override
-   public String toString() {
-      return getId();
-   }
+    @Override
+    public String toString() {
+        return getId();
+    }
 
-   public String getId() {
-      return id;
-   }
+    public String getId() {
+        return id;
+    }
 
-   public void setSetting(List<SettingIO> settings) {
-      for (SettingIO setting : settings) {
-         setSetting(setting);
-      }
-   }
+    public void setSetting(List<SettingIO> settings) {
+        for (SettingIO setting : settings) {
+            setSetting(setting);
+        }
+    }
 
-   /**
-    * Change this object config data according to the setting given.
-    * 
-    * @param sIo The SettingIO containing the setting data (name and value).
-    */
-   public void setSetting(SettingIO sIo) {
-      settings.put(sIo.getName(), sIo);
-   }
+    /**
+     * Change this object config data according to the setting given.
+     * 
+     * @param sIo The SettingIO containing the setting data (name and value).
+     */
+    public void setSetting(SettingIO sIo) {
+        settings.put(sIo.getName(), sIo);
+    }
 
-   /**
-    * Retrieve the setting linked to the given name.
-    * 
-    * @param name The name of the wanted setting.
-    * @return The setting object containing the value.
-    * @throws HyperboxException In case the setting does not exist.
-    * @see #hasSetting(String)
-    */
-   public SettingIO getSetting(String name) {
-      if (!hasSetting(name)) {
-         throw new HyperboxException("Setting [" + name + "] not found in " + this.getClass().getSimpleName());
-      }
-      return settings.get(name);
-   }
+    /**
+     * Retrieve the setting linked to the given name.
+     * 
+     * @param name The name of the wanted setting.
+     * @return The setting object containing the value.
+     * @throws HyperboxException In case the setting does not exist.
+     * @see #hasSetting(String)
+     */
+    public SettingIO getSetting(String name) {
+        if (!hasSetting(name)) {
+            throw new HyperboxException("Setting [" + name + "] not found in " + this.getClass().getSimpleName());
+        }
+        return settings.get(name);
+    }
 
-   /**
-    * Retrieve the setting for the given machine settings name.
-    * 
-    * @param name The Enum.toString() ID to use
-    * @return a SettingIO object that contains the setting data.
-    * @throws HyperboxException In case the setting does not exist.
-    * @see #hasSetting(Enum)
-    */
-   public SettingIO getSetting(Enum<?> name) {
-      return getSetting(name.toString());
-   }
+    /**
+     * Retrieve the setting for the given machine settings name.
+     * 
+     * @param name The Enum.toString() ID to use
+     * @return a SettingIO object that contains the setting data.
+     * @throws HyperboxException In case the setting does not exist.
+     * @see #hasSetting(Enum)
+     */
+    public SettingIO getSetting(Enum<?> name) {
+        return getSetting(name.toString());
+    }
 
-   public boolean hasSetting(String name) {
-      return settings.containsKey(name);
-   }
+    public boolean hasSetting(String name) {
+        return settings.containsKey(name);
+    }
 
-   public boolean hasSetting(Enum<?> name) {
-      return hasSetting(name.toString());
-   }
+    public boolean hasSetting(Enum<?> name) {
+        return hasSetting(name.toString());
+    }
 
-   public void removeSetting(String name) {
-      settings.remove(name);
-   }
+    public void removeSetting(String name) {
+        settings.remove(name);
+    }
 
-   public void removeSetting(Enum<?> name) {
-      removeSetting(name.toString());
-   }
+    public void removeSetting(Enum<?> name) {
+        removeSetting(name.toString());
+    }
 
-   public List<SettingIO> listSettings() {
-      return new ArrayList<SettingIO>(settings.values());
-   }
+    public List<SettingIO> listSettings() {
+        return new ArrayList<SettingIO>(settings.values());
+    }
 
 }

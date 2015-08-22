@@ -24,152 +24,152 @@ import io.kamax.hbox.hypervisor.net._NATRule;
 
 public class NATRuleIO extends ObjectIO implements _NATRule {
 
-   private boolean enabled;
-   private String name;
-   private String comment;
-   private String protocol;
-   private String publicIp;
-   private String publicPort;
-   private String privateIp;
-   private String privatePort;
+    private boolean enabled;
+    private String name;
+    private String comment;
+    private String protocol;
+    private String publicIp;
+    private String publicPort;
+    private String privateIp;
+    private String privatePort;
 
-   public NATRuleIO() {
+    public NATRuleIO() {
 
-   }
+    }
 
-   public NATRuleIO(String name, String protocol, String publicIp, String publicPort, String privateIp, String privatePort) {
-      setName(name);
-      setProtocol(protocol);
-      setPublicIp(publicIp);
-      setPublicPort(publicPort);
-      setPrivateIp(privateIp);
-      setPrivatePort(privatePort);
-   }
+    public NATRuleIO(String name, String protocol, String publicIp, String publicPort, String privateIp, String privatePort) {
+        setName(name);
+        setProtocol(protocol);
+        setPublicIp(publicIp);
+        setPublicPort(publicPort);
+        setPrivateIp(privateIp);
+        setPrivatePort(privatePort);
+    }
 
-   /**
-    * @return the enabled
-    */
-   @Override
-   public boolean isEnabled() {
-      return enabled;
-   }
+    /**
+     * @return the enabled
+     */
+    @Override
+    public boolean isEnabled() {
+        return enabled;
+    }
 
-   /**
-    * @param enabled the enabled to set
-    */
-   public void setEnabled(boolean enabled) {
-      this.enabled = enabled;
-   }
+    /**
+     * @param enabled the enabled to set
+     */
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
 
-   /**
-    * @return the name
-    */
-   @Override
-   public String getName() {
-      return name;
-   }
+    /**
+     * @return the name
+     */
+    @Override
+    public String getName() {
+        return name;
+    }
 
-   /**
-    * @param name the name to set
-    */
-   @Override
-   public void setName(String name) {
-      this.name = name;
-   }
+    /**
+     * @param name the name to set
+     */
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
 
-   /**
-    * @return the comment
-    */
-   @Override
-   public String getComment() {
-      return comment;
-   }
+    /**
+     * @return the comment
+     */
+    @Override
+    public String getComment() {
+        return comment;
+    }
 
-   /**
-    * @param comment the comment to set
-    */
-   @Override
-   public void setComment(String comment) {
-      this.comment = comment;
-   }
+    /**
+     * @param comment the comment to set
+     */
+    @Override
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
 
-   @Override
-   public String getProtocol() {
-      return protocol;
-   }
+    @Override
+    public String getProtocol() {
+        return protocol;
+    }
 
-   @Override
-   public void setProtocol(String protocol) {
-      this.protocol = protocol;
-   }
+    @Override
+    public void setProtocol(String protocol) {
+        this.protocol = protocol;
+    }
 
-   /**
-    * @return the publicIp
-    */
-   @Override
-   public String getPublicIp() {
-      return publicIp;
-   }
+    /**
+     * @return the publicIp
+     */
+    @Override
+    public String getPublicIp() {
+        return publicIp;
+    }
 
-   /**
-    * @param publicIp the publicIp to set
-    */
-   @Override
-   public void setPublicIp(String publicIp) {
-      this.publicIp = publicIp;
-   }
+    /**
+     * @param publicIp the publicIp to set
+     */
+    @Override
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+    }
 
-   /**
-    * @return the publicPort
-    */
-   @Override
-   public String getPublicPort() {
-      return publicPort;
-   }
+    /**
+     * @return the publicPort
+     */
+    @Override
+    public String getPublicPort() {
+        return publicPort;
+    }
 
-   /**
-    * @param publicPort the publicPort to set
-    */
-   @Override
-   public void setPublicPort(String publicPort) {
-      this.publicPort = publicPort;
-   }
+    /**
+     * @param publicPort the publicPort to set
+     */
+    @Override
+    public void setPublicPort(String publicPort) {
+        this.publicPort = publicPort;
+    }
 
-   /**
-    * @return the privateIp
-    */
-   @Override
-   public String getPrivateIp() {
-      return privateIp;
-   }
+    /**
+     * @return the privateIp
+     */
+    @Override
+    public String getPrivateIp() {
+        return privateIp;
+    }
 
-   /**
-    * @param privateIp the privateIp to set
-    */
-   @Override
-   public void setPrivateIp(String privateIp) {
-      this.privateIp = privateIp;
-   }
+    /**
+     * @param privateIp the privateIp to set
+     */
+    @Override
+    public void setPrivateIp(String privateIp) {
+        this.privateIp = privateIp;
+    }
 
-   /**
-    * @return the privatePort
-    */
-   @Override
-   public String getPrivatePort() {
-      return privatePort;
-   }
+    /**
+     * @return the privatePort
+     */
+    @Override
+    public String getPrivatePort() {
+        return privatePort;
+    }
 
-   /**
-    * @param privatePort the privatePort to set
-    */
-   @Override
-   public void setPrivatePort(String privatePort) {
-      this.privatePort = privatePort;
-   }
+    /**
+     * @param privatePort the privatePort to set
+     */
+    @Override
+    public void setPrivatePort(String privatePort) {
+        this.privatePort = privatePort;
+    }
 
-   @Override
-   public _ObjectIO getIO() {
-      return this;
-   }
+    @Override
+    public _ObjectIO getIO() {
+        return this;
+    }
 
 }

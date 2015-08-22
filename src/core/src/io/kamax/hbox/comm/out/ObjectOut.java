@@ -36,144 +36,144 @@ import java.util.Set;
 
 public abstract class ObjectOut {
 
-   private String entityTypeId;
-   private String id;
-   private Map<String, SettingIO> settingsMap = new HashMap<String, SettingIO>(5);
+    private String entityTypeId;
+    private String id;
+    private Map<String, SettingIO> settingsMap = new HashMap<String, SettingIO>(5);
 
-   private void setEntityTypeId(String entityTypeId) {
-      this.entityTypeId = entityTypeId;
-   }
+    private void setEntityTypeId(String entityTypeId) {
+        this.entityTypeId = entityTypeId;
+    }
 
-   private void setEntityTypeId(Enum<?> entityTypeId) {
-      this.entityTypeId = entityTypeId.toString();
-   }
+    private void setEntityTypeId(Enum<?> entityTypeId) {
+        this.entityTypeId = entityTypeId.toString();
+    }
 
-   protected void setSetting(SettingIO sIo) {
-      settingsMap.put(sIo.getName(), sIo);
-   }
+    protected void setSetting(SettingIO sIo) {
+        settingsMap.put(sIo.getName(), sIo);
+    }
 
-   protected void setSetting(Collection<SettingIO> sIoList) {
-      for (SettingIO set : sIoList) {
-         setSetting(set);
-      }
-   }
+    protected void setSetting(Collection<SettingIO> sIoList) {
+        for (SettingIO set : sIoList) {
+            setSetting(set);
+        }
+    }
 
-   protected ObjectOut() {
-      setEntityTypeId(EntityType.Unknown);
-   }
+    protected ObjectOut() {
+        setEntityTypeId(EntityType.Unknown);
+    }
 
-   public ObjectOut(String entityTypeId, String id) {
-      setEntityTypeId(entityTypeId);
-      this.id = id;
-   }
+    public ObjectOut(String entityTypeId, String id) {
+        setEntityTypeId(entityTypeId);
+        this.id = id;
+    }
 
-   public ObjectOut(Enum<?> entityTypeId, String id) {
-      setEntityTypeId(entityTypeId);
-      this.id = id;
-   }
+    public ObjectOut(Enum<?> entityTypeId, String id) {
+        setEntityTypeId(entityTypeId);
+        this.id = id;
+    }
 
-   public ObjectOut(String entityTypeId, String id, Collection<SettingIO> settings) {
-      this(entityTypeId, id);
-      setSetting(settings);
-   }
+    public ObjectOut(String entityTypeId, String id, Collection<SettingIO> settings) {
+        this(entityTypeId, id);
+        setSetting(settings);
+    }
 
-   public ObjectOut(Enum<?> entityTypeId, String id, Collection<SettingIO> settings) {
-      this(entityTypeId, id);
-      setSetting(settings);
-   }
+    public ObjectOut(Enum<?> entityTypeId, String id, Collection<SettingIO> settings) {
+        this(entityTypeId, id);
+        setSetting(settings);
+    }
 
-   /**
-    * See {@link EntityType} for natives values
-    *
-    * @return Entity Type ID
-    */
-   public String getEntityTypeId() {
-      return entityTypeId;
-   }
+    /**
+     * See {@link EntityType} for natives values
+     *
+     * @return Entity Type ID
+     */
+    public String getEntityTypeId() {
+        return entityTypeId;
+    }
 
-   public String getId() {
-      return id;
-   }
+    public String getId() {
+        return id;
+    }
 
-   public SettingIO getSetting(String name) {
-      if (name.equalsIgnoreCase("id")) {
-         return new StringSettingIO(name, id);
-      }
-      if (!hasSetting(name)) {
-         Logger.debug(getClass().getName() + " does not containg the setting " + name + "; NullSetting will be returned instead");
-         return new NullSettingIO(name);
-      }
-      return settingsMap.get(name);
-   }
+    public SettingIO getSetting(String name) {
+        if (name.equalsIgnoreCase("id")) {
+            return new StringSettingIO(name, id);
+        }
+        if (!hasSetting(name)) {
+            Logger.debug(getClass().getName() + " does not containg the setting " + name + "; NullSetting will be returned instead");
+            return new NullSettingIO(name);
+        }
+        return settingsMap.get(name);
+    }
 
-   /**
-    * Retrieve the setting linked to the given name.
-    *
-    * @param name The name of the wanted setting.
-    * @return a SettingIO object that contains the setting data, or null if no setting under the ID could be found.
-    */
-   public SettingIO getSetting(Object name) {
-      return getSetting(Settings.getUniqueId(name));
-   }
+    /**
+     * Retrieve the setting linked to the given name.
+     *
+     * @param name The name of the wanted setting.
+     * @return a SettingIO object that contains the setting data, or null if no setting under the ID could be found.
+     */
+    public SettingIO getSetting(Object name) {
+        return getSetting(Settings.getUniqueId(name));
+    }
 
-   public boolean hasSetting(Object name) {
-      if (name.toString().equalsIgnoreCase("id")) {
-         return true;
-      }
+    public boolean hasSetting(Object name) {
+        if (name.toString().equalsIgnoreCase("id")) {
+            return true;
+        }
 
-      return settingsMap.containsKey(Settings.getUniqueId(name));
-   }
+        return settingsMap.containsKey(Settings.getUniqueId(name));
+    }
 
-   /**
-    * This return the list of settings names in this IO object
-    *
-    * @return a Set of setting ID as String
-    */
-   // TODO be clear that this is only for settings actually included in the object, and create a method to list possible settings
-   public Set<String> listSettingsId() {
-      return new HashSet<String>(settingsMap.keySet());
-   }
+    /**
+     * This return the list of settings names in this IO object
+     *
+     * @return a Set of setting ID as String
+     */
+    // TODO be clear that this is only for settings actually included in the object, and create a method to list possible settings
+    public Set<String> listSettingsId() {
+        return new HashSet<String>(settingsMap.keySet());
+    }
 
-   public List<SettingIO> listSettings() {
-      return new ArrayList<SettingIO>(settingsMap.values());
-   }
+    public List<SettingIO> listSettings() {
+        return new ArrayList<SettingIO>(settingsMap.values());
+    }
 
-   @Override
-   public int hashCode() {
-      final int prime = 31;
-      int result = 1;
-      result = (prime * result) + ((entityTypeId == null) ? 0 : entityTypeId.hashCode());
-      result = (prime * result) + ((id == null) ? 0 : id.hashCode());
-      return result;
-   }
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = (prime * result) + ((entityTypeId == null) ? 0 : entityTypeId.hashCode());
+        result = (prime * result) + ((id == null) ? 0 : id.hashCode());
+        return result;
+    }
 
-   @Override
-   public boolean equals(Object obj) {
-      if (this == obj) {
-         return true;
-      }
-      if (obj == null) {
-         return false;
-      }
-      if (!(obj instanceof ObjectOut)) {
-         return false;
-      }
-      ObjectOut other = (ObjectOut) obj;
-      if (entityTypeId == null) {
-         if (other.entityTypeId != null) {
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
             return false;
-         }
-      } else if (!entityTypeId.equals(other.entityTypeId)) {
-         return false;
-      }
-      if (id == null) {
-         if (other.id != null) {
+        }
+        if (!(obj instanceof ObjectOut)) {
             return false;
-         }
-      } else if (!id.equals(other.id)) {
-         return false;
-      }
-      return true;
-   }
+        }
+        ObjectOut other = (ObjectOut) obj;
+        if (entityTypeId == null) {
+            if (other.entityTypeId != null) {
+                return false;
+            }
+        } else if (!entityTypeId.equals(other.entityTypeId)) {
+            return false;
+        }
+        if (id == null) {
+            if (other.id != null) {
+                return false;
+            }
+        } else if (!id.equals(other.id)) {
+            return false;
+        }
+        return true;
+    }
 
 }

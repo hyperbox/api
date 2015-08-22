@@ -25,8 +25,8 @@ import java.util.Date;
 
 public interface _Event extends _Container {
 
-   public Enum<?> getEventId();
+    public Enum<?> getEventId();
 
-   public Date getTime();
+    public Date getTime();
 
 }

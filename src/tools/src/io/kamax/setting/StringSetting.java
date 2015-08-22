@@ -22,12 +22,12 @@ package io.kamax.setting;
 
 public class StringSetting extends BasicSetting<String> {
 
-   public StringSetting(String name, String value) {
-      super(name, value);
-   }
+    public StringSetting(String name, String value) {
+        super(name, value);
+    }
 
-   public StringSetting(Enum<?> setting, String value) {
-      super(setting, value);
-   }
+    public StringSetting(Enum<?> setting, String value) {
+        super(setting, value);
+    }
 
 }

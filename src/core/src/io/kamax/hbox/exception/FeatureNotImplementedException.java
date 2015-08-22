@@ -20,15 +20,17 @@
 
 package io.kamax.hbox.exception;
 
-@SuppressWarnings("serial")
+
 public class FeatureNotImplementedException extends HyperboxException {
 
-   public FeatureNotImplementedException() {
-      super("This feature has not been implemented yet");
-   }
+    private static final long serialVersionUID = 3639780354138226333L;
 
-   public FeatureNotImplementedException(String s) {
-      super(s);
-   }
+    public FeatureNotImplementedException() {
+        super("This feature has not been implemented yet");
+    }
+
+    public FeatureNotImplementedException(String s) {
+        super(s);
+    }
 
 }

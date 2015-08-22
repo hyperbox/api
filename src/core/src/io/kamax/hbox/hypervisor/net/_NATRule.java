@@ -24,70 +24,70 @@ import io.kamax.hbox.comm.io._ObjectIO;
 
 public interface _NATRule extends _ObjectIO {
 
-   /**
-    * @return the enabled
-    */
-   public boolean isEnabled();
+    /**
+     * @return the enabled
+     */
+    public boolean isEnabled();
 
-   public String getName();
+    public String getName();
 
-   /**
-    * @param name the name to set
-    */
-   public void setName(String name);
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name);
 
-   /**
-    * @return the comment
-    */
-   public String getComment();
+    /**
+     * @return the comment
+     */
+    public String getComment();
 
-   /**
-    * @param comment the comment to set
-    */
-   public void setComment(String comment);
+    /**
+     * @param comment the comment to set
+     */
+    public void setComment(String comment);
 
-   public String getProtocol();
+    public String getProtocol();
 
-   public void setProtocol(String protocol);
+    public void setProtocol(String protocol);
 
-   /**
-    * @return the publicIp
-    */
-   public String getPublicIp();
+    /**
+     * @return the publicIp
+     */
+    public String getPublicIp();
 
-   /**
-    * @param publicIp the publicIp to set
-    */
-   public void setPublicIp(String publicIp);
+    /**
+     * @param publicIp the publicIp to set
+     */
+    public void setPublicIp(String publicIp);
 
-   /**
-    * @return the publicPort
-    */
-   public String getPublicPort();
+    /**
+     * @return the publicPort
+     */
+    public String getPublicPort();
 
-   /**
-    * @param publicPort the publicPort to set
-    */
-   public void setPublicPort(String publicPort);
+    /**
+     * @param publicPort the publicPort to set
+     */
+    public void setPublicPort(String publicPort);
 
-   /**
-    * @return the privateIp
-    */
-   public String getPrivateIp();
+    /**
+     * @return the privateIp
+     */
+    public String getPrivateIp();
 
-   /**
-    * @param privateIp the privateIp to set
-    */
-   public void setPrivateIp(String privateIp);
+    /**
+     * @param privateIp the privateIp to set
+     */
+    public void setPrivateIp(String privateIp);
 
-   /**
-    * @return the privatePort
-    */
-   public String getPrivatePort();
+    /**
+     * @return the privatePort
+     */
+    public String getPrivatePort();
 
-   /**
-    * @param privatePort the privatePort to set
-    */
-   public void setPrivatePort(String privatePort);
+    /**
+     * @param privatePort the privatePort to set
+     */
+    public void setPrivatePort(String privatePort);
 
 }

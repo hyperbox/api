@@ -34,153 +34,153 @@ import java.util.Set;
 
 /**
  * IO object used to send or receive data about a VM
- * 
+ *
  * @author max
  */
 public final class MachineIn extends ObjectIn<EntityType> {
 
-   private String uuid;
-   private Map<Long, NetworkInterfaceIn> nics = new HashMap<Long, NetworkInterfaceIn>();
-   private Map<String, StorageControllerIn> strCtrs = new HashMap<String, StorageControllerIn>();
-   private Map<String, DeviceIn> devs = new HashMap<String, DeviceIn>();
+    private String uuid;
+    private Map<Long, NetworkInterfaceIn> nics = new HashMap<Long, NetworkInterfaceIn>();
+    private Map<String, StorageControllerIn> strCtrs = new HashMap<String, StorageControllerIn>();
+    private Map<String, DeviceIn> devs = new HashMap<String, DeviceIn>();
 
-   public MachineIn() {
-      super(EntityType.Machine);
-   }
+    public MachineIn() {
+        super(EntityType.Machine);
+    }
 
-   /**
-    * Build a machine message with the given ID.
-    * 
-    * @param id The ID of the machine to send data about.
-    */
-   public MachineIn(String id) {
-      super(EntityType.Machine, id);
-      setUuid(id);
-   }
+    /**
+     * Build a machine message with the given ID.
+     * 
+     * @param id The ID of the machine to send data about.
+     */
+    public MachineIn(String id) {
+        super(EntityType.Machine, id);
+        setUuid(id);
+    }
 
-   public MachineIn(MachineOut mOut) {
-      this(mOut.getServerId(), mOut.getUuid());
-   }
+    public MachineIn(MachineOut mOut) {
+        this(mOut.getServerId(), mOut.getUuid());
+    }
 
-   public MachineIn(String srvId, String vmId) {
-      super(EntityType.Machine, vmId);
-      setServerId(srvId);
-      setUuid(vmId);
-   }
+    public MachineIn(String srvId, String vmId) {
+        super(EntityType.Machine, vmId);
+        setServerId(srvId);
+        setUuid(vmId);
+    }
 
-   protected void setUuid(String uuid) {
-      this.uuid = uuid;
-   }
+    protected void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
 
-   /**
-    * Get the UUID for this machine
-    * 
-    * @return a String for this UUID
-    */
-   public String getUuid() {
-      return uuid;
-   }
+    /**
+     * Get the UUID for this machine
+     * 
+     * @return a String for this UUID
+     */
+    public String getUuid() {
+        return uuid;
+    }
 
-   /**
-    * Get the machine name.<br/>
-    * Helper method that gets the setting name and return its value.
-    * 
-    * @return a String containing the name
-    */
-   public String getName() {
-      return getSetting(MachineAttribute.Name).getString();
-   }
+    /**
+     * Get the machine name.<br/>
+     * Helper method that gets the setting name and return its value.
+     * 
+     * @return a String containing the name
+     */
+    public String getName() {
+        return getSetting(MachineAttribute.Name).getString();
+    }
 
-   /**
-    * Set the machine name.<br/>
-    * Helper method that created a new StringSettingIO with <code>MachineSettings.Name</code> and set the value to <i>name</i>
-    * 
-    * @param name a String containing the name
-    */
-   public void setName(String name) {
-      setSetting(new StringSettingIO(MachineAttribute.Name, name));
-   }
+    /**
+     * Set the machine name.<br/>
+     * Helper method that created a new StringSettingIO with <code>MachineSettings.Name</code> and set the value to <i>name</i>
+     * 
+     * @param name a String containing the name
+     */
+    public void setName(String name) {
+        setSetting(new StringSettingIO(MachineAttribute.Name, name));
+    }
 
-   public String getServerId() {
-      return getSetting(MachineAttribute.ServerId).getString();
-   }
+    public String getServerId() {
+        return getSetting(MachineAttribute.ServerId).getString();
+    }
 
-   public void setServerId(String id) {
-      setSetting(new StringSettingIO(MachineAttribute.ServerId, id));
-   }
+    public void setServerId(String id) {
+        setSetting(new StringSettingIO(MachineAttribute.ServerId, id));
+    }
 
-   public void addStorageController(StorageControllerIn strCtrIo) {
-      if (strCtrs.containsKey(strCtrIo.getId())) {
-         if (strCtrs.get(strCtrIo.getId()).getAction().equals(Action.Delete)) {
-            strCtrIo.setAction(Action.Replace);
-         }
-      }
-      strCtrs.put(strCtrIo.getId(), strCtrIo);
-   }
+    public void addStorageController(StorageControllerIn strCtrIo) {
+        if (strCtrs.containsKey(strCtrIo.getId())) {
+            if (strCtrs.get(strCtrIo.getId()).getAction().equals(Action.Delete)) {
+                strCtrIo.setAction(Action.Replace);
+            }
+        }
+        strCtrs.put(strCtrIo.getId(), strCtrIo);
+    }
 
-   public void modifyStorageController(StorageControllerIn strCtrIo) {
-      if (strCtrs.containsKey(strCtrIo.getId()) && !getStorageController(strCtrIo.getId()).getAction().equals(Action.Modify)) {
-         throw new HyperboxException("Cannot mofidy a Storage Controller [" + strCtrIo.getId() + "]");
-      }
+    public void modifyStorageController(StorageControllerIn strCtrIo) {
+        if (strCtrs.containsKey(strCtrIo.getId()) && !getStorageController(strCtrIo.getId()).getAction().equals(Action.Modify)) {
+            throw new HyperboxException("Cannot mofidy a Storage Controller [" + strCtrIo.getId() + "]");
+        }
 
-      strCtrIo.setAction(Action.Modify);
-      strCtrs.put(strCtrIo.getId(), strCtrIo);
-   }
+        strCtrIo.setAction(Action.Modify);
+        strCtrs.put(strCtrIo.getId(), strCtrIo);
+    }
 
-   public void removeStorageController(String name) {
-      if (strCtrs.containsKey(name)) {
-         StorageControllerIn scIn = strCtrs.get(name);
-         if (scIn.getAction().equals(Action.Create)) {
-            strCtrs.remove(name);
-         } else {
+    public void removeStorageController(String name) {
+        if (strCtrs.containsKey(name)) {
+            StorageControllerIn scIn = strCtrs.get(name);
+            if (scIn.getAction().equals(Action.Create)) {
+                strCtrs.remove(name);
+            } else {
+                scIn.setAction(Action.Delete);
+            }
+        } else {
+            StorageControllerIn scIn = new StorageControllerIn(uuid, name, "");
             scIn.setAction(Action.Delete);
-         }
-      } else {
-         StorageControllerIn scIn = new StorageControllerIn(uuid, name, "");
-         scIn.setAction(Action.Delete);
-         strCtrs.put(name, scIn);
-      }
-   }
+            strCtrs.put(name, scIn);
+        }
+    }
 
-   public List<StorageControllerIn> listStorageController() {
-      return new ArrayList<StorageControllerIn>(strCtrs.values());
-   }
+    public List<StorageControllerIn> listStorageController() {
+        return new ArrayList<StorageControllerIn>(strCtrs.values());
+    }
 
-   public StorageControllerIn getStorageController(String id) {
-      return strCtrs.get(id);
-   }
+    public StorageControllerIn getStorageController(String id) {
+        return strCtrs.get(id);
+    }
 
-   public void addNetworkInterface(NetworkInterfaceIn nicIo) {
-      nics.put(nicIo.getNicId(), nicIo);
-   }
+    public void addNetworkInterface(NetworkInterfaceIn nicIo) {
+        nics.put(nicIo.getNicId(), nicIo);
+    }
 
-   public void removeNetworkInterface(long nicId) {
-      nics.remove(nicId);
-   }
+    public void removeNetworkInterface(long nicId) {
+        nics.remove(nicId);
+    }
 
-   public void addDevice(DeviceIn dev) {
-      devs.put(dev.getId(), dev);
-   }
+    public void addDevice(DeviceIn dev) {
+        devs.put(dev.getId(), dev);
+    }
 
-   public DeviceIn getDevice(String id) {
-      return devs.get(id);
-   }
+    public DeviceIn getDevice(String id) {
+        return devs.get(id);
+    }
 
-   public Set<DeviceIn> listDevice() {
-      return new HashSet<DeviceIn>(devs.values());
-   }
+    public Set<DeviceIn> listDevice() {
+        return new HashSet<DeviceIn>(devs.values());
+    }
 
-   public List<NetworkInterfaceIn> listNetworkInterface() {
-      return new ArrayList<NetworkInterfaceIn>(nics.values());
-   }
+    public List<NetworkInterfaceIn> listNetworkInterface() {
+        return new ArrayList<NetworkInterfaceIn>(nics.values());
+    }
 
-   public NetworkInterfaceIn getNetworkInterface(Long id) {
-      return nics.get(id);
-   }
+    public NetworkInterfaceIn getNetworkInterface(Long id) {
+        return nics.get(id);
+    }
 
-   @Override
-   public String toString() {
-      return getName();
-   }
+    @Override
+    public String toString() {
+        return getName();
+    }
 
 }

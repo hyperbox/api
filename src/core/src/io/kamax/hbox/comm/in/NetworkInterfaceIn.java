@@ -26,76 +26,76 @@ import io.kamax.hbox.constant.NetworkInterfaceAttribute;
 
 public class NetworkInterfaceIn extends DeviceIn {
 
-   private long nicId;
+    private long nicId;
 
-   @SuppressWarnings("unused")
-   private NetworkInterfaceIn() {
-      // used only for (de)serialisation
-   }
+    @SuppressWarnings("unused")
+    private NetworkInterfaceIn() {
+        // used only for (de)serialisation
+    }
 
-   public NetworkInterfaceIn(String machineUuid, long nicId) {
-      setMachineUuid(machineUuid);
-      this.nicId = nicId;
-   }
+    public NetworkInterfaceIn(String machineUuid, long nicId) {
+        setMachineUuid(machineUuid);
+        this.nicId = nicId;
+    }
 
-   public long getNicId() {
-      return nicId;
-   }
+    public long getNicId() {
+        return nicId;
+    }
 
-   public boolean isEnabled() {
-      return getSetting(NetworkInterfaceAttribute.Enabled).getBoolean();
-   }
+    public boolean isEnabled() {
+        return getSetting(NetworkInterfaceAttribute.Enabled).getBoolean();
+    }
 
-   public void setEnabled(boolean isEnabled) {
-      setSetting(new BooleanSettingIO(NetworkInterfaceAttribute.Enabled, isEnabled));
-   }
+    public void setEnabled(boolean isEnabled) {
+        setSetting(new BooleanSettingIO(NetworkInterfaceAttribute.Enabled, isEnabled));
+    }
 
-   public boolean isCableConnected() {
-      return getSetting(NetworkInterfaceAttribute.CableConnected).getBoolean();
-   }
+    public boolean isCableConnected() {
+        return getSetting(NetworkInterfaceAttribute.CableConnected).getBoolean();
+    }
 
-   public void setCableConnected(boolean connected) {
-      setSetting(new BooleanSettingIO(NetworkInterfaceAttribute.CableConnected, connected));
-   }
+    public void setCableConnected(boolean connected) {
+        setSetting(new BooleanSettingIO(NetworkInterfaceAttribute.CableConnected, connected));
+    }
 
-   public String getAttachMode() {
-      return getSetting(NetworkInterfaceAttribute.AttachMode).getString();
-   }
+    public String getAttachMode() {
+        return getSetting(NetworkInterfaceAttribute.AttachMode).getString();
+    }
 
-   public void setAttachMode(String modeId) {
-      setSetting(new StringSettingIO(NetworkInterfaceAttribute.AttachMode, modeId));
-   }
+    public void setAttachMode(String modeId) {
+        setSetting(new StringSettingIO(NetworkInterfaceAttribute.AttachMode, modeId));
+    }
 
-   public String getAttachName() {
-      if (hasSetting(NetworkInterfaceAttribute.AttachName)) {
-         return getSetting(NetworkInterfaceAttribute.AttachName).getString();
-      } else {
-         return "";
-      }
-   }
+    public String getAttachName() {
+        if (hasSetting(NetworkInterfaceAttribute.AttachName)) {
+            return getSetting(NetworkInterfaceAttribute.AttachName).getString();
+        } else {
+            return "";
+        }
+    }
 
-   public void setAttachName(String nameId) {
-      setSetting(new StringSettingIO(NetworkInterfaceAttribute.AttachName, nameId));
-   }
+    public void setAttachName(String nameId) {
+        setSetting(new StringSettingIO(NetworkInterfaceAttribute.AttachName, nameId));
+    }
 
-   public String getAdapterType() {
-      if (getSetting(NetworkInterfaceAttribute.AdapterType) != null) {
-         return getSetting(NetworkInterfaceAttribute.AdapterType).getString();
-      } else {
-         return "";
-      }
-   }
+    public String getAdapterType() {
+        if (getSetting(NetworkInterfaceAttribute.AdapterType) != null) {
+            return getSetting(NetworkInterfaceAttribute.AdapterType).getString();
+        } else {
+            return "";
+        }
+    }
 
-   public void setAdapterType(String adapterTypeId) {
-      setSetting(new StringSettingIO(NetworkInterfaceAttribute.AdapterType, adapterTypeId));
-   }
+    public void setAdapterType(String adapterTypeId) {
+        setSetting(new StringSettingIO(NetworkInterfaceAttribute.AdapterType, adapterTypeId));
+    }
 
-   public String getMacAddress() {
-      return getSetting(NetworkInterfaceAttribute.MacAddress).getString();
-   }
+    public String getMacAddress() {
+        return getSetting(NetworkInterfaceAttribute.MacAddress).getString();
+    }
 
-   public void setMacAddress(String addr) {
-      setSetting(new StringSettingIO(NetworkInterfaceAttribute.MacAddress, addr));
-   }
+    public void setMacAddress(String addr) {
+        setSetting(new StringSettingIO(NetworkInterfaceAttribute.MacAddress, addr));
+    }
 
 }

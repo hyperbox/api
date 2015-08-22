@@ -27,21 +27,21 @@ import java.util.Date;
 
 public abstract class StoreEventOut extends EventOut {
 
-   protected StoreEventOut() {
-      // Used for serialization
-   }
+    protected StoreEventOut() {
+        // Used for serialization
+    }
 
-   public StoreEventOut(Date time, Enum<?> id, ServerOut srvOut, StoreOut stoOut) {
-      super(time, id, srvOut);
-      set(StoreOut.class, stoOut);
-   }
+    public StoreEventOut(Date time, Enum<?> id, ServerOut srvOut, StoreOut stoOut) {
+        super(time, id, srvOut);
+        set(StoreOut.class, stoOut);
+    }
 
-   public StoreOut getStore() {
-      return get(StoreOut.class);
-   }
+    public StoreOut getStore() {
+        return get(StoreOut.class);
+    }
 
-   public String getStoreId() {
-      return getStore().getId();
-   }
+    public String getStoreId() {
+        return getStore().getId();
+    }
 
 }

@@ -26,12 +26,12 @@ import java.util.Date;
 
 public abstract class ServerEventOut extends EventOut {
 
-   protected ServerEventOut() {
-      // Used for serialization
-   }
+    protected ServerEventOut() {
+        // Used for serialization
+    }
 
-   public ServerEventOut(Date time, Enum<?> id, ServerOut srvOut) {
-      super(time, id, srvOut);
-   }
+    public ServerEventOut(Date time, Enum<?> id, ServerOut srvOut) {
+        super(time, id, srvOut);
+    }
 
 }

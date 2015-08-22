@@ -26,28 +26,28 @@ import io.kamax.hbox.comm.out.event.EventOut;
  * Represent a client into the communication process.<br/>
  * This will be created by classes implementing _Front within the server,</br>
  * to provide a way to send back information to the client from whom the request originated from.
- * 
+ *
  * @author max
  */
 public interface _Client extends _AnswerReceiver {
 
-   /**
-    * Get a unique identifier for the client.<br/>
-    * This unique ID will typically be the username, or the IP:Port of the connection.<br/>
-    * The value can potentially be anything and is left to the implementation, but always unique.
-    * 
-    * @return a String holding the unique ID for this client
-    */
-   public String getId();
+    /**
+     * Get a unique identifier for the client.<br/>
+     * This unique ID will typically be the username, or the IP:Port of the connection.<br/>
+     * The value can potentially be anything and is left to the implementation, but always unique.
+     * 
+     * @return a String holding the unique ID for this client
+     */
+    public String getId();
 
-   public String getAddress();
+    public String getAddress();
 
-   /**
-    * Allow to send an event to this particular client.<br/>
-    * If you wish to broadcast an event to every client, use _Front.broadcast() in the Hyperbox Server API.
-    * 
-    * @param evOut The Event object to be send
-    */
-   public void post(EventOut evOut);
+    /**
+     * Allow to send an event to this particular client.<br/>
+     * If you wish to broadcast an event to every client, use _Front.broadcast() in the Hyperbox Server API.
+     * 
+     * @param evOut The Event object to be send
+     */
+    public void post(EventOut evOut);
 
 }

@@ -22,33 +22,33 @@ package io.kamax.hbox.states;
 
 public enum TaskState {
 
-   Created(false, false),
-   Pending(false, false),
-   Running(false, false),
-   Paused(false, false),
-   Completed(true, false),
-   Canceled(true, true),
-   Failed(true, true),
-   CriticalFailure(true, true);
+    Created(false, false),
+    Pending(false, false),
+    Running(false, false),
+    Paused(false, false),
+    Completed(true, false),
+    Canceled(true, true),
+    Failed(true, true),
+    CriticalFailure(true, true);
 
-   private boolean isFinishing;
-   private boolean isFailing;
+    private boolean isFinishing;
+    private boolean isFailing;
 
-   private TaskState(boolean isFinishing, boolean isFailing) {
-      this.isFinishing = isFinishing;
-      this.isFailing = isFailing;
-   }
+    private TaskState(boolean isFinishing, boolean isFailing) {
+        this.isFinishing = isFinishing;
+        this.isFailing = isFailing;
+    }
 
-   public boolean isFinishing() {
-      return isFinishing;
-   }
+    public boolean isFinishing() {
+        return isFinishing;
+    }
 
-   public boolean isFailing() {
-      return isFailing;
-   }
+    public boolean isFailing() {
+        return isFailing;
+    }
 
-   public String getId() {
-      return toString();
-   }
+    public String getId() {
+        return toString();
+    }
 
 }

@@ -22,11 +22,11 @@ package io.kamax.hbox.event;
 
 public enum EventObjectTypes {
 
-   Machine,
-   Server,
-   ServerCore,
-   Task,
-   Session,
-   Medium
+    Machine,
+    Server,
+    ServerCore,
+    Task,
+    Session,
+    Medium
 
 }

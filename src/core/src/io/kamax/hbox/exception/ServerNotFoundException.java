@@ -20,11 +20,13 @@
 
 package io.kamax.hbox.exception;
 
-@SuppressWarnings("serial")
+
 public final class ServerNotFoundException extends ServerException {
 
-   public ServerNotFoundException(String srvId) {
-      super("Server was not found: " + srvId);
-   }
+    private static final long serialVersionUID = -200390982636510969L;
+
+    public ServerNotFoundException(String srvId) {
+        super("Server was not found: " + srvId);
+    }
 
 }

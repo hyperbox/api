@@ -23,24 +23,24 @@ package io.kamax.hbox.constant;
 
 public enum Unit {
 
-   B,
-   KB,
-   MB,
-   GB,
-   TB,
+    B,
+    KB,
+    MB,
+    GB,
+    TB,
 
-   bps,
-   kbps,
-   mbps,
-   gpps,
+    bps,
+    kbps,
+    mbps,
+    gpps,
 
-   ms,
-   sec,
-   min,
-   hour,
-   day,
-   week,
-   month,
-   year,
+    ms,
+    sec,
+    min,
+    hour,
+    day,
+    week,
+    month,
+    year,
 
 }

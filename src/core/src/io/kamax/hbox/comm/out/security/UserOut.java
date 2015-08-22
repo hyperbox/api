@@ -27,30 +27,30 @@ import io.kamax.hbox.constant.UserAttribute;
 
 public class UserOut extends ObjectOut {
 
-   protected UserOut() {
-      // used for (de)serialisation
-   }
+    protected UserOut() {
+        // used for (de)serialisation
+    }
 
-   public UserOut(String id, String username, String domain) {
-      super(EntityType.User, id);
-      setSetting(new StringSettingIO(UserAttribute.Username, username));
-      setSetting(new StringSettingIO(UserAttribute.Domain, domain));
-   }
+    public UserOut(String id, String username, String domain) {
+        super(EntityType.User, id);
+        setSetting(new StringSettingIO(UserAttribute.Username, username));
+        setSetting(new StringSettingIO(UserAttribute.Domain, domain));
+    }
 
-   public String getUsername() {
-      return getSetting(UserAttribute.Username).getString();
-   }
+    public String getUsername() {
+        return getSetting(UserAttribute.Username).getString();
+    }
 
-   public String getDomain() {
-      return getSetting(UserAttribute.Domain).getString();
-   }
+    public String getDomain() {
+        return getSetting(UserAttribute.Domain).getString();
+    }
 
-   public String getDomainLogonName() {
-      if (getDomain() != null) {
-         return getDomain() + "\\" + getUsername();
-      } else {
-         return getUsername();
-      }
-   }
+    public String getDomainLogonName() {
+        if (getDomain() != null) {
+            return getDomain() + "\\" + getUsername();
+        } else {
+            return getUsername();
+        }
+    }
 
 }

@@ -24,9 +24,9 @@ import java.util.Date;
 
 public class PlatformUtil {
 
-   public static Date getBootTime() {
-      // System.out.println(ProcessRunner.runAndWait(new String[] { "wmic", "os", "get", "lastbootuptime" }).getStdOut());
-      throw new RuntimeException("PlatformUtil::getBootTime() Not implemented");
-   }
+    public static Date getBootTime() {
+        // System.out.println(ProcessRunner.runAndWait(new String[] { "wmic", "os", "get", "lastbootuptime" }).getStdOut());
+        throw new RuntimeException("PlatformUtil::getBootTime() Not implemented");
+    }
 
 }

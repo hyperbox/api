@@ -20,19 +20,21 @@
 
 package io.kamax.hbox.exception;
 
-@SuppressWarnings("serial")
+
 public class HyperboxException extends RuntimeException {
 
-   public HyperboxException(String s) {
-      super(s);
-   }
+    private static final long serialVersionUID = -7493072157126142383L;
 
-   public HyperboxException(Throwable e) {
-      super(e.getMessage(), e);
-   }
+    public HyperboxException(String s) {
+        super(s);
+    }
 
-   public HyperboxException(String s, Throwable e) {
-      super(s, e);
-   }
+    public HyperboxException(Throwable e) {
+        super(e.getMessage(), e);
+    }
+
+    public HyperboxException(String s, Throwable e) {
+        super(s, e);
+    }
 
 }

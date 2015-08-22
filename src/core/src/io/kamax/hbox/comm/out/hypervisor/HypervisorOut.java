@@ -29,36 +29,36 @@ import java.util.List;
 
 public class HypervisorOut extends ObjectOut {
 
-   protected HypervisorOut() {
-      // Used for serialization
-   }
+    protected HypervisorOut() {
+        // Used for serialization
+    }
 
-   public HypervisorOut(String id) {
-      super(EntityType.Hypervisor, id);
-   }
+    public HypervisorOut(String id) {
+        super(EntityType.Hypervisor, id);
+    }
 
-   public HypervisorOut(String id, List<SettingIO> settings) {
-      super(EntityType.Hypervisor, id, settings);
-   }
+    public HypervisorOut(String id, List<SettingIO> settings) {
+        super(EntityType.Hypervisor, id, settings);
+    }
 
-   public String getType() {
-      return getSetting(HypervisorAttribute.Type).getString();
-   }
+    public String getType() {
+        return getSetting(HypervisorAttribute.Type).getString();
+    }
 
-   public String getVendor() {
-      return getSetting(HypervisorAttribute.Vendor).getString();
-   }
+    public String getVendor() {
+        return getSetting(HypervisorAttribute.Vendor).getString();
+    }
 
-   public String getProduct() {
-      return getSetting(HypervisorAttribute.Product).getString();
-   }
+    public String getProduct() {
+        return getSetting(HypervisorAttribute.Product).getString();
+    }
 
-   public String getVersion() {
-      return getSetting(HypervisorAttribute.Version).getString();
-   }
+    public String getVersion() {
+        return getSetting(HypervisorAttribute.Version).getString();
+    }
 
-   public String getRevision() {
-      return getSetting(HypervisorAttribute.Revision).getString();
-   }
+    public String getRevision() {
+        return getSetting(HypervisorAttribute.Revision).getString();
+    }
 
 }

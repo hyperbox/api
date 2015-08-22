@@ -20,11 +20,13 @@
 
 package io.kamax.hbox.exception;
 
-@SuppressWarnings("serial")
+
 public abstract class ServerException extends HyperboxException {
 
-   public ServerException(String s) {
-      super(s);
-   }
+    private static final long serialVersionUID = 5216931831750625335L;
+
+    public ServerException(String s) {
+        super(s);
+    }
 
 }

@@ -27,25 +27,25 @@ import java.util.Date;
 
 public final class MachineRegistrationEventOut extends MachineEventOut {
 
-   private Boolean isRegistered;
+    private Boolean isRegistered;
 
-   @SuppressWarnings("unused")
-   private MachineRegistrationEventOut() {
-      // Used for serialization
-   }
+    @SuppressWarnings("unused")
+    private MachineRegistrationEventOut() {
+        // Used for serialization
+    }
 
-   public MachineRegistrationEventOut(Date time, ServerOut srvOut, MachineOut mOut, Boolean isRegistered) {
-      super(time, HyperboxEvents.MachineRegistration, srvOut, mOut);
-      this.isRegistered = isRegistered;
-   }
+    public MachineRegistrationEventOut(Date time, ServerOut srvOut, MachineOut mOut, Boolean isRegistered) {
+        super(time, HyperboxEvents.MachineRegistration, srvOut, mOut);
+        this.isRegistered = isRegistered;
+    }
 
-   public Boolean isRegistered() {
-      return isRegistered;
-   }
+    public Boolean isRegistered() {
+        return isRegistered;
+    }
 
-   @Override
-   public String toString() {
-      return "Machine ID #" + getUuid() + " was " + (isRegistered() ? "registered" : "unregistered") + " @ " + getTime();
-   }
+    @Override
+    public String toString() {
+        return "Machine ID #" + getUuid() + " was " + (isRegistered() ? "registered" : "unregistered") + " @ " + getTime();
+    }
 
 }

@@ -20,11 +20,13 @@
 
 package io.kamax.hbox.exception;
 
-@SuppressWarnings("serial")
+
 public class ModuleNotFoundException extends ModuleException {
 
-   public ModuleNotFoundException(String moduleId) {
-      super("Module was not found for: " + moduleId);
-   }
+    private static final long serialVersionUID = -142675771267389005L;
+
+    public ModuleNotFoundException(String moduleId) {
+        super("Module was not found for: " + moduleId);
+    }
 
 }

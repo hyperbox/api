@@ -22,9 +22,9 @@ package io.kamax.hbox.states;
 
 public enum ProgressTrackerState {
 
-   Running,
-   Succeeded,
-   Failed,
-   Canceled
+    Running,
+    Succeeded,
+    Failed,
+    Canceled
 
 }

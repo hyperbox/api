@@ -24,54 +24,54 @@ import java.util.Map;
 
 public interface _Container {
 
-   public void set(String label, Object object);
+    public void set(String label, Object object);
 
-   public void set(Enum<?> e, Object object);
+    public void set(Enum<?> e, Object object);
 
-   public void set(Class<?> c, Object object);
+    public void set(Class<?> c, Object object);
 
-   public void set(Object object);
+    public void set(Object object);
 
-   public <T> T get(Class<T> c);
+    public <T> T get(Class<T> c);
 
-   public <T> T get(Class<?> label, Class<T> type);
+    public <T> T get(Class<?> label, Class<T> type);
 
-   /**
-    * Return the object mapped under the label given, or null if no object was included in this message.
-    * 
-    * @see Map
-    * @param s The label to use for looking up the object.
-    * @return The object mapped to this label, or null if no such map exist.
-    */
-   public Object get(String s);
+    /**
+     * Return the object mapped under the label given, or null if no object was included in this message.
+     * 
+     * @see Map
+     * @param s The label to use for looking up the object.
+     * @return The object mapped to this label, or null if no such map exist.
+     */
+    public Object get(String s);
 
-   /**
-    * Return the object mapped under this enum string representation, or null if no object was included in this message.
-    * 
-    * @see Map
-    * @param e The Enum to use for looking up the object. The lookup will use <code>toString()</code>
-    * @return The object mapped to this label, or null if no such map exist.
-    */
-   public Object get(Enum<?> e);
+    /**
+     * Return the object mapped under this enum string representation, or null if no object was included in this message.
+     * 
+     * @see Map
+     * @param e The Enum to use for looking up the object. The lookup will use <code>toString()</code>
+     * @return The object mapped to this label, or null if no such map exist.
+     */
+    public Object get(Enum<?> e);
 
-   /**
-    * Checks if an object mapped to the given label is included in this message.
-    * 
-    * @param s The label to check
-    * @return true if an object exists for this label, false if not.
-    */
-   public boolean has(String s);
+    /**
+     * Checks if an object mapped to the given label is included in this message.
+     * 
+     * @param s The label to check
+     * @return true if an object exists for this label, false if not.
+     */
+    public boolean has(String s);
 
-   /**
-    * Checks if an object mapped under the given class name is included in this message.
-    * 
-    * @param c The label to check
-    * @return true if an object exists for this class name as label, false if not.
-    */
-   public boolean has(Class<?> c);
+    /**
+     * Checks if an object mapped under the given class name is included in this message.
+     * 
+     * @param c The label to check
+     * @return true if an object exists for this class name as label, false if not.
+     */
+    public boolean has(Class<?> c);
 
-   public boolean has(Enum<?> e);
+    public boolean has(Enum<?> e);
 
-   public boolean hasData();
+    public boolean hasData();
 
 }

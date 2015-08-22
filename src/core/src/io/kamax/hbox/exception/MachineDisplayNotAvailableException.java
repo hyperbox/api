@@ -21,15 +21,17 @@
 
 package io.kamax.hbox.exception;
 
-@SuppressWarnings("serial")
+
 public class MachineDisplayNotAvailableException extends MachineException {
 
-   public MachineDisplayNotAvailableException() {
-      super("Machine Display is not available at this time.");
-   }
+    private static final long serialVersionUID = -4311348122462658960L;
 
-   public MachineDisplayNotAvailableException(String s) {
-      super(s);
-   }
+    public MachineDisplayNotAvailableException() {
+        super("Machine Display is not available at this time.");
+    }
+
+    public MachineDisplayNotAvailableException(String s) {
+        super(s);
+    }
 
 }

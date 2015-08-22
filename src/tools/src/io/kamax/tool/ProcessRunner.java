@@ -24,64 +24,64 @@ import java.io.IOException;
 
 public class ProcessRunner {
 
-   private String[] args;
-   private Process p;
-   private int rc = Integer.MAX_VALUE;
-   private String stdOut;
-   private String stdErr;
+    private String[] args;
+    private Process p;
+    private int rc = Integer.MAX_VALUE;
+    private String stdOut;
+    private String stdErr;
 
-   public static void runHeadless(Process p) {
-      new StreamDumper(p.getInputStream()).start();
-      new StreamDumper(p.getErrorStream()).start();
-   }
+    public static void runHeadless(Process p) {
+        new StreamDumper(p.getInputStream()).start();
+        new StreamDumper(p.getErrorStream()).start();
+    }
 
-   public static ProcessRunner runAndWait(String... args) {
-      return new ProcessRunner(args).runSync();
-   }
+    public static ProcessRunner runAndWait(String... args) {
+        return new ProcessRunner(args).runSync();
+    }
 
-   public ProcessRunner(String... args) {
-      this.args = args;
-   }
+    public ProcessRunner(String... args) {
+        this.args = args;
+    }
 
-   public ProcessRunner runSync() {
-      try {
-         p = new ProcessBuilder(args).start();
-      } catch (IOException e) {
-         throw new RuntimeException("Unable to build process", e);
-      }
+    public ProcessRunner runSync() {
+        try {
+            p = new ProcessBuilder(args).start();
+        } catch (IOException e) {
+            throw new RuntimeException("Unable to build process", e);
+        }
 
-      StreamReader srOut = new StreamReader(p.getInputStream());
-      StreamReader srErr = new StreamReader(p.getErrorStream());
-      srOut.start();
-      srErr.start();
+        StreamReader srOut = new StreamReader(p.getInputStream());
+        StreamReader srErr = new StreamReader(p.getErrorStream());
+        srOut.start();
+        srErr.start();
 
-      try {
-         rc = p.waitFor();
-      } catch (InterruptedException e) {
-         rc = Integer.MIN_VALUE;
-      } finally {
-         stdOut = srOut.getData();
-         stdErr = srErr.getData();
-      }
+        try {
+            rc = p.waitFor();
+        } catch (InterruptedException e) {
+            rc = Integer.MIN_VALUE;
+        } finally {
+            stdOut = srOut.getData();
+            stdErr = srErr.getData();
+        }
 
-      return this;
-   }
+        return this;
+    }
 
-   public String getStdErr() {
-      return stdErr;
-   }
+    public String getStdErr() {
+        return stdErr;
+    }
 
-   public String getStdOut() {
-      return stdOut;
-   }
+    public String getStdOut() {
+        return stdOut;
+    }
 
-   /**
-    * Get the process return code
-    * 
-    * @return process return code or Integer.MAX_VALUE if failed to create and start process or Integer.MIN_VALUE if Interrupted
-    */
-   public int getRc() {
-      return rc;
-   }
+    /**
+     * Get the process return code
+     * 
+     * @return process return code or Integer.MAX_VALUE if failed to create and start process or Integer.MIN_VALUE if Interrupted
+     */
+    public int getRc() {
+        return rc;
+    }
 
 }

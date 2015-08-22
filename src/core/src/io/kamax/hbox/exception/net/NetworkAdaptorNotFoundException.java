@@ -22,15 +22,17 @@ package io.kamax.hbox.exception.net;
 
 import io.kamax.hbox.exception.HyperboxException;
 
-@SuppressWarnings("serial")
+
 public class NetworkAdaptorNotFoundException extends HyperboxException {
 
-   public NetworkAdaptorNotFoundException(String adaptorId) {
-      this(adaptorId, "Could not find a network adaptor with ID " + adaptorId);
-   }
+    private static final long serialVersionUID = -5219073097148319571L;
 
-   public NetworkAdaptorNotFoundException(String adaptorId, String message) {
-      super(message);
-   }
+    public NetworkAdaptorNotFoundException(String adaptorId) {
+        this(adaptorId, "Could not find a network adaptor with ID " + adaptorId);
+    }
+
+    public NetworkAdaptorNotFoundException(String adaptorId, String message) {
+        super(message);
+    }
 
 }

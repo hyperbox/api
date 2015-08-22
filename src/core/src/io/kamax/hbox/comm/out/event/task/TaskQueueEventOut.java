@@ -28,25 +28,25 @@ import java.util.Date;
 
 public final class TaskQueueEventOut extends TaskEventOut {
 
-   private TaskQueueEvents ev;
+    private TaskQueueEvents ev;
 
-   @SuppressWarnings("unused")
-   private TaskQueueEventOut() {
-      // Used for serialization
-   }
+    @SuppressWarnings("unused")
+    private TaskQueueEventOut() {
+        // Used for serialization
+    }
 
-   public TaskQueueEventOut(Date time, ServerOut srvOut, TaskOut tOut, TaskQueueEvents ev) {
-      super(time, HyperboxEvents.TaskQueue, srvOut, tOut);
-      this.ev = ev;
-   }
+    public TaskQueueEventOut(Date time, ServerOut srvOut, TaskOut tOut, TaskQueueEvents ev) {
+        super(time, HyperboxEvents.TaskQueue, srvOut, tOut);
+        this.ev = ev;
+    }
 
-   public TaskQueueEvents getQueueEvent() {
-      return ev;
-   }
+    public TaskQueueEvents getQueueEvent() {
+        return ev;
+    }
 
-   @Override
-   public String toString() {
-      return "Task Queue performed " + getQueueEvent() + " on Task ID #" + getTaskId() + " @ " + getTime();
-   }
+    @Override
+    public String toString() {
+        return "Task Queue performed " + getQueueEvent() + " on Task ID #" + getTaskId() + " @ " + getTime();
+    }
 
 }

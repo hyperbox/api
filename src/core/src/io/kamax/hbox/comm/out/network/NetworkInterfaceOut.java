@@ -28,44 +28,44 @@ import java.util.List;
 
 public final class NetworkInterfaceOut extends ObjectOut {
 
-   private long nicId;
+    private long nicId;
 
-   @SuppressWarnings("unused")
-   private NetworkInterfaceOut() {
-      // stub
-   }
+    @SuppressWarnings("unused")
+    private NetworkInterfaceOut() {
+        // stub
+    }
 
-   public NetworkInterfaceOut(Long nicId, List<SettingIO> settings) {
-      super(EntityType.NetworkInterace, nicId.toString(), settings);
-      this.nicId = nicId;
-   }
+    public NetworkInterfaceOut(Long nicId, List<SettingIO> settings) {
+        super(EntityType.NetworkInterace, nicId.toString(), settings);
+        this.nicId = nicId;
+    }
 
-   public long getNicId() {
-      return nicId;
-   }
+    public long getNicId() {
+        return nicId;
+    }
 
-   public boolean isEnabled() {
-      return getSetting(NetworkInterfaceAttribute.Enabled).getBoolean();
-   }
+    public boolean isEnabled() {
+        return getSetting(NetworkInterfaceAttribute.Enabled).getBoolean();
+    }
 
-   public boolean isCableConnected() {
-      return getSetting(NetworkInterfaceAttribute.CableConnected).getBoolean();
-   }
+    public boolean isCableConnected() {
+        return getSetting(NetworkInterfaceAttribute.CableConnected).getBoolean();
+    }
 
-   public String getAttachMode() {
-      return getSetting(NetworkInterfaceAttribute.AttachMode).getString();
-   }
+    public String getAttachMode() {
+        return getSetting(NetworkInterfaceAttribute.AttachMode).getString();
+    }
 
-   public String getAttachName() {
-      return getSetting(NetworkInterfaceAttribute.AttachName).getString();
-   }
+    public String getAttachName() {
+        return getSetting(NetworkInterfaceAttribute.AttachName).getString();
+    }
 
-   public String getAdapterType() {
-      return getSetting(NetworkInterfaceAttribute.AdapterType).getString();
-   }
+    public String getAdapterType() {
+        return getSetting(NetworkInterfaceAttribute.AdapterType).getString();
+    }
 
-   public String getMacAddress() {
-      return getSetting(NetworkInterfaceAttribute.MacAddress).getString();
-   }
+    public String getMacAddress() {
+        return getSetting(NetworkInterfaceAttribute.MacAddress).getString();
+    }
 
 }

@@ -24,44 +24,44 @@ import io.kamax.hbox.hypervisor.net._NetService;
 
 public class NetServiceIO implements _NetService {
 
-   private String type;
-   private boolean enabled;
+    private String type;
+    private boolean enabled;
 
-   protected NetServiceIO() {
-      // serial
-   }
+    protected NetServiceIO() {
+        // serial
+    }
 
-   public NetServiceIO(_NetService svc) {
-      this(svc.getType(), svc.isEnabled());
-   }
+    public NetServiceIO(_NetService svc) {
+        this(svc.getType(), svc.isEnabled());
+    }
 
-   public NetServiceIO(String type) {
-      this.type = type;
-   }
+    public NetServiceIO(String type) {
+        this.type = type;
+    }
 
-   public NetServiceIO(String type, boolean enabled) {
-      this(type);
-      setEnabled(enabled);
-   }
+    public NetServiceIO(String type, boolean enabled) {
+        this(type);
+        setEnabled(enabled);
+    }
 
-   @Override
-   public String getType() {
-      return type;
-   }
+    @Override
+    public String getType() {
+        return type;
+    }
 
-   @Override
-   public boolean isEnabled() {
-      return enabled;
-   }
+    @Override
+    public boolean isEnabled() {
+        return enabled;
+    }
 
-   @Override
-   public void setEnabled(boolean isEnabled) {
-      this.enabled = isEnabled;
-   }
+    @Override
+    public void setEnabled(boolean isEnabled) {
+        this.enabled = isEnabled;
+    }
 
-   @Override
-   public NetServiceIO getIO() {
-      return this;
-   }
+    @Override
+    public NetServiceIO getIO() {
+        return this;
+    }
 
 }

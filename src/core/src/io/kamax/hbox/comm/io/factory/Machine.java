@@ -22,12 +22,12 @@ package io.kamax.hbox.comm.io.factory;
 
 public class Machine {
 
-   private Machine() {
-      // only static
-   }
+    private Machine() {
+        // only static
+    }
 
-   public static String getId(String serverId, String uuid) {
-      return serverId + "|" + uuid;
-   }
+    public static String getId(String serverId, String uuid) {
+        return serverId + "|" + uuid;
+    }
 
 }

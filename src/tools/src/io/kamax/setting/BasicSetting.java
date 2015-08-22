@@ -22,42 +22,42 @@ package io.kamax.setting;
 
 public abstract class BasicSetting<T> implements _Setting {
 
-   private String name;
-   private T value;
+    private String name;
+    private T value;
 
-   public BasicSetting(String name, T value) {
-      this.name = name;
-      this.value = value;
-   }
+    public BasicSetting(String name, T value) {
+        this.name = name;
+        this.value = value;
+    }
 
-   public BasicSetting(Enum<?> setting, T value) {
-      this(setting.toString(), value);
-   }
+    public BasicSetting(Enum<?> setting, T value) {
+        this(setting.toString(), value);
+    }
 
-   @Override
-   public String getName() {
-      return name;
-   }
+    @Override
+    public String getName() {
+        return name;
+    }
 
-   @Override
-   public T getValue() {
-      return value;
-   }
+    @Override
+    public T getValue() {
+        return value;
+    }
 
-   @Override
-   public Boolean getBoolean() {
-      return ((getString().compareToIgnoreCase("yes") == 0) ||
-            (getString().compareToIgnoreCase("1") == 0) || (getString().compareToIgnoreCase("true") == 0));
-   }
+    @Override
+    public Boolean getBoolean() {
+        return ((getString().compareToIgnoreCase("yes") == 0) ||
+                (getString().compareToIgnoreCase("1") == 0) || (getString().compareToIgnoreCase("true") == 0));
+    }
 
-   @Override
-   public Long getNumber() {
-      return Long.parseLong(getString());
-   }
+    @Override
+    public Long getNumber() {
+        return Long.parseLong(getString());
+    }
 
-   @Override
-   public String getString() {
-      return getValue().toString();
-   }
+    @Override
+    public String getString() {
+        return getValue().toString();
+    }
 
 }

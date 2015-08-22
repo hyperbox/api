@@ -22,11 +22,11 @@ package io.kamax.hbox.constant.security;
 
 public enum Machine {
 
-   List,
-   Get,
-   Modify,
-   Register,
-   Unregister,
-   Delete,
+    List,
+    Get,
+    Modify,
+    Register,
+    Unregister,
+    Delete,
 
 }

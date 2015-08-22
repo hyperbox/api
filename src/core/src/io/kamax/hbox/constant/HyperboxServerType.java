@@ -23,7 +23,7 @@ package io.kamax.hbox.constant;
 
 public enum HyperboxServerType {
 
-   Controller,
-   Manager,
+    Controller,
+    Manager,
 
 }

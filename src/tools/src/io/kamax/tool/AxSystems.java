@@ -26,12 +26,12 @@ import java.net.UnknownHostException;
 
 public class AxSystems {
 
-   public static String getHostname() {
-      try {
-         return InetAddress.getLocalHost().getHostName();
-      } catch (UnknownHostException e) {
-         return "Unknown Host";
-      }
-   }
+    public static String getHostname() {
+        try {
+            return InetAddress.getLocalHost().getHostName();
+        } catch (UnknownHostException e) {
+            return "Unknown Host";
+        }
+    }
 
 }

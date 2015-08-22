@@ -26,22 +26,22 @@ import io.kamax.hbox.comm.out.storage.StorageDeviceAttachmentOut;
 
 public final class StorageDeviceAttachmentIoFactory {
 
-   private StorageDeviceAttachmentIoFactory() {
-      // Factory class
-   }
+    private StorageDeviceAttachmentIoFactory() {
+        // Factory class
+    }
 
-   public static String getId(String machineId, String controllerId, Long portId, Long deviceId) {
-      return machineId + "|" + controllerId + "|" + portId.toString() + "|" + deviceId.toString();
-   }
+    public static String getId(String machineId, String controllerId, Long portId, Long deviceId) {
+        return machineId + "|" + controllerId + "|" + portId.toString() + "|" + deviceId.toString();
+    }
 
-   public static StorageDeviceAttachmentIn get(StorageDeviceAttachmentOut maOut) {
-      if (maOut.hasMediumInserted()) {
-         return new StorageDeviceAttachmentIn(maOut.getControllerName(), maOut.getPortId(), maOut.getDeviceId(), maOut.getDeviceType(), new MediumIn(
-               maOut.getMediumUuid()));
-      } else {
-         return new StorageDeviceAttachmentIn(maOut.getControllerName(), maOut.getPortId(), maOut.getDeviceId(), maOut.getDeviceType());
-      }
+    public static StorageDeviceAttachmentIn get(StorageDeviceAttachmentOut maOut) {
+        if (maOut.hasMediumInserted()) {
+            return new StorageDeviceAttachmentIn(maOut.getControllerName(), maOut.getPortId(), maOut.getDeviceId(), maOut.getDeviceType(), new MediumIn(
+                    maOut.getMediumUuid()));
+        } else {
+            return new StorageDeviceAttachmentIn(maOut.getControllerName(), maOut.getPortId(), maOut.getDeviceId(), maOut.getDeviceType());
+        }
 
-   }
+    }
 
 }

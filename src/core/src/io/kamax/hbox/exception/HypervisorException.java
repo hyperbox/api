@@ -20,20 +20,22 @@
 
 package io.kamax.hbox.exception;
 
-@SuppressWarnings("serial")
+
 public class HypervisorException extends HyperboxException {
 
-   public HypervisorException(String s) {
-      super(s);
-   }
+    private static final long serialVersionUID = 6775551124879478069L;
 
-   public HypervisorException(Throwable t) {
-      super(t);
-      ;
-   }
+    public HypervisorException(String s) {
+        super(s);
+    }
 
-   public HypervisorException(String s, Throwable t) {
-      super(s, t);
-   }
+    public HypervisorException(Throwable t) {
+        super(t);
+        ;
+    }
+
+    public HypervisorException(String s, Throwable t) {
+        super(s, t);
+    }
 
 }

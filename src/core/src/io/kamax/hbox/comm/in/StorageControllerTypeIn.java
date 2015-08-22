@@ -24,12 +24,12 @@ import io.kamax.hbox.constant.EntityType;
 
 public final class StorageControllerTypeIn extends ObjectIn<EntityType> {
 
-   private StorageControllerTypeIn() {
-      super(EntityType.StorageControllerType);
-   }
+    private StorageControllerTypeIn() {
+        super(EntityType.StorageControllerType);
+    }
 
-   public StorageControllerTypeIn(String id) {
-      super(EntityType.StorageControllerType, id);
-   }
+    public StorageControllerTypeIn(String id) {
+        super(EntityType.StorageControllerType, id);
+    }
 
 }

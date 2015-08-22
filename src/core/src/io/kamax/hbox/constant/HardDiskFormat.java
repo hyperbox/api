@@ -22,12 +22,12 @@ package io.kamax.hbox.constant;
 
 public enum HardDiskFormat {
 
-   // TODO remove this enum and use the _Hypervisor::listHardDiskFormats() call instead.
-   VDI,
-   VMDK;
+    // TODO remove this enum and use the _Hypervisor::listHardDiskFormats() call instead.
+    VDI,
+    VMDK;
 
-   public String getId() {
-      return toString();
-   }
+    public String getId() {
+        return toString();
+    }
 
 }

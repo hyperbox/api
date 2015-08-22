@@ -22,10 +22,10 @@ package io.kamax.hbox.constant.security;
 
 public enum Server {
 
-   Get,
-   Add,
-   Modify,
-   Remove,
-   ListVM,
+    Get,
+    Add,
+    Modify,
+    Remove,
+    ListVM,
 
 }

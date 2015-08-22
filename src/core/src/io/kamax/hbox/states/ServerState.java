@@ -22,38 +22,38 @@ package io.kamax.hbox.states;
 
 /**
  * The different Hyperbox system states.
- * 
+ *
  * @author max
  */
 public enum ServerState {
 
-   /**
-    * The server is under maintenance mode and will not accept any command except for going out of the mode or shutting down.
-    */
-   Maintenance,
+    /**
+     * The server is under maintenance mode and will not accept any command except for going out of the mode or shutting down.
+     */
+    Maintenance,
 
-   /**
-    * The server is stopped. This status is only visible internally or after the server has been stopped.
-    */
-   Stopped,
-   /**
-    * When Hyperbox is loading services, modules, etc.
-    */
-   Starting,
+    /**
+     * The server is stopped. This status is only visible internally or after the server has been stopped.
+     */
+    Stopped,
+    /**
+     * When Hyperbox is loading services, modules, etc.
+     */
+    Starting,
 
-   /**
-    * When Hyperbox is running and ready for commands and tasks.
-    */
-   Running,
+    /**
+     * When Hyperbox is running and ready for commands and tasks.
+     */
+    Running,
 
-   /**
-    * When Hyperbox is shutting down.
-    */
-   Stopping,
+    /**
+     * When Hyperbox is shutting down.
+     */
+    Stopping,
 
-   /**
-    * The server cannot be reached.
-    */
-   Unavailable
+    /**
+     * The server cannot be reached.
+     */
+    Unavailable
 
 }

@@ -27,33 +27,33 @@ import java.util.Collection;
 
 public class HostOut extends ObjectOut {
 
-   @SuppressWarnings("unused")
-   private HostOut() {
-      // Used for serialization
-   }
+    @SuppressWarnings("unused")
+    private HostOut() {
+        // Used for serialization
+    }
 
-   public HostOut(Collection<SettingIO> sIoList) {
-      setSetting(sIoList);
-   }
+    public HostOut(Collection<SettingIO> sIoList) {
+        setSetting(sIoList);
+    }
 
-   public String getHostname() {
-      return getSetting(HostAttribute.Hostname).getString();
-   }
+    public String getHostname() {
+        return getSetting(HostAttribute.Hostname).getString();
+    }
 
-   public String getOSName() {
-      return getSetting(HostAttribute.OperatingSystemName).getString();
-   }
+    public String getOSName() {
+        return getSetting(HostAttribute.OperatingSystemName).getString();
+    }
 
-   public String getOSVersion() {
-      return getSetting(HostAttribute.OperatingSystemVersion).getString();
-   }
+    public String getOSVersion() {
+        return getSetting(HostAttribute.OperatingSystemVersion).getString();
+    }
 
-   public Long getMemorySize() {
-      return getSetting(HostAttribute.MemoryTotal).getNumber();
-   }
+    public Long getMemorySize() {
+        return getSetting(HostAttribute.MemoryTotal).getNumber();
+    }
 
-   public Long getMemoryAvailable() {
-      return getSetting(HostAttribute.MemoryAvailable).getNumber();
-   }
+    public Long getMemoryAvailable() {
+        return getSetting(HostAttribute.MemoryAvailable).getNumber();
+    }
 
 }
