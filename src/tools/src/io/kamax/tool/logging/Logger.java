@@ -223,6 +223,7 @@ public class Logger {
         output.println(s);
     }
 
+    @SuppressWarnings("deprecation")
     private static String getCalling(boolean methodName) {
         int depth = 4;
         if (methodName) {
