@@ -28,4 +28,15 @@ public class Validate {
         }
     }
 
+    public static void notEmpty(Object o) {
+        notEmpty(o.toString());
+    }
+
+    public static void notEmpty(String s) {
+        notNull(s);
+        if (s.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
+    }
+
 }
