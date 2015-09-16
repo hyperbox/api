@@ -30,7 +30,7 @@ public class HyperboxException extends RuntimeException {
     }
 
     public HyperboxException(Throwable e) {
-        super(e.getMessage(), e);
+        super(e);
     }
 
     public HyperboxException(String s, Throwable e) {
