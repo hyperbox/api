@@ -79,11 +79,11 @@
 		<delete dir="${hbox.api.out.dir}"/>
 	</target>
 	
-	<target name="configure.win" if="ifWin">
+	<target name="configure.win" if="${ifWin}">
 		<property name="os.family"								value="win"/>
 	</target>
 	
-	<target name="configure.linux" if="ifLinux">
+	<target name="configure.linux" if="${ifLinux}">
 		<property name="os.family" 								value="linux"/>
 	</target>
 	
