@@ -97,6 +97,10 @@ public class AxStrings {
         return (l != null) && (r != null) && l.equals(r);
     }
 
+    public static boolean contentEquals(String l, String r) {
+        return (l != null) && (r != null) && l.contentEquals(r);
+    }
+
     /**
      * Get the string representation of the object
      * 
