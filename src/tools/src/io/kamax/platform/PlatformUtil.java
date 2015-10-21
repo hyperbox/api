@@ -21,12 +21,44 @@
 package io.kamax.platform;
 
 import java.util.Date;
+import org.apache.commons.lang3.SystemUtils;
 
 public class PlatformUtil {
 
     public static Date getBootTime() {
         // System.out.println(ProcessRunner.runAndWait(new String[] { "wmic", "os", "get", "lastbootuptime" }).getStdOut());
         throw new RuntimeException("PlatformUtil::getBootTime() Not implemented");
+    }
+
+    /**
+     * Return one of the given parameters depending on the current platform
+     * 
+     * @param onWin value to be returned if Platform is Windows
+     * @param other value to be returned for other platforms
+     * @return String
+     */
+    public static String getString(String onLinux, String other) {
+        if (SystemUtils.IS_OS_LINUX) {
+            return onLinux;
+        } else {
+            return other;
+        }
+    }
+
+    /**
+     * Return one of the given parameters depending on the current platform
+     * 
+     * @param onLinux value to be returned if Platform is Linux
+     * @param onWin value to be returned if Platform is Windows
+     * @param others value to be returned for other platforms
+     * @return String
+     */
+    public static String getString(String onLinux, String onWin, String others) {
+        if (SystemUtils.IS_OS_WINDOWS) {
+            return onWin;
+        } else {
+            return getString(onLinux, others);
+        }
     }
 
 }
