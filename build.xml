@@ -56,6 +56,7 @@
 	<property name="hbox.api.out.build.jar.file"								location="${hbox.api.out.build.jar.dir}/${hbox.api.jar.filename}" />
 	
 	<property name="hbox.api.tools.src.dir"										location="${hbox.api.tools.dir}/${src.dirname}" />
+	<property name="hbox.api.tools.lib.dir"										location="${hbox.api.tools.dir}/${lib.dirname}" />
 	<property name="hbox.api.tools.class.dir"									location="${hbox.api.out.build.class.dir}/${core.name}-${tools.name}" />
 	
 	<property name="hbox.api.core.src.dir"										location="${hbox.api.core.dir}/${src.dirname}" />
@@ -107,6 +108,7 @@
 		<pathelement location="${hbox.api.core.class.dir}"/>
 		<pathelement location="${hbox.api.tools.class.dir}"/>
 		<fileset dir="${hbox.api.core.lib.dir}" includes="**/*.jar"/>
+		<fileset dir="${hbox.api.tools.lib.dir}" includes="**/*.jar"/>
 	</path>
 	
 	<target name="compile" depends="configure">
