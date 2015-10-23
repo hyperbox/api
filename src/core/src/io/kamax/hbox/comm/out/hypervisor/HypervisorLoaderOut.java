@@ -25,6 +25,7 @@ public class HypervisorLoaderOut {
 
     private String vendor;
     private String product;
+    private String version;
     private String typeId;
     private String hypervisorId;
 
@@ -33,9 +34,10 @@ public class HypervisorLoaderOut {
 
     }
 
-    public HypervisorLoaderOut(String vendor, String product, String typeId, String hypervisorId) {
+    public HypervisorLoaderOut(String vendor, String product, String version, String typeId, String hypervisorId) {
         this.vendor = vendor;
         this.product = product;
+        this.version = version;
         this.typeId = typeId;
         this.hypervisorId = hypervisorId;
     }
@@ -52,6 +54,13 @@ public class HypervisorLoaderOut {
      */
     public String getProduct() {
         return product;
+    }
+
+    /**
+     * @return the version
+     */
+    public String getVersion() {
+        return version;
     }
 
     /**
