@@ -115,8 +115,8 @@
 		<mkdir dir="${hbox.api.tools.class.dir}" />
 		<mkdir dir="${hbox.api.core.class.dir}" />
 		
-		<javac source="1.6" target="1.6" debug="on" includeantruntime="false" srcdir="${hbox.api.tools.src.dir}" destdir="${hbox.api.tools.class.dir}" classpathref="hbox.api.classpath" />
-		<javac source="1.6" target="1.6" debug="on" includeantruntime="false" srcdir="${hbox.api.core.src.dir}" destdir="${hbox.api.core.class.dir}" classpathref="hbox.api.classpath" />
+		<javac source="1.7" target="1.7" debug="on" includeantruntime="false" srcdir="${hbox.api.tools.src.dir}" destdir="${hbox.api.tools.class.dir}" classpathref="hbox.api.classpath" />
+		<javac source="1.7" target="1.7" debug="on" includeantruntime="false" srcdir="${hbox.api.core.src.dir}" destdir="${hbox.api.core.class.dir}" classpathref="hbox.api.classpath" />
 		<echo file="${hbox.api.core.class.dir}/api.build.properties" append="false">version=${hbox.api.version}${line.separator}</echo>
 		<echo file="${hbox.api.core.class.dir}/api.build.properties" append="true">protocol=${hbox.api.version}${line.separator}</echo>
 	</target>
