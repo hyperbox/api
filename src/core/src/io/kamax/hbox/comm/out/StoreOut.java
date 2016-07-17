@@ -20,6 +20,7 @@
 
 package io.kamax.hbox.comm.out;
 
+import io.kamax.hbox.comm.io.BooleanSettingIO;
 import io.kamax.hbox.comm.io.StringSettingIO;
 import io.kamax.hbox.constant.EntityType;
 import io.kamax.hbox.constant.StoreAttribute;
@@ -32,8 +33,9 @@ public final class StoreOut extends ObjectOut {
         // used for (de)serialisation
     }
 
-    public StoreOut(String id, String label, String location) {
+    public StoreOut(String id, boolean isValid, String label, String location) {
         super(EntityType.Store, id);
+        setSetting(new BooleanSettingIO(StoreAttribute.IsValid, isValid));
         setSetting(new StringSettingIO(StoreAttribute.Label, label));
         setSetting(new StringSettingIO(StoreAttribute.Location, location));
     }
@@ -44,6 +46,10 @@ public final class StoreOut extends ObjectOut {
 
     public String getLocation() {
         return getSetting(StoreAttribute.Location).getString();
+    }
+
+    public boolean isValid() {
+        return getSetting(StoreAttribute.IsValid).getBoolean();
     }
 
     @Override

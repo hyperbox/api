@@ -23,6 +23,7 @@ package io.kamax.hbox.constant;
 public enum StoreAttribute {
 
     Id,
+    IsValid,
     Type,
     Label,
     Location,
