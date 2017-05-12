@@ -40,7 +40,7 @@ public class NetModeOut extends ObjectOut {
     }
 
     public NetModeOut(String id, String label, List<String> netServices, boolean canLinkAdaptor, boolean canAddAdaptor, boolean canRemoveAdaptor,
-            boolean canLinkNetworkName, boolean canRenameAdaptor) {
+                      boolean canLinkNetworkName, boolean canRenameAdaptor) {
         super(EntityType.NetMode, id);
         this.label = label;
         this.netServices = netServices;

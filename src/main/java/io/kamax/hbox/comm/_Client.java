@@ -35,7 +35,7 @@ public interface _Client extends _AnswerReceiver {
      * Get a unique identifier for the client.<br/>
      * This unique ID will typically be the username, or the IP:Port of the connection.<br/>
      * The value can potentially be anything and is left to the implementation, but always unique.
-     * 
+     *
      * @return a String holding the unique ID for this client
      */
     public String getId();
@@ -45,7 +45,7 @@ public interface _Client extends _AnswerReceiver {
     /**
      * Allow to send an event to this particular client.<br/>
      * If you wish to broadcast an event to every client, use _Front.broadcast() in the Hyperbox Server API.
-     * 
+     *
      * @param evOut The Event object to be send
      */
     public void post(EventOut evOut);

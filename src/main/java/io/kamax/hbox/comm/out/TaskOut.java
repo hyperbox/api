@@ -52,8 +52,8 @@ public class TaskOut extends ObjectOut {
     }
 
     public TaskOut(String serverId, String taskId, String actionId, String requestId, TaskState state, UserOut uOut, Date createTime,
-            Date queueTime,
-            Date startTime, Date endTime, ExceptionOut error) {
+                   Date queueTime,
+                   Date startTime, Date endTime, ExceptionOut error) {
         this(serverId, taskId);
         this.actionId = actionId;
         this.requestId = requestId;

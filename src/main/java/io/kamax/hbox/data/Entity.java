@@ -68,7 +68,7 @@ public abstract class Entity {
 
     /**
      * Change this object config data according to the setting given.
-     * 
+     *
      * @param sIo The SettingIO containing the setting data (name and value).
      */
     public void setSetting(SettingIO sIo) {
@@ -77,7 +77,7 @@ public abstract class Entity {
 
     /**
      * Retrieve the setting linked to the given name.
-     * 
+     *
      * @param name The name of the wanted setting.
      * @return The setting object containing the value.
      * @throws HyperboxException In case the setting does not exist.
@@ -92,7 +92,7 @@ public abstract class Entity {
 
     /**
      * Retrieve the setting for the given machine settings name.
-     * 
+     *
      * @param name The Enum.toString() ID to use
      * @return a SettingIO object that contains the setting data.
      * @throws HyperboxException In case the setting does not exist.

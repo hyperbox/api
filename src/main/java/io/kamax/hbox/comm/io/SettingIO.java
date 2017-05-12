@@ -27,10 +27,10 @@ import io.kamax.tools.logging.Logger;
  * Setting Comm object, equivalent of _Setting but can be used for sending to or receiving from the client.<br/>
  * More precise implementation of this class are available to enforce a more precise type, like String, boolean, etc.
  *
+ * @author max
  * @see BooleanSettingIO
  * @see StringSettingIO
  * @see PositiveNumberSettingIO
- * @author max
  */
 public class SettingIO {
 
@@ -48,8 +48,8 @@ public class SettingIO {
 
     /**
      * Constructor for a new setting, with the given name and an object as value
-     * 
-     * @param name The name of this setting as String
+     *
+     * @param name  The name of this setting as String
      * @param value The value for this setting
      */
     public SettingIO(Object name, Object value) {
@@ -59,7 +59,7 @@ public class SettingIO {
 
     /**
      * Get the name (also considered ID) of this setting
-     * 
+     *
      * @return The name of this setting as String
      */
     public String getName() {
@@ -68,7 +68,7 @@ public class SettingIO {
 
     /**
      * Get the raw value of this setting. Other methods can be used to get a more specific value.
-     * 
+     *
      * @return The value for this setting as Object
      * @see #getBoolean()
      * @see #getNumber()
@@ -82,7 +82,7 @@ public class SettingIO {
      * <p>
      * Get a boolean out of the stored raw setting value.
      * </p>
-     * 
+     *
      * @return a boolean, using {@code Boolean.parseBoolean(settingValue.toString())}
      * @see Boolean#parseBoolean(String)
      */
@@ -96,7 +96,7 @@ public class SettingIO {
      * Return a text value out of the stored raw setting value.<br/>
      * This method use <code>toString()</code> on the object, thus never fails.
      * </p>
-     * 
+     *
      * @return a String value for the setting
      */
     public String getString() {
@@ -105,7 +105,7 @@ public class SettingIO {
 
     /**
      * Try to get a Long out of the string representation of the stored raw setting value.
-     * 
+     *
      * @return a Long, using {@code Long.parseLong(settingValue.toString())}
      * @throws NumberFormatException in case the value cannot be parsed as a number
      * @see Long#parseLong(String)

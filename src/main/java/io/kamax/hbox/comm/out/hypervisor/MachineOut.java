@@ -49,7 +49,7 @@ public class MachineOut extends ObjectOut {
     }
 
     public MachineOut(String serverId, String uuid, MachineStates state, List<SettingIO> settings, List<StorageControllerOut> scList,
-            List<NetworkInterfaceOut> nicList) {
+                      List<NetworkInterfaceOut> nicList) {
         this(serverId, uuid, settings);
         if (state == null) {
             throw new HyperboxException("State cannot be null or empty");
@@ -84,9 +84,9 @@ public class MachineOut extends ObjectOut {
 
     /**
      * Build a machine message with the given UUID.
-     * 
+     *
      * @param serverId The server to which this VM belongs to
-     * @param uuid The UUID of the machine to send data about.
+     * @param uuid     The UUID of the machine to send data about.
      */
     public MachineOut(String serverId, String uuid) {
         super(EntityType.Machine, uuid);
@@ -100,7 +100,7 @@ public class MachineOut extends ObjectOut {
 
     /**
      * Get the UUID for this machine
-     * 
+     *
      * @return a String for this UUID
      */
     public String getUuid() {
@@ -113,7 +113,7 @@ public class MachineOut extends ObjectOut {
 
     /**
      * Get the machine state
-     * 
+     *
      * @return a String representing the machine state
      * @see MachineStates
      */
@@ -124,7 +124,7 @@ public class MachineOut extends ObjectOut {
     /**
      * Get the machine name.<br/>
      * Helper method that gets the setting name and return its value.
-     * 
+     *
      * @return a String containing the name
      */
     public String getName() {

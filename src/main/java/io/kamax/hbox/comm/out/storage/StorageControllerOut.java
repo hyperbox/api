@@ -40,7 +40,7 @@ public class StorageControllerOut extends ObjectOut {
     }
 
     public StorageControllerOut(String vmId, String name, List<SettingIO> settings) {
-        this(vmId, name, settings, Collections.<StorageDeviceAttachmentOut> emptyList());
+        this(vmId, name, settings, Collections.<StorageDeviceAttachmentOut>emptyList());
     }
 
     public StorageControllerOut(String vmId, String name, List<SettingIO> settings, List<StorageDeviceAttachmentOut> attachments) {

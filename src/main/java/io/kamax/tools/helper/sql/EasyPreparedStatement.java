@@ -166,7 +166,7 @@ public class EasyPreparedStatement {
      * <li>Date</li>
      * <li>Null</li>
      * </ul>
-     * 
+     *
      * @param o the object to set
      * @throws SQLException if something wrong happened
      */

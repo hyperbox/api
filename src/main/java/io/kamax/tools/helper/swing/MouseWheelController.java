@@ -33,7 +33,6 @@ import java.awt.event.MouseWheelListener;
  * </p>
  *
  * @author max
- *
  */
 public class MouseWheelController implements MouseWheelListener {
 
@@ -43,7 +42,7 @@ public class MouseWheelController implements MouseWheelListener {
 
     /**
      * Convenience constructor to create the class with a scroll amount of 60.
-     * 
+     *
      * @param scrollPane the scroll pane being used by the mouse wheel
      */
     public MouseWheelController(JScrollPane scrollPane) {
@@ -52,9 +51,9 @@ public class MouseWheelController implements MouseWheelListener {
 
     /**
      * Create the class with the specified scroll amount.
-     * 
+     *
      * @param scrollAmount the scroll amount to by used for this scroll pane
-     * @param scrollPane the scroll pane being used by the mouse wheel
+     * @param scrollPane   the scroll pane being used by the mouse wheel
      */
     public MouseWheelController(JScrollPane scrollPane, int scrollAmount) {
         this.scrollPane = scrollPane;
@@ -64,7 +63,7 @@ public class MouseWheelController implements MouseWheelListener {
 
     /**
      * Get the scroll amount
-     * 
+     *
      * @return the scroll amount
      */
     public int getScrollAmount() {
@@ -75,9 +74,9 @@ public class MouseWheelController implements MouseWheelListener {
      * Set the scroll amount. Controls the amount the scrollpane will scroll
      * for each mouse wheel rotation. The amount is relative to the unit
      * increment value of the scrollbar being scrolled.
-     * 
+     *
      * @param scrollAmount an integer value. A value of zero will use the
-     *            default scroll amount for your OS.
+     *                     default scroll amount for your OS.
      */
     public void setScrollAmount(int scrollAmount) {
         this.scrollAmount = scrollAmount;
@@ -124,6 +123,7 @@ public class MouseWheelController implements MouseWheelListener {
     }
 
     //  Implement MouseWheelListener interface
+
     /**
      * Redispatch a MouseWheelEvent to the real MouseWheelListeners
      */

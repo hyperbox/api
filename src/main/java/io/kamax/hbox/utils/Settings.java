@@ -26,7 +26,7 @@ public class Settings {
     /**
      * This will give a unique name for a given object.<br/>
      * This method is guarantee to always return the same unique ID for a setting for the class this object is made of.
-     * 
+     *
      * @param name The object to use as ID
      * @return The unique String representation of this object, to be used as an ID
      */

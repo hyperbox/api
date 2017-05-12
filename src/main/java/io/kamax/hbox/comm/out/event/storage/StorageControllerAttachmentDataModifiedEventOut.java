@@ -34,12 +34,12 @@ public class StorageControllerAttachmentDataModifiedEventOut extends StorageCont
     }
 
     public StorageControllerAttachmentDataModifiedEventOut(Date time, ServerOut srvOut, MachineOut vmOut,
-            StorageControllerOut stoOut) {
+                                                           StorageControllerOut stoOut) {
         super(time, HyperboxEvents.StorageControllerAttachmentDataModified, srvOut, vmOut, stoOut);
     }
 
     public StorageControllerAttachmentDataModifiedEventOut(Date time, Enum<?> id, ServerOut srvOut, MachineOut vmOut,
-            StorageControllerOut stoOut) {
+                                                           StorageControllerOut stoOut) {
         super(time, id, srvOut, vmOut, stoOut);
     }
 

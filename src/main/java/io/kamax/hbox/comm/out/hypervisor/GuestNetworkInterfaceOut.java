@@ -45,7 +45,7 @@ public class GuestNetworkInterfaceOut extends ObjectOut {
     }
 
     public GuestNetworkInterfaceOut(String id, boolean isUp, String macAddress, String ip4Address, String ip4Subnet, String ip6Address,
-            String ip6Subnet) {
+                                    String ip6Subnet) {
         this(id, isUp, macAddress, ip4Address, ip4Subnet);
         setSetting(new StringSettingIO(GuestNetworkInterfaceAttribute.IP6Address, ip6Address));
         setSetting(new StringSettingIO(GuestNetworkInterfaceAttribute.IP6Subnet, ip6Subnet));

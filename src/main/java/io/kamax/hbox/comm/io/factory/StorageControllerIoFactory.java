@@ -33,7 +33,7 @@ public final class StorageControllerIoFactory {
     /**
      * Create the equivalent in an Input object of this Storage Controller output object. The input object will have its {@link Action} set to
      * {@link Action#Modify}
-     * 
+     *
      * @param scOut The Storage Controller output object to transform
      * @return an input Storage Controller object labelled as {@link Action#Modify}
      * @see StorageControllerIn

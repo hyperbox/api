@@ -21,6 +21,7 @@
 package io.kamax.hbox.comm;
 
 // TODO create subclasses for each CoreTasks request
+
 /**
  * Request message represent a statefull message that is sent through the network from the client to the server.<br/>
  * A request message is the start of an exchange session and each exchange has a unique identifier.<br/>
@@ -30,9 +31,9 @@ package io.kamax.hbox.comm;
  * <li>a command to categorise this message</li>
  * </ul>
  *
+ * @author max
  * @see Answer
  * @see Message
- * @author max
  */
 public final class Request extends Message {
 
@@ -51,7 +52,7 @@ public final class Request extends Message {
 
     /**
      * Build a new Request message object with the given CoreTask.
-     * 
+     *
      * @param task The task to be set in this request message.
      */
     public Request(Enum<?> task) {
@@ -60,9 +61,9 @@ public final class Request extends Message {
 
     /**
      * Build a new Request message with the given task and include the given object to this message.
-     * 
+     *
      * @param task The CoreTask to set as task
-     * @param o The object to include to the message - will be mapped using its Class
+     * @param o    The object to include to the message - will be mapped using its Class
      * @see Message
      * @see Answer
      * @see HypervisorTasks
@@ -85,7 +86,7 @@ public final class Request extends Message {
 
     /**
      * Build a new Request message with the given command.
-     * 
+     *
      * @param command The command to set this Request message with.
      * @see Message
      * @see Answer
@@ -97,9 +98,9 @@ public final class Request extends Message {
 
     /**
      * Build a new Request message with the given command and task.
-     * 
+     *
      * @param command The command to set in this Request message.
-     * @param task The task to set in this Request message.
+     * @param task    The task to set in this Request message.
      * @see Message
      * @see Answer
      * @see Command
@@ -111,9 +112,9 @@ public final class Request extends Message {
 
     /**
      * Build a new Request message with the given command and CoreTask ID.
-     * 
+     *
      * @param command The command to set in this Request message.
-     * @param task The CoreTask ID to set in this Request message.
+     * @param task    The CoreTask ID to set in this Request message.
      * @see Message
      * @see Answer
      * @see Command
@@ -125,10 +126,10 @@ public final class Request extends Message {
 
     /**
      * Build a new Request message with the given command, CoreTask ID and object.
-     * 
+     *
      * @param command The command to set in this Request message.
-     * @param task The CoreTask ID to set in this Request message.
-     * @param obj The object to attach to this Request message.
+     * @param task    The CoreTask ID to set in this Request message.
+     * @param obj     The object to attach to this Request message.
      * @see Message
      * @see Answer
      * @see Command
@@ -157,7 +158,7 @@ public final class Request extends Message {
 
     /**
      * Get the unique identifier for this Request and the following Answer(s).
-     * 
+     *
      * @return a String containing the unique ID
      */
     public String getExchangeId() {
@@ -166,7 +167,7 @@ public final class Request extends Message {
 
     /**
      * Get the command associated with this request.
-     * 
+     *
      * @return a Command object set in this Request message.
      */
     public Command getCommand() {

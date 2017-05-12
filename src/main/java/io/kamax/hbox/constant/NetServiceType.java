@@ -49,9 +49,7 @@ public enum NetServiceType {
     /**
      * Can an NAT engine for IPv6 be enabled/disabled
      */
-    NAT_IPv6,
-
-    ;
+    NAT_IPv6,;
 
     public String getId() {
         return toString();

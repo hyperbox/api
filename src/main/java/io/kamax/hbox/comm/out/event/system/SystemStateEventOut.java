@@ -47,10 +47,10 @@ public class SystemStateEventOut extends EventOut {
 
     /**
      * Create a new System Event comm message with the given state.
-     * 
-     * @param time when the event occurred
+     *
+     * @param time   when the event occurred
      * @param srvOut The server it originated from
-     * @param ss The new SystemState
+     * @param ss     The new SystemState
      */
     public SystemStateEventOut(Date time, ServerOut srvOut, ServerState ss) {
         super(time, HyperboxEvents.SystemState, srvOut);
@@ -59,7 +59,7 @@ public class SystemStateEventOut extends EventOut {
 
     /**
      * Get the system state stored in this event comm message.
-     * 
+     *
      * @return the system state at the time of creation of the message.
      */
     public ServerState getState() {

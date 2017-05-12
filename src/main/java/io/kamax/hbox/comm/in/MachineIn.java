@@ -46,7 +46,7 @@ public final class MachineIn extends ObjectIn<EntityType> {
 
     /**
      * Build a machine message with the given ID.
-     * 
+     *
      * @param id The ID of the machine to send data about.
      */
     public MachineIn(String id) {
@@ -70,7 +70,7 @@ public final class MachineIn extends ObjectIn<EntityType> {
 
     /**
      * Get the UUID for this machine
-     * 
+     *
      * @return a String for this UUID
      */
     public String getUuid() {
@@ -80,7 +80,7 @@ public final class MachineIn extends ObjectIn<EntityType> {
     /**
      * Get the machine name.<br/>
      * Helper method that gets the setting name and return its value.
-     * 
+     *
      * @return a String containing the name
      */
     public String getName() {
@@ -90,7 +90,7 @@ public final class MachineIn extends ObjectIn<EntityType> {
     /**
      * Set the machine name.<br/>
      * Helper method that created a new StringSettingIO with <code>MachineSettings.Name</code> and set the value to <i>name</i>
-     * 
+     *
      * @param name a String containing the name
      */
     public void setName(String name) {

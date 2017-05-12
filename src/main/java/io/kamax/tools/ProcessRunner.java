@@ -77,7 +77,7 @@ public class ProcessRunner {
 
     /**
      * Get the process return code
-     * 
+     *
      * @return process return code or Integer.MAX_VALUE if failed to create and start process or Integer.MIN_VALUE if Interrupted
      */
     public int getRc() {

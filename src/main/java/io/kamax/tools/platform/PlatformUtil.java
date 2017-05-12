@@ -33,7 +33,7 @@ public class PlatformUtil {
 
     /**
      * Return one of the given parameters depending on the current platform
-     * 
+     *
      * @param onWin value to be returned if Platform is Windows
      * @param other value to be returned for other platforms
      * @return String
@@ -48,10 +48,10 @@ public class PlatformUtil {
 
     /**
      * Return one of the given parameters depending on the current platform
-     * 
+     *
      * @param onLinux value to be returned if Platform is Linux
-     * @param onWin value to be returned if Platform is Windows
-     * @param others value to be returned for other platforms
+     * @param onWin   value to be returned if Platform is Windows
+     * @param others  value to be returned for other platforms
      * @return String
      */
     public static String getString(String onLinux, String onWin, String others) {

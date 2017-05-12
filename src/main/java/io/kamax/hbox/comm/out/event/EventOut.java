@@ -53,10 +53,10 @@ public abstract class EventOut {
 
     /**
      * Build a new Event Comm object with the given String ID
-     * 
-     * @param time When the event occurred
+     *
+     * @param time   When the event occurred
      * @param srvOut The Server from which this event originated from
-     * @param id The ID of the Event Comm
+     * @param id     The ID of the Event Comm
      */
     public EventOut(Date time, String id, ServerOut srvOut) {
         this.time = time;
@@ -66,10 +66,10 @@ public abstract class EventOut {
 
     /**
      * Build a new Event Comm object with the given SystemEvent ID
-     * 
-     * @param time When the event occurred
+     *
+     * @param time   When the event occurred
      * @param srvOut The Server from which this event originated from
-     * @param id The ID of the Event Comm
+     * @param id     The ID of the Event Comm
      */
     public EventOut(Date time, Enum<?> id, ServerOut srvOut) {
         this(time, id.toString(), srvOut);
@@ -77,11 +77,11 @@ public abstract class EventOut {
 
     /**
      * Build a new Event Comm object with the given ID and include the given data.
-     * 
-     * @param time When the event occurred
+     *
+     * @param time   When the event occurred
      * @param srvOut The Server from which this event originated from
-     * @param id The Event ID to include
-     * @param data The object data to include
+     * @param id     The Event ID to include
+     * @param data   The object data to include
      * @see ObjectIn
      * @see HyperboxEvents
      */
@@ -92,7 +92,7 @@ public abstract class EventOut {
 
     /**
      * Get this event ID
-     * 
+     *
      * @return This event ID as String
      */
     public String getId() {
@@ -113,9 +113,9 @@ public abstract class EventOut {
 
     /**
      * Set the given data under the given label
-     * 
+     *
      * @param label The label for this data
-     * @param data The data as _ObjectIO object
+     * @param data  The data as _ObjectIO object
      * @see ObjectIn
      */
     protected void set(String label, ObjectOut data) {
@@ -128,7 +128,7 @@ public abstract class EventOut {
 
     /**
      * Include a Comm object to this event using its class name as label.
-     * 
+     *
      * @param object a _ObjectIO objec to add to this event message.
      * @see ObjectIn
      * @see Class
@@ -139,7 +139,7 @@ public abstract class EventOut {
 
     /**
      * Get the object that was stored under this label, or null if none is mapped.
-     * 
+     *
      * @param s The label to search for
      * @return The object under this label, or null if no oject was found
      * @see HashMap
@@ -150,7 +150,7 @@ public abstract class EventOut {
 
     /**
      * Get the object that was stored using its class name as label
-     * 
+     *
      * @param c The Class to use as label
      * @return The object under this label, or null if no oject was found
      * @see HashMap

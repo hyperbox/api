@@ -92,7 +92,7 @@ public class Version {
 
     /**
      * Check if this version is an update compared to the given version
-     * 
+     *
      * @param o Version to check against
      * @return true if this version is an update, false if not
      */

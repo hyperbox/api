@@ -39,24 +39,19 @@ public class FileSizeNumber {
         if (byteSize >= 1125899906842624l) {
             humanUnit = "PB";
             humanSize = byteSize / 1125899906842624l;
-        }
-        else if (byteSize >= 1099511627776l) {
+        } else if (byteSize >= 1099511627776l) {
             humanUnit = "TB";
             humanSize = byteSize / 1099511627776l;
-        }
-        else if (byteSize >= 1073741824l) {
+        } else if (byteSize >= 1073741824l) {
             humanUnit = "GB";
             humanSize = byteSize / 1073741824l;
-        }
-        else if (byteSize >= 1048576l) {
+        } else if (byteSize >= 1048576l) {
             humanUnit = "MB";
             humanSize = byteSize / 1048576l;
-        }
-        else if (byteSize >= 1024) {
+        } else if (byteSize >= 1024) {
             humanUnit = "KB";
             humanSize = byteSize / 1024;
-        }
-        else {
+        } else {
             humanUnit = "B";
             humanSize = byteSize;
         }

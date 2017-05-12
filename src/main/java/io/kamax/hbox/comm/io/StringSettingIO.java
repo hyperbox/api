@@ -42,8 +42,8 @@ public final class StringSettingIO extends SettingIO {
     /**
      * Constructor for a new String setting, with the given name and value.<br/>
      * {@link Settings#getUniqueId(Object)} will be used on the Object name to get a unique ID.
-     * 
-     * @param name The Object value returned by to use as name.
+     *
+     * @param name  The Object value returned by to use as name.
      * @param value The String value of this setting
      */
     public StringSettingIO(Object name, String value) {
@@ -52,7 +52,7 @@ public final class StringSettingIO extends SettingIO {
 
     /**
      * Get the value of this setting as String
-     * 
+     *
      * @return String value of this setting
      */
     public String getValue() {

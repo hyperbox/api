@@ -48,7 +48,7 @@ public class MediumOut extends ObjectOut {
 
     /**
      * Return the filename of this medium or its UUID if the filename was not provided
-     * 
+     *
      * @return a String containing the filename or the UUID for this medium
      */
     public String getName() {
@@ -73,7 +73,7 @@ public class MediumOut extends ObjectOut {
 
     /**
      * Get the UUID for the base medium of this medium, if any
-     * 
+     *
      * @return UUID if this medium has a base medium, or an empty String if not
      */
     public String getBaseUuid() {

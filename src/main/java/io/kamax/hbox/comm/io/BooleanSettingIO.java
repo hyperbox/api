@@ -40,8 +40,8 @@ public final class BooleanSettingIO extends SettingIO {
 
     /**
      * Constructor for a new boolean setting, with the given name and value
-     * 
-     * @param name The name of this setting as Object
+     *
+     * @param name  The name of this setting as Object
      * @param value The boolean value for this setting
      */
     public BooleanSettingIO(Object name, Boolean value) {
@@ -50,7 +50,7 @@ public final class BooleanSettingIO extends SettingIO {
 
     /**
      * Get the boolean value of this setting
-     * 
+     *
      * @return boolean value of this setting
      */
     public boolean getValue() {

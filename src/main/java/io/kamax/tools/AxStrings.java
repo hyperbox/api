@@ -31,7 +31,7 @@ public class AxStrings {
      * Detects if a String is NULL or empty and return the failover value in case of.<br/>
      * Else, the String is returned untouched.
      *
-     * @param before String to validate
+     * @param before   String to validate
      * @param failover Failover string ins case original string is null or empty
      * @return the wanted value
      */
@@ -103,7 +103,7 @@ public class AxStrings {
 
     /**
      * Get the string representation of the object
-     * 
+     *
      * @param o The object to represent
      * @return o.toString() or null if o is null
      */

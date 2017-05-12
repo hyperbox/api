@@ -145,7 +145,7 @@ public class Configuration {
     /**
      * Insert the defined value for the given key to the configuration
      *
-     * @param key a String value for the key
+     * @param key   a String value for the key
      * @param value String value of the object, obtained using <code>toString()</code>
      */
     public static void setSetting(String key, Object value) {

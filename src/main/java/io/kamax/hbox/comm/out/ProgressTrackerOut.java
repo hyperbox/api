@@ -69,7 +69,7 @@ public class ProgressTrackerOut extends ObjectOut {
 
     /**
      * In seconds
-     * 
+     *
      * @return seconds remaining
      */
     public long timeRemaining() {

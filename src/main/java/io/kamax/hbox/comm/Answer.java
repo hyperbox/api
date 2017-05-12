@@ -52,9 +52,9 @@ public final class Answer extends Message {
 
     /**
      * Build an Answer object from the given request and with the given type.
-     * 
+     *
      * @param request The original request that produced this answer
-     * @param type The type of answer this message is
+     * @param type    The type of answer this message is
      * @see Message
      * @see AnswerType
      * @see Request
@@ -68,10 +68,10 @@ public final class Answer extends Message {
 
     /**
      * Build an Answer object from the given request and with the given type and attach the given object
-     * 
+     *
      * @param request The original request that produced this answer
-     * @param type The type of answer this message is
-     * @param o The objec to attach to this message
+     * @param type    The type of answer this message is
+     * @param o       The objec to attach to this message
      * @see Message
      * @see AnswerType
      * @see Request
@@ -87,11 +87,11 @@ public final class Answer extends Message {
 
     /**
      * Build an Answer object from the given request and with the given type and attach the given object under the given label.
-     * 
+     *
      * @param request The original request that produced this answer
-     * @param type The type of answer this message is
-     * @param label The label to set for the given object
-     * @param o The objecy to attach to this message
+     * @param type    The type of answer this message is
+     * @param label   The label to set for the given object
+     * @param o       The objecy to attach to this message
      * @see Message
      * @see AnswerType
      * @see Request
@@ -113,7 +113,7 @@ public final class Answer extends Message {
 
     /**
      * Get the unique identifier for this message and the following one(s).
-     * 
+     *
      * @return a String containing the unique ID
      */
     public String getExchangeId() {
@@ -122,7 +122,7 @@ public final class Answer extends Message {
 
     /**
      * Get the type of answer this message is
-     * 
+     *
      * @return an AnswerType object
      * @see AnswerType
      */
@@ -132,7 +132,7 @@ public final class Answer extends Message {
 
     /**
      * Get the command associated with this answer.
-     * 
+     *
      * @return a Command object set in this answer message.
      * @see Command
      */
@@ -143,7 +143,7 @@ public final class Answer extends Message {
     /**
      * Check if this message conclude an exchange between the client and the server based on the type of answer.<br/>
      * For more information on which type concludes an an exchange, refer to the ActionType doc.
-     * 
+     *
      * @return true if this answer finishes the exchange, false if not.
      * @see AnswerType
      * @see Request

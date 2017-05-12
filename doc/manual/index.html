@@ -67,24 +67,24 @@
 			</ol>
 		</li>
 		<!-- <li><a href="#m">Modules</a>
-			<ol>
-				<li><a href="#m-o">Overview</a></li>
-				<li><a href="#m-mm">Managing modules</a></li>
-			</ol>
-		</li> -->
+            <ol>
+                <li><a href="#m-o">Overview</a></li>
+                <li><a href="#m-mm">Managing modules</a></li>
+            </ol>
+        </li> -->
 		<!-- <li><a href="#st">Stores</a>
-			<ol>
-				<li><a href="#st-o">Overview</a></li>
-				<li><a href="#st-ms">Managing stores</a></li>
-			</ol>
-		</li> -->
+            <ol>
+                <li><a href="#st-o">Overview</a></li>
+                <li><a href="#st-ms">Managing stores</a></li>
+            </ol>
+        </li> -->
 		<!-- <li><a href="#sec">Security</a>
-			<ol>
-				<li><a href="#sec-o">Overview</a></li>
-				<li><a href="#sec-u">Users</a></li>
-				<li><a href="#sec-perm">Permissions</a></li>
-			</ol>
-		</li> -->
+            <ol>
+                <li><a href="#sec-o">Overview</a></li>
+                <li><a href="#sec-u">Users</a></li>
+                <li><a href="#sec-perm">Permissions</a></li>
+            </ol>
+        </li> -->
 		<li><a href="#cv">Console Viewers</a>
 			<ol>
 				<li><a href="#cv-o">Overview</a></li>
@@ -107,78 +107,118 @@
 	<div>
 		<h2><a id="gs-whyhbox">Why Hyperbox?</a></h2>
 		<div class="tab">
-			<p>Many Enterprise-grade management solutions exist out there: VMware vCenter, Citrix XenServer/Center, Microsoft Hyper-V to name a few.<br/>
-			Regardless of that, none of these solutions were fitting to solve a very simple problem: manage a dedicated server for virtualization, under the OS of our choice, in a free and open way.<br/>
-			Also, being big fans of VirtualBox, we could only find products that emulated the VirtualBox behaviour/interface, but did not provide easy remote access to an admin console or any enterprise-grade features.<br/>
-			That's when Hyperbox was born: to provide a management gateway to VirtualBox with advanced features, but open to any hypervisor and extensions via modules.</p>
-			
+			<p>Many Enterprise-grade management solutions exist out there: VMware vCenter, Citrix XenServer/Center,
+				Microsoft Hyper-V to name a few.<br/>
+				Regardless of that, none of these solutions were fitting to solve a very simple problem: manage a
+				dedicated server for virtualization, under the OS of our choice, in a free and open way.<br/>
+				Also, being big fans of VirtualBox, we could only find products that emulated the VirtualBox
+				behaviour/interface, but did not provide easy remote access to an admin console or any enterprise-grade
+				features.<br/>
+				That's when Hyperbox was born: to provide a management gateway to VirtualBox with advanced features, but
+				open to any hypervisor and extensions via modules.</p>
+
 			<p>
-				The name "Hyperbox" is made of "hyper", denoting its "up" nature, and "box" for <a href="https://www.virtualbox.org/" target="_blank">VirtualBox</a>, its favourite hypervisor.<br/>
-				The Hyperbox logo is inspired by an <a href="https://en.wikipedia.org/wiki/Hypercube" target="_blank">Hypercube</a>, building on top of the VirtualBox logo, just like it does for the software.
+				The name "Hyperbox" is made of "hyper", denoting its "up" nature, and "box" for <a
+					href="https://www.virtualbox.org/" target="_blank">VirtualBox</a>, its favourite hypervisor.<br/>
+				The Hyperbox logo is inspired by an <a href="https://en.wikipedia.org/wiki/Hypercube" target="_blank">Hypercube</a>,
+				building on top of the VirtualBox logo, just like it does for the software.
 			</p>
 		</div> <!-- Why Hyperbox -->
-		
+
 		<h2><a id="gs-whathbox">What is Hyperbox?</a></h2>
 		<div class="tab">
-			<p>Hyperbox is a Virtual Enterprise Management tool written in Java so it can be ported to virtually any platform using the same code.</p>
+			<p>Hyperbox is a Virtual Enterprise Management tool written in Java so it can be ported to virtually any
+				platform using the same code.</p>
 			Hyperbox is:
 			<ul>
-				<li>Meant to be a solution that allow IT amateurs and professionals alike to manage virtualized infrastructures, ranging from a single dedicated server to a multi-cluster multi-site design.</li>
-				<li>Meant to be a free, open and simple alternative to VMware vCenter, Citrix XenServer/XenCenter, Microsoft Hyper-V.</li>
-				<li>Especially targeted for Enterprise with its access and permissions systems, its store management, log of all activities and audit of sensitive actions.</li>
-				<li>A Client-Server software, not meant to be used alongside another management tool (like vboxmanage).</li>
-				<li>Aimed to individuals that already have knowledge and concepts about virtualization. Hyperbox does not reinvent the wheel, only implements existing concepts.</li>
+				<li>Meant to be a solution that allow IT amateurs and professionals alike to manage virtualized
+					infrastructures, ranging from a single dedicated server to a multi-cluster multi-site design.
+				</li>
+				<li>Meant to be a free, open and simple alternative to VMware vCenter, Citrix XenServer/XenCenter,
+					Microsoft Hyper-V.
+				</li>
+				<li>Especially targeted for Enterprise with its access and permissions systems, its store management,
+					log of all activities and audit of sensitive actions.
+				</li>
+				<li>A Client-Server software, not meant to be used alongside another management tool (like
+					vboxmanage).
+				</li>
+				<li>Aimed to individuals that already have knowledge and concepts about virtualization. Hyperbox does
+					not reinvent the wheel, only implements existing concepts.
+				</li>
 			</ul>
 			Hyperbox is not:
 			<ul>
 				<li>Meant to run without an hypervisor to manage. Nothing would be achieved then...</li>
-				<li>Be another &lt;insert protocol&gt; front-end implementation of the VirtualBox user interface. Many already exist like <a href="http://sourceforge.net/projects/phpvirtualbox/" target="_blank">phpVirtualBox</a>.</li>
-				<li>Meant to run on desktops environment where user interaction is required with the Virtual Machine console. It radically changes the use cases of VirtualBox by running headless-only VMs.</li>
-				<li>An Hypervisor like VirtualBox or ESXi. Hyperbox does NOT run Virtual machines but only connects to an hypervisor that does to manage it.</li>
+				<li>Be another &lt;insert protocol&gt; front-end implementation of the VirtualBox user interface. Many
+					already exist like <a href="http://sourceforge.net/projects/phpvirtualbox/" target="_blank">phpVirtualBox</a>.
+				</li>
+				<li>Meant to run on desktops environment where user interaction is required with the Virtual Machine
+					console. It radically changes the use cases of VirtualBox by running headless-only VMs.
+				</li>
+				<li>An Hypervisor like VirtualBox or ESXi. Hyperbox does NOT run Virtual machines but only connects to
+					an hypervisor that does to manage it.
+				</li>
 			</ul>
 		</div> <!-- What Hyperbox -->
-		
+
 		<h2><a id="gs-ga">Global Architecture</a></h2>
 		<div class="tab">
 			Hyperbox is made of three main components :
 			<ul>
-				<li>The Client, processing user inputs, sending them to the client and displaying the results or data change.</li>
-				<li>The Server, managing the Hypervisor, abstracting out its details and presenting a common management layer to the clients and proving a series of <a href="#gs-feats">features</a> that would normally not be present in the hypervisor itself.</li>
+				<li>The Client, processing user inputs, sending them to the client and displaying the results or data
+					change.
+				</li>
+				<li>The Server, managing the Hypervisor, abstracting out its details and presenting a common management
+					layer to the clients and proving a series of <a href="#gs-feats">features</a> that would normally
+					not be present in the hypervisor itself.
+				</li>
 				<li>The Hypervisor, running the actual virtualized entities.</li>
 			</ul>
 			<h3>The Client</h3>
 			<div class="tab">
-				The Client is a standalone Java program running on the server administrator's computer and is used to connected to an Hyperbox server. It comes as a GUI application by default.<br/>
-				It connects by mean of a "connector" which is a network module that read and write the data from/to the server. The default connector implements the <a href="https://github.com/EsotericSoftware/kryonet" target="_blank">Kryonet</a> protocol.<br/>
+				The Client is a standalone Java program running on the server administrator's computer and is used to
+				connected to an Hyperbox server. It comes as a GUI application by default.<br/>
+				It connects by mean of a "connector" which is a network module that read and write the data from/to the
+				server. The default connector implements the <a href="https://github.com/EsotericSoftware/kryonet"
+																target="_blank">Kryonet</a> protocol.<br/>
 				The Client can connect to several servers at once.<br/>
 			</div> <!-- Client -->
-			
+
 			<h3>The Server</h3>
 			<div class="tab">
-				<p>The Server is the cornerstone of an Hyperbox infrastructure, by being the bridge between different hypervisors, their management, extra features and the client.<br/>
-				It will abstract out all the specific implementations between the hypervisors and only keep the generic concepts, making it pluggable with virtually anything.<br/>
-				Finally, most free hypervisor products don't provide any kind of advanced enterprise features, focusing on the virtual side of things. The Server is meant to fill that gap.</p>
-				<p>The Server runs as a background process, as a Daemon or Service, but can also be run interactively. More details in the <a href="#il">Installation and Launch chapter</a>.</p>
+				<p>The Server is the cornerstone of an Hyperbox infrastructure, by being the bridge between different
+					hypervisors, their management, extra features and the client.<br/>
+					It will abstract out all the specific implementations between the hypervisors and only keep the
+					generic concepts, making it pluggable with virtually anything.<br/>
+					Finally, most free hypervisor products don't provide any kind of advanced enterprise features,
+					focusing on the virtual side of things. The Server is meant to fill that gap.</p>
+				<p>The Server runs as a background process, as a Daemon or Service, but can also be run interactively.
+					More details in the <a href="#il">Installation and Launch chapter</a>.</p>
 			</div> <!-- Server -->
-			
+
 			<h3>The Hypervisor</h3>
 			<div class="tab">
 				<p>The Hypervisor is the 3rd party software that the Hyperbox server manages by use of a module.<br/>
-				The module is a hot-pluggable Java package that can be dynamically used to directly connect to the hypervisor.<br/>
-				The Server can only connect to a single Hypervisor at the time by design, and it is strongly discourage to change it once in use.<br/></p>
-				Modules for VirtualBox are included by default in the Hyperbox releases - see the <a href="#h">Hypervisors</a> section for requirements and limitations.
+					The module is a hot-pluggable Java package that can be dynamically used to directly connect to the
+					hypervisor.<br/>
+					The Server can only connect to a single Hypervisor at the time by design, and it is strongly
+					discourage to change it once in use.<br/></p>
+				Modules for VirtualBox are included by default in the Hyperbox releases - see the <a href="#h">Hypervisors</a>
+				section for requirements and limitations.
 			</div> <!-- Hypervisor -->
 		</div> <!-- Global Arch -->
-		
+
 		<h2><a id="gs-req">Requirements</a></h2>
 		<div class="tab">
 			<ul>
-			<li>Java 1.6 64 bits or newer (Oracle JRE/JDK or OpenJDK JRE/JDK alike)</li>
-			<li>Hypervisor to connect to and its connector module. More on this in the <a href="#h">Hypervisors chapter</a></li>
-			<li>TCP port 45612 open on the server</li>
+				<li>Java 1.6 64 bits or newer (Oracle JRE/JDK or OpenJDK JRE/JDK alike)</li>
+				<li>Hypervisor to connect to and its connector module. More on this in the <a href="#h">Hypervisors
+					chapter</a></li>
+				<li>TCP port 45612 open on the server</li>
 			</ul>
 		</div>
-		
+
 		<h2><a id="gs-feats">Features</a></h2>
 		<div>
 			<ul>
@@ -212,7 +252,7 @@
 			</ul>
 		</div>
 	</div>
-	
+
 	<h1 class="chapterTitle"><a id="il">Installation and Launch</a></h1>
 	<ol>
 		<li><a href="#il-linux">Linux</a>
@@ -233,11 +273,14 @@
 			<div class="tab">
 				<h4>VirtualBox</h4>
 				<div class="tab">
-					Install the latest VirtualBox from <a href="https://www.VirtualBox.org/wiki/Downloads" target="_blank">VirtualBox website</a> - any other version/build are not tested and might break.<br>
+					Install the latest VirtualBox from <a href="https://www.VirtualBox.org/wiki/Downloads"
+														  target="_blank">VirtualBox website</a> - any other
+					version/build are not tested and might break.<br>
 				</div> <!-- VirtualBox -->
 				<h4>Java</h4>
 				<div class="tab">
-					Install : <pre>$ sudo apt-get install default-jre-headless</pre>
+					Install :
+					<pre>$ sudo apt-get install default-jre-headless</pre>
 					Check that you get a successful version info:
 					<pre>$ java -version<br/>java version "1.6.0_27"<br>OpenJDK Runtime Environment (IcedTea6 1.12.6) (6b27-1.12.6-1~deb7u1)<br>OpenJDK 64-Bit Server VM (build 20.0-b12, mixed mode)</pre>
 				</div> <!-- Java -->
@@ -247,7 +290,8 @@
 					<div class="tab">
 						Download the latest Hyperbox server installer
 						<pre>$ wget https://kamax.io/hbox/download/hbox_server-latest-linux_amd64.run</pre>
-						Run the installer and following the instructions. The Hyperbox daemon will start automatically - Output and errors are logged to &#60;INSTALL_DIR&#62;/log/hboxd.log by default.<br>
+						Run the installer and following the instructions. The Hyperbox daemon will start automatically -
+						Output and errors are logged to &#60;INSTALL_DIR&#62;/log/hboxd.log by default.<br>
 						<pre>$ sudo sh hbox_server-latest-linux_amd64.run</pre>
 						You can start/stop/restart/see status of the Hyperbox server using the init.d script as root :
 						<pre># /etc/init.d/hboxd status</pre>
@@ -258,7 +302,8 @@
 						<pre>$ wget https://kamax.io/hbox/download/hbox_client-latest-linux_amd64.run</pre>
 						Run the installer
 						<pre>$ sudo sh hbox_client-latest-linux_amd64.run</pre>
-						The Client can then be launched via the main menu or by creating a shortcut pointing to &#60;INSTALL_DIR&#62;/hyperbox and setting the working dir to &#60;INSTALL_DIR&#62;
+						The Client can then be launched via the main menu or by creating a shortcut pointing to &#60;INSTALL_DIR&#62;/hyperbox
+						and setting the working dir to &#60;INSTALL_DIR&#62;
 					</div> <!-- Client -->
 				</div> <!-- Hyperbox -->
 			</div> <!-- Debian -->
@@ -266,11 +311,14 @@
 			<div class="tab">
 				<h4>VirtualBox</h4>
 				<div class="tab">
-					Install the latest VirtualBox from <a href="https://www.VirtualBox.org/wiki/Downloads" target="_blank">VirtualBox website</a> - any other version/build are not tested and might break.<br>
+					Install the latest VirtualBox from <a href="https://www.VirtualBox.org/wiki/Downloads"
+														  target="_blank">VirtualBox website</a> - any other
+					version/build are not tested and might break.<br>
 				</div> <!-- VirtualBox -->
 				<h4>Java</h4>
 				<div class="tab">
-					Install : <pre>$ sudo yum install java-1.6.0-openjdk.x86_64</pre>
+					Install :
+					<pre>$ sudo yum install java-1.6.0-openjdk.x86_64</pre>
 					Check that you get a successful version info:
 					<pre>$ java -version<br/>java version "1.6.0_27"<br>OpenJDK Runtime Environment (IcedTea6 1.12.6) (6b27-1.12.6-1~deb7u1)<br>OpenJDK 64-Bit Server VM (build 20.0-b12, mixed mode)</pre>
 				</div> <!-- Java -->
@@ -280,7 +328,8 @@
 					<div class="tab">
 						Download the latest Hyperbox server installer
 						<pre>$ curl -O https://kamax.io/hbox/download/hbox_server-latest-linux_amd64.run</pre>
-						Run the installer and following the instructions. The Hyperbox daemon will start automatically - Output and errors are logged to &#60;INSTALL_DIR&#62;/log/hboxd.log by default.<br>
+						Run the installer and following the instructions. The Hyperbox daemon will start automatically -
+						Output and errors are logged to &#60;INSTALL_DIR&#62;/log/hboxd.log by default.<br>
 						<pre>$ sudo sh hbox_server-latest-linux_amd64.run</pre>
 						You can start/stop/restart/see status of the Hyperbox server using the init.d script as root :
 						<pre># /etc/init.d/hboxd status</pre>
@@ -291,12 +340,13 @@
 						<pre>$ curl -O https://kamax.io/hbox/download/hbox_client-latest-linux_amd64.run</pre>
 						Run the installer
 						<pre>$ sudo sh hbox_client-latest-linux_amd64.run</pre>
-						The Client can then be launched via the main menu or by creating a shortcut pointing to &#60;INSTALL_DIR&#62;/hyperbox and setting the working dir to &#60;INSTALL_DIR&#62;
+						The Client can then be launched via the main menu or by creating a shortcut pointing to &#60;INSTALL_DIR&#62;/hyperbox
+						and setting the working dir to &#60;INSTALL_DIR&#62;
 					</div> <!-- Client -->
 				</div> <!-- Hyperbox -->
 			</div> <!-- Redhat -->
 		</div> <!-- Linux -->
-		
+
 		<h2><a id="il-win">Windows</a></h2>
 		<ul>
 			<li>Ensure that a 64 bits JRE/JDK is installed</li>
@@ -311,109 +361,137 @@
 		<div class="tab">
 			<h3>Server</h3>
 			<div class="tab">Download the latest installer and run it.
-			
-				No up-to-date info is available here. If you have tried and got a nice step-by-step, please post on the forums or the mailing list.
+
+				No up-to-date info is available here. If you have tried and got a nice step-by-step, please post on the
+				forums or the mailing list.
 			</div>
-			
+
 			<h3>Client</h3>
 			<div class="tab">
-				Download the <a href="https://github.com/hyperbox/hyperbox/releases">latest installer</a> and run it. You will be able to change the install directory.<br/>
+				Download the <a href="https://github.com/hyperbox/hyperbox/releases">latest installer</a> and run it.
+				You will be able to change the install directory.<br/>
 				You can then start it from the Start Menu under the Hyperbox folder.
 			</div>
 		</div> <!-- Windows -->
-		
+
 		<h2><a id="il-others">Others</a></h2>
 		<div class="tab">
-			A ZIP package is available for the server and the client at the <a href="http://kamax.io/hbox/?downloads">Downloads</a> page.<br/>
-			Hyperbox doesn't require anything except for Java to be available. All the data, log file and configuration are stored within the install directory.<br/>
-			Therefore, to run Hyperbox in any other system, simply unzip the file in the location of your choice and run Hyperbox by taking example from the Linux bash script.
+			A ZIP package is available for the server and the client at the <a href="http://kamax.io/hbox/?downloads">Downloads</a>
+			page.<br/>
+			Hyperbox doesn't require anything except for Java to be available. All the data, log file and configuration
+			are stored within the install directory.<br/>
+			Therefore, to run Hyperbox in any other system, simply unzip the file in the location of your choice and run
+			Hyperbox by taking example from the Linux bash script.
 		</div> <!-- Others -->
 
 		<h2><a id="il-fl">First launch</a></h2>
 		<div class="tab">
 			<figure>
-				<img src="img/gettingStarted_client_first_launch.png" />
+				<img src="img/gettingStarted_client_first_launch.png"/>
 				<figcaption>Fire up the client. You will start in an empty window</figcaption>
 			</figure>
 			<br>
-			<figure>	
-				<img src="img/gettingStarted_client_server_add.png" />
+			<figure>
+				<img src="img/gettingStarted_client_server_add.png"/>
 				<figcaption>In the menu bar, click on Server > Add...</figcaption>
 			</figure>
 			<br>
 			<figure>
-				<img src="img/gettingStarted_client_server_add_info.png" />
+				<img src="img/gettingStarted_client_server_add_info.png"/>
 				<figcaption>
-					You will be prompted to enter the host name/IP address of the server you want to connect to. The Hyperbox Server default listener is available on all interfaces by default.<br>
+					You will be prompted to enter the host name/IP address of the server you want to connect to. The
+					Hyperbox Server default listener is available on all interfaces by default.<br>
 					The default username / password are : admin / hyperbox<br>
 					Click on Save once finished.
 				</figcaption>
 			</figure>
 			<br>
 			<figure>
-				<img src="img/gettingStarted_client_server_connected_hyp_offline.png" />
+				<img src="img/gettingStarted_client_server_connected_hyp_offline.png"/>
 				<figcaption>
-					You can now right click > Connect or double-click on the server address to initiate the connection.<br>
-					If successful, the icon will change to a stopped server icon, and the tabs on the right panel should activate. You should also see the Hyperbox Server detailed and that is it disconnected of the hypervisor.<br>
+					You can now right click > Connect or double-click on the server address to initiate the
+					connection.<br>
+					If successful, the icon will change to a stopped server icon, and the tabs on the right panel should
+					activate. You should also see the Hyperbox Server detailed and that is it disconnected of the
+					hypervisor.<br>
 				</figcaption>
 			</figure>
 			<br>
 			<figure>
-				<img src="img/gettingStarted_client_server_connected_hyp_connect.png" />
+				<img src="img/gettingStarted_client_server_connected_hyp_connect.png"/>
 				<figcaption>Right click on the server: Select Hypervisor > Connect</figcaption>
 			</figure>
 			<br>
 			<figure>
-				<img src="img/gettingStarted_client_server_connected_hyp_connect_dialog.png" />
+				<img src="img/gettingStarted_client_server_connected_hyp_connect_dialog.png"/>
 				<figcaption>
 					Hyperbox comes by default with several connectors. Select the one matching your installation.<br/>
-					You can leave the "Connector Options" field blank for now, it is used for advanced configuration.<br/>
+					You can leave the "Connector Options" field blank for now, it is used for advanced
+					configuration.<br/>
 					Click on Connect.
 				</figcaption>
 			</figure>
 			<br>
 			<figure>
-				<img src="img/gettingStarted_client_server_connected_hyp_connecting.png" />
-				<figcaption>You should now see a new task in the bottom list showing you that Hyperbox is currently connecting and initializing the connection with the hypervisor.</figcaption>
+				<img src="img/gettingStarted_client_server_connected_hyp_connecting.png"/>
+				<figcaption>You should now see a new task in the bottom list showing you that Hyperbox is currently
+					connecting and initializing the connection with the hypervisor.
+				</figcaption>
 			</figure>
 			<br>
 			<figure>
-				<img src="img/gettingStarted_client_server_connected_hyp_connected.png" />
-				<figcaption>If successful, the server icon will change as well as the hypervisor status in the detail panel.</figcaption>
+				<img src="img/gettingStarted_client_server_connected_hyp_connected.png"/>
+				<figcaption>If successful, the server icon will change as well as the hypervisor status in the detail
+					panel.
+				</figcaption>
 			</figure>
 			<br>
-			You can now then manage your machines or create new ones by right clicking on the server list item in the left panel!
+			You can now then manage your machines or create new ones by right clicking on the server list item in the
+			left panel!
 		</div> <!-- First Launch -->
 	</div> <!-- Installation and Launch -->
-	
+
 	<h1 class="chapterTitle"><a id="h">Hypervisors</a></h1>
 	<div>
 		<h2><a id="h-o">Overview</a></h2>
 		<div class="tab">
-			<p>Hyperbox itself is only a manager of a virtualized infrastructure, but does not provide any virtualization features.<br/>
-			To provide these features, Hyperbox will rely on 3rd party products that will provide these features.<br/>
-			Hyperbox is mainly aimed to work with VirtualBox, an open-source product from Oracle. But given the modular structure of Hyperbox, any other hypervisor could be ported, as long as they provided a compatible API with Java.<br/>
-			One of the long-term goal is Hyperbox is also to allow management of an hybrid infrastructure (VirtualBox and VMware per example) and also allow to transfer VM between the two.
+			<p>Hyperbox itself is only a manager of a virtualized infrastructure, but does not provide any
+				virtualization features.<br/>
+				To provide these features, Hyperbox will rely on 3rd party products that will provide these
+				features.<br/>
+				Hyperbox is mainly aimed to work with VirtualBox, an open-source product from Oracle. But given the
+				modular structure of Hyperbox, any other hypervisor could be ported, as long as they provided a
+				compatible API with Java.<br/>
+				One of the long-term goal is Hyperbox is also to allow management of an hybrid infrastructure
+				(VirtualBox and VMware per example) and also allow to transfer VM between the two.
 			</p>
 		</div> <!-- Overview -->
-		
+
 		<h2><a id="h-v">VirtualBox</a></h2>
 		<div class="tab">
-			Currently, Hyperbox is shipped with connectors for several versions of VirtualBox, as well as different connection protocols.<br/>
+			Currently, Hyperbox is shipped with connectors for several versions of VirtualBox, as well as different
+			connection protocols.<br/>
 			VirtualBox supports the following kind of connectors :
 			<ul>
 				<li>
-					<strong>WebServices</strong>: Compatible with all systems but may require some configuration in VirtualBox.<br/>
-					The connector is slower than XPCOM/COM and come with several limitations. <span style="font-weight: bold;">It is the recommended connector for all platforms due to bugs in the others.</span><br/>
+					<strong>WebServices</strong>: Compatible with all systems but may require some configuration in
+					VirtualBox.<br/>
+					The connector is slower than XPCOM/COM and come with several limitations. <span
+						style="font-weight: bold;">It is the recommended connector for all platforms due to bugs in the others.</span><br/>
 				</li>
 				<li>
-					<strong>XPCOM</strong>: Only compatible with systems supporting XPCOM, which is basically any UNIX-based system. This is a native connector that supports every feature of VirtualBox and should be preferred over WebServices.
+					<strong>XPCOM</strong>: Only compatible with systems supporting XPCOM, which is basically any
+					UNIX-based system. This is a native connector that supports every feature of VirtualBox and should
+					be preferred over WebServices.
 				</li>
 				<li>
-					<strong>MSCOM</strong>: Only compatible with Windows systems. Due to build limitation in the VirtualBox SDK and a known bug (<a href="https://www.VirtualBox.org/ticket/13843" target="_blank">Ticket #13483</a>), this kind of connector is not currently implemented in Hyperbox. Only WebServices can be used on Windows.
+					<strong>MSCOM</strong>: Only compatible with Windows systems. Due to build limitation in the
+					VirtualBox SDK and a known bug (<a href="https://www.VirtualBox.org/ticket/13843" target="_blank">Ticket
+					#13483</a>), this kind of connector is not currently implemented in Hyperbox. Only WebServices can
+					be used on Windows.
 				</li>
 			</ul>
-			
+
 			Hyperbox is shipped with the following connectors for the given versions:
 			<ul>
 				<li>4.2.x
@@ -430,81 +508,105 @@
 				</li>
 			</ul>
 			<div class="tab warning">
-				A known bug prevents XPCOM to work on all versions. XPCOM only works from 4.2.24 and 4.3.8. Fix was not back-ported to any previous versions and therefore will never work.<br/>
-				You can find detailed info on <a href="https://www.virtualbox.org/ticket/11232" target="_blank">Ticket #11232</a> of the <a href="https://www.VirtualBox.org/wiki/Bugtracker" target="_blank">VirtualBox BugTracker</a>.
+				A known bug prevents XPCOM to work on all versions. XPCOM only works from 4.2.24 and 4.3.8. Fix was not
+				back-ported to any previous versions and therefore will never work.<br/>
+				You can find detailed info on <a href="https://www.virtualbox.org/ticket/11232" target="_blank">Ticket
+				#11232</a> of the <a href="https://www.VirtualBox.org/wiki/Bugtracker" target="_blank">VirtualBox
+				BugTracker</a>.
 			</div>
 			<div class="tab warning">
-				XPCOM has a severe bug which produces a memory leak, preventing resources to be released once connected to VirtualBox, including TCP sockets.<br/>
-				Is it highly recommended to use WebServices connector on all platforms and all versions of VirtualBox for the time being.<br/>
-				You can find detailed info on <a href="https://www.virtualbox.org/ticket/13647" target="_blank">Ticket #13647</a> of the <a href="https://www.VirtualBox.org/wiki/Bugtracker" target="_blank">VirtualBox BugTracker</a>.
+				XPCOM has a severe bug which produces a memory leak, preventing resources to be released once connected
+				to VirtualBox, including TCP sockets.<br/>
+				Is it highly recommended to use WebServices connector on all platforms and all versions of VirtualBox
+				for the time being.<br/>
+				You can find detailed info on <a href="https://www.virtualbox.org/ticket/13647" target="_blank">Ticket
+				#13647</a> of the <a href="https://www.VirtualBox.org/wiki/Bugtracker" target="_blank">VirtualBox
+				BugTracker</a>.
 			</div>
 		</div> <!-- VirtualBox -->
-		
+
 		<h2><a id="h-mh">Managing Hypervisors</a></h2>
 		<div class="tab">
-			<p>Hypervisor connectors are shipped with modules loaded in Hyperbox.<!-- For managing modules, see the <a href="#m">Modules</a> section. --></p>
-			<p>Once the modules are ready, you can connect to an hypervisor by right-clicking on the server &gt; Hypervisor &gt; Connect.<br/>
-			You will be prompted by dialogue to choose which hypervisor connector you want to use, and optional options for the connector.<br/>
-			<p>The options are implementation specific, so syntax/values will normally be provided by the author of the Hypervisor connector module.<br/>
-			For the VirtualBox modules shipped with Hyperbox, the following options are available (anything in square brackets [ ] are optional) :
+			<p>Hypervisor connectors are shipped with modules loaded in Hyperbox.
+				<!-- For managing modules, see the <a href="#m">Modules</a> section. --></p>
+			<p>Once the modules are ready, you can connect to an hypervisor by right-clicking on the server &gt;
+				Hypervisor &gt; Connect.<br/>
+				You will be prompted by dialogue to choose which hypervisor connector you want to use, and optional
+				options for the connector.<br/>
+			<p>The options are implementation specific, so syntax/values will normally be provided by the author of the
+				Hypervisor connector module.<br/>
+				For the VirtualBox modules shipped with Hyperbox, the following options are available (anything in
+				square brackets [ ] are optional) :
 			<ul>
 				<li>WebServices: <code>[http[s]://][user:password@]host[:port]</code><br/>
-				Default value is <code>http://localhost:18083</code> and expects VirtualBox to be configured with <code>null</code> authentication for the WebServices - See the <a href="https://www.VirtualBox.org/manual/ch08.html#vboxmanage-setproperty">webservauthlibrary property</a><br/>&nbsp;</li>
+					Default value is <code>http://localhost:18083</code> and expects VirtualBox to be configured with
+					<code>null</code> authentication for the WebServices - See the <a
+							href="https://www.VirtualBox.org/manual/ch08.html#vboxmanage-setproperty">webservauthlibrary
+						property</a><br/>&nbsp;</li>
 				<li>XPCOM: full base path to the VirtualBox XPCOM native code.<br/>
-				Default value is <code>/usr/lib/VirtualBox</code></li>
+					Default value is <code>/usr/lib/VirtualBox</code></li>
 			</ul>
 		</div> <!-- Managing Hypervisor -->
 	</div> <!-- Hypervisors -->
-	
+
 	<h1 class="chapterTitle"><a id="cv">Console Viewers</a></h1>
 	<div>
 		<h2><a id="cv-o">Overview</a></h2>
 		<div class="tab">
-			<div>Since Hyperbox will start VMs in headless mode (or equivalent), it is indispensable to be able to connect to the console of the VM, being like the physical screen of a real computer.<br/>
-			That is an essential step to perform OS installs, start rescue modes, or simply access the console for debugging purposes.<br/>
-			Hyperbox already provides the Console module and address in the VM summary panel if available, but also implements the concept of "Console Viewers".</div>
-			<div>Console Viewers are programs that can be launched to connect to and display the VM console by the simple press of a button. Console viewers are meant to map to a specific protocol.<br/>
-			VirtualBox provides a RDP implementation in the Extension pack and a non-supported VNC implementation built from SVN, both which can be used with standard programs like :
-			<ul>
-				<li>Windows: Remote Desktop native Client (mstsc.exe) and UltraVNC</li>
-				<li>UNIX-Like: rdesktop and UltraVNC</li>
-			</ul>
-			Hyperbox can (and should) pass parameters using variables like the console IP and port, server hostname, VM name, etc.
+			<div>Since Hyperbox will start VMs in headless mode (or equivalent), it is indispensable to be able to
+				connect to the console of the VM, being like the physical screen of a real computer.<br/>
+				That is an essential step to perform OS installs, start rescue modes, or simply access the console for
+				debugging purposes.<br/>
+				Hyperbox already provides the Console module and address in the VM summary panel if available, but also
+				implements the concept of "Console Viewers".
+			</div>
+			<div>Console Viewers are programs that can be launched to connect to and display the VM console by the
+				simple press of a button. Console viewers are meant to map to a specific protocol.<br/>
+				VirtualBox provides a RDP implementation in the Extension pack and a non-supported VNC implementation
+				built from SVN, both which can be used with standard programs like :
+				<ul>
+					<li>Windows: Remote Desktop native Client (mstsc.exe) and UltraVNC</li>
+					<li>UNIX-Like: rdesktop and UltraVNC</li>
+				</ul>
+				Hyperbox can (and should) pass parameters using variables like the console IP and port, server hostname,
+				VM name, etc.
 			</div>
 			<div>
-			Hyperbox will use two values to map a given console viewer to a VM: the Hypervisor Type ID and the Console Module.<br/>
-			The Hypervisor type can be found on the Server Summary panel and the Console module in each VM Summary panel.
+				Hyperbox will use two values to map a given console viewer to a VM: the Hypervisor Type ID and the
+				Console Module.<br/>
+				The Hypervisor type can be found on the Server Summary panel and the Console module in each VM Summary
+				panel.
 			</div>
 		</div> <!-- Overview -->
-		
+
 		<h2><a id="cv-mcv">Managing Console Viewers</a></h2>
 		<div class="tab">
 			<h3>Default Console Viewers</h3>
 			<div class="tab">
 			</div>
-			
+
 			<h3>Connect to a VM console</h3>
 			<div class="tab">
 			</div>
-			
+
 			<h3>Variables</h3>
 			<div class="tab">
 			</div>
-			
+
 			<h3>Add Console Viewer(s)</h3>
 			<div class="tab">
 			</div>
-			
+
 			<h3>Edit a Console Viewer</h3>
 			<div class="tab">
 			</div>
-			
+
 			<h3>Remove Console Viewer(s)</h3>
 			<div class="tab">
 			</div>
 		</div>
 	</div> <!-- Console Viewers -->
-	
+
 	<h1 class="chapterTitle"><a id="at">Advanced Topics</a></h1>
 	<div>
 		<h2><a id="at-dl">Data location</a></h2>
@@ -518,109 +620,130 @@
 				</ul>
 				The location cannot currently be changed.
 			</div>
-			
+
 			<h3>Server</h3>
 			<div class="tab">
-			The server relies on Persistor modules to store its data. Therefore, the location will depend on the configuration of the used module.<br/>
-			The default Persistor module is based on an H2 database on disk, located at &lt;INSTALL_DIR&gt;/data/global.h2.db
+				The server relies on Persistor modules to store its data. Therefore, the location will depend on the
+				configuration of the used module.<br/>
+				The default Persistor module is based on an H2 database on disk, located at &lt;INSTALL_DIR&gt;/data/global.h2.db
 			</div>
 		</div> <!-- Data location -->
-		
+
 		<h2><a id="at-l">Logs</a></h2>
 		<div class="tab">
 		</div> <!-- Logs -->
-		
+
 		<h2><a id="at-ac">Advanced Configuration</a></h2>
 		<div class="tab">
 			<h3>Common</h3>
 			<table style="border:1px solid black">
 				<thead>
-					<tr>
-						<td>Name</td>
-						<td>Daemon Config File</td>
-						<td>Command-Line option</td>
-						<td>Environment Variable</td>
-						<td>Purpose</td>
-					</tr>
+				<tr>
+					<td>Name</td>
+					<td>Daemon Config File</td>
+					<td>Command-Line option</td>
+					<td>Environment Variable</td>
+					<td>Purpose</td>
+				</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>Log File</td>
-						<td>log.file</td>
-						<td>-Dlog.file</td>
-						<td>HBOX_LOG_FILE</td>
-						<td>Define where Hyperbox will log messages. Relative paths will start from the installation directory.</td>
-					</tr>
-					<tr>
-						<td>Log Output Level</td>
-						<td>log.level</td>
-						<td>-Dlog.level</td>
-						<td>HBOX_LOG_LEVEL</td>
-						<td>
-							Define the maximum logging level for Hyperbox. A level include all the levels above (in terms of verbosity). The following levels are available in increasing verbosity order :<br>
-							FatalException - Only log exceptions stack traces that caused the server to stop. This is currently not used.<br>
-							Exception - Log exceptions stack traces that are not fatal. This is tightly linked to Error level as each error will also produce an exception entry.<br>
-							Error - Log errors that occurred. This is tightly linked to Exception level as the message will be the exception message.<br>
-							Warning - Log warnings.<br>
-							Info - Log regular info messages. This is the default level.<br>
-							Verbose - Log precise info messages.<br>
-							Debug - Log debug info for each server activity, task and client request: This can be quite verbose and should not be kept on in live environment due to the performance penalty.<br>
-							Tracking - Log code tracking info: This is very verbose and WILL inflict a high performance penalty but will provide very detailed info for debugging.
-						</td>
-					</tr>
+				<tr>
+					<td>Log File</td>
+					<td>log.file</td>
+					<td>-Dlog.file</td>
+					<td>HBOX_LOG_FILE</td>
+					<td>Define where Hyperbox will log messages. Relative paths will start from the installation
+						directory.
+					</td>
+				</tr>
+				<tr>
+					<td>Log Output Level</td>
+					<td>log.level</td>
+					<td>-Dlog.level</td>
+					<td>HBOX_LOG_LEVEL</td>
+					<td>
+						Define the maximum logging level for Hyperbox. A level include all the levels above (in terms of
+						verbosity). The following levels are available in increasing verbosity order :<br>
+						FatalException - Only log exceptions stack traces that caused the server to stop. This is
+						currently not used.<br>
+						Exception - Log exceptions stack traces that are not fatal. This is tightly linked to Error
+						level as each error will also produce an exception entry.<br>
+						Error - Log errors that occurred. This is tightly linked to Exception level as the message will
+						be the exception message.<br>
+						Warning - Log warnings.<br>
+						Info - Log regular info messages. This is the default level.<br>
+						Verbose - Log precise info messages.<br>
+						Debug - Log debug info for each server activity, task and client request: This can be quite
+						verbose and should not be kept on in live environment due to the performance penalty.<br>
+						Tracking - Log code tracking info: This is very verbose and WILL inflict a high performance
+						penalty but will provide very detailed info for debugging.
+					</td>
+				</tr>
 				</tbody>
 			</table>
 
 			<h3>Server</h3>
 			<table style="border:1px solid black">
 				<thead>
-					<tr>
-						<td>Name</td>
-						<td>Daemon Config File</td>
-						<td>Command-Line option</td>
-						<td>Environment Variable</td>
-						<td>Purpose</td>
-					</tr>
+				<tr>
+					<td>Name</td>
+					<td>Daemon Config File</td>
+					<td>Command-Line option</td>
+					<td>Environment Variable</td>
+					<td>Purpose</td>
+				</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>Server Name</td>
-						<td>server.name</td>
-						<td>-Dserver.name</td>
-						<td>HBOX_SERVER_NAME</td>
-						<td>Configure a name for the server that will be display in the client.<br>The hostname will be used as default value.</td>
-					</tr>
-					<tr>
-						<td>Kryonet Connector Port</td>
-						<td>kryonet.net.tcp.port</td>
-						<td>-Dkryonet.net.tcp.port</td>
-						<td>HBOX_KRYONET_NET_TCP_PORT</td>
-						<td>Define the listening port for the default client connector using <a href="https://github.com/EsotericSoftware/kryonet" target="_blank">Kryonet</a>.<br>Default value is 45612</td>
-					</tr>
-					<tr>
-						<td>Kryonet Write Buffer size</td>
-						<td>kryonet.net.buffer.write</td>
-						<td>-Dkryonet.net.buffer.write</td>
-						<td>HBOX_KRYONET_NET_BUFFER_WRITE</td>
-						<td>Define the <a href="https://github.com/EsotericSoftware/kryonet" target="_blank">Kryonet</a> <a href="https://github.com/EsotericSoftware/kryonet#buffer-sizes">write buffer</a> size for output write.<br>Default value is 1838400</td>
-					</tr>
-					<tr>
-						<td>Kryonet Object Buffer size</td>
-						<td>kryonet.net.buffer.object</td>
-						<td>-Dkryonet.net.buffer.object</td>
-						<td>HBOX_KRYONET_NET_BUFFER_OBJECT</td>
-						<td>Define the <a href="https://github.com/EsotericSoftware/kryonet" target="_blank">Kryonet</a> <a href="https://github.com/EsotericSoftware/kryonet#buffer-sizes">object buffer</a> size for output write..<br>Default value is 456121638400</td>
-					</tr>
+				<tr>
+					<td>Server Name</td>
+					<td>server.name</td>
+					<td>-Dserver.name</td>
+					<td>HBOX_SERVER_NAME</td>
+					<td>Configure a name for the server that will be display in the client.<br>The hostname will be used
+						as default value.
+					</td>
+				</tr>
+				<tr>
+					<td>Kryonet Connector Port</td>
+					<td>kryonet.net.tcp.port</td>
+					<td>-Dkryonet.net.tcp.port</td>
+					<td>HBOX_KRYONET_NET_TCP_PORT</td>
+					<td>Define the listening port for the default client connector using <a
+							href="https://github.com/EsotericSoftware/kryonet" target="_blank">Kryonet</a>.<br>Default
+						value is 45612
+					</td>
+				</tr>
+				<tr>
+					<td>Kryonet Write Buffer size</td>
+					<td>kryonet.net.buffer.write</td>
+					<td>-Dkryonet.net.buffer.write</td>
+					<td>HBOX_KRYONET_NET_BUFFER_WRITE</td>
+					<td>Define the <a href="https://github.com/EsotericSoftware/kryonet" target="_blank">Kryonet</a> <a
+							href="https://github.com/EsotericSoftware/kryonet#buffer-sizes">write buffer</a> size for
+						output write.<br>Default value is 1838400
+					</td>
+				</tr>
+				<tr>
+					<td>Kryonet Object Buffer size</td>
+					<td>kryonet.net.buffer.object</td>
+					<td>-Dkryonet.net.buffer.object</td>
+					<td>HBOX_KRYONET_NET_BUFFER_OBJECT</td>
+					<td>Define the <a href="https://github.com/EsotericSoftware/kryonet" target="_blank">Kryonet</a> <a
+							href="https://github.com/EsotericSoftware/kryonet#buffer-sizes">object buffer</a> size for
+						output write..<br>Default value is 456121638400
+					</td>
+				</tr>
 				</tbody>
 			</table>
 		</div> <!-- Advanced Config -->
 	</div><!-- Advanced Topics -->
-	
+
 	<h1 class="chapterTitle"><a id="cst">Credits and Third Parties</a></h1>
 	<div>
 		<h2>Credits</h2>
 		<div>
-			The current Hyperbox release relies on several open-sources libraries and media. NOTICE and LICENSE files can be found for each of these under &lt;INSTALL_DIR&gt;/doc/legal of your Hyperbox installation.<br>
+			The current Hyperbox release relies on several open-sources libraries and media. NOTICE and LICENSE files
+			can be found for each of these under &lt;INSTALL_DIR&gt;/doc/legal of your Hyperbox installation.<br>
 			<ul>
 				<li><a href="http://commons.apache.org/proper/commons-daemon/">Apache Common Daemons</a></li>
 				<li><a href="http://www.dafont.com/cubic.font">Cubic Font</a></li>
@@ -636,14 +759,15 @@
 				<li><a href="https://github.com/zeroturnaround/zt-exec">ZeroTurnaround Process Executor</a></li>
 			</ul>
 		</div> <!-- Credits -->
-		
+
 		<h2>Special Thanks</h2>
 		<div>
-		The Hyperbox team would like to give their special thanks to those who dedicated their time to make this project come true and making it better by their continuous support and their kind words in the hardships.
-		<ul>
-			<li>Perryg</li>
-			<li>klaus-vb</li>
-		</ul>
+			The Hyperbox team would like to give their special thanks to those who dedicated their time to make this
+			project come true and making it better by their continuous support and their kind words in the hardships.
+			<ul>
+				<li>Perryg</li>
+				<li>klaus-vb</li>
+			</ul>
 		</div> <!-- Special Thanks -->
 	</div><!-- Credits and Special Thanks -->
 </div> <!-- Main -->

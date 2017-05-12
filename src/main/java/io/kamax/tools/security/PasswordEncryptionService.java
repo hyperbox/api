@@ -39,7 +39,6 @@ import java.util.Arrays;
  * </p>
  *
  * @author max
- *
  */
 public class PasswordEncryptionService {
 

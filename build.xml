@@ -22,115 +22,121 @@
 
 <project name="Hyperbox API" default="build">
 
-	<macrodef name="assertDirAvailable">
-		<attribute name="dir" />
-		<sequential>
-			<fail message="@{dir} could not be found">
-				<condition>
-					<not>
-						<available file="@{dir}" type="dir" />
-					</not>
-				</condition>
-			</fail>
-		</sequential>
-	</macrodef>
-	
-	<property file="build.properties" />
-	
-	<property name="hbox.api.base.dir"											location="." />
-	<property file="${hbox.api.base.dir}/global.properties" />
-	
-	<property name="hbox.api.src.dir"											location="${hbox.api.base.dir}/${src.dirname}" />
-	<condition property="hbox.api.out.dir" value="${hbox.out.dir}">
-			<isset property="hbox.out.dir" />
-	</condition>
-	<property name="hbox.api.out.dir"											location="${hbox.api.base.dir}/${out.dirname}" />
-	
-	<property name="hbox.api.core.dir"											location="${hbox.api.src.dir}/${core.name}" />
-	<property name="hbox.api.tools.dir"											location="${hbox.api.src.dir}/${tools.name}" />
-	<property name="hbox.api.jar.filename"										value="${hbox.name}-${api.name}.jar" />
-	
-	<property name="hbox.api.out.build.dir"										location="${hbox.api.out.dir}/${build.dirname}" />
-	<property name="hbox.api.out.build.class.dir"								location="${hbox.api.out.build.dir}/${class.dirname}" />
-	<property name="hbox.api.out.build.jar.dir"									location="${hbox.api.out.build.dir}/${jar.dirname}" />
-	<property name="hbox.api.out.build.jar.file"								location="${hbox.api.out.build.jar.dir}/${hbox.api.jar.filename}" />
-	
-	<property name="hbox.api.tools.src.dir"										location="${hbox.api.tools.dir}/${src.dirname}" />
-	<property name="hbox.api.tools.lib.dir"										location="${hbox.api.tools.dir}/${lib.dirname}" />
-	<property name="hbox.api.tools.class.dir"									location="${hbox.api.out.build.class.dir}/${core.name}-${tools.name}" />
-	
-	<property name="hbox.api.core.src.dir"										location="${hbox.api.core.dir}/${src.dirname}" />
-	<property name="hbox.api.core.lib.dir"										location="${hbox.api.core.dir}/${lib.dirname}" />
-	<property name="hbox.api.core.class.dir"									location="${hbox.api.out.build.class.dir}/${core.name}" />
+    <macrodef name="assertDirAvailable">
+        <attribute name="dir"/>
+        <sequential>
+            <fail message="@{dir} could not be found">
+                <condition>
+                    <not>
+                        <available file="@{dir}" type="dir"/>
+                    </not>
+                </condition>
+            </fail>
+        </sequential>
+    </macrodef>
 
-	<property name="hbox.api.doc.dir"											location="${hbox.api.base.dir}/${doc.dirname}" />
-	
-	<property name="hbox.api.media.dir"											location="${hbox.api.base.dir}/${media.dirname}" />
-	<property name="hbox.api.media.img.dir"										location="${hbox.api.media.dir}/${image.dirname}" />
-	
-	<condition property="ifWin">
-		<os family="windows" />
-	</condition>
-	
-	<condition property="ifLinux">
-		<os family="unix" />
-	</condition>
-	
-	<target name="clean">
-		<delete dir="${hbox.api.out.dir}"/>
-	</target>
-	
-	<target name="configure.win" if="${ifWin}">
-		<property name="os.family"								value="win"/>
-	</target>
-	
-	<target name="configure.linux" if="${ifLinux}">
-		<property name="os.family" 								value="linux"/>
-	</target>
-	
-	<target name="configure" depends="configure.win, configure.linux">
-		<property name="platform"						value="${os.family}_${os.arch}" />
+    <property file="build.properties"/>
 
-		<assertDirAvailable dir="${hbox.api.tools.src.dir}" />
-		<assertDirAvailable dir="${hbox.api.core.src.dir}" />
+    <property name="hbox.api.base.dir" location="."/>
+    <property file="${hbox.api.base.dir}/global.properties"/>
 
-		<property file="${hbox.api.base.dir}/${tools.dirname}/${platform}/build.properties" />
-		<property file="${hbox.api.base.dir}/${tools.dirname}/${os.family}/build.properties" />
-		
-		<exec executable="git" dir="${hbox.api.base.dir}" outputProperty="hbox.api.version">
-			<arg line="describe --always"/>
-		</exec>
-		
-		<echo message="Hyperbox API Version: ${hbox.api.version}" />
-	</target>
-	
-	<path id="hbox.api.classpath">
-		<pathelement location="${hbox.api.core.class.dir}"/>
-		<pathelement location="${hbox.api.tools.class.dir}"/>
-		<fileset dir="${hbox.api.core.lib.dir}" includes="**/*.jar"/>
-		<fileset dir="${hbox.api.tools.lib.dir}" includes="**/*.jar"/>
-	</path>
-	
-	<target name="compile" depends="configure">
-		<mkdir dir="${hbox.api.tools.class.dir}" />
-		<mkdir dir="${hbox.api.core.class.dir}" />
-		
-		<javac source="1.7" target="1.7" debug="on" includeantruntime="false" srcdir="${hbox.api.tools.src.dir}" destdir="${hbox.api.tools.class.dir}" classpathref="hbox.api.classpath" />
-		<javac source="1.7" target="1.7" debug="on" includeantruntime="false" srcdir="${hbox.api.core.src.dir}" destdir="${hbox.api.core.class.dir}" classpathref="hbox.api.classpath" />
-		<echo file="${hbox.api.core.class.dir}/api.build.properties" append="false">version=${hbox.api.version}${line.separator}</echo>
-		<echo file="${hbox.api.core.class.dir}/api.build.properties" append="true">protocol=${hbox.api.version}${line.separator}</echo>
-	</target>
-	
-	<target name="build" depends="compile">
-		<mkdir dir="${hbox.api.out.build.jar.dir}" />
-		<jar destfile="${hbox.api.out.build.jar.file}">
-			<fileset dir="${hbox.api.tools.class.dir}" />
-			<fileset dir="${hbox.api.core.class.dir}" />
-		</jar>
-	</target>
-	
-	<extension-point name="deploy" depends="compile" />
-	
-	<extension-point name="dist" depends="compile" />
-	
+    <property name="hbox.api.src.dir" location="${hbox.api.base.dir}/${src.dirname}"/>
+    <condition property="hbox.api.out.dir" value="${hbox.out.dir}">
+        <isset property="hbox.out.dir"/>
+    </condition>
+    <property name="hbox.api.out.dir" location="${hbox.api.base.dir}/${out.dirname}"/>
+
+    <property name="hbox.api.core.dir" location="${hbox.api.src.dir}/${core.name}"/>
+    <property name="hbox.api.tools.dir" location="${hbox.api.src.dir}/${tools.name}"/>
+    <property name="hbox.api.jar.filename" value="${hbox.name}-${api.name}.jar"/>
+
+    <property name="hbox.api.out.build.dir" location="${hbox.api.out.dir}/${build.dirname}"/>
+    <property name="hbox.api.out.build.class.dir" location="${hbox.api.out.build.dir}/${class.dirname}"/>
+    <property name="hbox.api.out.build.jar.dir" location="${hbox.api.out.build.dir}/${jar.dirname}"/>
+    <property name="hbox.api.out.build.jar.file" location="${hbox.api.out.build.jar.dir}/${hbox.api.jar.filename}"/>
+
+    <property name="hbox.api.tools.src.dir" location="${hbox.api.tools.dir}/${src.dirname}"/>
+    <property name="hbox.api.tools.lib.dir" location="${hbox.api.tools.dir}/${lib.dirname}"/>
+    <property name="hbox.api.tools.class.dir" location="${hbox.api.out.build.class.dir}/${core.name}-${tools.name}"/>
+
+    <property name="hbox.api.core.src.dir" location="${hbox.api.core.dir}/${src.dirname}"/>
+    <property name="hbox.api.core.lib.dir" location="${hbox.api.core.dir}/${lib.dirname}"/>
+    <property name="hbox.api.core.class.dir" location="${hbox.api.out.build.class.dir}/${core.name}"/>
+
+    <property name="hbox.api.doc.dir" location="${hbox.api.base.dir}/${doc.dirname}"/>
+
+    <property name="hbox.api.media.dir" location="${hbox.api.base.dir}/${media.dirname}"/>
+    <property name="hbox.api.media.img.dir" location="${hbox.api.media.dir}/${image.dirname}"/>
+
+    <condition property="ifWin">
+        <os family="windows"/>
+    </condition>
+
+    <condition property="ifLinux">
+        <os family="unix"/>
+    </condition>
+
+    <target name="clean">
+        <delete dir="${hbox.api.out.dir}"/>
+    </target>
+
+    <target name="configure.win" if="${ifWin}">
+        <property name="os.family" value="win"/>
+    </target>
+
+    <target name="configure.linux" if="${ifLinux}">
+        <property name="os.family" value="linux"/>
+    </target>
+
+    <target name="configure" depends="configure.win, configure.linux">
+        <property name="platform" value="${os.family}_${os.arch}"/>
+
+        <assertDirAvailable dir="${hbox.api.tools.src.dir}"/>
+        <assertDirAvailable dir="${hbox.api.core.src.dir}"/>
+
+        <property file="${hbox.api.base.dir}/${tools.dirname}/${platform}/build.properties"/>
+        <property file="${hbox.api.base.dir}/${tools.dirname}/${os.family}/build.properties"/>
+
+        <exec executable="git" dir="${hbox.api.base.dir}" outputProperty="hbox.api.version">
+            <arg line="describe --always"/>
+        </exec>
+
+        <echo message="Hyperbox API Version: ${hbox.api.version}"/>
+    </target>
+
+    <path id="hbox.api.classpath">
+        <pathelement location="${hbox.api.core.class.dir}"/>
+        <pathelement location="${hbox.api.tools.class.dir}"/>
+        <fileset dir="${hbox.api.core.lib.dir}" includes="**/*.jar"/>
+        <fileset dir="${hbox.api.tools.lib.dir}" includes="**/*.jar"/>
+    </path>
+
+    <target name="compile" depends="configure">
+        <mkdir dir="${hbox.api.tools.class.dir}"/>
+        <mkdir dir="${hbox.api.core.class.dir}"/>
+
+        <javac source="1.7" target="1.7" debug="on" includeantruntime="false" srcdir="${hbox.api.tools.src.dir}"
+               destdir="${hbox.api.tools.class.dir}" classpathref="hbox.api.classpath"/>
+        <javac source="1.7" target="1.7" debug="on" includeantruntime="false" srcdir="${hbox.api.core.src.dir}"
+               destdir="${hbox.api.core.class.dir}" classpathref="hbox.api.classpath"/>
+        <echo file="${hbox.api.core.class.dir}/api.build.properties" append="false">
+            version=${hbox.api.version}${line.separator}
+        </echo>
+        <echo file="${hbox.api.core.class.dir}/api.build.properties" append="true">
+            protocol=${hbox.api.version}${line.separator}
+        </echo>
+    </target>
+
+    <target name="build" depends="compile">
+        <mkdir dir="${hbox.api.out.build.jar.dir}"/>
+        <jar destfile="${hbox.api.out.build.jar.file}">
+            <fileset dir="${hbox.api.tools.class.dir}"/>
+            <fileset dir="${hbox.api.core.class.dir}"/>
+        </jar>
+    </target>
+
+    <extension-point name="deploy" depends="compile"/>
+
+    <extension-point name="dist" depends="compile"/>
+
 </project>

@@ -39,8 +39,8 @@ public final class PositiveNumberSettingIO extends SettingIO {
 
     /**
      * Constructor for a new boolean setting, with the given name and value
-     * 
-     * @param name The name of this setting as Object
+     *
+     * @param name  The name of this setting as Object
      * @param value The long value for this setting - If the value is less than 0, Math.abs() will be used to get a positive value.
      */
     public PositiveNumberSettingIO(Object name, long value) {
@@ -49,7 +49,7 @@ public final class PositiveNumberSettingIO extends SettingIO {
 
     /**
      * Get the value of this setting as long
-     * 
+     *
      * @return long value of this setting
      */
     public Long getValue() {

@@ -30,7 +30,6 @@ import java.awt.event.KeyEvent;
  * - Allow to be closed on escape key
  *
  * @author max
- *
  */
 
 public class JDialogImp extends JDialog {

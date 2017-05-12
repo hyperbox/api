@@ -21,6 +21,7 @@
 package io.kamax.hbox.comm;
 
 // TODO change isFinishing variable by a state variable, using int (0 => started , 1 => in progress, 2 => finished)
+
 /**
  * Types of Answer used for communication between Hyperbox Server & Client
  *
@@ -164,7 +165,7 @@ public enum AnswerType {
 
     /**
      * Check if this answer message concluded an exchange.
-     * 
+     *
      * @return True if this is the last message of this exchange, false if not.
      */
     public boolean isFinishing() {

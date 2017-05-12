@@ -30,9 +30,9 @@ import java.util.Map;
  * The message contains a name, which can be arbitrarily set, and pair of key/values to hold objects in the message.<br/>
  * A Map is used to implement this mapping. If you want to send message with transaction and state tracking, use Request & Answer.
  *
+ * @author max
  * @see Answer
  * @see Request
- * @author max
  */
 public class Message implements _Container {
 
@@ -49,7 +49,7 @@ public class Message implements _Container {
 
     /**
      * Create a message with the given name.
-     * 
+     *
      * @param name The name to create this message with.
      */
     public Message(String name) {
@@ -59,9 +59,9 @@ public class Message implements _Container {
 
     /**
      * Create a message with the given name and the given object
-     * 
+     *
      * @param name The name to create this message with.
-     * @param o The object to include to this message.
+     * @param o    The object to include to this message.
      */
     public Message(String name, Object o) {
         this(name);
@@ -110,10 +110,10 @@ public class Message implements _Container {
 
     /**
      * Return the object mapped under the label given, or null if no object was included in this message.
-     * 
-     * @see Map
+     *
      * @param s The label to use for looking up the object.
      * @return The object mapped to this label, or null if no such map exist.
+     * @see Map
      */
     @Override
     public Object get(String s) {
@@ -122,10 +122,10 @@ public class Message implements _Container {
 
     /**
      * Return the object mapped under this enum string representation, or null if no object was included in this message.
-     * 
-     * @see Map
+     *
      * @param e The Enum to use for looking up the object. The lookup will use <code>toString()</code>
      * @return The object mapped to this label, or null if no such map exist.
+     * @see Map
      */
     @Override
     public Object get(Enum<?> e) {
@@ -134,7 +134,7 @@ public class Message implements _Container {
 
     /**
      * Checks if an object mapped to the given label is included in this message.
-     * 
+     *
      * @param s The label to check
      * @return true if an object exists for this label, false if not.
      */
@@ -145,7 +145,7 @@ public class Message implements _Container {
 
     /**
      * Checks if an object mapped under the given class name is included in this message.
-     * 
+     *
      * @param c The label to check
      * @return true if an object exists for this class name as label, false if not.
      */
