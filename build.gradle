@@ -1,5 +1,7 @@
 apply plugin: 'java'
 
+def versionInfoFile = 'build/tmp/versionInfo/api.build.properties'
+
 repositories {
     mavenCentral()
 }
@@ -30,4 +32,23 @@ dependencies {
 
     testCompile 'junit:junit:4.12'
 
+}
+
+task versionInfo(type: Exec) {
+    commandLine 'git describe --always --dirty'.split()
+    standardOutput = new ByteArrayOutputStream()
+
+    doLast {
+        def versionFile = new File(versionInfoFile)
+        versionFile.getParentFile().mkdir()
+
+        String version = standardOutput.toString()
+        versionFile.text = 'version=' + version + 'protocol=' + version
+    }
+}
+
+jar {
+    dependsOn versionInfo
+
+    from versionInfoFile
 }
