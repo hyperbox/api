@@ -18,9 +18,8 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package io.kamax.hbox.comm.output;
+package io.kamax.hbox.comm.out;
 
-import io.kamax.hbox.comm.out.StoreItemOut;
 import io.kamax.hbox.constant.StoreItemAttribute;
 
 import static org.junit.Assert.*;

@@ -18,34 +18,23 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package io.kamax.hbox.comm.input;
+package io.kamax.hbox.comm.in;
 
-import io.kamax.hbox.comm.in.MachineIn;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertNotNull;
 
-public class MachineInputTest {
-
-    private MachineIn mIn;
-
-    @Before
-    public void before() {
-        mIn = new MachineIn();
-    }
-
-    @After
-    public void after() {
-        mIn = null;
-    }
+public class ServerInputTest {
 
     @Test
-    public void uuidTest() {
-        assertNull("Unset uuid should be null", mIn.getUuid());
-        assertFalse(mIn.hasNewData());
+    public void basicTest() {
+        ServerIn srvIn = new ServerIn();
+        assertNotNull(srvIn.getId());
+
+        srvIn = new ServerIn("test");
+        assertFalse(srvIn.getId().isEmpty());
+
     }
 
 }

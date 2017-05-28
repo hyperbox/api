@@ -1,6 +1,7 @@
 /*
  * Hyperbox - Virtual Infrastructure Manager
  * Copyright (C) 2013 Maxime Dor
+ * hyperbox at altherian dot org
  * 
  * http://kamax.io/hbox/
  * 
@@ -18,26 +19,21 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package io.kamax.hbox.comm.output;
+package io.kamax.hbox.comm.out;
 
-import io.kamax.hbox.comm.out.ServerOut;
+import io.kamax.hbox.comm.out.hypervisor.HypervisorOut;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
-public class ServerOutputTest {
+public class HypervisorOutputTest {
 
-    public static void validateSimple(ServerOut srvOut) {
-        assertNotNull(srvOut);
-        assertNotNull(srvOut.getId());
-        assertFalse(srvOut.getId().isEmpty());
-    }
-
-    public static void validateFull(ServerOut srvOut) {
-        assertNotNull(srvOut.getType());
-        assertFalse(srvOut.getType().isEmpty());
-        assertNotNull(srvOut.getVersion());
-        assertFalse(srvOut.getVersion().isEmpty());
+    public static void validateFull(HypervisorOut hypOut) {
+        assertFalse(hypOut.getId().isEmpty());
+        assertNotNull(hypOut.getVendor());
+        assertNotNull(hypOut.getProduct());
+        assertNotNull(hypOut.getVersion());
+        assertNotNull(hypOut.getRevision());
     }
 
 }

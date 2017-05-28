@@ -18,9 +18,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package io.kamax.hbox.comm.output;
-
-import io.kamax.hbox.comm.out.TaskOut;
+package io.kamax.hbox.comm.out;
 
 import static org.junit.Assert.*;
 

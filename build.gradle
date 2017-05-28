@@ -1,6 +1,8 @@
 apply plugin: 'java'
 
-def versionInfoFile = 'build/tmp/versionInfo/api.build.properties'
+sourceCompatibility = 1.7
+
+ext.versionInfoFile = "${projectDir}/build/tmp/versionInfo/api.build.properties"
 
 repositories {
     mavenCentral()
@@ -22,7 +24,7 @@ dependencies {
     compile 'org.reflections:reflections:0.9.11'
 
     // Event bus
-    compile 'net.engio:mbassador:1.3.0'
+    compile 'net.engio:mbassador:1.1.10'
 
     // XML
     compile 'com.thoughtworks.xstream:xstream:1.4.9'

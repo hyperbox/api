@@ -18,28 +18,23 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package io.kamax.hbox.comm.output;
+package io.kamax.hbox.comm.out;
 
-import io.kamax.hbox.comm.out.storage.StorageControllerTypeOut;
+import io.kamax.hbox.comm.out.storage.StorageControllerSubTypeOut;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public final class StorageControllerTypeOutputTest {
+public final class StorageControllerSubTypeOutputTest {
 
-    public static void validate(StorageControllerTypeOut sctOut) {
-        assertFalse(sctOut.getId().isEmpty());
-        assertFalse(sctOut.getMinPort() <= 0);
-        assertFalse(sctOut.getMaxPort() <= 0);
-        assertFalse(sctOut.getMinPort() > sctOut.getMaxPort());
-        assertFalse(sctOut.getMaxDevicePerPort() <= 0);
+    public static void validate(StorageControllerSubTypeOut scstOut) {
+        assertFalse(scstOut.getId().isEmpty());
+        assertFalse(scstOut.getParentType().isEmpty());
     }
 
-    public static void compare(StorageControllerTypeOut sctOut1, StorageControllerTypeOut sctOut2) {
-        assertTrue(sctOut1.getId().contentEquals(sctOut2.getId()));
-        assertTrue(sctOut1.getMinPort() == sctOut2.getMinPort());
-        assertTrue(sctOut1.getMaxPort() == sctOut2.getMaxPort());
-        assertTrue(sctOut1.getMaxDevicePerPort() == sctOut2.getMaxDevicePerPort());
+    public static void compare(StorageControllerSubTypeOut scstOut1, StorageControllerSubTypeOut scstOut2) {
+        assertTrue(scstOut1.getId().contentEquals(scstOut2.getId()));
+        assertTrue(scstOut1.getParentType().contentEquals(scstOut2.getParentType()));
     }
 
 }
