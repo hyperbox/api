@@ -37,6 +37,8 @@ dependencies {
     // Client-Server protocol
     compile 'com.esotericsoftware:kryonet:2.22.0-RC1'
 
+    compile 'org.zeroturnaround:zt-exec:1.9'
+
     testCompile 'junit:junit:4.12'
 
 }
@@ -56,6 +58,5 @@ task versionInfo(type: Exec) {
 
 jar {
     dependsOn versionInfo
-
     from versionInfoFile
 }
