@@ -56,7 +56,7 @@ task versionInfo {
     doLast {
         File versionFile = new File(versionInfoFile)
         versionFile.getParentFile().mkdir()
-        versionFile.text = 'version=' + project.version + 'protocol=' + project.version
+        versionFile.text = 'version=' + project.version + System.lineSeparator() + 'protocol=' + project.version
     }
 }
 
