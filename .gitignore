@@ -2,6 +2,6 @@
 **/.idea/
 
 # Build
-**/.gradle/
-**/build/
-**/out/
+.gradle/
+build/
+out/
