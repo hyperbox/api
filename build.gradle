@@ -1,19 +1,25 @@
-apply plugin: 'java'
-apply plugin: 'maven'
+plugins {
+    id 'java'
+    id 'maven'
+    id 'com.palantir.git-version' version '0.8.0'
+}
 
 group = 'io.kamax'
-version = 'latest'
+version = gitVersion()
 
 sourceCompatibility = 1.7
 
 String versionInfoFile = "${projectDir}/build/tmp/versionInfo/api.build.properties"
+
+configurations {
+    deployerJars
+}
 
 repositories {
     mavenLocal()
     mavenCentral()
 }
 
-// In this section you declare the dependencies for your production and test code
 dependencies {
 
     // Logging
@@ -37,26 +43,51 @@ dependencies {
     // Client-Server protocol
     compile 'com.esotericsoftware:kryonet:2.22.0-RC1'
 
+    // Process execution
     compile 'org.zeroturnaround:zt-exec:1.9'
 
     testCompile 'junit:junit:4.12'
 
+    deployerJars "org.apache.maven.wagon:wagon-ssh:2.2"
+
 }
 
-task versionInfo(type: Exec) {
-    commandLine 'git describe --always --dirty'.split()
-    standardOutput = new ByteArrayOutputStream()
-
+task versionInfo {
     doLast {
-        def versionFile = new File(versionInfoFile)
+        File versionFile = new File(versionInfoFile)
         versionFile.getParentFile().mkdir()
-
-        String version = standardOutput.toString()
-        versionFile.text = 'version=' + version + 'protocol=' + version
+        versionFile.text = 'version=' + project.version + 'protocol=' + project.version
     }
 }
 
 jar {
     dependsOn versionInfo
     from versionInfoFile
+}
+
+task computeMavenInfo {
+    gradle.ext.mavenUrl = System.env.MAVEN_URL + (project.version ==~ /\d+\.\d+\.\d+/ ? '/releases' : '/snapshots')
+    gradle.ext.mavenUser = System.env.MAVEN_USER
+    gradle.ext.mavenPassword = System.env.MAVEN_PASS
+    gradle.ext.mavenPrivateKey = System.env.MAVEN_PK
+}
+
+uploadArchives {
+    dependsOn computeMavenInfo
+
+    doFirst {
+        println "Publishing to maven repository ${gradle.mavenUrl} with user ${gradle.mavenUser}"
+    }
+
+    repositories.mavenDeployer {
+        configuration = configurations.deployerJars
+
+        repository(url: gradle.mavenUrl) {
+            authentication(
+                    userName: gradle.mavenUser,
+                    password: gradle.mavenPassword,
+                    privateKey: gradle.mavenPrivateKey
+            )
+        }
+    }
 }
