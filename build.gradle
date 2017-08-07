@@ -1,0 +1,89 @@
+plugins {
+    id 'java'
+    id 'maven'
+    id 'com.palantir.git-version' version '0.8.0'
+}
+
+group = 'io.kamax'
+version = gitVersion()
+
+sourceCompatibility = 1.7
+
+String versionInfoFile = "${projectDir}/build/tmp/versionInfo/api.build.properties"
+
+configurations {
+    deployerJars
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+
+    // Logging
+    compile 'org.slf4j:log4j-over-slf4j:1.7.25'
+
+    // Various utilities
+    compile 'org.apache.commons:commons-lang3:3.5'
+
+    // IO Utilities
+    compile 'commons-io:commons-io:2.5'
+
+    // Auto-detection of classes to support modules
+    compile 'org.reflections:reflections:0.9.11'
+
+    // Event bus
+    compile 'net.engio:mbassador:1.1.10'
+
+    // XML
+    compile 'com.thoughtworks.xstream:xstream:1.4.9'
+
+    // Client-Server protocol
+    compile 'com.esotericsoftware:kryonet:2.22.0-RC1'
+
+    // Process execution
+    compile 'org.zeroturnaround:zt-exec:1.9'
+
+    testCompile 'junit:junit:4.12'
+
+    deployerJars "org.apache.maven.wagon:wagon-ssh:2.2"
+
+}
+
+task versionInfo {
+    doLast {
+        File versionFile = new File(versionInfoFile)
+        versionFile.getParentFile().mkdir()
+        versionFile.text = 'version=' + project.version + System.lineSeparator() + 'protocol=' + project.version
+    }
+}
+
+jar {
+    dependsOn versionInfo
+    from versionInfoFile
+}
+
+uploadArchives {
+    gradle.ext.mavenUrl = System.env.MAVEN_URL + (project.version ==~ /\d+\.\d+\.\d+/ ? '/releases' : '/snapshots')
+    gradle.ext.mavenUser = System.env.MAVEN_USER
+    gradle.ext.mavenPassword = System.env.MAVEN_PASS
+    gradle.ext.mavenPrivateKey = System.env.MAVEN_PK
+
+    doLast {
+        println "Published ${project.version} to maven repository ${gradle.mavenUrl} with user ${gradle.mavenUser}"
+    }
+
+    repositories.mavenDeployer {
+        configuration = configurations.deployerJars
+
+        repository(url: gradle.mavenUrl) {
+            authentication(
+                    userName: gradle.mavenUser,
+                    password: gradle.mavenPassword,
+                    privateKey: gradle.mavenPrivateKey
+            )
+        }
+    }
+}

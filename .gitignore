@@ -1,6 +1,7 @@
-/out/
-build.properties
+# IDEs
+**/.idea/
 
-src/core/.settings/
-src/tools/.settings/
-
+# Build
+.gradle/
+build/
+out/
