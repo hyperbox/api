@@ -1,7 +1,13 @@
-plugins {
-    id 'java'
-    id 'maven'
-    id 'com.palantir.git-version' version '0.8.0'
+apply plugin: 'java'
+apply plugin: 'maven'
+
+String gitVersion() {
+    ByteArrayOutputStream out = new ByteArrayOutputStream()
+    exec {
+        commandLine = [ 'git', 'describe', '--always', '--dirty' ]
+        standardOutput = out
+    }
+    return out.toString().replace(System.lineSeparator(), '')
 }
 
 group = 'io.kamax'
