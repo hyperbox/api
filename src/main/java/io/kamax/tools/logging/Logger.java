@@ -191,7 +191,7 @@ public class Logger {
                     output = o.toString();
                     break;
                 case Exception:
-                    output = time + " | Exception | " + Thread.currentThread().getName() + " | " + getCalling(false);
+                    output = time + " | Exception | " + Thread.currentThread().getName() + " | " + getCalling();
                     break;
                 case Error:
                     output = time + " |     Error | " + o;
@@ -206,10 +206,10 @@ public class Logger {
                     output = time + " |   verbose | " + o;
                     break;
                 case Debug:
-                    output = time + " |     debug | " + Thread.currentThread().getName() + " | " + getCalling(false) + " | " + o;
+                    output = time + " |     debug | " + Thread.currentThread().getName() + " | " + getCalling() + " | " + o;
                     break;
                 case Tracking:
-                    output = time + " |  tracking | " + Thread.currentThread().getName() + " | " + getCalling(true);
+                    output = time + " |  tracking | " + Thread.currentThread().getName() + " | " + getCalling();
                     break;
                 default:
                     output = time + " |   UNKNWON | " + o;
@@ -223,23 +223,18 @@ public class Logger {
         output.println(s);
     }
 
-    @SuppressWarnings("deprecation")
-    private static String getCalling(boolean methodName) {
+    private static String getCalling() {
         int depth = 4;
-        if (methodName) {
-            StackTraceElement e[] = Thread.currentThread().getStackTrace();
-            if ((e != null) && (e.length >= depth)) {
-                StackTraceElement s = e[depth];
-                if (s != null) {
-                    String finalValue = s.getClassName().substring((s.getClassName().lastIndexOf(".") + 1));
-                    finalValue = finalValue + "." + s.getMethodName() + "():" + s.getLineNumber();
-                    return finalValue;
-                }
+        StackTraceElement e[] = Thread.currentThread().getStackTrace();
+        if (e.length >= depth) {
+            StackTraceElement s = e[depth];
+            if (s != null) {
+                String finalValue = s.getClassName().substring((s.getClassName().lastIndexOf(".") + 1));
+                finalValue = finalValue + "." + s.getMethodName() + "():" + s.getLineNumber();
+                return finalValue;
             }
-            return null;
-        } else {
-            return sun.reflect.Reflection.getCallerClass(depth + 1).getSimpleName();
         }
+        return null;
     }
 
     public static void destroy() {
