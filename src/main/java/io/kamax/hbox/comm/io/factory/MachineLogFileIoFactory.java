@@ -1,7 +1,7 @@
 package io.kamax.hbox.comm.io.factory;
 
 import io.kamax.hbox.comm.io.MachineLogFileIO;
-import io.kamax.hbox.hypervisor._MachineLogFile;
+import io.kamax.hbox.hypervisor.vbox._MachineLogFile;
 
 public class MachineLogFileIoFactory {
 

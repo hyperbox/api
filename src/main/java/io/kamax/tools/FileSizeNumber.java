@@ -1,14 +1,14 @@
 /*
  * Hyperbox - Virtual Infrastructure Manager
- * Copyright (C) 2014 Maxime Dor
- * 
- * http://kamax.io/hbox/
- * 
+ * Copyright (C) 2014 Max Dor
+ *
+ * https://apps.kamax.io/hyperbox
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
@@ -36,18 +36,18 @@ public class FileSizeNumber {
     }
 
     private void evaluate() {
-        if (byteSize >= 1125899906842624l) {
+        if (byteSize >= 1125899906842624L) {
             humanUnit = "PB";
-            humanSize = byteSize / 1125899906842624l;
-        } else if (byteSize >= 1099511627776l) {
+            humanSize = byteSize / 1125899906842624L;
+        } else if (byteSize >= 1099511627776L) {
             humanUnit = "TB";
-            humanSize = byteSize / 1099511627776l;
-        } else if (byteSize >= 1073741824l) {
+            humanSize = byteSize / 1099511627776L;
+        } else if (byteSize >= 1073741824L) {
             humanUnit = "GB";
-            humanSize = byteSize / 1073741824l;
-        } else if (byteSize >= 1048576l) {
+            humanSize = byteSize / 1073741824L;
+        } else if (byteSize >= 1048576L) {
             humanUnit = "MB";
-            humanSize = byteSize / 1048576l;
+            humanSize = byteSize / 1048576L;
         } else if (byteSize >= 1024) {
             humanUnit = "KB";
             humanSize = byteSize / 1024;

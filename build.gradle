@@ -1,25 +1,71 @@
-apply plugin: 'java'
-apply plugin: 'maven'
+/*
+ * Hyperbox - Virtual Infrastructure Manager
+ * Copyright (C) 2021 Max Dor
+ *
+ * https://apps.kamax.io/hyperbox
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
-String gitVersion() {
-    ByteArrayOutputStream out = new ByteArrayOutputStream()
-    exec {
-        commandLine = [ 'git', 'describe', '--always', '--dirty' ]
-        standardOutput = out
+import java.util.regex.Pattern
+
+String buildVersion() {
+    def versionPattern = Pattern.compile("v(\\d+\\.)?(\\d+\\.)?(\\d+)(-.*)?")
+
+    String version = System.getenv('HBOX_API_BUILD_VERSION')
+    if (version == null || version.length() == 0) {
+        version = sourceVersion()
     }
+    return versionPattern.matcher(version).matches() ? version.substring(1) : version
+}
+
+String sourceVersion() {
+    String version = System.getenv('HBOX_API_SOURCE_VERSION')
+    if (version != null && version.length() > 0) {
+        return version
+    }
+
+    ByteArrayOutputStream out = new ByteArrayOutputStream()
+
+    def o = exec {
+        commandLine = ['git', 'describe', '--tags', '--always', '--dirty']
+        standardOutput = out
+        errorOutput = out
+        ignoreExitValue = true
+    }
+
+    if (o.exitValue != 0) {
+        if (o.exitValue != 128) {
+            logger.warn('Unable to determine git version: {}', out.toString())
+        }
+
+        return "UNKNOWN"
+    }
+
     return out.toString().replace(System.lineSeparator(), '')
 }
 
-group = 'io.kamax'
-version = gitVersion()
+apply plugin: 'java-library'
+apply plugin: 'maven-publish'
 
-sourceCompatibility = 1.7
+group = 'io.kamax.apps.hbox'
+version = buildVersion()
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 String versionInfoFile = "${projectDir}/build/tmp/versionInfo/api.build.properties"
-
-configurations {
-    deployerJars
-}
 
 repositories {
     mavenLocal()
@@ -27,35 +73,31 @@ repositories {
 }
 
 dependencies {
-
     // Logging
-    compile 'org.slf4j:log4j-over-slf4j:1.7.25'
+    api 'org.slf4j:log4j-over-slf4j:1.7.32'
 
     // Various utilities
-    compile 'org.apache.commons:commons-lang3:3.5'
+    api 'org.apache.commons:commons-lang3:3.12.0'
 
     // IO Utilities
-    compile 'commons-io:commons-io:2.5'
+    api 'commons-io:commons-io:2.5'
 
     // Auto-detection of classes to support modules
-    compile 'org.reflections:reflections:0.9.11'
+    api 'org.reflections:reflections:0.9.12'
 
     // Event bus
-    compile 'net.engio:mbassador:1.1.10'
+    api 'net.engio:mbassador:1.1.10'
 
     // XML
-    compile 'com.thoughtworks.xstream:xstream:1.4.9'
+    api 'com.thoughtworks.xstream:xstream:1.4.18'
 
     // Client-Server protocol
-    compile 'com.esotericsoftware:kryonet:2.22.0-RC1'
+    api 'com.esotericsoftware:kryonet:2.22.0-RC1'
 
     // Process execution
-    compile 'org.zeroturnaround:zt-exec:1.9'
+    api 'org.zeroturnaround:zt-exec:1.12'
 
-    testCompile 'junit:junit:4.12'
-
-    deployerJars "org.apache.maven.wagon:wagon-ssh:2.2"
-
+    testImplementation 'junit:junit:4.13.2'
 }
 
 task versionInfo {
@@ -71,25 +113,18 @@ jar {
     from versionInfoFile
 }
 
-uploadArchives {
-    gradle.ext.mavenUrl = System.env.MAVEN_URL + (project.version ==~ /\d+\.\d+\.\d+/ ? '/releases' : '/snapshots')
-    gradle.ext.mavenUser = System.env.MAVEN_USER
-    gradle.ext.mavenPassword = System.env.MAVEN_PASS
-    gradle.ext.mavenPrivateKey = System.env.MAVEN_PK
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = project.group
+            artifactId = project.name
+            version = project.version
 
-    doLast {
-        println "Published ${project.version} to maven repository ${gradle.mavenUrl} with user ${gradle.mavenUser}"
-    }
-
-    repositories.mavenDeployer {
-        configuration = configurations.deployerJars
-
-        repository(url: gradle.mavenUrl) {
-            authentication(
-                    userName: gradle.mavenUser,
-                    password: gradle.mavenPassword,
-                    privateKey: gradle.mavenPrivateKey
-            )
+            from components.java
         }
     }
+}
+
+task install {
+    dependsOn publishToMavenLocal
 }
